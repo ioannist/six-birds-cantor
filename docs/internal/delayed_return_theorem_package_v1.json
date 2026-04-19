@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "package_id": "delayed-return-theorem-package-v1",
+  "closed_class_id": "bounded_return_full_core_delayed_gate_subclass",
+  "theorem_statement_short": "For K in the bounded_return_full_core_delayed_gate_subclass, dim_H K = s_* where P_ind(s_*) = 0.",
+  "assumptions_paths": [
+    "docs/internal/delayed_return_theorem_assumptions_v1.json"
+  ],
+  "dependency_paths": [
+    "docs/internal/proof_dependency_induced_pressure_v1.json",
+    "docs/internal/proof_dependency_lower_transfer_v1.json",
+    "docs/internal/proof_dependency_delayed_return_v1.json"
+  ],
+  "selected_routes": {
+    "pressure_route": "induced_return_block_pressure",
+    "lower_route": "induced_cylinder_premeasure"
+  },
+  "witness_families": [
+    "frontier.fw_delayed_return_gate_a3",
+    "frontier.fw_delayed_return_gate_a1",
+    "frontier.fw_delayed_return_gate_a2"
+  ],
+  "included_families": [
+    "frontier.fw_delayed_return_gate_a3",
+    "frontier.fw_delayed_return_gate_a1",
+    "frontier.fw_delayed_return_gate_a2"
+  ],
+  "excluded_families": [
+    "contextual_local.domain_gated_two_map_local_ifs",
+    "contextual_local.prefix_memory_last_digit_rule",
+    "contextual_local.prefix_memory_no_22_base3"
+  ],
+  "not_claimed_families": [
+    "bounded_return_delayed_gate_subclass",
+    "countable_state_delayed_return_local_domain_class"
+  ],
+  "proof_status": "closed_in_note",
+  "notes": [
+    "This package freezes the already-closed theorem branch and intentionally does not claim the broader working class.",
+    "The closed class is still finite-state-renewal-like in the control-model sense used by the non-SFT audit."
+  ]
+}

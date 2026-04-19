@@ -1,0 +1,49 @@
+{
+  "decision": "design_space_blocked",
+  "generated_at_utc": "2026-03-18T09:10:40.975182Z",
+  "next_branch": "CS-alt \u2014 Import an external local-domain/countable-state witness family",
+  "rejected_candidates": [
+    "cs.multi_return_c1",
+    "cs.reset_hold_b3",
+    "cs.ladder_gate_a1",
+    "cs.ladder_gate_a2",
+    "cs.ladder_gate_a3",
+    "cs.window_stack_d2",
+    "cs.window_stack_d1"
+  ],
+  "schema_version": "1.0",
+  "selection_rule": "Prefer candidates that retain nonconstant return structure and avoid immediate finite-state collapse while keeping truncation and original defects tolerable.",
+  "shortlist_id": "countable-state-redesign-shortlist-v1",
+  "top_candidates": [
+    {
+      "compression_status": "trivial_collapse",
+      "effective_alphabet_regime": "unknown",
+      "family_id": "cs.reset_hold_b2",
+      "frontier_status": "blocked",
+      "induced_core_type": "trivial_finite_state",
+      "return_time_regime": "bounded_constant",
+      "template_type": "reset_and_hold",
+      "why_selected": "Induced coding collapses or becomes too lossy on the checked cap."
+    },
+    {
+      "compression_status": "trivial_collapse",
+      "effective_alphabet_regime": "unknown",
+      "family_id": "cs.reset_hold_b1",
+      "frontier_status": "blocked",
+      "induced_core_type": "trivial_finite_state",
+      "return_time_regime": "bounded_constant",
+      "template_type": "reset_and_hold",
+      "why_selected": "Induced coding collapses or becomes too lossy on the checked cap."
+    },
+    {
+      "compression_status": "trivial_collapse",
+      "effective_alphabet_regime": "unknown",
+      "family_id": "cs.multi_return_c2",
+      "frontier_status": "blocked",
+      "induced_core_type": "trivial_finite_state",
+      "return_time_regime": "unknown",
+      "template_type": "multi_return_three_map",
+      "why_selected": "Induced coding collapses or becomes too lossy on the checked cap."
+    }
+  ]
+}

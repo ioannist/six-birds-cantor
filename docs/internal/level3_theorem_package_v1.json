@@ -1,0 +1,95 @@
+{
+  "assumption_paths": [
+    "docs/internal/continuous_theorem_assumptions_v1.json"
+  ],
+  "canonical_object_id": "canonical_hybrid_theorem_object_v1",
+  "core_class_id": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "dependency_paths": [
+    "docs/internal/proof_dependency_continuous_full_loop_v1.json",
+    "docs/internal/proof_dependency_continuous_pressure_v1.json",
+    "docs/internal/proof_dependency_strict_theory_extension_v1.json",
+    "docs/internal/proof_dependency_conditional_disintegration_v1.json"
+  ],
+  "evidence_paths": [
+    "results/continuous_pressure_closure/report.json",
+    "results/strict_theory_extension_closure/report.json",
+    "results/conditional_disintegration/report.json"
+  ],
+  "generated_at_utc": "2026-03-19T00:00:00Z",
+  "included_theoremlets": [
+    {
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_path": "docs/internal/proof_dependency_continuous_full_loop_v1.json",
+      "note": "Closed six-primitive lawfulness regime theoremlet on the shell-stable audited package.",
+      "status": "closed_in_note",
+      "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_path": "docs/internal/proof_dependency_continuous_pressure_v1.json",
+      "note": "Closed switched-operator cocycle pressure theoremlet on the shell-stable class.",
+      "status": "closed_in_note",
+      "theoremlet_id": "cocycle_pressure_closure_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_path": "docs/internal/proof_dependency_strict_theory_extension_v1.json",
+      "note": "Closed strict theory extension theoremlet for T1 over T0 on the audited shell.",
+      "status": "closed_in_note",
+      "theoremlet_id": "strict_theory_extension_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_path": "docs/internal/proof_dependency_conditional_disintegration_v1.json",
+      "note": "Closed conditional pressure disintegration theoremlet on the canonical hybrid object over the audited shell.",
+      "status": "closed_in_note",
+      "theoremlet_id": "conditional_pressure_disintegration_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    }
+  ],
+  "nonclaims": [
+    "no broader-class theorem beyond the audited shell",
+    "no external/non-SFT breadth claim beyond what is actually closed",
+    "no direct stratumwise root-separation theorem",
+    "no packaging-induced broader theorem class claim",
+    "no shell-general theorem beyond the audited shell-stable class"
+  ],
+  "notes": [
+    "The package is frozen around the audited-shell Level-3 core only.",
+    "The conditional disintegration theoremlet is the thermodynamic consequence route retained in the paper-core package."
+  ],
+  "package_id": "level3_theorem_package_v1",
+  "paper_core_positioning": "level3_core_on_audited_shell",
+  "reserve_routes": [
+    "packaging-completion broader-class ambitions",
+    "hybrid object broadening beyond audited shell",
+    "wider parameter shell theorem",
+    "non-SFT breadth story not already closed"
+  ],
+  "schema_version": "v1",
+  "selected_routes": {
+    "extension_route": "forcing_lemma_nondefinability_route",
+    "lawfulness_route": "deterministic_skew_product_with_budget_feedback",
+    "pressure_route": "fekete_sup_cocycle_route",
+    "thermodynamic_consequence_route": "conditional_pressure_disintegration_route"
+  },
+  "witness_families": [
+    "generated.continuous_full_loop_kernel",
+    "generated.continuous_full_loop_kernel_shell"
+  ]
+}

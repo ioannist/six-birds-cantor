@@ -1,0 +1,796 @@
+{
+  "assumption_catalog": {
+    "bounded_cylinder_multiplicity": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Depth-n cylinder family has a uniform pointwise overlap bound independent of depth on the target subclass.",
+      "label": "bounded cylinder multiplicity"
+    },
+    "bounded_distortion": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Cylinder diameters are uniformly comparable to nominal contraction products.",
+      "label": "Bounded distortion"
+    },
+    "disjoint_cylinder_geometry": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Depth-n cylinder images are pairwise disjoint or uniformly separated so upper and lower geometric sums coincide at cylinder scale.",
+      "label": "Disjoint cylinder geometry"
+    },
+    "equal_scale_cylinders": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Depth-n cylinder images in the target subclass have a common contraction scale at each fixed depth.",
+      "label": "equal-scale cylinders"
+    },
+    "exact_cylinder_packaging": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "The lower-pressure packaging at depth n is exactly the family of depth-n cylinder images, not a coarser or adaptive grouping.",
+      "label": "Exact cylinder packaging"
+    },
+    "feedback_free_admissibility": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Admissibility does not change through runtime feedback states.",
+      "label": "Feedback-free admissibility"
+    },
+    "finite_memory_bound": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Admissibility depends on bounded memory or explicit finite control state.",
+      "label": "Finite memory bound"
+    },
+    "fixed_lens": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Lens/representation choice is fixed and not updated during the run.",
+      "label": "Fixed lens"
+    },
+    "fixed_packaging": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Packaging/coalescing rule is fixed and not updated during the run.",
+      "label": "Fixed packaging"
+    },
+    "lens_affects_admissibility": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Lens choice changes which branches are admissible.",
+      "label": "Lens affects admissibility"
+    },
+    "lower_pressure_packaging_admissible": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "The packaging rule is legitimate for lower-pressure geometric sums, not just bookkeeping.",
+      "label": "Lower-pressure packaging admissible"
+    },
+    "packaging_affects_admissibility": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Packaging choice changes which branches are admissible.",
+      "label": "Packaging affects admissibility"
+    },
+    "quasi_multiplicativity": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Branch weights satisfy a uniform multiplicative comparison under concatenation.",
+      "label": "Quasi-multiplicativity"
+    },
+    "stationary_admissibility_rule": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Admissibility law does not change with stage.",
+      "label": "Fixed/stationary admissibility rule"
+    },
+    "tempered_memory": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Memory/protocol complexity grows slowly enough for asymptotic pressure control.",
+      "label": "Tempered memory"
+    },
+    "uniform_contraction": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "All branch maps contract uniformly below 1.",
+      "label": "Uniform contraction"
+    },
+    "usable_separation": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Overlap is controlled enough for covering and lower-pressure arguments.",
+      "label": "Usable separation"
+    }
+  },
+  "assumptions_id": "theorem_assumptions_v1",
+  "based_on_shortlist": "docs/internal/theorem_class_shortlist_v1.json",
+  "class_profiles": [
+    {
+      "class_id": "safe_finite_memory_local_subclass",
+      "forbidden_assumptions": {
+        "feedback_free_admissibility": "no",
+        "lens_affects_admissibility": "yes",
+        "packaging_affects_admissibility": "yes",
+        "stationary_admissibility_rule": "no"
+      },
+      "label": "Safe finite-memory/local subclass",
+      "notes": "Primary theorem class: narrow, bounded-memory, feedback-free, and mechanically stable enough for direct upper/lower pressure proofs.",
+      "permitted_unknowns": [
+        "quasi_multiplicativity",
+        "tempered_memory",
+        "lower_pressure_packaging_admissible"
+      ],
+      "required_assumptions": {
+        "bounded_distortion": "yes",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "packaging_affects_admissibility": "no",
+        "stationary_admissibility_rule": "yes",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      }
+    },
+    {
+      "class_id": "quasi_multiplicative_local_cantor_class",
+      "forbidden_assumptions": {
+        "lens_affects_admissibility": "yes",
+        "packaging_affects_admissibility": "yes",
+        "quasi_multiplicativity": "no"
+      },
+      "label": "Quasi-multiplicative local Cantor class",
+      "notes": "Stretch class: only enter when there is positive evidence for a quasi-multiplicative pressure structure; otherwise stay unknown.",
+      "permitted_unknowns": [
+        "finite_memory_bound",
+        "stationary_admissibility_rule",
+        "feedback_free_admissibility",
+        "fixed_lens",
+        "fixed_packaging",
+        "tempered_memory",
+        "lower_pressure_packaging_admissible"
+      ],
+      "required_assumptions": {
+        "bounded_distortion": "yes",
+        "lens_affects_admissibility": "no",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "yes",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      }
+    }
+  ],
+  "family_assumption_tags": [
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "yes",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "yes",
+        "equal_scale_cylinders": "yes",
+        "exact_cylinder_packaging": "yes",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "yes",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "yes",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "yes",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "classical.middle_thirds",
+      "tagging_note": "Classical similarity baseline satisfies the full safe profile and is a clean stretch-class control."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "no",
+        "equal_scale_cylinders": "no",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "no",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "no",
+        "fixed_packaging": "no",
+        "lens_affects_admissibility": "yes",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "yes",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "no",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "generated.pg_rewrite_bundle",
+      "tagging_note": "Frozen generated rewrite bundle: active P1/P3/P6 generation is promising but not claimed by the proved Bowen classes."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "no",
+        "equal_scale_cylinders": "no",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "no",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "no",
+        "fixed_packaging": "no",
+        "lens_affects_admissibility": "yes",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "yes",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "no",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "generated.pg_protocol_lens",
+      "tagging_note": "Frozen generated protocol/lens bundle: stable structural anchor, tracked but not claimed by the proved Bowen classes."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "no",
+        "equal_scale_cylinders": "no",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "no",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "no",
+        "fixed_packaging": "no",
+        "lens_affects_admissibility": "yes",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "yes",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "generated.pg_full_loop_bundle",
+      "tagging_note": "Attempted full-loop generated bundle: tracked conservatively because P5 still needs causal closure."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "yes",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "yes",
+        "equal_scale_cylinders": "yes",
+        "exact_cylinder_packaging": "yes",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "yes",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "yes",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "yes",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "classical.restricted_digits_base4_02",
+      "tagging_note": "Classical restricted-digit control is fully compatible with the primary class."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "yes",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "yes",
+        "equal_scale_cylinders": "yes",
+        "exact_cylinder_packaging": "yes",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "yes",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "yes",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "yes",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "classical.restricted_digits_base5_024",
+      "tagging_note": "Classical restricted-digit control is fully compatible with the primary class."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "no",
+        "equal_scale_cylinders": "no",
+        "exact_cylinder_packaging": "unknown",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "yes",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+      "tagging_note": "Simple domain-gated local IFS remains inside the primary class as the key genuinely local example."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "no",
+        "bounded_distortion": "unknown",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "unknown",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "no",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "yes",
+        "fixed_packaging": "no",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "unknown",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "no",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "contextual_local.feedback_budget_gate_and_packaging",
+      "tagging_note": "Budget-driven family is computationally tractable but theorem tags remain conservative because packaging is adaptive and admissibility is feedback-driven."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "no",
+        "bounded_distortion": "unknown",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "unknown",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "no",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "no",
+        "fixed_packaging": "no",
+        "lens_affects_admissibility": "yes",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "unknown",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "no",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "contextual_local.feedback_lens_protocol_coupled",
+      "tagging_note": "Current evidence is too feedback-dependent and unstable for primary-class inclusion; lens-driven gating blocks safe-class compatibility."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "yes",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "no",
+        "equal_scale_cylinders": "yes",
+        "exact_cylinder_packaging": "yes",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "yes",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "contextual_local.prefix_memory_last_digit_rule",
+      "tagging_note": "Bounded-memory contextual family is a direct primary-class candidate; broad quasi-multiplicativity is not yet established."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "yes",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "yes",
+        "equal_scale_cylinders": "yes",
+        "exact_cylinder_packaging": "yes",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "yes",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "tagging_note": "This is the best current contextual member of the primary class; stretch-class evidence is still incomplete."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "yes",
+        "exact_cylinder_packaging": "unknown",
+        "feedback_free_admissibility": "no",
+        "finite_memory_bound": "no",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "no",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "contextual_local.stage_dependent_alternating_removal",
+      "tagging_note": "Nonautonomous stage control is explicitly excluded from the primary class."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "yes",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "no",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "no",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "control.middle_thirds_symbolic",
+      "tagging_note": "Symbolic control is safe-class compatible but not evidence for the broader local stretch class."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "yes",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "no",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "no",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "control.restricted_digits_base5_024_symbolic",
+      "tagging_note": "Symbolic control is safe-class compatible but not evidence for the broader local stretch class."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "yes",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "yes",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "finite_state.adjacency_no_consecutive_2_base3",
+      "tagging_note": "Finite-state control fits the primary class; lower-pressure packaging is not the main route here, so it stays unknown."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "unknown",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "finite_state.graph_directed_two_vertex_similarity",
+      "tagging_note": "Graph-directed probe looks close to the safe class but separation and quasi-multiplicativity remain unverified."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "no",
+        "exact_cylinder_packaging": "unknown",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "frontier.fw_delayed_return_gate_a1",
+      "tagging_note": "Frontier delayed-return witness frozen after T15; tagged conservatively as stationary and feedback-free, but theorem compatibility remains unknown pending the frontier assumptions pack."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "no",
+        "exact_cylinder_packaging": "unknown",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "frontier.fw_delayed_return_gate_a2",
+      "tagging_note": "Frontier delayed-return witness frozen after T15; tagged conservatively as stationary and feedback-free, but theorem compatibility remains unknown pending the frontier assumptions pack."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "no",
+        "exact_cylinder_packaging": "unknown",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "frontier.fw_delayed_return_gate_a3",
+      "tagging_note": "Frontier delayed-return witness frozen after T15; tagged conservatively as stationary and feedback-free, but theorem compatibility remains unknown pending the frontier assumptions pack."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "no",
+        "equal_scale_cylinders": "unknown",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "external.countable_gdms_countable_alphabet",
+      "tagging_note": "Imported countable-GDMS witness is tracked conservatively as external future work."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "no",
+        "equal_scale_cylinders": "unknown",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "external.local_ifs_non_sft_bridge",
+      "tagging_note": "Imported local-IFS bridge is tracked conservatively as external non-SFT future work."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "no",
+        "equal_scale_cylinders": "unknown",
+        "exact_cylinder_packaging": "no",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "external.pseudo_markov_countable_alphabet",
+      "tagging_note": "Imported pseudo-Markov witness is tracked conservatively as external future work."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "yes",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "no",
+        "exact_cylinder_packaging": "unknown",
+        "feedback_free_admissibility": "yes",
+        "finite_memory_bound": "yes",
+        "fixed_lens": "yes",
+        "fixed_packaging": "yes",
+        "lens_affects_admissibility": "no",
+        "lower_pressure_packaging_admissible": "yes",
+        "packaging_affects_admissibility": "no",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "yes",
+        "tempered_memory": "unknown",
+        "uniform_contraction": "yes",
+        "usable_separation": "yes"
+      },
+      "family_id": "toy.local_ifs.nested_three_map_local_ifs",
+      "tagging_note": "Toy local-IFS family is primary-class compatible and useful for proof scaffolding, but not evidence for the stretch class yet."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "unknown",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "unknown",
+        "exact_cylinder_packaging": "unknown",
+        "feedback_free_admissibility": "no",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "no",
+        "fixed_packaging": "no",
+        "lens_affects_admissibility": "yes",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "yes",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "no",
+        "tempered_memory": "yes",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "generated.continuous_full_loop_kernel",
+      "tagging_note": "Continuous full-loop kernel is a theorem-bridge control, not part of the original finite-memory shortlist."
+    },
+    {
+      "assumption_values": {
+        "bounded_cylinder_multiplicity": "unknown",
+        "bounded_distortion": "unknown",
+        "disjoint_cylinder_geometry": "unknown",
+        "equal_scale_cylinders": "unknown",
+        "exact_cylinder_packaging": "unknown",
+        "feedback_free_admissibility": "no",
+        "finite_memory_bound": "unknown",
+        "fixed_lens": "no",
+        "fixed_packaging": "no",
+        "lens_affects_admissibility": "yes",
+        "lower_pressure_packaging_admissible": "unknown",
+        "packaging_affects_admissibility": "yes",
+        "quasi_multiplicativity": "unknown",
+        "stationary_admissibility_rule": "no",
+        "tempered_memory": "yes",
+        "uniform_contraction": "yes",
+        "usable_separation": "unknown"
+      },
+      "family_id": "generated.continuous_full_loop_kernel_shell",
+      "tagging_note": "Continuous shell witness is a theorem-bridge control outside the original finite-memory shortlist."
+    }
+  ],
+  "primary_class_id": "safe_finite_memory_local_subclass",
+  "schema_version": "1.0",
+  "stretch_class_id": "quasi_multiplicative_local_cantor_class"
+}

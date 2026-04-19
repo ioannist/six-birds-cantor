@@ -1,0 +1,292 @@
+{
+  "assumption_catalog": {
+    "bounded_bridge_property": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Induced return blocks admit a bounded-bridge / concatenation compatibility proxy strong enough to support a pressure argument."
+    },
+    "bounded_return_times": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Observed first-return lengths stay in a finite controlled window instead of immediately requiring an unbounded tail statement."
+    },
+    "core_return_coverage": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "The chosen delayed-return core captures a nontrivial share of the induced mass and is not a vacuous witness."
+    },
+    "delayed_return_core_exists": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "An explicit delayed-return core interval can be identified and return blocks can be defined relative to it."
+    },
+    "feedback_free_admissibility": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Admissibility is stationary and not changed by runtime feedback."
+    },
+    "full_core_induction": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Every surviving original cylinder/set is represented by the delayed-return core up to a uniformly bounded entry/exit correction, so the induced tower captures the full attractor modulo bounded distortion constants."
+    },
+    "induced_alphabet_control": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Induced alphabet growth is controlled well enough to keep the induced coding theorem-amenable on the intended class."
+    },
+    "local_domain_compatibility": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Gate, hold, and return words respect the local domains strongly enough to define an induced coding on the chosen core."
+    },
+    "nontrivial_induced_structure": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "The induced coding does not collapse to a size-1 trivial finite-state core."
+    },
+    "stationary_local_admissibility": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Map domains and admissibility law are fixed in time."
+    },
+    "strict_return_contraction": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Each return block has contraction weight strictly less than 1, so induced weights decay with s and the induced pressure has a genuine root at finite s."
+    },
+    "uniform_entry_exit_bound": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "The prefix/suffix correction needed to pass between original cylinders and induced return-block cylinders is uniformly bounded over the class."
+    },
+    "usable_overlap_control": {
+      "allowed_values": [
+        "yes",
+        "no",
+        "unknown"
+      ],
+      "description": "Overlap/packaging behavior is controlled well enough that the induced return coding is geometrically meaningful."
+    }
+  },
+  "assumptions_id": "delayed_return_theorem_assumptions_v1",
+  "class_profiles": [
+    {
+      "class_id": "bounded_return_delayed_gate_subclass",
+      "forbidden_assumptions": {
+        "feedback_free_admissibility": "no",
+        "nontrivial_induced_structure": "no",
+        "stationary_local_admissibility": "no"
+      },
+      "label": "Bounded-return delayed-gate subclass",
+      "notes": "Working class chosen in FW-T2: explicit delayed-return gate/hold/return structure, bounded checked return regime, and nontrivial induced coding.",
+      "permitted_unknowns": [
+        "usable_overlap_control"
+      ],
+      "required_assumptions": {
+        "bounded_bridge_property": "yes",
+        "bounded_return_times": "yes",
+        "core_return_coverage": "yes",
+        "delayed_return_core_exists": "yes",
+        "feedback_free_admissibility": "yes",
+        "induced_alphabet_control": "yes",
+        "local_domain_compatibility": "yes",
+        "nontrivial_induced_structure": "yes",
+        "stationary_local_admissibility": "yes",
+        "strict_return_contraction": "yes"
+      }
+    },
+    {
+      "class_id": "countable_state_delayed_return_local_domain_class",
+      "forbidden_assumptions": {
+        "feedback_free_admissibility": "no",
+        "nontrivial_induced_structure": "no",
+        "stationary_local_admissibility": "no"
+      },
+      "label": "Countable-state delayed-return local-domain class",
+      "notes": "Stretch class: delayed-return induction stays alive beyond the bounded-return window and no longer looks reducible to a small finite-state renewal model.",
+      "permitted_unknowns": [
+        "bounded_return_times",
+        "core_return_coverage",
+        "induced_alphabet_control",
+        "usable_overlap_control"
+      ],
+      "required_assumptions": {
+        "bounded_bridge_property": "yes",
+        "delayed_return_core_exists": "yes",
+        "feedback_free_admissibility": "yes",
+        "local_domain_compatibility": "yes",
+        "nontrivial_induced_structure": "yes",
+        "stationary_local_admissibility": "yes",
+        "strict_return_contraction": "yes"
+      }
+    },
+    {
+      "class_id": "bounded_return_full_core_delayed_gate_subclass",
+      "forbidden_assumptions": {
+        "feedback_free_admissibility": "no",
+        "nontrivial_induced_structure": "no",
+        "stationary_local_admissibility": "no"
+      },
+      "label": "Bounded-return full-core delayed-gate subclass",
+      "notes": "Narrowed closure class for FW-T6: every surviving branch is controlled by the delayed-return core up to uniformly bounded entry/exit correction, so induced lower transfer closes without exponential truncation loss.",
+      "permitted_unknowns": [
+        "usable_overlap_control"
+      ],
+      "required_assumptions": {
+        "bounded_bridge_property": "yes",
+        "bounded_return_times": "yes",
+        "core_return_coverage": "yes",
+        "delayed_return_core_exists": "yes",
+        "feedback_free_admissibility": "yes",
+        "full_core_induction": "yes",
+        "induced_alphabet_control": "yes",
+        "local_domain_compatibility": "yes",
+        "nontrivial_induced_structure": "yes",
+        "stationary_local_admissibility": "yes",
+        "strict_return_contraction": "yes",
+        "uniform_entry_exit_bound": "yes"
+      }
+    }
+  ],
+  "family_assumption_tags": [
+    {
+      "assumption_values": {
+        "bounded_bridge_property": "yes",
+        "bounded_return_times": "yes",
+        "core_return_coverage": "yes",
+        "delayed_return_core_exists": "yes",
+        "feedback_free_admissibility": "yes",
+        "full_core_induction": "yes",
+        "induced_alphabet_control": "yes",
+        "local_domain_compatibility": "yes",
+        "nontrivial_induced_structure": "yes",
+        "stationary_local_admissibility": "yes",
+        "strict_return_contraction": "yes",
+        "uniform_entry_exit_bound": "yes",
+        "usable_overlap_control": "unknown"
+      },
+      "family_id": "frontier.fw_delayed_return_gate_a3",
+      "tagging_note": "Primary delayed-return witness: nonconstant observed return lengths and nontrivial induced alphabet growth support the working class on the checked cap."
+    },
+    {
+      "assumption_values": {
+        "bounded_bridge_property": "yes",
+        "bounded_return_times": "yes",
+        "core_return_coverage": "yes",
+        "delayed_return_core_exists": "yes",
+        "feedback_free_admissibility": "yes",
+        "full_core_induction": "yes",
+        "induced_alphabet_control": "yes",
+        "local_domain_compatibility": "yes",
+        "nontrivial_induced_structure": "yes",
+        "stationary_local_admissibility": "yes",
+        "strict_return_contraction": "yes",
+        "uniform_entry_exit_bound": "yes",
+        "usable_overlap_control": "unknown"
+      },
+      "family_id": "frontier.fw_delayed_return_gate_a1",
+      "tagging_note": "Reserve delayed-return witness with the same gate/hold/return shape and the same bounded-return signal on the checked cap."
+    },
+    {
+      "assumption_values": {
+        "bounded_bridge_property": "yes",
+        "bounded_return_times": "yes",
+        "core_return_coverage": "yes",
+        "delayed_return_core_exists": "yes",
+        "feedback_free_admissibility": "yes",
+        "full_core_induction": "yes",
+        "induced_alphabet_control": "yes",
+        "local_domain_compatibility": "yes",
+        "nontrivial_induced_structure": "yes",
+        "stationary_local_admissibility": "yes",
+        "strict_return_contraction": "yes",
+        "uniform_entry_exit_bound": "yes",
+        "usable_overlap_control": "unknown"
+      },
+      "family_id": "frontier.fw_delayed_return_gate_a2",
+      "tagging_note": "Reserve/stress delayed-return witness; kept in the working class for now, but still only stretch-unknown because the stronger loop could drift toward renewal-like behavior on larger caps."
+    },
+    {
+      "assumption_values": {
+        "bounded_bridge_property": "yes",
+        "bounded_return_times": "yes",
+        "core_return_coverage": "yes",
+        "delayed_return_core_exists": "no",
+        "feedback_free_admissibility": "yes",
+        "full_core_induction": "no",
+        "induced_alphabet_control": "no",
+        "local_domain_compatibility": "yes",
+        "nontrivial_induced_structure": "no",
+        "stationary_local_admissibility": "yes",
+        "strict_return_contraction": "yes",
+        "uniform_entry_exit_bound": "no",
+        "usable_overlap_control": "unknown"
+      },
+      "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+      "tagging_note": "Old domain-gated family remains the comparison baseline: induction works only by trivial size-1 collapse, so it is outside the delayed-return working class."
+    },
+    {
+      "assumption_values": {
+        "bounded_bridge_property": "yes",
+        "bounded_return_times": "no",
+        "core_return_coverage": "unknown",
+        "delayed_return_core_exists": "no",
+        "feedback_free_admissibility": "yes",
+        "full_core_induction": "no",
+        "induced_alphabet_control": "yes",
+        "local_domain_compatibility": "no",
+        "nontrivial_induced_structure": "no",
+        "stationary_local_admissibility": "yes",
+        "strict_return_contraction": "yes",
+        "uniform_entry_exit_bound": "no",
+        "usable_overlap_control": "yes"
+      },
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "tagging_note": "Symbolic contextual control is useful as a clean comparison, but it is not a delayed-return local-domain family."
+    }
+  ],
+  "notes": [
+    "This pack is for the new frontier delayed-return branch only; it does not revise the proved Bowen classes.",
+    "The working class is intentionally narrower than the stretch class because current evidence is finite-cap diagnostic evidence rather than a countable-state theorem scaffold."
+  ],
+  "schema_version": "1.0",
+  "stretch_class_id": "countable_state_delayed_return_local_domain_class",
+  "working_class_id": "bounded_return_delayed_gate_subclass"
+}

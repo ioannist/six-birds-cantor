@@ -1,0 +1,166 @@
+{
+  "assumptions_path": "docs/internal/theorem_assumptions_v1.json",
+  "assumptions_used": [
+    "uniform_contraction",
+    "finite_memory_bound",
+    "stationary_admissibility_rule",
+    "feedback_free_admissibility",
+    "bounded_distortion",
+    "usable_separation",
+    "fixed_packaging",
+    "lower_pressure_packaging_admissible"
+  ],
+  "class_id": "safe_finite_memory_local_subclass",
+  "core_subclass": "safe_finite_memory_local_subclass_with_lower_pressure_packaging_admissible",
+  "dependency_edges": [
+    [
+      "LEM-LOWER-1",
+      "LEM-LOWER-2"
+    ],
+    [
+      "LEM-LOWER-1",
+      "LEM-LOWER-3"
+    ],
+    [
+      "LEM-LOWER-2",
+      "LEM-LOWER-3"
+    ],
+    [
+      "LEM-LOWER-1",
+      "LEM-LOWER-4"
+    ],
+    [
+      "LEM-LOWER-2",
+      "LEM-LOWER-4"
+    ],
+    [
+      "LEM-LOWER-3",
+      "LEM-LOWER-4"
+    ],
+    [
+      "LEM-LOWER-1",
+      "THM-LOWER-1"
+    ],
+    [
+      "LEM-LOWER-2",
+      "THM-LOWER-1"
+    ],
+    [
+      "LEM-LOWER-3",
+      "THM-LOWER-1"
+    ],
+    [
+      "LEM-LOWER-4",
+      "THM-LOWER-1"
+    ]
+  ],
+  "dependency_id": "proof_dependency_lower_v1",
+  "gap_status": {
+    "localized_gaps": [
+      {
+        "description": "Need a uniform bounded-bridge / quasi-Bernoulli comparison for packaged cylinders across depths on the full core subclass.",
+        "lemma_id": "LEM-LOWER-2"
+      },
+      {
+        "description": "Need a clean packaged-cylinder overlap bound for simple local-domain families beyond the symbolic witnesses.",
+        "lemma_id": "LEM-LOWER-3"
+      }
+    ],
+    "overall": "localized_gap"
+  },
+  "lemmas": [
+    {
+      "assumptions_used": [
+        "uniform_contraction",
+        "fixed_packaging",
+        "lower_pressure_packaging_admissible"
+      ],
+      "depends_on": [],
+      "label": "Cylinder mass / premeasure construction",
+      "lemma_id": "LEM-LOWER-1",
+      "statement_short": "Normalize packaged cylinder weights at depth n to obtain a stage premeasure.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "finite_memory_bound",
+        "stationary_admissibility_rule",
+        "feedback_free_admissibility",
+        "fixed_packaging",
+        "lower_pressure_packaging_admissible"
+      ],
+      "depends_on": [
+        "LEM-LOWER-1"
+      ],
+      "label": "Consistency / tightness step",
+      "lemma_id": "LEM-LOWER-2",
+      "statement_short": "Stage premeasures are compatible across depths up to bounded finite-memory constants.",
+      "status": "localized_gap"
+    },
+    {
+      "assumptions_used": [
+        "bounded_distortion",
+        "usable_separation",
+        "uniform_contraction",
+        "lower_pressure_packaging_admissible"
+      ],
+      "depends_on": [
+        "LEM-LOWER-1",
+        "LEM-LOWER-2"
+      ],
+      "label": "Cylinder-to-ball comparison",
+      "lemma_id": "LEM-LOWER-3",
+      "statement_short": "Packaged cylinder masses give a uniform ball upper bound at matching scales.",
+      "status": "localized_gap"
+    },
+    {
+      "assumptions_used": [
+        "uniform_contraction",
+        "bounded_distortion",
+        "usable_separation",
+        "fixed_packaging",
+        "lower_pressure_packaging_admissible"
+      ],
+      "depends_on": [
+        "LEM-LOWER-1",
+        "LEM-LOWER-2",
+        "LEM-LOWER-3"
+      ],
+      "label": "Dimension conclusion",
+      "lemma_id": "LEM-LOWER-4",
+      "statement_short": "Positive lower content from the premeasure route implies dim_H K >= s.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "uniform_contraction",
+        "finite_memory_bound",
+        "stationary_admissibility_rule",
+        "feedback_free_admissibility",
+        "bounded_distortion",
+        "usable_separation",
+        "fixed_packaging",
+        "lower_pressure_packaging_admissible"
+      ],
+      "depends_on": [
+        "LEM-LOWER-1",
+        "LEM-LOWER-2",
+        "LEM-LOWER-3",
+        "LEM-LOWER-4"
+      ],
+      "label": "Lower pressure bound theorem node",
+      "lemma_id": "THM-LOWER-1",
+      "statement_short": "For the core subclass, dim_H K >= s whenever s < s^L.",
+      "status": "closed_in_note"
+    }
+  ],
+  "route_selected": "cylinder_premeasure_carath\u00e9odory",
+  "schema_version": "1.0",
+  "theorem_id": "lower_pressure_bound_core_subclass_v1",
+  "theorem_statement_short": "For the core subclass, if s < s^L then H^s(K) > 0 and dim_H K >= s.",
+  "witness_families": [
+    "contextual_local.prefix_memory_no_22_base3",
+    "classical.middle_thirds",
+    "classical.restricted_digits_base5_024"
+  ]
+}

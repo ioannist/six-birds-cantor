@@ -1,0 +1,32 @@
+{
+  "description": "Forbid adjacent '22' in base-3 digit strings.",
+  "engine": "finite_state_symbolic",
+  "experiment_id": "prefix-memory-no-22-base3",
+  "family_id": "contextual_local.prefix_memory_no_22_base3",
+  "lens_mode": "prefix_sectors",
+  "output_root": "results/contextual_family_samples/prefix_memory_no_22_base3",
+  "packaging_mode": "merge_touching",
+  "parameters": {
+    "base": 3,
+    "constructor": "prefix_memory_no_22_base3",
+    "snapshot_depth": 8,
+    "start_digits": [
+      0,
+      2
+    ],
+    "transition_digits": {
+      "0": [
+        0,
+        2
+      ],
+      "2": [
+        0
+      ]
+    }
+  },
+  "run_controls": {
+    "save_outputs": true,
+    "seed": 0
+  },
+  "schema_version": "1.0"
+}

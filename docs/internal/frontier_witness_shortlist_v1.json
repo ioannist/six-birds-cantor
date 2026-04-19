@@ -1,0 +1,45 @@
+{
+  "decision": "promising_frontier_witness_found",
+  "generated_at_utc": "2026-03-17T22:19:46.563957Z",
+  "next_branch": "FW-T2 \u2014 Formalize the new frontier target class",
+  "rejected_candidates": [
+    "fw.three_map_renewal_b2",
+    "fw.three_map_renewal_b1",
+    "fw.three_map_renewal_b3",
+    "fw.nested_ladder_c2",
+    "fw.nested_ladder_c1",
+    "fw.nested_ladder_c3"
+  ],
+  "schema_version": "1.0",
+  "selection_rule": "Prefer candidates that avoid size-1 induced collapse, keep nonconstant return structure, and retain tolerable truncation on the checked cap.",
+  "shortlist_id": "frontier-witness-shortlist-v1",
+  "top_candidates": [
+    {
+      "effective_alphabet_regime": "finite_state_renewal_like",
+      "family_id": "fw.delayed_return_gate_a3",
+      "frontier_status": "promising",
+      "induced_core_type": "countable_state_candidate",
+      "return_time_regime": "growing_but_tight",
+      "template_type": "delayed_return_domain_gated",
+      "why_selected": "Induction produces nonconstant return lengths and growing induced alphabet without collapsing to a size-1 core."
+    },
+    {
+      "effective_alphabet_regime": "finite_state_renewal_like",
+      "family_id": "fw.delayed_return_gate_a1",
+      "frontier_status": "promising",
+      "induced_core_type": "countable_state_candidate",
+      "return_time_regime": "growing_but_tight",
+      "template_type": "delayed_return_domain_gated",
+      "why_selected": "Induction produces nonconstant return lengths and growing induced alphabet without collapsing to a size-1 core."
+    },
+    {
+      "effective_alphabet_regime": "finite_state_renewal_like",
+      "family_id": "fw.delayed_return_gate_a2",
+      "frontier_status": "promising",
+      "induced_core_type": "countable_state_candidate",
+      "return_time_regime": "growing_but_tight",
+      "template_type": "delayed_return_domain_gated",
+      "why_selected": "Induction produces nonconstant return lengths and growing induced alphabet without collapsing to a size-1 core."
+    }
+  ]
+}

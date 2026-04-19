@@ -1,0 +1,201 @@
+{
+  "schema_version": "v1",
+  "dependency_id": "hybrid_pressure_root_v1",
+  "base_theory_id": "T0_cocycle_pressure_theory",
+  "extended_theory_id": "T1_hybrid_cocycle_plus_completion_theory",
+  "canonical_object_path": "docs/internal/canonical_hybrid_theorem_object_v1.md",
+  "selected_working_route": "conditional_pressure_disintegration_route",
+  "selected_stretch_route": null,
+  "rejected_routes": [
+    {
+      "route_id": "stratumwise_pressure_existence_route",
+      "reason": "Rejected on conceptual grounds: the papers treat thermodynamic consequence globally and conditionally over packaging fibers, not as independent stratum pressure systems."
+    },
+    {
+      "route_id": "root_separation_within_T0_route",
+      "reason": "Rejected because direct within-fiber root/profile separation is not paper-native and is unsupported on the audited shell."
+    }
+  ],
+  "assumptions_path": "docs/internal/continuous_theorem_assumptions_v1.json",
+  "theorem_statement_short": "On the canonical hybrid object over the audited shell, the paper-native thermodynamic consequence route is conditional pressure disintegration: the global T0 cocycle pressure decomposes nontrivially over T1 packaging fibers, so T0 is not sufficient for the packaged future in the audited thermodynamic sense.",
+  "assumptions_used": [
+    "continuous_operator_substrate",
+    "full_six_primitive_closure",
+    "p1_rewrite_active",
+    "p2_gating_active",
+    "p3_timescale_adaptation",
+    "p4_nondegenerate_lens_competition",
+    "p5_nondegenerate_packaging_competition",
+    "p6_budget_dynamics_active",
+    "persistent_kernel_variation",
+    "hysteresis_stable_selection",
+    "lawful_exploratory_regime",
+    "no_fast_collapse",
+    "parameter_shell_robustness",
+    "generated_object_extraction_plausible"
+  ],
+  "lemmas": [
+    {
+      "lemma_id": "HR-LEM-1",
+      "label": "packaged-strata persistence/well-posedness",
+      "statement_short": "Persistent packaged fibers are well-defined theorem objects on the canonical hybrid object across the audited shell.",
+      "assumptions_used": [
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CH-THM-7"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "HR-LEM-2",
+      "label": "conditional disintegration observable well-posedness",
+      "statement_short": "The cocycle-weighted package-conditioned pressure object is well-defined on T1 packaging fibers over audited T0 descriptor classes.",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "p1_rewrite_active",
+        "p3_timescale_adaptation",
+        "persistent_kernel_variation"
+      ],
+      "depends_on": [
+        "HR-LEM-1",
+        "CP-THM-7"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "HR-LEM-3",
+      "label": "compatibility with T0 cocycle pressure",
+      "statement_short": "The package-conditioned disintegration refines the closed T0 cocycle pressure because it uses the same thermodynamic base observable and conditions it on packaging fibers.",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "parameter_shell_robustness"
+      ],
+      "depends_on": [
+        "HR-LEM-2",
+        "CP-THM-7"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "HR-LEM-4",
+      "label": "nontrivial package-conditioned gap",
+      "statement_short": "The weighted package-conditioned pressure gap is nontrivial on the audited shell.",
+      "assumptions_used": [
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "HR-LEM-2",
+        "HR-LEM-3"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "HR-LEM-5",
+      "label": "insufficiency via conditional disintegration",
+      "statement_short": "A nontrivial package-conditioned pressure gap witnesses that T0 is insufficient for the packaged future on the audited shell.",
+      "assumptions_used": [
+        "p2_gating_active",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "HR-LEM-4",
+        "SE-THM-6"
+      ],
+      "status": "localized_gap"
+    },
+    {
+      "lemma_id": "HR-COR-6",
+      "label": "thermodynamic consequence relation between T0 and T1",
+      "statement_short": "The strict extension from T0 to T1 has a thermodynamic consequence because the T0 pressure decomposes nontrivially over T1 packaging fibers.",
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "lawful_exploratory_regime",
+        "no_fast_collapse",
+        "parameter_shell_robustness"
+      ],
+      "depends_on": [
+        "HR-LEM-5"
+      ],
+      "status": "localized_gap"
+    },
+    {
+      "lemma_id": "HR-THM-7",
+      "label": "hybrid pressure/root consequence theoremlet",
+      "statement_short": "The correct thermodynamic consequence route on the canonical hybrid object is conditional pressure disintegration rather than direct stratumwise separation.",
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "HR-COR-6"
+      ],
+      "status": "localized_gap"
+    }
+  ],
+  "dependency_edges": [
+    {
+      "from": "CH-THM-7",
+      "to": "HR-LEM-1"
+    },
+    {
+      "from": "CP-THM-7",
+      "to": "HR-LEM-2"
+    },
+    {
+      "from": "HR-LEM-1",
+      "to": "HR-LEM-2"
+    },
+    {
+      "from": "CP-THM-7",
+      "to": "HR-LEM-3"
+    },
+    {
+      "from": "HR-LEM-2",
+      "to": "HR-LEM-3"
+    },
+    {
+      "from": "HR-LEM-2",
+      "to": "HR-LEM-4"
+    },
+    {
+      "from": "HR-LEM-3",
+      "to": "HR-LEM-4"
+    },
+    {
+      "from": "HR-LEM-4",
+      "to": "HR-LEM-5"
+    },
+    {
+      "from": "SE-THM-6",
+      "to": "HR-LEM-5"
+    },
+    {
+      "from": "HR-LEM-5",
+      "to": "HR-COR-6"
+    },
+    {
+      "from": "HR-COR-6",
+      "to": "HR-THM-7"
+    }
+  ],
+  "witness_families": [
+    "generated.continuous_full_loop_kernel",
+    "generated.continuous_full_loop_kernel_shell"
+  ],
+  "gap_status": {
+    "status": "consequence_route_plausible",
+    "note": "The route is explicitly switched away from stratumwise separation and toward conditional pressure disintegration as the paper-native thermodynamic consequence route."
+  }
+}

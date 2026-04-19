@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "dependency_id": "lower-transfer-v1",
+  "decision": "working_class_narrowed_and_closed",
+  "closed_class_id": "bounded_return_full_core_delayed_gate_subclass",
+  "selected_lower_route": "induced_cylinder_premeasure",
+  "assumptions_path": "docs/internal/delayed_return_theorem_assumptions_v1.json",
+  "induced_pressure_dependency_path": "docs/internal/proof_dependency_induced_pressure_v1.json",
+  "theorem_statement_short": "For K in the bounded_return_full_core_delayed_gate_subclass, induced cylinder premeasure plus bounded entry/exit correction gives the lower transfer, and hence the delayed-return Bowen theorem closes.",
+  "assumptions_used": [
+    "delayed_return_core_exists",
+    "bounded_return_times",
+    "stationary_local_admissibility",
+    "local_domain_compatibility",
+    "induced_alphabet_control",
+    "bounded_bridge_property",
+    "feedback_free_admissibility",
+    "core_return_coverage",
+    "nontrivial_induced_structure",
+    "strict_return_contraction",
+    "usable_overlap_control",
+    "full_core_induction",
+    "uniform_entry_exit_bound"
+  ],
+  "lemmas": [
+    {
+      "lemma_id": "LT-LEM-1",
+      "label": "Induced cylinder premeasure construction",
+      "statement_short": "At the induced root, the product rule on return-block weights defines a consistent cylinder premeasure.",
+      "assumptions_used": [
+        "bounded_bridge_property",
+        "strict_return_contraction",
+        "nontrivial_induced_structure"
+      ],
+      "depends_on": [],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "LT-LEM-2",
+      "label": "Truncation-control lemma",
+      "statement_short": "Bounded entry/exit correction prevents exponential loss when transferring from induced cylinders to original cylinders.",
+      "assumptions_used": [
+        "full_core_induction",
+        "uniform_entry_exit_bound",
+        "strict_return_contraction",
+        "core_return_coverage"
+      ],
+      "depends_on": [
+        "LT-LEM-1"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "LT-LEM-3",
+      "label": "Return-to-original mass transfer lemma",
+      "statement_short": "The induced cylinder premeasure pushes forward to original cylinder pieces with bounded multiplicative loss.",
+      "assumptions_used": [
+        "full_core_induction",
+        "uniform_entry_exit_bound",
+        "local_domain_compatibility",
+        "bounded_return_times"
+      ],
+      "depends_on": [
+        "LT-LEM-1",
+        "LT-LEM-2"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "LT-LEM-4",
+      "label": "Lower content / ball comparison lemma",
+      "statement_short": "Usable overlap control converts the pushed-forward cylinder mass into a Frostman-style ball estimate.",
+      "assumptions_used": [
+        "usable_overlap_control",
+        "full_core_induction",
+        "uniform_entry_exit_bound"
+      ],
+      "depends_on": [
+        "LT-LEM-3"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "LT-THM-5",
+      "label": "Lower-transfer theoremlet",
+      "statement_short": "The original attractor satisfies dim_H K >= s_* on the closed class.",
+      "assumptions_used": [
+        "bounded_return_times",
+        "usable_overlap_control",
+        "full_core_induction",
+        "uniform_entry_exit_bound"
+      ],
+      "depends_on": [
+        "LT-LEM-4"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "LT-COR-6",
+      "label": "Final delayed-return Bowen closure",
+      "statement_short": "Combining the already-closed induced pressure/root step with LT-THM-5 gives dim_H K = s_* on the closed class.",
+      "assumptions_used": [
+        "bounded_return_times",
+        "induced_alphabet_control",
+        "bounded_bridge_property",
+        "full_core_induction",
+        "uniform_entry_exit_bound"
+      ],
+      "depends_on": [
+        "LT-THM-5"
+      ],
+      "status": "closed_in_note"
+    }
+  ],
+  "dependency_edges": [
+    {"from": "LT-LEM-1", "to": "LT-LEM-2"},
+    {"from": "LT-LEM-1", "to": "LT-LEM-3"},
+    {"from": "LT-LEM-2", "to": "LT-LEM-3"},
+    {"from": "LT-LEM-3", "to": "LT-LEM-4"},
+    {"from": "LT-LEM-4", "to": "LT-THM-5"},
+    {"from": "LT-THM-5", "to": "LT-COR-6"}
+  ],
+  "witness_families": [
+    "frontier.fw_delayed_return_gate_a3",
+    "frontier.fw_delayed_return_gate_a1",
+    "frontier.fw_delayed_return_gate_a2"
+  ],
+  "gap_status": [
+    "Lower transfer and final delayed-return Bowen closure are closed on the narrowed full-core subclass.",
+    "The remaining open issue is not theorem closure on the narrowed class, but whether the broader working class can be shown to satisfy full_core_induction and uniform_entry_exit_bound without narrowing."
+  ]
+}

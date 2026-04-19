@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "p5_closure_id": "p5-causal-closure-v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "packaging_producers": [
+    "P5<-P3",
+    "P5<-P4",
+    "P5<-P6"
+  ],
+  "selection_rule": "hysteresis_best_score",
+  "p1_from_p5_rule": "rewrite targets follow the active packaging boundaries and package defect score.",
+  "p2_from_p5_rule": "gating follows package viability and cross-package leakage under the selected packaging.",
+  "candidate_substrates": [
+    {
+      "family_id": "generated.pg_protocol_lens",
+      "active_packaging_sources": [],
+      "packaging_selection_status": "inactive",
+      "p1_from_p5_status": "inactive",
+      "p2_from_p5_status": "inactive",
+      "p5_knockout_effect": "nonmaterial",
+      "full_loop_status": "control_only",
+      "note": "Control-only lens/protocol substrate."
+    },
+    {
+      "family_id": "generated.pg_rewrite_bundle",
+      "active_packaging_sources": [
+        "P5<-P3",
+        "P5<-P4",
+        "P5<-P6"
+      ],
+      "packaging_selection_status": "active",
+      "p1_from_p5_status": "active",
+      "p2_from_p5_status": "active",
+      "p5_knockout_effect": "material",
+      "full_loop_status": "true_full_loop",
+      "note": "Rewrite bundle now uses P5 as an active packaging producer and downstream driver."
+    },
+    {
+      "family_id": "generated.pg_full_loop_bundle",
+      "active_packaging_sources": [
+        "P5<-P3",
+        "P5<-P4"
+      ],
+      "packaging_selection_status": "partial",
+      "p1_from_p5_status": "partial",
+      "p2_from_p5_status": "partial",
+      "p5_knockout_effect": "partial",
+      "full_loop_status": "partial_loop",
+      "note": "Comparative candidate; packaging enters the loop but still does not fully close causally."
+    }
+  ],
+  "decision": "p5_causally_closed",
+  "notes": [
+    "The rewrite bundle is now the strongest full-loop candidate.",
+    "P5 is causal because removing it materially changes the lawful loop.",
+    "Protocol_lens remains a control-only substrate."
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "allowed_roots": {
+    "apps": {
+      "allow_all": true
+    },
+    "configs": {
+      "allow_all": true
+    },
+    "docs": {
+      "allow_all": true
+    },
+    "experiments": {
+      "allow_all": true
+    },
+    "lean": {
+      "allow_all": true
+    },
+    "paper": {
+      "allow_all": true
+    },
+    "results": {
+      "allow_all": true
+    },
+    "vendors": {
+      "allow_all": true
+    },
+    "scripts": {
+      "allow_all": true
+    },
+    "src": {
+      "allow_all": true
+    },
+    "tests": {
+      "allow_all": true
+    }
+  },
+  "allowed_root_files": [
+    ".gitignore",
+    ".package-repo-snapshot.json",
+    "Makefile",
+    "pyproject.toml"
+  ],
+  "include_globs": [
+    "results/**/report.json",
+    "results/**/report.csv",
+    "results/**/result_manifest.json"
+  ],
+  "exclude_dirs": [
+    ".git",
+    ".lake",
+    ".venv",
+    "venv",
+    "__pycache__",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".ipynb_checkpoints",
+    "build",
+    "dist",
+    "tmp",
+    "target",
+    "node_modules"
+  ]
+}

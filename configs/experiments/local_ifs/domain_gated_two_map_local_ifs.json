@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "domain-gated-two-map-local-ifs",
+  "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+  "engine": "local_ifs",
+  "description": "Two-map domain-gated local IFS with explicit admissibility split.",
+  "parameters": {
+    "maps": [
+      {
+        "a": 0.5,
+        "b": 0.0,
+        "domain": [
+          0.0,
+          0.5
+        ],
+        "label": "left-gate"
+      },
+      {
+        "a": 0.5,
+        "b": 0.5,
+        "domain": [
+          0.5,
+          1.0
+        ],
+        "label": "right-gate"
+      }
+    ],
+    "iterations": 8,
+    "admissibility_examples": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "run_controls": {
+    "seed": 0,
+    "precision_bits": 53,
+    "save_outputs": true
+  },
+  "output_root": "results/local_ifs_toys/domain_gated_two_map_local_ifs"
+}

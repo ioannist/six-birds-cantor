@@ -1,0 +1,55 @@
+{
+  "allowed_roots": {
+    ".claude": {
+      "extensions": [".md", ".json", ".sh"],
+      "filenames": []
+    },
+    "analysis": {
+      "extensions": [".py", ".md"],
+      "filenames": []
+    },
+    "crates": {
+      "extensions": [".rs", ".toml", ".md"],
+      "filenames": []
+    },
+    "lab": {
+      "extensions": [".md", ".jsonl", ".json", ".log"],
+      "filenames": []
+    },
+    "paper": {
+      "extensions": ["*"],
+      "filenames": ["Makefile", ".gitignore", ".gitkeep"]
+    },
+    "scripts": {
+      "extensions": [".sh", ".py", ".md"],
+      "filenames": []
+    },
+    "skills": {
+      "extensions": [".md"],
+      "filenames": []
+    },
+    "theory": {
+      "extensions": [".md", ".yaml", ".yml"],
+      "filenames": []
+    }
+  },
+  "allowed_root_files": [
+    ".gitignore",
+    "CLAUDE.md",
+    "Cargo.toml",
+    "Cargo.lock",
+    "agent.md"
+  ],
+  "exclude_dirs": [
+    ".git",
+    "target",
+    "research",
+    ".lake",
+    ".venv",
+    "venv",
+    "__pycache__",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache"
+  ]
+}

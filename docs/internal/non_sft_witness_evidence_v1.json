@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "witness_id": "non-sft-witness-v1",
+  "decision": "impact_blocker_confirmed",
+  "target_class_id": "narrow_hybrid_affine_cylinder_class",
+  "candidate_families": [
+    "contextual_local.domain_gated_two_map_local_ifs",
+    "toy.local_ifs.nested_three_map_local_ifs",
+    "contextual_local.prefix_memory_no_22_base3",
+    "contextual_local.prefix_memory_last_digit_rule"
+  ],
+  "selected_family": "contextual_local.prefix_memory_no_22_base3",
+  "in_class_status": "yes",
+  "non_sft_status": "no",
+  "evidence_items": [
+    {
+      "kind": "bowen_class_membership",
+      "path": "docs/internal/bowen_class_v1.json",
+      "note": "Only contextual_local.prefix_memory_no_22_base3 is currently included among the required candidates."
+    },
+    {
+      "kind": "diagnostic_report",
+      "path": "results/non_sft_witness/witness_report.json",
+      "note": "Prefix-memory witness has an explicit finite-state transition table with two reachable continuation types."
+    },
+    {
+      "kind": "theorem_assumptions",
+      "path": "docs/internal/theorem_assumptions_v1.json",
+      "note": "Local/domain candidates remain excluded or unclaimed because required T19 assumptions are not satisfied or not established."
+    }
+  ],
+  "notes": [
+    "Impact blocker: no family is currently both in the T19 Bowen class and non-SFT in the paper-relevant sense.",
+    "The closest in-class contextual witness is explicit finite-state symbolic control, so it cannot serve as the non-SFT witness package.",
+    "A pass would require reopening the Bowen class to admit a genuinely local/non-finite-state witness."
+  ]
+}

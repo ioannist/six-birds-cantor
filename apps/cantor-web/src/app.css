@@ -1,0 +1,119 @@
+:root {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  color: #f8f5ee;
+  background:
+    radial-gradient(circle at top left, rgba(255, 165, 0, 0.18), transparent 35%),
+    radial-gradient(circle at top right, rgba(67, 97, 238, 0.2), transparent 30%),
+    linear-gradient(160deg, #0a0f1f 0%, #10233a 55%, #183b2e 100%);
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+code {
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(1120px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  backdrop-filter: blur(14px);
+  background: rgba(9, 16, 31, 0.58);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
+}
+
+.eyebrow {
+  margin: 0;
+  color: #f4b860;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.78rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 0.95;
+}
+
+.lede {
+  margin: 0;
+  max-width: 42rem;
+  color: rgba(248, 245, 238, 0.86);
+  font-size: 1.05rem;
+}
+
+.data-pill {
+  width: fit-content;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: rgba(244, 184, 96, 0.16);
+  border: 1px solid rgba(244, 184, 96, 0.28);
+}
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.panel {
+  min-height: 220px;
+  padding: 1.5rem;
+  border-radius: 24px;
+  background: rgba(248, 245, 238, 0.08);
+  border: 1px solid rgba(248, 245, 238, 0.12);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.panel p {
+  margin: 0;
+  color: rgba(248, 245, 238, 0.8);
+}
+
+@media (max-width: 900px) {
+  .panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-shell {
+    width: min(100vw - 1.25rem, 720px);
+    padding-top: 1rem;
+  }
+
+  .hero {
+    padding: 1.5rem;
+  }
+}

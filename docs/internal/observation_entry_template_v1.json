@@ -1,0 +1,21 @@
+{
+  "claim_id": "OBS-XXX",
+  "status": "empirical_pattern",
+  "family_ids": [
+    "example.family_id"
+  ],
+  "run_ids": [
+    "example-run-id"
+  ],
+  "artifact_paths": [
+    "results/example/path.json"
+  ],
+  "quantitative_support": {
+    "example_metric": 0.0
+  },
+  "qualitative_note": "Short evidence-linked internal note.",
+  "tags": [
+    "example"
+  ],
+  "related_claim_ids": []
+}

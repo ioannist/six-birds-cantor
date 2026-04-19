@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "generated-continuous-full-loop-kernel-shell",
+  "family_id": "generated.continuous_full_loop_kernel_shell",
+  "engine": "continuous_kernel_substrate",
+  "description": "Wider parameter shell around the frozen continuous full-loop kernel from SB-R3.",
+  "parameters": {
+    "steps_run": 600,
+    "kernel_dim": 20,
+    "seed": 5,
+    "pilot_parameters": {
+      "lens_hysteresis": 0.017,
+      "packaging_hysteresis": 0.012,
+      "budget_income_scale": 1.08,
+      "budget_cost_scale": 0.96,
+      "tau_initial": 0.88,
+      "action_temperature_bias": 0.045,
+      "lens_temperature_shift": 0.02
+    },
+    "primitive_activity": {
+      "P1": true,
+      "P2": true,
+      "P3": true,
+      "P4": true,
+      "P5": true,
+      "P6": true
+    },
+    "frozen_generation": {
+      "regime_label": "lawful_exploratory",
+      "continuous_full_loop_status": "shell",
+      "stretch_class_id": "continuous_full_loop_lawful_kernel_class_with_wider_parameter_shell"
+    }
+  },
+  "run_controls": {
+    "save_outputs": false
+  },
+  "output_root": "results/continuous_theorem_assumptions/generated/continuous_full_loop_kernel_shell"
+}
+

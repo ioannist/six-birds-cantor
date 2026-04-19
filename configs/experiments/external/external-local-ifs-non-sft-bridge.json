@@ -1,0 +1,22 @@
+{
+  "description": "Imported external witness skeleton from Foundations of local iterated function systems.",
+  "engine": "external_schematic",
+  "experiment_id": "external-local-ifs-non-sft-bridge",
+  "family_id": "external.local_ifs_non_sft_bridge",
+  "output_root": "results/external_witness_import/external-local-ifs-non-sft-bridge",
+  "paper_ref": "arXiv:2601.07804",
+  "parameters": {
+    "countable_alphabet": true,
+    "geometric_type": "local_domain",
+    "import_status": "skeletal",
+    "symbolic_type": "extended_shift_non_sft"
+  },
+  "run_controls": {
+    "save_outputs": false,
+    "seed": 0
+  },
+  "schema_version": "1.0",
+  "source_id": "local_ifs_foundations",
+  "source_title_short": "Foundations of local iterated function systems",
+  "theorem_route_fit": "bounded_overlap"
+}

@@ -1,0 +1,138 @@
+{
+  "assumptions_path": "docs/internal/theorem_assumptions_v1.json",
+  "assumptions_used": [
+    "uniform_contraction",
+    "finite_memory_bound",
+    "stationary_admissibility_rule",
+    "feedback_free_admissibility",
+    "bounded_distortion",
+    "usable_separation"
+  ],
+  "class_id": "safe_finite_memory_local_subclass",
+  "dependency_edges": [
+    [
+      "LEM-UPPER-1",
+      "LEM-UPPER-4"
+    ],
+    [
+      "LEM-UPPER-2",
+      "LEM-UPPER-4"
+    ],
+    [
+      "LEM-UPPER-3",
+      "LEM-UPPER-4"
+    ],
+    [
+      "LEM-UPPER-1",
+      "THM-UPPER-1"
+    ],
+    [
+      "LEM-UPPER-2",
+      "THM-UPPER-1"
+    ],
+    [
+      "LEM-UPPER-3",
+      "THM-UPPER-1"
+    ],
+    [
+      "LEM-UPPER-4",
+      "THM-UPPER-1"
+    ]
+  ],
+  "dependency_id": "proof_dependency_upper_v1",
+  "gap_status": {
+    "localized_gaps": [
+      {
+        "description": "Need a clean finite-memory concatenation constant for the whole primary class, especially simple local-domain families beyond symbolic controls.",
+        "lemma_id": "LEM-UPPER-3"
+      }
+    ],
+    "overall": "localized_gap"
+  },
+  "lemmas": [
+    {
+      "assumptions_used": [
+        "uniform_contraction",
+        "finite_memory_bound",
+        "stationary_admissibility_rule",
+        "feedback_free_admissibility"
+      ],
+      "depends_on": [],
+      "label": "Cylinder covering lemma",
+      "lemma_id": "LEM-UPPER-1",
+      "statement_short": "Depth-n admissible cylinder images cover the attractor.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "uniform_contraction",
+        "bounded_distortion"
+      ],
+      "depends_on": [],
+      "label": "Diameter/radius control lemma",
+      "lemma_id": "LEM-UPPER-2",
+      "statement_short": "Cylinder diameters are uniformly controlled by contraction products up to bounded-distortion constants.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "finite_memory_bound",
+        "stationary_admissibility_rule",
+        "feedback_free_admissibility",
+        "uniform_contraction",
+        "usable_separation"
+      ],
+      "depends_on": [],
+      "label": "Submultiplicative pressure estimate",
+      "lemma_id": "LEM-UPPER-3",
+      "statement_short": "Upper partition sums satisfy a finite-memory submultiplicative estimate with bounded connecting-context loss.",
+      "status": "localized_gap"
+    },
+    {
+      "assumptions_used": [
+        "uniform_contraction",
+        "bounded_distortion",
+        "finite_memory_bound",
+        "stationary_admissibility_rule",
+        "feedback_free_admissibility"
+      ],
+      "depends_on": [
+        "LEM-UPPER-1",
+        "LEM-UPPER-2",
+        "LEM-UPPER-3"
+      ],
+      "label": "Covering-to-dimension step",
+      "lemma_id": "LEM-UPPER-4",
+      "statement_short": "Negative upper pressure gives a vanishing Hausdorff-content covering sequence.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "uniform_contraction",
+        "finite_memory_bound",
+        "stationary_admissibility_rule",
+        "feedback_free_admissibility",
+        "bounded_distortion",
+        "usable_separation"
+      ],
+      "depends_on": [
+        "LEM-UPPER-1",
+        "LEM-UPPER-2",
+        "LEM-UPPER-3",
+        "LEM-UPPER-4"
+      ],
+      "label": "Upper pressure bound theorem node",
+      "lemma_id": "THM-UPPER-1",
+      "statement_short": "dim_H K <= s whenever P^U(s) < 0 for the primary class.",
+      "status": "closed_in_note"
+    }
+  ],
+  "schema_version": "1.0",
+  "theorem_id": "upper_pressure_bound_primary_class_v1",
+  "theorem_statement_short": "If P^U(s) < 0 for a primary-class family, then H^s(K)=0 and dim_H K <= s.",
+  "witness_families": [
+    "contextual_local.prefix_memory_no_22_base3",
+    "classical.middle_thirds",
+    "finite_state.adjacency_no_consecutive_2_base3"
+  ]
+}

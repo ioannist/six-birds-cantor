@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "control-restricted-digits-base5-024-symbolic-baseline",
+  "family_id": "control.restricted_digits_base5_024_symbolic",
+  "engine": "finite_state_symbolic",
+  "description": "One-state symbolic control matching base-5 restricted digits {0,2,4}.",
+  "parameters": {
+    "states": [
+      "q0"
+    ],
+    "start_states": [
+      "q0"
+    ],
+    "edges": [
+      {
+        "src": "q0",
+        "dst": "q0",
+        "ratio": 0.2,
+        "label": "0"
+      },
+      {
+        "src": "q0",
+        "dst": "q0",
+        "ratio": 0.2,
+        "label": "2"
+      },
+      {
+        "src": "q0",
+        "dst": "q0",
+        "ratio": 0.2,
+        "label": "4"
+      }
+    ],
+    "depth_list": [
+      2,
+      4,
+      6,
+      8,
+      10
+    ]
+  },
+  "run_controls": {
+    "seed": 0,
+    "precision_bits": 53,
+    "save_outputs": true
+  },
+  "output_root": "results/finite_state_baselines/control_restricted_digits_base5_024_symbolic"
+}

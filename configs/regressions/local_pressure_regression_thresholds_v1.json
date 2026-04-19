@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "thresholds_id": "local_pressure_regression_thresholds_v1",
+  "description": "Observed-stability thresholds for local-pressure default settings.",
+  "default_setting_key": "default",
+  "families": {
+    "classical.middle_thirds": {
+      "abs_error_max": 1e-6,
+      "last_step_drift_max": 1e-9,
+      "interval_root_width_max": 1e-9
+    },
+    "classical.restricted_digits_base5_024": {
+      "abs_error_max": 1e-6,
+      "last_step_drift_max": 1e-9,
+      "interval_root_width_max": 1e-9
+    },
+    "finite_state.adjacency_no_consecutive_2_base3": {
+      "abs_error_max": 2e-2,
+      "last_step_drift_max": 2e-2,
+      "interval_root_width_max": null
+    }
+  },
+  "instability_rules": {
+    "spread_vs_default_max": 1e-2,
+    "last_step_drift_max": 2e-2
+  }
+}

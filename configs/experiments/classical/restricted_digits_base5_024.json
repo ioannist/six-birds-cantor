@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "restricted-digits-base5-024-baseline",
+  "family_id": "classical.restricted_digits_base5_024",
+  "engine": "classical_similarity",
+  "description": "Base-5 restricted digits {0,2,4} similarity baseline.",
+  "parameters": {
+    "base": 5,
+    "allowed_digits": [
+      0,
+      2,
+      4
+    ],
+    "max_depth": 8
+  },
+  "run_controls": {
+    "seed": 0,
+    "precision_bits": 53,
+    "save_outputs": true
+  },
+  "output_root": "results/classical_baselines/restricted_digits_base5_024"
+}

@@ -1,0 +1,189 @@
+{
+  "schema_version": "v1",
+  "dependency_id": "stratumwise_distinction_v1",
+  "base_theory_id": "T0_cocycle_pressure_theory",
+  "extended_theory_id": "T1_hybrid_cocycle_plus_completion_theory",
+  "canonical_object_path": "docs/internal/canonical_hybrid_theorem_object_v1.md",
+  "selected_working_route": "weighted_conditional_distinction_route",
+  "selected_reserve_route": "profile_gap_route",
+  "assumptions_path": "docs/internal/continuous_theorem_assumptions_v1.json",
+  "theorem_statement_short": "On the canonical hybrid object, direct within-fiber stratumwise thermodynamic separation is not sharp on the audited shell, while packaged conditional weighting yields a stable thermodynamic distinction signal that points toward the conditional disintegration route.",
+  "assumptions_used": [
+    "continuous_operator_substrate",
+    "full_six_primitive_closure",
+    "p1_rewrite_active",
+    "p2_gating_active",
+    "p3_timescale_adaptation",
+    "p4_nondegenerate_lens_competition",
+    "p5_nondegenerate_packaging_competition",
+    "p6_budget_dynamics_active",
+    "persistent_kernel_variation",
+    "hysteresis_stable_selection",
+    "lawful_exploratory_regime",
+    "no_fast_collapse",
+    "parameter_shell_robustness",
+    "generated_object_extraction_plausible"
+  ],
+  "lemmas": [
+    {
+      "lemma_id": "SD-LEM-1",
+      "label": "persistent-stratum identity within a fixed T0 class",
+      "statement_short": "Persistent T1 packaged strata can be grouped inside audited T0 descriptor classes on the canonical hybrid object.",
+      "assumptions_used": [
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CH-THM-7"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "SD-LEM-2",
+      "label": "stratumwise pressure/profile well-posedness",
+      "statement_short": "The cocycle-weighted pressure/profile comparison object is well-defined on persistent T1 strata.",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "p1_rewrite_active",
+        "p3_timescale_adaptation",
+        "persistent_kernel_variation"
+      ],
+      "depends_on": [
+        "SD-LEM-1",
+        "CP-THM-7"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "SD-LEM-3",
+      "label": "comparison object stability across the shell",
+      "statement_short": "The comparison object and its weighted conditional variant remain stable across the audited shell witnesses.",
+      "assumptions_used": [
+        "hysteresis_stable_selection",
+        "lawful_exploratory_regime",
+        "no_fast_collapse",
+        "parameter_shell_robustness"
+      ],
+      "depends_on": [
+        "SD-LEM-2"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "SD-LEM-4",
+      "label": "distinction criterion",
+      "statement_short": "Either root-window separation, profile-gap separation, or weighted conditional distinction provides the relevant thermodynamic distinction criterion.",
+      "assumptions_used": [
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "SD-LEM-2",
+        "SD-LEM-3"
+      ],
+      "status": "localized_gap"
+    },
+    {
+      "lemma_id": "SD-LEM-5",
+      "label": "persistence of distinction under forcing and saturation",
+      "statement_short": "Any usable thermodynamic distinction must persist under the same saturation and forcing structure that defines the canonical hybrid object.",
+      "assumptions_used": [
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active"
+      ],
+      "depends_on": [
+        "SD-LEM-3",
+        "CH-THM-7"
+      ],
+      "status": "localized_gap"
+    },
+    {
+      "lemma_id": "SD-COR-6",
+      "label": "stratumwise thermodynamic distinction corollary",
+      "statement_short": "On the audited shell, the only stable thermodynamic distinction signal comes from the weighted conditional route rather than direct within-fiber stratumwise separation.",
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "SD-LEM-4",
+        "SD-LEM-5"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "SD-THM-7",
+      "label": "sharpened stratumwise consequence theoremlet",
+      "statement_short": "The current stratumwise distinction route is not viable on the audited shell; the canonical hybrid object points instead toward the weighted conditional disintegration route.",
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "SD-COR-6"
+      ],
+      "status": "closed_in_note"
+    }
+  ],
+  "dependency_edges": [
+    {
+      "from": "CH-THM-7",
+      "to": "SD-LEM-1"
+    },
+    {
+      "from": "CP-THM-7",
+      "to": "SD-LEM-2"
+    },
+    {
+      "from": "SD-LEM-1",
+      "to": "SD-LEM-2"
+    },
+    {
+      "from": "SD-LEM-2",
+      "to": "SD-LEM-3"
+    },
+    {
+      "from": "SD-LEM-2",
+      "to": "SD-LEM-4"
+    },
+    {
+      "from": "SD-LEM-3",
+      "to": "SD-LEM-4"
+    },
+    {
+      "from": "CH-THM-7",
+      "to": "SD-LEM-5"
+    },
+    {
+      "from": "SD-LEM-3",
+      "to": "SD-LEM-5"
+    },
+    {
+      "from": "SD-LEM-4",
+      "to": "SD-COR-6"
+    },
+    {
+      "from": "SD-LEM-5",
+      "to": "SD-COR-6"
+    },
+    {
+      "from": "SD-COR-6",
+      "to": "SD-THM-7"
+    }
+  ],
+  "witness_families": [
+    "generated.continuous_full_loop_kernel",
+    "generated.continuous_full_loop_kernel_shell"
+  ],
+  "gap_status": {
+    "status": "stratumwise_route_not_viable",
+    "note": "Direct within-fiber stratumwise thermodynamic distinction is not theorem-sharp on the audited shell; the weighted conditional route is the supported pivot."
+  }
+}

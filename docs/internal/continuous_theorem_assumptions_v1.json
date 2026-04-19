@@ -1,0 +1,262 @@
+{
+  "schema_version": "v1",
+  "assumptions_id": "continuous_theorem_assumptions_v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "working_class_id": "continuous_full_loop_lawful_kernel_class",
+  "stretch_class_id": "continuous_full_loop_lawful_kernel_class_with_wider_parameter_shell",
+  "assumption_catalog": [
+    {
+      "assumption_id": "continuous_operator_substrate",
+      "label": "continuous operator substrate",
+      "description": "The Cantor substrate is a continuously evolving kernel/operator state, not a finite map list.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "continuous_kernel_pilot report plus the non-finite-state-like sweep signature."
+    },
+    {
+      "assumption_id": "full_six_primitive_closure",
+      "label": "full six-primitive closure",
+      "description": "All six primitives are causally active in one loop, and each materially matters under knockout.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "pilot knockout report with all six removals and material degradation."
+    },
+    {
+      "assumption_id": "p1_rewrite_active",
+      "label": "P1 rewrite active",
+      "description": "Kernel rewrite is causally driven by the selected packaging and lens.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "P1 knockout materially degrades the loop and suppresses tau switching."
+    },
+    {
+      "assumption_id": "p2_gating_active",
+      "label": "P2 gating active",
+      "description": "Support/viability gating depends on the active packaging and affects the next substrate.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "P2 knockout materially degrades the loop and changes the stability regime."
+    },
+    {
+      "assumption_id": "p3_timescale_adaptation",
+      "label": "P3 timescale adaptation",
+      "description": "The substrate has an active tau/protocol adaptation mechanism.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "tau_switch_count is nonzero in the pilot and sweep."
+    },
+    {
+      "assumption_id": "p4_nondegenerate_lens_competition",
+      "label": "P4 nondegenerate lens competition",
+      "description": "Lens selection is competitive and switches among distinct lenses in a nontrivial way.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "Three-way lens switching in the pilot and sweep."
+    },
+    {
+      "assumption_id": "p5_nondegenerate_packaging_competition",
+      "label": "P5 nondegenerate packaging competition",
+      "description": "Packaging selection is competitive and changes the next substrate causally.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "Three-way packaging switching in the pilot; P5 knockout collapses packaging switching."
+    },
+    {
+      "assumption_id": "p6_budget_dynamics_active",
+      "label": "P6 budget dynamics active",
+      "description": "The budget/income/cost ledger actively modulates the loop.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "Budget volatility is large and P6 knockout collapses the budget range."
+    },
+    {
+      "assumption_id": "primitive_knockout_fragility",
+      "label": "primitive knockout fragility",
+      "description": "Removing any one primitive materially degrades the loop.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "All six knockouts in the pilot report are materially degrading."
+    },
+    {
+      "assumption_id": "persistent_kernel_variation",
+      "label": "persistent kernel variation",
+      "description": "The kernel remains dynamically active rather than freezing.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "Mean variation stays around 0.17-0.20 and never collapses to near zero in the sweep."
+    },
+    {
+      "assumption_id": "hysteresis_stable_selection",
+      "label": "hysteresis-stabilized selection",
+      "description": "Selection is stabilized by hysteresis, not by collapse to a single static choice.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "Switch rates remain bounded away from 0 and 1 while staying regular."
+    },
+    {
+      "assumption_id": "lawful_exploratory_regime",
+      "label": "lawful exploratory regime",
+      "description": "The continuous regime is exploratory but still lawful, not pathological.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "All sweep runs are labeled lawful_exploratory."
+    },
+    {
+      "assumption_id": "no_fast_collapse",
+      "label": "no fast collapse",
+      "description": "The regime does not quickly collapse into a frozen or near-frozen state.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "No near-frozen or collapsed runs appear in the sweep window."
+    },
+    {
+      "assumption_id": "parameter_shell_robustness",
+      "label": "parameter-shell robustness",
+      "description": "The lawful regime persists across a modest shell of nearby parameters.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "12/12 sweep runs remain lawful_exploratory across two sizes, three seeds, and two parameter sets."
+    },
+    {
+      "assumption_id": "generated_object_extraction_plausible",
+      "label": "generated object extraction plausible",
+      "description": "The later theorem can be stated on the generated kernel-family object rather than on a raw trajectory.",
+      "allowed_values": ["yes", "no", "unknown"],
+      "empirical_proxy": "The working pilot and sweep define a stable generated family and regime shell."
+    }
+  ],
+  "class_profiles": [
+    {
+      "class_id": "continuous_full_loop_lawful_kernel_class",
+      "label": "working",
+      "selection_status": "working",
+      "required_assumptions": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active",
+        "primitive_knockout_fragility",
+        "persistent_kernel_variation",
+        "hysteresis_stable_selection",
+        "lawful_exploratory_regime",
+        "no_fast_collapse",
+        "generated_object_extraction_plausible"
+      ],
+      "forbidden_assumptions": [
+        "continuous_operator_substrate:no",
+        "full_six_primitive_closure:no",
+        "primitive_knockout_fragility:no",
+        "lawful_exploratory_regime:no",
+        "no_fast_collapse:no"
+      ],
+      "permitted_unknowns": [
+        "parameter_shell_robustness"
+      ],
+      "notes": "Core theorem class supported by the working pilot and the regime sweep."
+    },
+    {
+      "class_id": "continuous_full_loop_lawful_kernel_class_with_wider_parameter_shell",
+      "label": "stretch",
+      "selection_status": "stretch",
+      "required_assumptions": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active",
+        "primitive_knockout_fragility",
+        "persistent_kernel_variation",
+        "hysteresis_stable_selection",
+        "lawful_exploratory_regime",
+        "no_fast_collapse",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "forbidden_assumptions": [
+        "continuous_operator_substrate:no",
+        "full_six_primitive_closure:no",
+        "primitive_knockout_fragility:no",
+        "lawful_exploratory_regime:no",
+        "no_fast_collapse:no",
+        "parameter_shell_robustness:no"
+      ],
+      "permitted_unknowns": [],
+      "notes": "Broader shell class around the working regime, with the same full-loop mechanism but wider admissible parameter variation."
+    }
+  ],
+  "family_assumption_tags": [
+    {
+      "family_id": "generated.continuous_full_loop_kernel",
+      "assumption_values": {
+        "continuous_operator_substrate": "yes",
+        "full_six_primitive_closure": "yes",
+        "p1_rewrite_active": "yes",
+        "p2_gating_active": "yes",
+        "p3_timescale_adaptation": "yes",
+        "p4_nondegenerate_lens_competition": "yes",
+        "p5_nondegenerate_packaging_competition": "yes",
+        "p6_budget_dynamics_active": "yes",
+        "primitive_knockout_fragility": "yes",
+        "persistent_kernel_variation": "yes",
+        "hysteresis_stable_selection": "yes",
+        "lawful_exploratory_regime": "yes",
+        "no_fast_collapse": "yes",
+        "parameter_shell_robustness": "unknown",
+        "generated_object_extraction_plausible": "yes"
+      },
+      "tagging_note": "Frozen working pilot kernel; this is the theorem-ready core witness."
+    },
+    {
+      "family_id": "generated.continuous_full_loop_kernel_shell",
+      "assumption_values": {
+        "continuous_operator_substrate": "yes",
+        "full_six_primitive_closure": "yes",
+        "p1_rewrite_active": "yes",
+        "p2_gating_active": "yes",
+        "p3_timescale_adaptation": "yes",
+        "p4_nondegenerate_lens_competition": "yes",
+        "p5_nondegenerate_packaging_competition": "yes",
+        "p6_budget_dynamics_active": "yes",
+        "primitive_knockout_fragility": "yes",
+        "persistent_kernel_variation": "yes",
+        "hysteresis_stable_selection": "yes",
+        "lawful_exploratory_regime": "yes",
+        "no_fast_collapse": "yes",
+        "parameter_shell_robustness": "yes",
+        "generated_object_extraction_plausible": "yes"
+      },
+      "tagging_note": "Wider parameter shell witness supporting the stretch theorem class."
+    },
+    {
+      "family_id": "generated.pg_rewrite_bundle",
+      "assumption_values": {
+        "full_six_primitive_closure": "yes",
+        "generated_object_extraction_plausible": "yes"
+      },
+      "tagging_note": "Legacy generated control; useful for comparison but not the target continuous theorem object."
+    },
+    {
+      "family_id": "generated.pg_protocol_lens",
+      "assumption_values": {
+        "full_six_primitive_closure": "no",
+        "generated_object_extraction_plausible": "no"
+      },
+      "tagging_note": "Control only; excluded from the continuous theorem branch."
+    }
+  ],
+  "empirical_support": {
+    "pilot_decision": "continuous_full_loop_working",
+    "regime_decision": "lawful_regime_extracted",
+    "sweep_label_counts": {
+      "lawful_exploratory": 12
+    },
+    "stable_regime_fraction": 1.0,
+    "persistent_nontrivial_fraction": 1.0,
+    "switching_rich_fraction": 1.0,
+    "knockout_support": {
+      "P1": "yes",
+      "P2": "yes",
+      "P3": "yes",
+      "P4": "yes",
+      "P5": "yes",
+      "P6": "yes"
+    }
+  },
+  "notes": [
+    "The assumption pack separates empirical proxies from formal theorem assumptions.",
+    "The theorem object is the continuous full-loop lawful kernel class, not the 600-step trajectory."
+  ]
+}

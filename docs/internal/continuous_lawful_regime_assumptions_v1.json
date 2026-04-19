@@ -1,0 +1,105 @@
+{
+  "schema_version": "v1",
+  "assumptions_id": "continuous_lawful_regime_v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "regime_classes": [
+    {
+      "class_id": "lawful_exploratory_full_loop_class",
+      "label": "working",
+      "one_line_definition": "A continuous six-primitive kernel regime with persistent variation, rotating lens/packaging competition, and active tau/budget feedback.",
+      "evidence_support": "All 12 sweep runs fell in the exploratory lawful regime class.",
+      "selection_status": "working"
+    },
+    {
+      "class_id": "lawful_exploratory_full_loop_class_with_wider_parameter_shell",
+      "label": "stretch",
+      "one_line_definition": "A broader continuous six-primitive kernel regime obtained by widening the admissible parameter shell around the observed exploratory regime.",
+      "evidence_support": "The sweep suggests the same full-loop mechanism may persist beyond the current small neighborhood.",
+      "selection_status": "stretch"
+    }
+  ],
+  "candidate_assumptions": [
+    {
+      "assumption_id": "persistent_kernel_variation",
+      "status": "yes",
+      "threshold": "mean_variation >= 0.10",
+      "note": "Observed mean variation stayed around 0.17-0.20 across the sweep."
+    },
+    {
+      "assumption_id": "nondegenerate_lens_competition",
+      "status": "yes",
+      "threshold": "lens_switch_count >= 20 and unique_lenses >= 3",
+      "note": "Lens competition rotated among three lenses in the pilot and sweep."
+    },
+    {
+      "assumption_id": "nondegenerate_packaging_competition",
+      "status": "yes",
+      "threshold": "packaging_switch_count >= 20 and unique_packagings >= 3",
+      "note": "Packaging competition rotated among three packagings in the pilot and sweep."
+    },
+    {
+      "assumption_id": "tau_adaptation_active",
+      "status": "yes",
+      "threshold": "tau_switch_count > 0",
+      "note": "Tau adapted in the pilot and remained active throughout the sweep."
+    },
+    {
+      "assumption_id": "budget_replenishment_nontrivial",
+      "status": "yes",
+      "threshold": "budget_volatility >= 8.0",
+      "note": "Budget range and volatility were large enough to modulate action selection."
+    },
+    {
+      "assumption_id": "primitive_knockout_fragility",
+      "status": "yes",
+      "threshold": "all six knockouts materially degrade the loop",
+      "note": "The knockout audit reports material degradation for every removed primitive."
+    },
+    {
+      "assumption_id": "hysteresis_persistence",
+      "status": "yes",
+      "threshold": "switch rates remain bounded away from both 0 and 1",
+      "note": "Lens and packaging switch rates stayed around one quarter of the trajectory length."
+    },
+    {
+      "assumption_id": "no_fast_collapse",
+      "status": "yes",
+      "threshold": "no near_frozen or collapsed runs in the sweep window",
+      "note": "All 12 sweep runs were classified as lawful_exploratory."
+    }
+  ],
+  "primitive_necessity": {
+    "P1": {
+      "status": "yes",
+      "note": "P1 knockout materially degrades the loop and suppresses tau switching."
+    },
+    "P2": {
+      "status": "yes",
+      "note": "P2 knockout materially degrades the loop and changes the stability regime."
+    },
+    "P3": {
+      "status": "yes",
+      "note": "P3 knockout collapses lens/packaging switching and weakens the adaptive loop."
+    },
+    "P4": {
+      "status": "yes",
+      "note": "P4 knockout kills lens switching."
+    },
+    "P5": {
+      "status": "yes",
+      "note": "P5 knockout kills packaging switching and weakens the loop materially."
+    },
+    "P6": {
+      "status": "yes",
+      "note": "P6 knockout collapses budget dynamics."
+    }
+  },
+  "working_regime_class": "lawful_exploratory_full_loop_class",
+  "stretch_regime_class": "lawful_exploratory_full_loop_class_with_wider_parameter_shell",
+  "decision": "lawful_regime_extracted",
+  "notes": [
+    "The regime evidence is extracted from the continuous-kernel sweep and knockout audit.",
+    "The theorem assumptions should be stated separately from the observed regime labels."
+  ]
+}
+

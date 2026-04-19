@@ -1,0 +1,182 @@
+{
+  "schema_version": "v1",
+  "paper_core_positioning": "level3_core_on_audited_shell",
+  "core_claim_ids": [
+    "continuous_full_loop_lawfulness_theoremlet",
+    "cocycle_pressure_closure_theoremlet",
+    "strict_theory_extension_theoremlet",
+    "conditional_pressure_disintegration_theoremlet"
+  ],
+  "support_only_claim_ids": [
+    "closure_deficit_proxy_support"
+  ],
+  "reserve_claim_ids": [
+    "packaging-completion_broader-class_ambitions",
+    "hybrid_object_broadening_beyond_audited_shell",
+    "wider_parameter_shell_theorem",
+    "non-SFT_breadth_story_not_already_closed"
+  ],
+  "nonclaim_ids": [
+    "no_broader-class_theorem_beyond_the_audited_shell",
+    "no_direct_stratumwise_root-separation_theorem",
+    "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+    "no_packaging-induced_broader_theorem_class_claim",
+    "no_shell-general_theorem_beyond_the_audited_shell-stable_class"
+  ],
+  "scope_guards": [
+    "audited shell only",
+    "no broader-class theorem",
+    "no shell-general theorem",
+    "no direct stratumwise root-separation theorem",
+    "no external/non-SFT breadth claim beyond what is closed"
+  ],
+  "per_theoremlet_bindings": [
+    {
+      "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+      "allowed_claim_ids": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ]
+    },
+    {
+      "theoremlet_id": "cocycle_pressure_closure_theoremlet",
+      "allowed_claim_ids": [
+        "cocycle_pressure_closure_theoremlet"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ]
+    },
+    {
+      "theoremlet_id": "strict_theory_extension_theoremlet",
+      "allowed_claim_ids": [
+        "strict_theory_extension_theoremlet"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ]
+    },
+    {
+      "theoremlet_id": "conditional_pressure_disintegration_theoremlet",
+      "allowed_claim_ids": [
+        "conditional_pressure_disintegration_theoremlet"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ]
+    }
+  ],
+  "claim_classifications": {
+    "continuous_full_loop_lawfulness_theoremlet": {
+      "status": "closed_theoremlet",
+      "allowed_final_paper_use": "core_claim",
+      "claim_type": "lawfulness"
+    },
+    "cocycle_pressure_closure_theoremlet": {
+      "status": "closed_theoremlet",
+      "allowed_final_paper_use": "core_claim",
+      "claim_type": "pressure"
+    },
+    "strict_theory_extension_theoremlet": {
+      "status": "closed_theoremlet",
+      "allowed_final_paper_use": "core_claim",
+      "claim_type": "strict_extension"
+    },
+    "conditional_pressure_disintegration_theoremlet": {
+      "status": "closed_theoremlet",
+      "allowed_final_paper_use": "core_claim",
+      "claim_type": "thermodynamic_consequence"
+    },
+    "closure_deficit_proxy_support": {
+      "status": "supporting_evidence",
+      "allowed_final_paper_use": "support_only",
+      "claim_type": "thermodynamic_consequence"
+    },
+    "packaging-completion_broader-class_ambitions": {
+      "status": "reserve",
+      "allowed_final_paper_use": "reserve_only",
+      "claim_type": "future_work"
+    },
+    "hybrid_object_broadening_beyond_audited_shell": {
+      "status": "reserve",
+      "allowed_final_paper_use": "reserve_only",
+      "claim_type": "stretch_route"
+    },
+    "wider_parameter_shell_theorem": {
+      "status": "reserve",
+      "allowed_final_paper_use": "reserve_only",
+      "claim_type": "stretch_route"
+    },
+    "non-SFT_breadth_story_not_already_closed": {
+      "status": "reserve",
+      "allowed_final_paper_use": "reserve_only",
+      "claim_type": "future_work"
+    },
+    "no_broader-class_theorem_beyond_the_audited_shell": {
+      "status": "nonclaim",
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_type": "broader_class"
+    },
+    "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed": {
+      "status": "nonclaim",
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_type": "non_sft_scope"
+    },
+    "no_direct_stratumwise_root-separation_theorem": {
+      "status": "nonclaim",
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_type": "thermodynamic_consequence"
+    },
+    "no_packaging-induced_broader_theorem_class_claim": {
+      "status": "nonclaim",
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_type": "broader_class"
+    },
+    "no_shell-general_theorem_beyond_the_audited_shell-stable_class": {
+      "status": "nonclaim",
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_type": "future_work"
+    }
+  },
+  "phrases_to_avoid": [
+    "broader-class theorem",
+    "shell-general result",
+    "external/non-SFT breadth",
+    "direct stratumwise root separation",
+    "exact KL closure-deficit theorem"
+  ]
+}

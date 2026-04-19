@@ -1,0 +1,39 @@
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.coverage
+.coverage.*
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+.venv/
+venv/
+env/
+ENV/
+
+.idea/
+.vscode/
+.DS_Store
+
+# Lean/Lake artifacts
+.lake/
+lake-packages/
+lean_packages/
+*.olean
+*.ilean
+*.c
+
+# Generated results (keep ticket artifact)
+results/*
+!results/capability_matrix/
+!results/capability_matrix/env_probe.json
+
+# Local snapshot packaging artifacts
+.package-repo-snapshot-version
+six-birds-cantor_snapshot_v*.zip

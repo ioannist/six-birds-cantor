@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "generated-pg-protocol-lens",
+  "family_id": "generated.pg_protocol_lens",
+  "engine": "primitive_generated_substrate",
+  "description": "Frozen generated substrate from SB-T1 protocol-lens bundle.",
+  "parameters": {
+    "bundle_origin": "pg.protocol_lens",
+    "active_cells": [
+      "P3<-P4",
+      "P4<-P3",
+      "P3<-P3"
+    ],
+    "primitive_coverage": [
+      "P3",
+      "P4"
+    ],
+    "steps_run": 8,
+    "frozen_generation": {
+      "stable_rule_family": true,
+      "closure_idempotence_defect": 0.0,
+      "induced_core_type": "finite_state_renewal_like",
+      "return_time_regime": "bounded_constant",
+      "effective_alphabet_regime": "finite_large",
+      "return_structure": "richer",
+      "constraint_only_share": 0.35,
+      "multi_primitive_interaction_score": 2,
+      "status": "promising",
+      "classification_note": "Protocol/lens attractor; useful control and possible reserve target.",
+      "final_state": {
+        "budget": 3.0,
+        "map_count": 5,
+        "phase": 2,
+        "maps": [
+          {
+            "label": "exit_left",
+            "domain": [0.0, 0.18],
+            "a": 0.42,
+            "b": 0.02,
+            "weight": 0.95,
+            "return_length": 1
+          },
+          {
+            "label": "exit_right",
+            "domain": [0.15, 0.34],
+            "a": 0.39,
+            "b": 0.12,
+            "weight": 0.91,
+            "return_length": 1
+          },
+          {
+            "label": "wait_hold",
+            "domain": [0.28, 0.58],
+            "a": 0.55,
+            "b": 0.1,
+            "weight": 1.0,
+            "return_length": 2
+          },
+          {
+            "label": "return_branch",
+            "domain": [0.4, 0.7],
+            "a": 0.32,
+            "b": 0.0,
+            "weight": 0.88,
+            "return_length": 1
+          },
+          {
+            "label": "bridge",
+            "domain": [0.56, 0.82],
+            "a": 0.47,
+            "b": 0.05,
+            "weight": 0.79,
+            "return_length": 2
+          }
+        ]
+      }
+    }
+  },
+  "run_controls": {
+    "save_outputs": false,
+    "seed": 0
+  },
+  "output_root": "results/lawful_substrate_diagnostics/generated/pg_protocol_lens"
+}

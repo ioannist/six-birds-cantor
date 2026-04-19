@@ -1,0 +1,203 @@
+{
+  "schema_version": "v1",
+  "audit_id": "publication_risk_audit_v1",
+  "generated_at_utc": "2026-03-19T10:03:34Z",
+  "paper_core_positioning": "level3_core_on_audited_shell",
+  "strengths": [
+    {
+      "label": "Four closed theoremlets on one audited-shell package",
+      "note": "Lawfulness, cocycle pressure closure, strict theory extension, and conditional disintegration are all frozen in one package."
+    },
+    {
+      "label": "Canonical hybrid object is explicit",
+      "note": "The branch no longer relies on an unstable object definition; the hybrid object is intrinsic and factorization-based."
+    },
+    {
+      "label": "Scope firewall is already frozen",
+      "note": "Traceability and claim-ledger artifacts make overclaiming materially harder."
+    },
+    {
+      "label": "Paper-native thermodynamic consequence route closed",
+      "note": "Conditional disintegration replaced the conceptually wrong direct stratumwise route."
+    }
+  ],
+  "risks": [
+    {
+      "risk_id": "audited_shell_scope_only",
+      "label": "Audited-shell-only scope",
+      "severity": "high",
+      "type": "shell_specificity",
+      "applies_to": [
+        "all core theoremlets"
+      ],
+      "mitigation": "State the class as audited-shell only everywhere and block any shell-general phrasing.",
+      "note": "The package is strong on the audited shell but intentionally does not generalize to broader shells."
+    },
+    {
+      "risk_id": "no_broader_class_theorem",
+      "label": "No broader-class theorem",
+      "severity": "medium",
+      "type": "scope",
+      "applies_to": [
+        "strict_theory_extension_theoremlet",
+        "conditional_pressure_disintegration_theoremlet"
+      ],
+      "mitigation": "Keep broader-class ambitions in reserve-only language and do not market the result as a class-expansion theorem.",
+      "note": "Reviewer resistance will rise if the paper implies family breadth rather than audited-shell closure."
+    },
+    {
+      "risk_id": "no_external_non_sft_breadth",
+      "label": "No external/non-SFT breadth claim",
+      "severity": "medium",
+      "type": "non_sft_breadth_absence",
+      "applies_to": [
+        "paper-core positioning"
+      ],
+      "mitigation": "Avoid universality rhetoric and keep non-SFT comparisons out of the core claim set.",
+      "note": "The package is six-birds-native and continuous, but not an external breadth theorem."
+    },
+    {
+      "risk_id": "canonical_object_complexity",
+      "label": "Canonical hybrid object complexity",
+      "severity": "medium",
+      "type": "object_complexity",
+      "applies_to": [
+        "canonical_hybrid_object"
+      ],
+      "mitigation": "Use the frozen theorem summary and traceability matrix to keep the object definition tight and repeatable.",
+      "note": "A serious reviewer may find the hybrid object technically dense even if the internal package is coherent."
+    },
+    {
+      "risk_id": "continuous_kernel_reset_dependence",
+      "label": "Dependence on the continuous-kernel reset rather than older discrete families",
+      "severity": "medium",
+      "type": "simulation_dependence",
+      "applies_to": [
+        "continuous_full_loop_lawfulness_theoremlet",
+        "cocycle_pressure_closure_theoremlet"
+      ],
+      "mitigation": "Frame the reset as a deliberate branch reset and distinguish it cleanly from the earlier delayed/finite families.",
+      "note": "Some readers may prefer the older discrete baselines and treat the reset as a change of arena rather than a theorem advance."
+    },
+    {
+      "risk_id": "pica_novelty_overlap",
+      "label": "Possible reviewer read of the result as adapted from PICA",
+      "severity": "medium",
+      "type": "novelty_overlap",
+      "applies_to": [
+        "continuous_six_primitive_substrate_reset",
+        "canonical_hybrid_object"
+      ],
+      "mitigation": "Separate inherited substrate semantics from the new theoremlets and canonical hybrid closure in every internal summary.",
+      "note": "The vendor repo supplies substrate machinery and primitive semantics, so novelty has to be argued at the theorem-package level."
+    },
+    {
+      "risk_id": "strict_extension_shell_specificity",
+      "label": "Strict extension theoremlet may look too shell-specific",
+      "severity": "high",
+      "type": "shell_specificity",
+      "applies_to": [
+        "strict_theory_extension_theoremlet"
+      ],
+      "mitigation": "Keep the claim on the audited shell and present the shell restriction as part of the theorem object rather than as a hidden weakness.",
+      "note": "The theoremlet is real, but a reviewer could still question how much of it survives outside the audited shell."
+    },
+    {
+      "risk_id": "thermodynamic_consequence_proxy_reading",
+      "label": "Conditional disintegration may be read as too proxy-based if overstated",
+      "severity": "high",
+      "type": "proof_presentation",
+      "applies_to": [
+        "conditional_pressure_disintegration_theoremlet"
+      ],
+      "mitigation": "Claim the weighted package-conditioned pressure gap theoremlet only; mention KL-style closure-deficit proxies as support-only.",
+      "note": "Overstating the KL or exact information-theoretic layer would create avoidable reviewer pushback."
+    },
+    {
+      "risk_id": "reviewer_confusion_about_negative_results",
+      "label": "Rejected routes may confuse reviewers about what is actually claimed",
+      "severity": "medium",
+      "type": "reviewer_confusion",
+      "applies_to": [
+        "conditional_pressure_disintegration_theoremlet"
+      ],
+      "mitigation": "Keep the rejected broader-class and stratumwise routes explicit as non-claims, not as partial claims.",
+      "note": "The branch contains several honest negative results that need to be framed as scope discipline rather than failed core claims."
+    }
+  ],
+  "objection_map": [
+    {
+      "objection_id": "obj_scope_shell_only",
+      "targets": [
+        "audited_shell_scope_only",
+        "strict_extension_shell_specificity"
+      ],
+      "objection": "The theorem package is only on a narrow audited shell.",
+      "response": "That scope is explicit, frozen, and traceable; the package does not claim more than it closes."
+    },
+    {
+      "objection_id": "obj_pica_overlap",
+      "targets": [
+        "pica_novelty_overlap",
+        "continuous_kernel_reset_dependence"
+      ],
+      "objection": "This looks like an adaptation of vendor substrate work rather than a new theorem package.",
+      "response": "The substrate reset is adapted, but the closed theoremlets, canonical hybrid object, strict extension, and conditional disintegration package are new in this branch."
+    },
+    {
+      "objection_id": "obj_proxy_thermodynamics",
+      "targets": [
+        "thermodynamic_consequence_proxy_reading"
+      ],
+      "objection": "The thermodynamic consequence is too proxy-based.",
+      "response": "The closed claim is only the weighted package-conditioned pressure gap theoremlet; KL-style closure-deficit language is support-only."
+    },
+    {
+      "objection_id": "obj_object_complexity",
+      "targets": [
+        "canonical_object_complexity",
+        "reviewer_confusion_about_negative_results"
+      ],
+      "objection": "The object is too complicated and the route changes are hard to follow.",
+      "response": "The canonical object, traceability matrix, and non-claim firewall keep the final package auditable despite the development history."
+    }
+  ],
+  "claim_posture": {
+    "core_positioning": "level3_core_on_audited_shell",
+    "core_claim_ids": [
+      "continuous_full_loop_lawfulness_theoremlet",
+      "cocycle_pressure_closure_theoremlet",
+      "strict_theory_extension_theoremlet",
+      "conditional_pressure_disintegration_theoremlet"
+    ],
+    "support_only_claim_ids": [
+      "closure_deficit_proxy_support"
+    ],
+    "reserve_claim_ids": [
+      "packaging-completion_broader-class_ambitions",
+      "hybrid_object_broadening_beyond_audited_shell",
+      "wider_parameter_shell_theorem",
+      "non-SFT_breadth_story_not_already_closed"
+    ],
+    "nonclaim_ids": [
+      "no_broader-class_theorem_beyond_the_audited_shell",
+      "no_direct_stratumwise_root-separation_theorem",
+      "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+      "no_packaging-induced_broader_theorem_class_claim",
+      "no_shell-general_theorem_beyond_the_audited_shell-stable_class"
+    ],
+    "manuscript_posture": "State a Level-3 core on the audited shell, emphasize the canonical hybrid object and strict theory extension, and keep broader-scope ambitions outside the paper-core claim set.",
+    "phrases_to_avoid": [
+      "broader-class theorem",
+      "shell-general result",
+      "external/non-SFT breadth",
+      "direct stratumwise root separation",
+      "exact KL closure-deficit theorem"
+    ]
+  },
+  "decision": "ready_with_conservative_level3_positioning",
+  "notes": [
+    "The package is publication-ready only under conservative audited-shell claim discipline.",
+    "The six-birds papers directory is absent from this snapshot, so the prior-paper baseline uses the in-repo vendor six-birds materials plus earlier internal theorem branches."
+  ]
+}

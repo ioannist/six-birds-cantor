@@ -1,0 +1,319 @@
+{
+  "bounded_overlap_id": "bounded-overlap-v1",
+  "candidate_enlarged_class_label": "finite-memory affine class with exact cylinder packaging and bounded cylinder multiplicity",
+  "decision": "advance_to_overlap_lemmas",
+  "families": [
+    {
+      "artifact_paths": [
+        "results/contextual_family_samples/prefix_memory_last_digit_rule"
+      ],
+      "bounded_overlap_status": "promising",
+      "classification_note": "Bounded-overlap proxy stays uniformly small on checked depths; this is the main candidate for the overlap-lemma sprint.",
+      "config_path": "configs/experiments/contextual/prefix_memory_last_digit_rule.json",
+      "depth_sensitivity": {
+        "depth_series": [
+          4,
+          6,
+          8,
+          10
+        ],
+        "last_step_drift": 0.011793277022661641,
+        "max_spread_upper_root": 0.07185741580906324
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "contextual_local.prefix_memory_last_digit_rule",
+      "max_overlap_multiplicity_by_depth": {
+        "10": 2,
+        "4": 2,
+        "6": 2,
+        "8": 2
+      },
+      "max_overlap_multiplicity_overall": 2,
+      "memory_growth_proxy": {
+        "method": "explicit_transition_context_count",
+        "value": 3
+      },
+      "ratio_proxy_by_depth": {
+        "10": 1.1500406881478484,
+        "4": 1.205895406967904,
+        "6": 1.1651486025856648,
+        "8": 1.153660200821055
+      },
+      "root_proxy_used": 0.5590723377827089,
+      "upper_lower_gap_by_depth": {
+        "10": 0.013069478009128943,
+        "4": 0.03978058119537309,
+        "6": 0.022777563222916797,
+        "8": 0.016419526655226946
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/contextual_family_samples/prefix_memory_no_22_base3"
+      ],
+      "bounded_overlap_status": "inconclusive",
+      "classification_note": "Current diagnostics do not falsify bounded-overlap, but they are not yet strong enough to justify the lemma sprint automatically.",
+      "config_path": "configs/experiments/contextual/prefix_memory_no_22_base3.json",
+      "depth_sensitivity": {
+        "depth_series": [
+          4,
+          6,
+          8,
+          10
+        ],
+        "last_step_drift": 0.0035820810007862747,
+        "max_spread_upper_root": 0.020825413754209876
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "max_overlap_multiplicity_by_depth": {
+        "10": 1,
+        "4": 1,
+        "6": 1,
+        "8": 1
+      },
+      "max_overlap_multiplicity_overall": 1,
+      "memory_growth_proxy": {
+        "method": "explicit_transition_context_count",
+        "value": 2
+      },
+      "ratio_proxy_by_depth": {
+        "10": 1.000000000000091,
+        "4": 0.9999999999999996,
+        "6": 1.0000000000000049,
+        "8": 0.9999999999999548
+      },
+      "root_proxy_used": 0.45237190142506734,
+      "upper_lower_gap_by_depth": {
+        "10": 0.0,
+        "4": 0.0,
+        "6": 0.0,
+        "8": 0.0
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/contextual_family_samples/domain_gated_two_map_local_ifs"
+      ],
+      "bounded_overlap_status": "inconclusive",
+      "classification_note": "Current diagnostics do not falsify bounded-overlap, but they are not yet strong enough to justify the lemma sprint automatically.",
+      "config_path": "configs/experiments/contextual/domain_gated_two_map_local_ifs.json",
+      "depth_sensitivity": {
+        "depth_series": [
+          4,
+          6,
+          8,
+          10
+        ],
+        "last_step_drift": 0.024999999994179234,
+        "max_spread_upper_root": 0.14999999999417923
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+      "max_overlap_multiplicity_by_depth": {
+        "10": 1,
+        "4": 1,
+        "6": 1,
+        "8": 1
+      },
+      "max_overlap_multiplicity_overall": 1,
+      "memory_growth_proxy": {
+        "method": "local_domain_map_count",
+        "value": 2
+      },
+      "ratio_proxy_by_depth": {
+        "10": 1.0717734625406174,
+        "4": 1.0717734625406174,
+        "6": 1.0717734625406174,
+        "8": 1.0717734625406174
+      },
+      "root_proxy_used": 0.10000000000582077,
+      "upper_lower_gap_by_depth": {
+        "10": 0.009090909094084054,
+        "4": 0.04999999998835847,
+        "6": 0.023809523845557123,
+        "8": 0.013888888875953853
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/local_ifs_toys/nested_three_map_local_ifs"
+      ],
+      "bounded_overlap_status": "blocked",
+      "classification_note": "Depth sensitivity is high enough that bounded-overlap does not look like the main obstruction.",
+      "config_path": "configs/experiments/local_ifs/nested_three_map_local_ifs.json",
+      "depth_sensitivity": {
+        "depth_series": [
+          4,
+          6,
+          8
+        ],
+        "last_step_drift": 0.07529120129765943,
+        "max_spread_upper_root": 0.18148966642911546
+      },
+      "depths_checked": [
+        4,
+        6,
+        8
+      ],
+      "family_id": "toy.local_ifs.nested_three_map_local_ifs",
+      "max_overlap_multiplicity_by_depth": {
+        "4": 1,
+        "6": 1,
+        "8": 1
+      },
+      "max_overlap_multiplicity_overall": 1,
+      "memory_growth_proxy": {
+        "method": "local_domain_map_count",
+        "value": 3
+      },
+      "ratio_proxy_by_depth": {
+        "4": 1.4130414164325207,
+        "6": 1.4759688765322767,
+        "8": 1.5109831428682858
+      },
+      "root_proxy_used": 0.4725106557307299,
+      "upper_lower_gap_by_depth": {
+        "4": 0.09248690176173113,
+        "6": 0.06099287373945117,
+        "8": 0.04312938911607489
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/classical_baselines/middle_thirds"
+      ],
+      "bounded_overlap_status": "inconclusive",
+      "classification_note": "Current diagnostics do not falsify bounded-overlap, but they are not yet strong enough to justify the lemma sprint automatically.",
+      "config_path": "configs/experiments/classical/middle_thirds.json",
+      "depth_sensitivity": {
+        "depth_series": [
+          4,
+          6,
+          8,
+          10
+        ],
+        "last_step_drift": 0.0,
+        "max_spread_upper_root": 2.9103830456733704e-11
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "classical.middle_thirds",
+      "max_overlap_multiplicity_by_depth": {
+        "10": 1,
+        "4": 1,
+        "6": 1,
+        "8": 1
+      },
+      "max_overlap_multiplicity_overall": 1,
+      "memory_growth_proxy": {
+        "method": "single_scale_branching",
+        "value": 2
+      },
+      "ratio_proxy_by_depth": {
+        "10": 1.000000000000168,
+        "4": 1.0000000000000002,
+        "6": 1.000000000000008,
+        "8": 0.9999999999999207
+      },
+      "root_proxy_used": 0.6309297535626683,
+      "upper_lower_gap_by_depth": {
+        "10": 0.0,
+        "4": 0.0,
+        "6": 0.0,
+        "8": 0.0
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/classical_baselines/restricted_digits_base5_024"
+      ],
+      "bounded_overlap_status": "inconclusive",
+      "classification_note": "Current diagnostics do not falsify bounded-overlap, but they are not yet strong enough to justify the lemma sprint automatically.",
+      "config_path": "configs/experiments/classical/restricted_digits_base5_024.json",
+      "depth_sensitivity": {
+        "depth_series": [
+          4,
+          6,
+          8,
+          10
+        ],
+        "last_step_drift": 0.0,
+        "max_spread_upper_root": 0.0
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "classical.restricted_digits_base5_024",
+      "max_overlap_multiplicity_by_depth": {
+        "10": 1,
+        "4": 1,
+        "6": 1,
+        "8": 1
+      },
+      "max_overlap_multiplicity_overall": 1,
+      "memory_growth_proxy": {
+        "method": "single_scale_branching",
+        "value": 3
+      },
+      "ratio_proxy_by_depth": {
+        "10": 0.9999999999076362,
+        "4": 0.9999999999999916,
+        "6": 1.0000000000002112,
+        "8": 1.0000000000024423
+      },
+      "root_proxy_used": 0.6826061944884714,
+      "upper_lower_gap_by_depth": {
+        "10": 0.0,
+        "4": 0.0,
+        "6": 0.0,
+        "8": 0.0
+      }
+    }
+  ],
+  "fixed_assumptions_from_t15": [
+    "uniform_contraction",
+    "finite_memory_bound",
+    "stationary_admissibility_rule",
+    "bounded_distortion",
+    "usable_separation",
+    "feedback_free_admissibility",
+    "fixed_lens",
+    "fixed_packaging",
+    "lower_pressure_packaging_admissible",
+    "lens_affects_admissibility",
+    "packaging_affects_admissibility",
+    "exact_cylinder_packaging"
+  ],
+  "generated_at_utc": "2026-03-19T17:07:46.239702Z",
+  "new_overlap_assumption": "bounded_cylinder_multiplicity",
+  "notes": [
+    "Bounded overlap is being tested as a replacement for disjoint cylinder geometry in the T19 coincidence step.",
+    "The kept assumptions are the T19 fixed assumptions except that disjoint cylinder geometry is replaced by a bounded cylinder multiplicity hypothesis.",
+    "Any proof sprint after this ticket still needs a geometric overlap-counting lemma giving a family-uniform multiplicity bound M independent of depth."
+  ],
+  "schema_version": "1.0",
+  "target_theorem_class": "narrow_hybrid_affine_cylinder_class"
+}

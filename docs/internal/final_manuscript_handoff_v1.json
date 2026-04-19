@@ -1,0 +1,130 @@
+{
+  "allowed_claim_ids": [
+    "continuous_full_loop_lawfulness_theoremlet",
+    "cocycle_pressure_closure_theoremlet",
+    "strict_theory_extension_theoremlet",
+    "conditional_pressure_disintegration_theoremlet"
+  ],
+  "assumption_paths": [
+    "docs/internal/continuous_theorem_assumptions_v1.json"
+  ],
+  "canonical_theorem_object": {
+    "base_object": "T0_cocycle_pressure_theory",
+    "canonical_object": "T1_hybrid_cocycle_plus_completion_theory",
+    "canonical_object_id": "canonical_hybrid_theorem_object_v1",
+    "completion_object": "packaging_completion_endomap_fixed_point_strata",
+    "theoremlet_layers": {
+      "cocycle_pressure_closure_theoremlet": "T0_cocycle_pressure_theory",
+      "conditional_pressure_disintegration_theoremlet": "canonical hybrid object",
+      "continuous_full_loop_lawfulness_theoremlet": "shell-stable lawful regime object",
+      "strict_theory_extension_theoremlet": "canonical hybrid object"
+    }
+  },
+  "claim_ledger_path": "docs/internal/final_paper_core_claim_ledger_v1.json",
+  "closed_class": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "closed_theoremlets": [
+    {
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_path": "docs/internal/proof_dependency_continuous_full_loop_v1.json",
+      "note": "Manuscript-safe limitation: no broader shell theorem beyond the audited shell-stable class",
+      "object_scope": "continuous_full_loop_theorem_package_v1",
+      "status": "closed_in_note",
+      "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_path": "docs/internal/proof_dependency_continuous_pressure_v1.json",
+      "note": "Manuscript-safe limitation: no broader shell theorem beyond the audited shell-stable class",
+      "object_scope": "continuous_full_loop_theorem_package_v1",
+      "status": "closed_in_note",
+      "theoremlet_id": "cocycle_pressure_closure_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_path": "docs/internal/proof_dependency_strict_theory_extension_v1.json",
+      "note": "Manuscript-safe limitation: no broader shell theorem beyond the audited shell-stable class",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "status": "closed_in_note",
+      "theoremlet_id": "strict_theory_extension_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_path": "docs/internal/proof_dependency_conditional_disintegration_v1.json",
+      "note": "Manuscript-safe limitation: no broader shell theorem beyond the audited shell-stable class",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "status": "closed_in_note",
+      "theoremlet_id": "conditional_pressure_disintegration_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    }
+  ],
+  "compile_status": {
+    "duplicate_labels": [],
+    "latex_errors": [],
+    "major_warnings": [],
+    "pdf_exists": true,
+    "undefined_citations": [],
+    "undefined_references": []
+  },
+  "dependency_paths": [
+    "docs/internal/proof_dependency_continuous_full_loop_v1.json",
+    "docs/internal/proof_dependency_continuous_pressure_v1.json",
+    "docs/internal/proof_dependency_strict_theory_extension_v1.json",
+    "docs/internal/proof_dependency_conditional_disintegration_v1.json"
+  ],
+  "figure_manifest_path": "docs/internal/figure_manifest_v1.json",
+  "final_pdf_path": "paper/build/main.pdf",
+  "final_readiness_decision": "ready_with_minor_typographic_warnings",
+  "generated_at_utc": "2026-03-20T17:56:15.990280+00:00",
+  "handoff_id": "final_manuscript_handoff_v1",
+  "main_tex_path": "paper/main.tex",
+  "nonclaim_ids": [
+    "no_broader-class_theorem_beyond_the_audited_shell",
+    "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+    "no_direct_stratumwise_root-separation_theorem",
+    "no_packaging-induced_broader_theorem_class_claim",
+    "no_shell-general_theorem_beyond_the_audited_shell-stable_class"
+  ],
+  "notes": [
+    "Final manuscript handoff is restricted to the audited shell.",
+    "Only the four closed theoremlets are manuscript-core claims.",
+    "Support-only, reserve, and non-claim boundaries are frozen from the internal package."
+  ],
+  "paper_core_positioning": "level3_core_on_audited_shell",
+  "publication_risk_audit_path": "docs/internal/publication_risk_audit_v1.json",
+  "reserve_ids": [
+    "packaging-completion_broader-class_ambitions",
+    "hybrid_object_broadening_beyond_audited_shell",
+    "wider_parameter_shell_theorem",
+    "non-SFT_breadth_story_not_already_closed"
+  ],
+  "schema_version": "1.0",
+  "support_only_ids": [
+    "closure_deficit_proxy_support"
+  ],
+  "title": "Strict Theory Extension on a Lawful Continuous Cantor Shell",
+  "traceability_matrix_path": "docs/internal/theorem_traceability_matrix_v1.json",
+  "warning_summary": {
+    "minor_overfull_boxes": [
+      {
+        "amount": "2.11972pt",
+        "lines": "13--14"
+      }
+    ],
+    "underfull_boxes": []
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "assumptions_path": "docs/internal/continuous_theorem_assumptions_v1.json",
+  "closed_class_id": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "dependency_edges": [
+    ["FR-LEM-1", "FR-LEM-2"],
+    ["FR-LEM-2", "FR-LEM-3"],
+    ["FR-LEM-3", "FR-LEM-4"],
+    ["FR-LEM-4", "FR-LEM-5"],
+    ["FR-LEM-5", "FR-THM-6"],
+    ["FR-THM-6", "FR-COR-7"]
+  ],
+  "dependency_id": "proof_dependency_forward_invariant_regime_v1",
+  "decision": "working_class_narrowed_and_closed",
+  "gap_status": {},
+  "lemmas": [
+    {
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "lawful_exploratory_regime",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [],
+      "label": "lawful shell definition and nonemptiness",
+      "lemma_id": "FR-LEM-1",
+      "status": "closed_in_note",
+      "statement_short": "The regime shell is nonempty on the narrowed class."
+    },
+    {
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "full_six_primitive_closure"
+      ],
+      "depends_on": [
+        "FR-LEM-1"
+      ],
+      "label": "one-step kernel-shell preservation",
+      "lemma_id": "FR-LEM-2",
+      "status": "closed_in_note",
+      "statement_short": "The update law keeps the kernel/operator state inside the shell."
+    },
+    {
+      "assumptions_used": [
+        "hysteresis_stable_selection",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition"
+      ],
+      "depends_on": [
+        "FR-LEM-1",
+        "FR-LEM-2"
+      ],
+      "label": "selector-margin preservation",
+      "lemma_id": "FR-LEM-3",
+      "status": "closed_in_note",
+      "statement_short": "Lens and packaging hysteresis margins remain nondegenerate."
+    },
+    {
+      "assumptions_used": [
+        "p3_timescale_adaptation",
+        "p6_budget_dynamics_active",
+        "no_fast_collapse"
+      ],
+      "depends_on": [
+        "FR-LEM-2",
+        "FR-LEM-3"
+      ],
+      "label": "budget/tau-shell preservation",
+      "lemma_id": "FR-LEM-4",
+      "status": "closed_in_note",
+      "statement_short": "Budget and timescale remain in a lawful shell range."
+    },
+    {
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "primitive_knockout_fragility",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active"
+      ],
+      "depends_on": [
+        "FR-LEM-3",
+        "FR-LEM-4"
+      ],
+      "label": "primitive-closure preservation",
+      "lemma_id": "FR-LEM-5",
+      "status": "closed_in_note",
+      "statement_short": "All six primitives remain causally active inside the shell."
+    },
+    {
+      "assumptions_used": [
+        "lawful_exploratory_regime",
+        "parameter_shell_robustness",
+        "hysteresis_stable_selection",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "FR-LEM-5"
+      ],
+      "label": "forward-invariant lawful regime theoremlet",
+      "lemma_id": "FR-THM-6",
+      "status": "closed_in_note",
+      "statement_short": "The shell is forward-invariant for the narrowed class."
+    },
+    {
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "lawful_exploratory_regime",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "FR-THM-6"
+      ],
+      "label": "closure of continuous full-loop lawfulness theorem",
+      "lemma_id": "FR-COR-7",
+      "status": "closed_in_note",
+      "statement_short": "CK-LEM-5 and CK-THM-7 are closed on the narrowed shell-stable class."
+    }
+  ],
+  "selected_route": "deterministic_skew_product_with_budget_feedback",
+  "stretch_class_id": "continuous_full_loop_lawful_kernel_class_with_wider_parameter_shell",
+  "theorem_statement_short": "A shell-stable continuous six-primitive skew-product cocycle has a nonempty compact forward-invariant lawful regime preserving hysteretic selector margins and budget/tau activity.",
+  "witness_families": [
+    {
+      "family_id": "generated.continuous_full_loop_kernel",
+      "role": "required_working_witness"
+    },
+    {
+      "family_id": "generated.continuous_full_loop_kernel_shell",
+      "role": "required_shell_witness"
+    }
+  ],
+  "working_class_id": "continuous_full_loop_lawful_kernel_class"
+}
+

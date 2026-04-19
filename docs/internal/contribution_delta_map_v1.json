@@ -1,0 +1,238 @@
+{
+  "schema_version": "v1",
+  "delta_id": "contribution_delta_map_v1",
+  "generated_at_utc": "2026-03-19T10:03:34Z",
+  "comparison_baselines": {
+    "vendor_pica_readme": "vendors/six-birds-pica/README.md",
+    "vendor_pica_primitives": "vendors/six-birds-pica/theory/primitives.md",
+    "vendor_pica_paper_workspace": "vendors/six-birds-pica/paper/README.md",
+    "delayed_return_package": "docs/internal/delayed_return_theorem_package_v1.md",
+    "bounded_overlap_branch": "docs/internal/bounded_overlap_class_v1.json",
+    "induced_core_branch": "docs/internal/induced_core_class_v1.json",
+    "quasimultiplicative_branch": "docs/internal/quasimultiplicative_class_v1.json",
+    "attached_six_birds_papers_dir": "docs/papers"
+  },
+  "contributions": [
+    {
+      "contribution_id": "primitive_semantics_six_birds",
+      "label": "Primitive semantics and P1-P6 definitions",
+      "type": "object",
+      "novelty_status": "inherited",
+      "baseline_refs": [
+        "vendors/six-birds-pica/theory/primitives.md"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/continuous_full_loop_theorem_package_v1.md"
+      ],
+      "scope": "all audited-shell theoremlets",
+      "note": "The branch inherits the six-birds primitive semantics and the packaging-endomap viewpoint rather than inventing them."
+    },
+    {
+      "contribution_id": "continuous_six_primitive_substrate_reset",
+      "label": "Continuous six-primitive substrate reset",
+      "type": "substrate_mechanism",
+      "novelty_status": "adapted",
+      "baseline_refs": [
+        "vendors/six-birds-pica/README.md",
+        "vendors/six-birds-pica/theory/primitives.md",
+        "docs/internal/delayed_return_theorem_package_v1.md"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/continuous_full_loop_theorem_package_v1.md",
+        "docs/internal/proof_dependency_continuous_full_loop_v1.json"
+      ],
+      "scope": "audited shell-stable continuous class",
+      "note": "This branch adapts the vendor finite stochastic substrate ideas into the continuous full-loop kernel setting instead of reusing the earlier discrete or delayed-return packages."
+    },
+    {
+      "contribution_id": "continuous_full_loop_lawfulness_theoremlet",
+      "label": "Continuous full-loop lawful kernel theoremlet",
+      "type": "theoremlet",
+      "novelty_status": "new_in_branch",
+      "baseline_refs": [
+        "docs/internal/delayed_return_theorem_package_v1.md",
+        "docs/internal/bounded_overlap_class_v1.json"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/continuous_full_loop_theorem_package_v1.md",
+        "docs/internal/proof_dependency_continuous_full_loop_v1.json"
+      ],
+      "scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "note": "This is the first closed continuous six-primitive lawfulness theoremlet in this repo branch."
+    },
+    {
+      "contribution_id": "cocycle_pressure_closure_theoremlet",
+      "label": "Cocycle pressure closure theoremlet",
+      "type": "theoremlet",
+      "novelty_status": "new_in_branch",
+      "baseline_refs": [
+        "docs/internal/delayed_return_theorem_package_v1.md",
+        "docs/internal/quasimultiplicative_class_v1.json"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/continuous_pressure_closure_v1.md",
+        "docs/internal/proof_dependency_continuous_pressure_v1.json",
+        "results/continuous_pressure_closure/report.json"
+      ],
+      "scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "note": "The closed cocycle-pressure route is new in this continuous audited-shell branch and is not inherited from the earlier induced/delayed branches."
+    },
+    {
+      "contribution_id": "packaging_completion_endomap_as_object_generator",
+      "label": "Packaging completion endomap as theorem-object generator",
+      "type": "object",
+      "novelty_status": "adapted",
+      "baseline_refs": [
+        "vendors/six-birds-pica/theory/primitives.md"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/packaging_completion_endomap_v1.md",
+        "src/contextual_cantor/continuous_kernel_substrate.py"
+      ],
+      "scope": "canonical hybrid object construction",
+      "note": "The endomap/fixed-point object idea is inherited from six-birds theory, but its continuous full-loop implementation and audit are adapted here."
+    },
+    {
+      "contribution_id": "canonical_hybrid_object",
+      "label": "Canonical hybrid object",
+      "type": "object",
+      "novelty_status": "new_relative_to_prior_six_birds",
+      "baseline_refs": [
+        "vendors/six-birds-pica/theory/primitives.md",
+        "vendors/six-birds-pica/README.md"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/canonical_hybrid_theorem_object_v1.md",
+        "docs/internal/canonical_hybrid_theorem_object_v1.json",
+        "results/canonical_hybrid_extension/report.json"
+      ],
+      "scope": "audited shell-stable continuous class",
+      "note": "The branch packages cocycle pressure, completion, saturation, forcing, and packaged strata into one intrinsic theorem object rather than leaving them as separate diagnostics."
+    },
+    {
+      "contribution_id": "strict_theory_extension_theoremlet",
+      "label": "Strict theory extension theoremlet",
+      "type": "theoremlet",
+      "novelty_status": "new_relative_to_prior_six_birds",
+      "baseline_refs": [
+        "vendors/six-birds-pica/theory/primitives.md",
+        "docs/internal/delayed_return_theorem_package_v1.md"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/strict_theory_extension_closure_v1.md",
+        "docs/internal/proof_dependency_strict_theory_extension_v1.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "note": "The abstract six-birds strict-extension idea is closed here as an audited-shell theoremlet on the canonical hybrid object."
+    },
+    {
+      "contribution_id": "conditional_pressure_disintegration_theoremlet",
+      "label": "Conditional pressure disintegration theoremlet",
+      "type": "thermodynamic_consequence",
+      "novelty_status": "new_relative_to_prior_six_birds",
+      "baseline_refs": [
+        "vendors/six-birds-pica/theory/primitives.md",
+        "vendors/six-birds-pica/README.md"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/conditional_pressure_disintegration_v1.md",
+        "docs/internal/proof_dependency_conditional_disintegration_v1.json",
+        "results/conditional_disintegration/report.json"
+      ],
+      "scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "note": "The branch closes a paper-native conditional disintegration consequence on the canonical hybrid object rather than on a raw trajectory or per-stratum root split."
+    },
+    {
+      "contribution_id": "audited_shell_scope_restriction",
+      "label": "Audited-shell scope restriction",
+      "type": "audit_certificate",
+      "novelty_status": "new_in_branch",
+      "baseline_refs": [
+        "docs/internal/delayed_return_theorem_package_v1.md"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/level3_theorem_package_v1.md",
+        "docs/internal/theorem_traceability_matrix_v1.json",
+        "docs/internal/final_paper_core_claim_ledger_v1.json"
+      ],
+      "scope": "paper-core positioning",
+      "note": "The branch converts scope discipline into a first-class package artifact instead of leaving shell limits implicit."
+    },
+    {
+      "contribution_id": "rejected_broader_class_claim",
+      "label": "Rejected broader-class claim",
+      "type": "audit_certificate",
+      "novelty_status": "new_in_branch",
+      "baseline_refs": [
+        "docs/internal/bounded_overlap_class_v1.json",
+        "docs/internal/induced_core_class_v1.json"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/final_paper_core_claim_ledger_v1.json",
+        "docs/internal/level3_theorem_package_v1.json"
+      ],
+      "scope": "paper-core positioning",
+      "note": "The branch explicitly records broader-class ambitions as reserve-only and prevents them from leaking into the core package."
+    },
+    {
+      "contribution_id": "rejected_direct_stratumwise_separation_route",
+      "label": "Rejected direct stratumwise separation route",
+      "type": "audit_certificate",
+      "novelty_status": "new_in_branch",
+      "baseline_refs": [
+        "vendors/six-birds-pica/theory/primitives.md"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/stratumwise_thermodynamic_distinction_v1.md",
+        "docs/internal/final_paper_core_claim_ledger_v1.json"
+      ],
+      "scope": "thermodynamic consequence route selection",
+      "note": "The branch turns the failed stratumwise route into an explicit non-claim and pivots to the paper-native conditional route."
+    },
+    {
+      "contribution_id": "supporting_infrastructure_audit_chain",
+      "label": "Traceability, claim-ledger, and manuscript-firewall infrastructure",
+      "type": "supporting_infrastructure",
+      "novelty_status": "new_in_branch",
+      "baseline_refs": [
+        "vendors/six-birds-pica/README.md"
+      ],
+      "repo_evidence_paths": [
+        "docs/internal/level3_theorem_package_v1.json",
+        "docs/internal/final_paper_core_claim_ledger_v1.json",
+        "docs/internal/theorem_traceability_matrix_v1.json",
+        "docs/internal/figure_manifest_v1.json"
+      ],
+      "scope": "publication-readiness controls",
+      "note": "The branch builds publication-facing package controls that the earlier theorem branches and vendor substrate do not provide in this form."
+    }
+  ],
+  "noncontributions": [
+    {
+      "label": "Primitive semantics origination",
+      "reason": "Inherited from six-birds theory documents rather than created in this branch."
+    },
+    {
+      "label": "Vendor PICA finite stochastic substrate invention",
+      "reason": "The vendor machinery is treated as baseline substrate/input, not as a new branch contribution."
+    },
+    {
+      "label": "Broader-class theorem beyond the audited shell",
+      "reason": "Explicit non-claim in the frozen package."
+    },
+    {
+      "label": "Direct stratumwise root-separation theorem",
+      "reason": "Explicitly rejected and not part of the core contribution set."
+    },
+    {
+      "label": "External/non-SFT breadth theorem",
+      "reason": "Explicit non-claim in the frozen package."
+    }
+  ],
+  "decision": "delta_map_complete",
+  "notes": [
+    "The delta map is conservative: primitive semantics are inherited, continuous substrate mechanics are adapted, and theorem closure is counted as new only where the branch actually closes it.",
+    "The external docs/papers baseline directory is absent from this snapshot, so prior-paper comparison is limited to the vendor six-birds PICA materials and in-repo theorem branches."
+  ]
+}

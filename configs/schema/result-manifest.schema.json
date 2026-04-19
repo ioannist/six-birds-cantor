@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contextual Cantor Result Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "timestamp_utc",
+    "status",
+    "code_version",
+    "config_path",
+    "config_hash_method",
+    "config_hash_sha256",
+    "family_id",
+    "engine",
+    "parameters",
+    "artifacts",
+    "summary_metrics"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[^\\s]+$"
+    },
+    "status": {
+      "type": "string"
+    },
+    "code_version": {
+      "type": "string"
+    },
+    "config_path": {
+      "type": "string"
+    },
+    "config_hash_method": {
+      "type": "string"
+    },
+    "config_hash_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "family_id": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "kind"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary_metrics": {
+      "type": "object"
+    },
+    "command": {
+      "type": "string"
+    },
+    "exit_status": {
+      "type": "integer"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "environment": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,130 @@
+{
+  "hardware": {
+    "cpu_count": 96,
+    "mem_total_bytes": 269917192192
+  },
+  "notes": [],
+  "paths": {
+    "cwd": "/home/repos/six-birds-cantor",
+    "repo_root_assumption": "/home/repos/six-birds-cantor",
+    "script_path": "/home/repos/six-birds-cantor/scripts/env_probe.py"
+  },
+  "platform": {
+    "architecture": "64bit",
+    "machine": "x86_64",
+    "platform": "Linux-5.15.0-152-generic-x86_64-with-glibc2.35",
+    "processor": "x86_64",
+    "release": "5.15.0-152-generic",
+    "system": "Linux"
+  },
+  "python": {
+    "executable": "/home/ioannis/.local/bin/python",
+    "implementation": "CPython",
+    "major": 3,
+    "micro": 12,
+    "minor": 10,
+    "version": "3.10.12 (main, Mar  3 2026, 11:56:32) [GCC 11.4.0]"
+  },
+  "python_packages": {
+    "jax": {
+      "available": false,
+      "error": "ModuleNotFoundError: No module named 'jax'",
+      "version": null
+    },
+    "matplotlib": {
+      "available": true,
+      "error": null,
+      "version": "3.10.8"
+    },
+    "mpmath": {
+      "available": true,
+      "error": null,
+      "version": "1.3.0"
+    },
+    "networkx": {
+      "available": true,
+      "error": null,
+      "version": "3.4.2"
+    },
+    "numba": {
+      "available": false,
+      "error": "ModuleNotFoundError: No module named 'numba'",
+      "version": null
+    },
+    "numpy": {
+      "available": true,
+      "error": null,
+      "version": "2.2.6"
+    },
+    "pandas": {
+      "available": true,
+      "error": null,
+      "version": "2.3.3"
+    },
+    "pytest": {
+      "available": true,
+      "error": null,
+      "version": "9.0.2"
+    },
+    "scipy": {
+      "available": true,
+      "error": null,
+      "version": "1.15.3"
+    },
+    "sympy": {
+      "available": true,
+      "error": null,
+      "version": "1.14.0"
+    },
+    "torch": {
+      "available": true,
+      "error": null,
+      "version": "2.2.2+cu121"
+    }
+  },
+  "timestamp_utc": "2026-03-16T18:03:54.752946+00:00",
+  "tools": {
+    "clang": {
+      "available": true,
+      "error": null,
+      "path": "/usr/bin/clang",
+      "version": "Ubuntu clang version 14.0.0-1ubuntu1.1"
+    },
+    "elan": {
+      "available": true,
+      "error": null,
+      "path": "/home/ioannis/.elan/bin/elan",
+      "version": "elan 4.1.2 (58e8d545e 2025-05-26)"
+    },
+    "gcc": {
+      "available": true,
+      "error": null,
+      "path": "/usr/bin/gcc",
+      "version": "gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0"
+    },
+    "git": {
+      "available": true,
+      "error": null,
+      "path": "/usr/bin/git",
+      "version": "git version 2.34.1"
+    },
+    "lake": {
+      "available": true,
+      "error": null,
+      "path": "/home/ioannis/.elan/bin/lake",
+      "version": "Lake version 5.0.0-src+7e01a1b (Lean version 4.28.0)"
+    },
+    "lean": {
+      "available": true,
+      "error": null,
+      "path": "/home/ioannis/.elan/bin/lean",
+      "version": "Lean (version 4.28.0, x86_64-unknown-linux-gnu, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b, Release)"
+    },
+    "make": {
+      "available": true,
+      "error": null,
+      "path": "/usr/bin/make",
+      "version": "GNU Make 4.3"
+    }
+  }
+}

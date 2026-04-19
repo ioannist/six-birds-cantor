@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "nested-three-map-local-ifs",
+  "family_id": "toy.local_ifs.nested_three_map_local_ifs",
+  "engine": "local_ifs",
+  "description": "Three-map local IFS with nested and overlapping domains.",
+  "parameters": {
+    "maps": [
+      {
+        "a": 0.4,
+        "b": 0.0,
+        "domain": [
+          0.0,
+          1.0
+        ],
+        "label": "global-left"
+      },
+      {
+        "a": 0.3,
+        "b": 0.35,
+        "domain": [
+          0.2,
+          0.8
+        ],
+        "label": "nested-mid"
+      },
+      {
+        "a": 0.25,
+        "b": 0.7,
+        "domain": [
+          0.6,
+          1.0
+        ],
+        "label": "right-nested"
+      }
+    ],
+    "iterations": 8,
+    "admissibility_examples": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ]
+  },
+  "run_controls": {
+    "seed": 0,
+    "precision_bits": 53,
+    "save_outputs": true
+  },
+  "output_root": "results/local_ifs_toys/nested_three_map_local_ifs"
+}

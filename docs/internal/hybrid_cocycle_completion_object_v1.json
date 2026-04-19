@@ -1,0 +1,55 @@
+{
+  "schema_version": "v1",
+  "target_id": "hybrid_cocycle_completion_object_v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "base_closed_class": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "cocycle_component": {
+    "route_id": "fekete_sup_cocycle_route",
+    "observable_family": "selector_weighted_operator_growth_observable",
+    "status": "closed_in_note",
+    "summary": "Closed six-primitive cocycle-pressure theorem object."
+  },
+  "completion_component": {
+    "endomap_id": "packaging_completion_endomap_v1",
+    "status": "real_completion_object",
+    "summary": "Fixed-point packaging object with saturation and P4<-P5 refinement."
+  },
+  "candidate_hybrid_story": {
+    "route_id": "hybrid_same_class_stronger_object",
+    "label": "Hybrid same-class stronger object",
+    "description": "The hybrid object combines closed cocycle pressure with packaging completion fixed points and saturation, yielding richer object identity but not a broader class."
+  },
+  "candidate_hybrid_options": [
+    "cocycle_final_best_story",
+    "hybrid_same_class_stronger_object",
+    "hybrid_with_forcing_broader_candidate"
+  ],
+  "broadening_tests": {
+    "object_identity_broadening_test": {
+      "result": true,
+      "note": "Completion fixed points distinguish packaged objects not separated by the cocycle route alone."
+    },
+    "saturation_forcing_test": {
+      "result": true,
+      "note": "Saturation occurs and `P4<-P5` refinement events produce nontrivial packaged strata."
+    },
+    "class_broadening_test": {
+      "result": false,
+      "note": "Current evidence does not support a class strictly broader than `continuous_full_loop_lawful_kernel_class_shell_stable`."
+    },
+    "p5_theorem_role_test": {
+      "result": true,
+      "note": "P5 is class-defining for completion objects, not merely observable-supporting."
+    }
+  },
+  "decision": "hybrid_real_but_not_yet_broader",
+  "object_identity_verdict": "broader_object_identity",
+  "saturation_verdict": "nontrivial_saturation_with_new_strata",
+  "p4_from_p5_forcing_verdict": "active_and_material",
+  "class_broadening_verdict": "not_broader_on_current_evidence",
+  "notes": [
+    "The hybrid object is real and richer than the cocycle route alone.",
+    "The current diagnostics do not justify a broader theorem class yet.",
+    "The completion object changes object identity, but the class relation remains the same-class refinement story."
+  ]
+}

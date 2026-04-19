@@ -1,0 +1,184 @@
+{
+  "schema_version": "v1",
+  "dependency_id": "canonical_hybrid_extension_v1",
+  "base_theory_id": "T0_cocycle_pressure_theory",
+  "extended_theory_id": "T1_hybrid_cocycle_plus_completion_theory",
+  "assumptions_path": "docs/internal/continuous_theorem_assumptions_v1.json",
+  "theorem_statement_short": "On the audited shell-stable six-primitive class, the canonical hybrid object is a strict intrinsic extension of the cocycle object because the T1 packaged-object map does not factor through the T0 cocycle object map, while saturation, forcing, and macro-admissibility obstruction remain active.",
+  "assumptions_used": [
+    "continuous_operator_substrate",
+    "full_six_primitive_closure",
+    "p1_rewrite_active",
+    "p2_gating_active",
+    "p3_timescale_adaptation",
+    "p4_nondegenerate_lens_competition",
+    "p5_nondegenerate_packaging_competition",
+    "p6_budget_dynamics_active",
+    "primitive_knockout_fragility",
+    "persistent_kernel_variation",
+    "hysteresis_stable_selection",
+    "lawful_exploratory_regime",
+    "no_fast_collapse",
+    "parameter_shell_robustness",
+    "generated_object_extraction_plausible"
+  ],
+  "lemmas": [
+    {
+      "lemma_id": "CH-LEM-1",
+      "label": "base-object well-posedness",
+      "statement_short": "The T0 cocycle object map is well-defined on the audited shell-stable class.",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "parameter_shell_robustness"
+      ],
+      "depends_on": [
+        "CP-THM-7"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CH-LEM-2",
+      "label": "extended packaged-object well-posedness",
+      "statement_short": "The T1 packaged-object map is well-defined via the completion endomap and its fixed-point strata on the same shell.",
+      "assumptions_used": [
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CH-LEM-1"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CH-LEM-3",
+      "label": "saturation/fixed-point object lemma",
+      "statement_short": "The completion object saturates and yields stable packaged-object strata on the audited shell.",
+      "assumptions_used": [
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "parameter_shell_robustness"
+      ],
+      "depends_on": [
+        "CH-LEM-2"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CH-LEM-4",
+      "label": "forcing creates new packaged-object strata",
+      "statement_short": "Material P4<-P5 forcing produces persistent new packaged-object strata after saturation.",
+      "assumptions_used": [
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active",
+        "parameter_shell_robustness"
+      ],
+      "depends_on": [
+        "CH-LEM-3"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CH-LEM-5",
+      "label": "non-factorization / non-definability lemma",
+      "statement_short": "The T1 packaged-object map does not factor through the T0 cocycle object map on the audited shell.",
+      "assumptions_used": [
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CH-LEM-1",
+        "CH-LEM-2",
+        "CH-LEM-4"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CH-COR-6",
+      "label": "macro-admissibility obstruction corollary",
+      "statement_short": "Macro-admissibility failure shows T0 is too coarse for the same packaged objects on the canonical hybrid object.",
+      "assumptions_used": [
+        "p2_gating_active",
+        "p6_budget_dynamics_active",
+        "lawful_exploratory_regime",
+        "no_fast_collapse"
+      ],
+      "depends_on": [
+        "CH-LEM-3"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CH-THM-7",
+      "label": "canonical strict-extension theoremlet",
+      "statement_short": "The canonical hybrid object is a strict intrinsic extension of the cocycle object on the audited shell.",
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "primitive_knockout_fragility",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CH-LEM-5",
+        "CH-COR-6"
+      ],
+      "status": "closed_in_note"
+    }
+  ],
+  "dependency_edges": [
+    {
+      "from": "CP-THM-7",
+      "to": "CH-LEM-1"
+    },
+    {
+      "from": "CH-LEM-1",
+      "to": "CH-LEM-2"
+    },
+    {
+      "from": "CH-LEM-2",
+      "to": "CH-LEM-3"
+    },
+    {
+      "from": "CH-LEM-3",
+      "to": "CH-LEM-4"
+    },
+    {
+      "from": "CH-LEM-1",
+      "to": "CH-LEM-5"
+    },
+    {
+      "from": "CH-LEM-2",
+      "to": "CH-LEM-5"
+    },
+    {
+      "from": "CH-LEM-4",
+      "to": "CH-LEM-5"
+    },
+    {
+      "from": "CH-LEM-3",
+      "to": "CH-COR-6"
+    },
+    {
+      "from": "CH-LEM-5",
+      "to": "CH-THM-7"
+    },
+    {
+      "from": "CH-COR-6",
+      "to": "CH-THM-7"
+    }
+  ],
+  "witness_families": [
+    "generated.continuous_full_loop_kernel",
+    "generated.continuous_full_loop_kernel_shell"
+  ],
+  "gap_status": {
+    "status": "closed_on_audited_shell_class",
+    "note": "The canonical object and intrinsic extension are closed in note on the audited shell."
+  }
+}

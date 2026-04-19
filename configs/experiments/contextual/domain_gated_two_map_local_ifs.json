@@ -1,0 +1,38 @@
+{
+  "description": "Two contractive maps with disjoint gating domains.",
+  "engine": "local_ifs",
+  "experiment_id": "domain-gated-two-map-local-ifs",
+  "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+  "lens_mode": "coalesced_intervals",
+  "output_root": "results/contextual_family_samples/domain_gated_two_map_local_ifs",
+  "packaging_mode": "merge_touching",
+  "parameters": {
+    "constructor": "domain_gated_two_map_local_ifs",
+    "iterations": 8,
+    "maps": [
+      {
+        "a": 0.5,
+        "b": 0.0,
+        "domain": [
+          0.0,
+          0.5
+        ],
+        "label": "left"
+      },
+      {
+        "a": 0.5,
+        "b": 0.5,
+        "domain": [
+          0.5,
+          1.0
+        ],
+        "label": "right"
+      }
+    ]
+  },
+  "run_controls": {
+    "save_outputs": true,
+    "seed": 0
+  },
+  "schema_version": "1.0"
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "sweep_id": "local-pressure-atlas-v1",
+  "description": "Depth sweep across baseline and contextual families using the local-pressure pipeline.",
+  "families": [
+    {
+      "family_id": "classical.middle_thirds",
+      "config_path": "configs/experiments/classical/middle_thirds.json",
+      "parameter_points": [
+        {"parameter_point_id": "d4", "depth": 4},
+        {"parameter_point_id": "d6", "depth": 6},
+        {"parameter_point_id": "d8", "depth": 8},
+        {"parameter_point_id": "d10", "depth": 10},
+        {"parameter_point_id": "d12", "depth": 12}
+      ]
+    },
+    {
+      "family_id": "classical.restricted_digits_base5_024",
+      "config_path": "configs/experiments/classical/restricted_digits_base5_024.json",
+      "parameter_points": [
+        {"parameter_point_id": "d4", "depth": 4},
+        {"parameter_point_id": "d6", "depth": 6},
+        {"parameter_point_id": "d8", "depth": 8},
+        {"parameter_point_id": "d10", "depth": 10},
+        {"parameter_point_id": "d12", "depth": 12}
+      ]
+    },
+    {
+      "family_id": "finite_state.adjacency_no_consecutive_2_base3",
+      "config_path": "configs/experiments/finite_state/adjacency_no_consecutive_2_base3.json",
+      "parameter_points": [
+        {"parameter_point_id": "d4", "depth": 4},
+        {"parameter_point_id": "d6", "depth": 6},
+        {"parameter_point_id": "d8", "depth": 8},
+        {"parameter_point_id": "d10", "depth": 10},
+        {"parameter_point_id": "d12", "depth": 12}
+      ]
+    },
+    {
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "config_path": "configs/experiments/contextual/prefix_memory_no_22_base3.json",
+      "parameter_points": [
+        {"parameter_point_id": "d4", "depth": 4},
+        {"parameter_point_id": "d6", "depth": 6},
+        {"parameter_point_id": "d8", "depth": 8},
+        {"parameter_point_id": "d10", "depth": 10},
+        {"parameter_point_id": "d12", "depth": 12}
+      ]
+    }
+  ]
+}

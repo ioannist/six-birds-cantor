@@ -1,0 +1,29 @@
+{
+  "description": "Alternating stage rules in base 3 for contextual removal.",
+  "engine": "nonautonomous_symbolic",
+  "experiment_id": "stage-dependent-alternating-removal",
+  "family_id": "contextual_local.stage_dependent_alternating_removal",
+  "lens_mode": "coalesced_intervals",
+  "output_root": "results/contextual_family_samples/stage_dependent_alternating_removal",
+  "packaging_mode": "merge_touching",
+  "parameters": {
+    "base": 3,
+    "constructor": "stage_dependent_alternating_removal",
+    "snapshot_depth": 8,
+    "stage_digit_sets": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "run_controls": {
+    "save_outputs": true,
+    "seed": 0
+  },
+  "schema_version": "1.0"
+}

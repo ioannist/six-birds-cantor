@@ -1,0 +1,293 @@
+{
+  "candidate_classes": [
+    {
+      "class_id": "safe_finite_memory_local_subclass",
+      "key_assumptions": [
+        "finite memory or explicit finite control",
+        "bounded distortion / contraction",
+        "usable separation or overlap control",
+        "tractable admissible-word or interval-union bookkeeping"
+      ],
+      "label": "Safe finite-memory/local subclass",
+      "one_line_definition": "Bounded-memory symbolic or simple local-domain Cantor systems with explicit finite control and separation hypotheses.",
+      "selection_status": "primary",
+      "theorem_targets": [
+        "upper/lower pressure bounds",
+        "coincidence on a narrow subclass",
+        "initial exact-dimensional control examples"
+      ]
+    },
+    {
+      "class_id": "quasi_multiplicative_local_cantor_class",
+      "key_assumptions": [
+        "quasi-multiplicativity or almost-additivity",
+        "bounded distortion",
+        "recoverable local admissibility structure"
+      ],
+      "label": "Quasi-multiplicative local Cantor class",
+      "one_line_definition": "Local Cantor systems with enough almost-additive or quasi-multiplicative structure to support a Bowen-style pressure zero formula.",
+      "selection_status": "stretch",
+      "theorem_targets": [
+        "upper/lower pressure bounds",
+        "Bowen formula via pressure coincidence",
+        "path toward equilibrium measures"
+      ]
+    },
+    {
+      "class_id": "tempered_memory_stretch_class",
+      "key_assumptions": [
+        "tempered memory growth",
+        "bounded distortion",
+        "enough recurrence/control for thermodynamic formalism"
+      ],
+      "label": "Tempered-memory stretch class",
+      "one_line_definition": "Broad context-dependent local systems with slowly varying memory/protocol complexity approaching the full project vision.",
+      "selection_status": "reserve",
+      "theorem_targets": [
+        "full local Bowen package",
+        "equilibrium measure statement",
+        "largest non-SFT theorem scope"
+      ]
+    }
+  ],
+  "evidence_refs": [
+    "docs/internal/rigorous_method_decision_v1.md",
+    "docs/internal/observation_claim_ledger_v1.json",
+    "configs/pica/cantor_pica_alignment_v1.json",
+    "results/robustness/local_pressure_stability_v1/stability_summary.json",
+    "results/local_pressure/prefix-memory-no-22-base3/result_manifest.json",
+    "results/local_pressure/feedback-lens-protocol-coupled/result_manifest.json"
+  ],
+  "family_membership": [
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "in",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "in"
+      },
+      "family_id": "classical.middle_thirds",
+      "primary_class_note": "Classical disjoint baseline sits inside the safe class as a control anchor."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "in",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "in"
+      },
+      "family_id": "classical.restricted_digits_base4_02",
+      "primary_class_note": "Classical restricted-digit baseline is safely inside the narrow theorem class."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "in",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "in"
+      },
+      "family_id": "classical.restricted_digits_base5_024",
+      "primary_class_note": "Classical restricted-digit baseline is safely inside the narrow theorem class."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "generated.pg_protocol_lens",
+      "primary_class_note": "Frozen generated protocol/lens attractor is a stable structural anchor for the safe class."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "generated.pg_rewrite_bundle",
+      "primary_class_note": "Frozen generated rewrite bundle remains within the safe finite-memory envelope at the frozen depth."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "unknown",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "generated.pg_full_loop_bundle",
+      "primary_class_note": "Attempted full-loop generated bundle is tracked conservatively until P5 causal closure is demonstrated."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+      "primary_class_note": "Simple domain-gated local IFS is the key nontrivial local member to keep inside the primary class."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "unknown",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "contextual_local.feedback_budget_gate_and_packaging",
+      "primary_class_note": "Tractable computationally, but theorem-class inclusion is still premature."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "unknown",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "contextual_local.feedback_lens_protocol_coupled",
+      "primary_class_note": "Current evidence is too unstable to include this feedback family in the primary theorem class."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "contextual_local.prefix_memory_last_digit_rule",
+      "primary_class_note": "Bounded-memory contextual rule is a realistic primary-class theorem target."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "primary_class_note": "Bounded-memory contextual rule has the best current evidence for primary-class inclusion."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "out",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "contextual_local.stage_dependent_alternating_removal",
+      "primary_class_note": "This is a nonautonomous control and should stay outside the primary theorem class."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "out",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "out"
+      },
+      "family_id": "control.middle_thirds_symbolic",
+      "primary_class_note": "Pure control family belongs in the narrow class but does not motivate broader local theorems."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "out",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "out"
+      },
+      "family_id": "control.restricted_digits_base5_024_symbolic",
+      "primary_class_note": "Pure control family belongs in the narrow class but does not motivate broader local theorems."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "in",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "finite_state.adjacency_no_consecutive_2_base3",
+      "primary_class_note": "Finite-memory symbolic control is a core member of the safe class."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "in",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "finite_state.graph_directed_two_vertex_similarity",
+      "primary_class_note": "Graph-directed finite-state probe is compatible with the safe class as a control case."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "unknown",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "frontier.fw_delayed_return_gate_a1",
+      "primary_class_note": "Frontier delayed-return witness added after T14; not classified in the original theorem shortlist."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "unknown",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "frontier.fw_delayed_return_gate_a2",
+      "primary_class_note": "Frontier delayed-return witness added after T14; not classified in the original theorem shortlist."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "unknown",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "frontier.fw_delayed_return_gate_a3",
+      "primary_class_note": "Frontier delayed-return witness added after T14; not classified in the original theorem shortlist."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "out",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "external.countable_gdms_countable_alphabet",
+      "primary_class_note": "Imported external countable-GDMS witness is tracked but not claimed by the current theorem shortlist."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "out",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "external.local_ifs_non_sft_bridge",
+      "primary_class_note": "Imported local-IFS bridge is tracked as a future branch, not as part of the current theorem shortlist."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "out",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "external.pseudo_markov_countable_alphabet",
+      "primary_class_note": "Imported pseudo-Markov witness is tracked but not claimed by the current theorem shortlist."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "in",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "toy.local_ifs.nested_three_map_local_ifs",
+      "primary_class_note": "Toy local-IFS example is a plausible member of the safe local subclass."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "out",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "generated.continuous_full_loop_kernel",
+      "primary_class_note": "Continuous full-loop kernel is tracked as a theorem-bridge control, not a member of the original finite-memory shortlist."
+    },
+    {
+      "candidate_membership": {
+        "quasi_multiplicative_local_cantor_class": "unknown",
+        "safe_finite_memory_local_subclass": "out",
+        "tempered_memory_stretch_class": "unknown"
+      },
+      "family_id": "generated.continuous_full_loop_kernel_shell",
+      "primary_class_note": "Continuous shell witness is tracked as a theorem-bridge control outside the original finite-memory shortlist."
+    }
+  ],
+  "generated_at_utc": "2026-03-17T12:58:24.799499Z",
+  "primary_class_id": "safe_finite_memory_local_subclass",
+  "schema_version": "1.0",
+  "shortlist_id": "theorem_class_shortlist_v1",
+  "stretch_class_id": "quasi_multiplicative_local_cantor_class"
+}

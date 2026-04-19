@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "frontier_target_id": "frontier-target-class-v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "working_class_id": "bounded_return_delayed_gate_subclass",
+  "stretch_class_id": "countable_state_delayed_return_local_domain_class",
+  "candidate_classes": [
+    {
+      "class_id": "bounded_return_delayed_gate_subclass",
+      "label": "Bounded-return delayed-gate subclass",
+      "one_line_definition": "Stationary delayed-return local-domain families with explicit gate/hold/return structure and bounded checked return regime.",
+      "frontier_value": "Best conservative next theorem class: better than trivial induced collapse but still directly supported by the frozen witness data.",
+      "proof_outlook": "Most realistic next target because it only needs bounded-return induction plus truncation control, not a full countable-state theory.",
+      "selection_status": "working"
+    },
+    {
+      "class_id": "finite_state_renewal_local_domain_subclass",
+      "label": "Finite-state renewal local-domain subclass",
+      "one_line_definition": "Local-domain families whose induced coding is nontrivial but remains effectively finite-state renewal-like.",
+      "frontier_value": "Useful reserve if delayed-return evidence fails to widen beyond renewal-like behavior.",
+      "proof_outlook": "Probably easier than the stretch class, but less valuable if the delayed-return structure can already be isolated directly.",
+      "selection_status": "reserve"
+    },
+    {
+      "class_id": "countable_state_delayed_return_local_domain_class",
+      "label": "Countable-state delayed-return local-domain class",
+      "one_line_definition": "Delayed-return local-domain families with genuinely growing induced return structure not reducible to a small finite-state renewal model.",
+      "frontier_value": "Real frontier target if the delayed-return witnesses can be shown to keep growing induced structure beyond the checked cap.",
+      "proof_outlook": "High-value stretch class, but currently blocked by lack of structural evidence beyond finite-cap diagnostics.",
+      "selection_status": "stretch"
+    }
+  ],
+  "witness_families": [
+    {
+      "family_id": "frontier.fw_delayed_return_gate_a3",
+      "config_path": "configs/experiments/frontier/fw_delayed_return_gate_a3.json",
+      "template_origin": "delayed_return_domain_gated",
+      "search_status": "promising",
+      "why_it_matters": "Primary witness: best-ranked delayed-return candidate with nonconstant observed return lengths and induced alphabet growth."
+    },
+    {
+      "family_id": "frontier.fw_delayed_return_gate_a1",
+      "config_path": "configs/experiments/frontier/fw_delayed_return_gate_a1.json",
+      "template_origin": "delayed_return_domain_gated",
+      "search_status": "promising",
+      "why_it_matters": "Reserve witness: same template with slightly different scaling, useful to test that the working class is not pinned to one parameter choice."
+    },
+    {
+      "family_id": "frontier.fw_delayed_return_gate_a2",
+      "config_path": "configs/experiments/frontier/fw_delayed_return_gate_a2.json",
+      "template_origin": "delayed_return_domain_gated",
+      "search_status": "promising",
+      "why_it_matters": "Reserve witness: same delayed-return shape but more aggressive loop scaling, useful as a stress-test family."
+    }
+  ],
+  "family_membership": [
+    {
+      "family_id": "frontier.fw_delayed_return_gate_a3",
+      "working_class_membership": "in",
+      "stretch_class_membership": "unknown",
+      "note": "Primary witness for the bounded-return delayed-gate class; stretch-class inclusion remains unproved because the observed induced structure is still finite-cap evidence."
+    },
+    {
+      "family_id": "frontier.fw_delayed_return_gate_a1",
+      "working_class_membership": "in",
+      "stretch_class_membership": "unknown",
+      "note": "Reserve witness with the same delayed-return shape; current data supports working-class inclusion but not a countable-state claim."
+    },
+    {
+      "family_id": "frontier.fw_delayed_return_gate_a2",
+      "working_class_membership": "in",
+      "stretch_class_membership": "unknown",
+      "note": "Included in the working class as a stress-test witness, but held back from stretch inclusion because the stronger loop may still collapse to renewal-like behavior on larger caps."
+    }
+  ],
+  "decision": "advance_bounded_return_delayed_gate",
+  "notes": [
+    "The frozen delayed-return witnesses are better than the old domain-gated family because they retain nonconstant induced return structure instead of collapsing to a one-symbol core.",
+    "The working class is kept narrower than the stretch class because the current evidence is finite-cap diagnostic evidence, not a countable-state theorem scaffold.",
+    "The next theorem task is an assumptions-and-diagnostics pack for delayed-return induction, not a proof of the stretch class."
+  ]
+}

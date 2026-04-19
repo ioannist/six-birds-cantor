@@ -1,0 +1,13 @@
+{
+  "comparison_csv_path": "results/transfer_operator/baseline_comparison.csv",
+  "comparison_json_path": "results/transfer_operator/baseline_comparison.json",
+  "generated_at_utc": "2026-03-17T11:42:51.711919Z",
+  "linked_manifests": [
+    "results/certified_bracketing/middle-thirds-baseline/result_manifest.json",
+    "results/certified_bracketing/adjacency-no-consecutive-2-base3-baseline/result_manifest.json",
+    "results/local_pressure/middle-thirds-baseline/result_manifest.json",
+    "results/local_pressure/adjacency-no-consecutive-2-base3-baseline/result_manifest.json",
+    "results/local_pressure/feedback-lens-protocol-coupled/result_manifest.json"
+  ],
+  "note_path": "docs/internal/rigorous_method_decision_v1.md"
+}

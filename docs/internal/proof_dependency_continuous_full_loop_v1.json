@@ -1,0 +1,135 @@
+{
+  "assumptions_path": "docs/internal/continuous_theorem_assumptions_v1.json",
+  "dependency_edges": [
+    ["CK-LEM-1", "CK-LEM-2"],
+    ["CK-LEM-2", "CK-LEM-3"],
+    ["CK-LEM-3", "CK-LEM-4"],
+    ["CK-LEM-4", "CK-LEM-5"],
+    ["CK-LEM-5", "CK-LEM-6"],
+    ["CK-LEM-6", "CK-THM-7"]
+  ],
+  "dependency_id": "proof_dependency_continuous_full_loop_v1",
+  "gap_status": {},
+  "lemmas": [
+    {
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [],
+      "label": "state-space well-posedness",
+      "lemma_id": "CK-LEM-1",
+      "status": "closed_in_note",
+      "statement_short": "The continuous kernel state and auxiliary variables form a well-posed cocycle state space."
+    },
+    {
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "p1_rewrite_active",
+        "p2_gating_active"
+      ],
+      "depends_on": [
+        "CK-LEM-1"
+      ],
+      "label": "refresh/invalidation lemma",
+      "lemma_id": "CK-LEM-2",
+      "status": "closed_in_note",
+      "statement_short": "Informant refresh and cache invalidation are consistent with the continuous update law."
+    },
+    {
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "hysteresis_stable_selection",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition"
+      ],
+      "depends_on": [
+        "CK-LEM-1",
+        "CK-LEM-2"
+      ],
+      "label": "hysteretic selector lemma",
+      "lemma_id": "CK-LEM-3",
+      "status": "closed_in_note",
+      "statement_short": "Lens and packaging selection with hysteresis define stable selector dynamics."
+    },
+    {
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active"
+      ],
+      "depends_on": [
+        "CK-LEM-2",
+        "CK-LEM-3"
+      ],
+      "label": "primitive-closure lemma",
+      "lemma_id": "CK-LEM-4",
+      "status": "closed_in_note",
+      "statement_short": "All six primitives are causally active and enter the update law essentially."
+    },
+    {
+      "assumptions_used": [
+        "lawful_exploratory_regime",
+        "parameter_shell_robustness",
+        "no_fast_collapse"
+      ],
+      "depends_on": [
+        "CK-LEM-4"
+      ],
+      "label": "forward-invariant regime lemma",
+      "lemma_id": "CK-LEM-5",
+      "status": "closed_in_note",
+      "statement_short": "A lawful exploratory regime class is forward-invariant under the chosen update law."
+    },
+    {
+      "assumptions_used": [
+        "persistent_kernel_variation",
+        "primitive_knockout_fragility",
+        "hysteresis_stable_selection",
+        "p6_budget_dynamics_active"
+      ],
+      "depends_on": [
+        "CK-LEM-3",
+        "CK-LEM-4"
+      ],
+      "label": "nondegenerate exploratory dynamics lemma",
+      "lemma_id": "CK-LEM-6",
+      "status": "closed_in_note",
+      "statement_short": "Persistent variation, switching, and budget/tau activity rule out collapse within the class."
+    },
+    {
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "lawful_exploratory_regime",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CK-LEM-5",
+        "CK-LEM-6"
+      ],
+      "label": "continuous full-loop lawfulness theoremlet",
+      "lemma_id": "CK-THM-7",
+      "status": "closed_in_note",
+      "statement_short": "The working class supports a genuine lawful exploratory full-loop regime."
+    }
+  ],
+  "selected_route": "deterministic_skew_product_with_budget_feedback",
+  "stretch_class_id": "continuous_full_loop_lawful_kernel_class_with_wider_parameter_shell",
+  "theorem_statement_short": "A continuous six-primitive skew-product cocycle has a nonempty compact forward-invariant lawful exploratory regime class with active hysteretic lens/packaging competition and nondegenerate budget/tau feedback.",
+  "witness_families": [
+    {
+      "family_id": "generated.continuous_full_loop_kernel",
+      "role": "required_working_witness"
+    },
+    {
+      "family_id": "generated.continuous_full_loop_kernel_shell",
+      "role": "required_stretch_witness"
+    }
+  ],
+  "working_class_id": "continuous_full_loop_lawful_kernel_class"
+}

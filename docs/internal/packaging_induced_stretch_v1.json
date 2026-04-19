@@ -1,0 +1,96 @@
+{
+  "schema_version": "v1",
+  "target_id": "packaging_induced_stretch_v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "base_closed_class": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "candidate_routes": [
+    {
+      "route_id": "packaging_induced_shell_stable_class",
+      "label": "Packaging-induced shell-stable class",
+      "depends_on_active_p5": true,
+      "broadening_potential": "meaningful_but_class_equivalent",
+      "proof_outlook": "reserve",
+      "selection_status": "selected"
+    },
+    {
+      "route_id": "packaging_induced_wider_shell_class",
+      "label": "Packaging-induced wider-shell class",
+      "depends_on_active_p5": true,
+      "broadening_potential": "unsupported_by_current_diagnostics",
+      "proof_outlook": "stretch_only",
+      "selection_status": "reserve"
+    },
+    {
+      "route_id": "cocycle_route_is_final_best_story",
+      "label": "Cocycle route is final best story",
+      "depends_on_active_p5": true,
+      "broadening_potential": "default_closed_route",
+      "proof_outlook": "default",
+      "selection_status": "rejected"
+    }
+  ],
+  "candidate_observables": [
+    {
+      "observable_id": "package_switching_growth_observable",
+      "label": "Package-switching growth observable",
+      "route_id": "packaging_induced_shell_stable_class",
+      "description": "Finite-horizon growth observable built from package switches and package scores."
+    },
+    {
+      "observable_id": "package_entropy_complexity_observable",
+      "label": "Package entropy / complexity observable",
+      "route_id": "packaging_induced_shell_stable_class",
+      "description": "Observable encoding the diversity and entropy of active packaging choices."
+    },
+    {
+      "observable_id": "package_budget_weighted_growth_observable",
+      "label": "Package/budget-weighted growth observable",
+      "route_id": "packaging_induced_shell_stable_class",
+      "description": "Observable coupling packaging score, budget, and return-core activity."
+    }
+  ],
+  "candidate_measures": [
+    {
+      "measure_id": "package_conditional_empirical_measure_candidate",
+      "label": "Package-conditional empirical measure candidate",
+      "route_id": "packaging_induced_shell_stable_class",
+      "description": "Empirical measure conditioned on the active packaging and selector state."
+    },
+    {
+      "measure_id": "packaging_selector_invariant_measure_candidate",
+      "label": "Packaging-selector invariant measure candidate",
+      "route_id": "packaging_induced_shell_stable_class",
+      "description": "Selector/package invariant-measure candidate built from the active packaging dynamics."
+    },
+    {
+      "measure_id": "reserve_stretch_measure_object",
+      "label": "Reserve/stretch measure object",
+      "route_id": "packaging_induced_wider_shell_class",
+      "description": "Reserve measure object for a broader shell if later evidence supports it."
+    }
+  ],
+  "broadening_tests": {
+    "class_broadening_test": {
+      "result": false,
+      "note": "The packaging route stays on the shell-stable closed class; no strictly broader class is supported."
+    },
+    "primitive_value_test": {
+      "result": false,
+      "note": "P5 is theorem-relevant and indispensable for packaging dynamics, but not stronger than the cocycle route at the class level."
+    },
+    "nondegeneracy_test": {
+      "result": true,
+      "note": "Packaging observables are numerically distinct from the selector-weighted cocycle observable."
+    },
+    "robustness_test": {
+      "result": true,
+      "note": "The route survives on the frozen shell configs, but without evidence of broader class coverage."
+    }
+  },
+  "decision": "packaging_route_plausible_but_not_broader",
+  "notes": [
+    "The packaging route is mathematically meaningful and P5-heavy, but it does not yet justify a broader theorem class.",
+    "The cocycle route remains the closed default proof story.",
+    "The frozen continuous configs used in the diagnostics are the shell-stable kernel and the wider shell witness."
+  ]
+}

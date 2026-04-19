@@ -1,0 +1,50 @@
+{
+  "cache_invalidation_rules": [
+    "invalidate cached informants when the kernel signature changes",
+    "invalidate lens state when a lens switch occurs",
+    "invalidate packaging state when a packaging switch occurs"
+  ],
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "lens_algorithms": [
+    "spectral_lens",
+    "row_similarity_cluster_lens",
+    "audit_flow_quantile_lens"
+  ],
+  "notes": [
+    "The substrate is a continuous kernel/operator state rather than a finite map list.",
+    "P5 is causal only if its selected packaging changes P1 rewrite targeting and P2 gating targeting."
+  ],
+  "packaging_algorithms": [
+    "partition_cluster_packaging",
+    "return_core_packaging",
+    "budget_audit_packaging"
+  ],
+  "pilot_decision": "continuous_full_loop_working",
+  "primitive_roles": {
+    "P1": "kernel rewrite driven by packaging and lens",
+    "P2": "gating of kernel viability and support",
+    "P3": "timescale and protocol adaptation",
+    "P4": "competing lens computation",
+    "P5": "competing packaging production and selection",
+    "P6": "budget / income / cost control and stochastic temperature"
+  },
+  "schema_version": "v1",
+  "state_variables": [
+    "kernel_operator_state",
+    "active_lens",
+    "active_packaging",
+    "tau",
+    "budget_ledger",
+    "phase",
+    "protocol_state",
+    "action_weights",
+    "informant_cache",
+    "cache_invalidation_counters"
+  ],
+  "substrate_id": "continuous_kernel_substrate_v1",
+  "budget_rules": [
+    "income increases with packaging score, lens score, and stability",
+    "cost increases with phase and switching pressure",
+    "budget modulates the stochastic temperature for primitive selection"
+  ]
+}

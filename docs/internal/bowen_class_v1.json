@@ -1,0 +1,75 @@
+{
+  "assumptions_used": [
+    "uniform_contraction",
+    "finite_memory_bound",
+    "stationary_admissibility_rule",
+    "bounded_distortion",
+    "usable_separation",
+    "feedback_free_admissibility",
+    "fixed_lens",
+    "fixed_packaging",
+    "lower_pressure_packaging_admissible",
+    "lens_affects_admissibility",
+    "packaging_affects_admissibility",
+    "exact_cylinder_packaging",
+    "disjoint_cylinder_geometry"
+  ],
+  "based_on_assumptions_path": "docs/internal/theorem_assumptions_v1.json",
+  "based_on_lower_dependency_path": "docs/internal/proof_dependency_lower_v1.json",
+  "based_on_upper_dependency_path": "docs/internal/proof_dependency_upper_v1.json",
+  "bowen_id": "bowen-class-v1",
+  "decision": "narrowed_and_proved",
+  "excluded_families": [
+    "contextual_local.prefix_memory_last_digit_rule",
+    "contextual_local.domain_gated_two_map_local_ifs",
+    "contextual_local.stage_dependent_alternating_removal",
+    "contextual_local.feedback_lens_protocol_coupled",
+    "contextual_local.feedback_budget_gate_and_packaging"
+  ],
+  "included_families": [
+    "classical.middle_thirds",
+    "classical.restricted_digits_base4_02",
+    "classical.restricted_digits_base5_024",
+    "contextual_local.prefix_memory_no_22_base3"
+  ],
+  "not_claimed_families": [
+    "control.middle_thirds_symbolic",
+    "control.restricted_digits_base5_024_symbolic",
+    "finite_state.adjacency_no_consecutive_2_base3",
+    "finite_state.graph_directed_two_vertex_similarity",
+    "external.countable_gdms_countable_alphabet",
+    "external.local_ifs_non_sft_bridge",
+    "external.pseudo_markov_countable_alphabet",
+    "generated.pg_protocol_lens",
+    "generated.pg_rewrite_bundle",
+    "generated.pg_full_loop_bundle",
+    "generated.continuous_full_loop_kernel",
+    "generated.continuous_full_loop_kernel_shell",
+    "frontier.fw_delayed_return_gate_a1",
+    "frontier.fw_delayed_return_gate_a2",
+    "frontier.fw_delayed_return_gate_a3",
+    "toy.local_ifs.nested_three_map_local_ifs"
+  ],
+  "notes": [
+    "Decision is narrowed_and_proved because the coincidence step closes cleanly only after restricting the primary class to exact-cylinder/disjoint-geometry packaging.",
+    "Every current family ID is accounted for across included_families, excluded_families, or not_claimed_families.",
+    "External imported witness configs are tracked as not claimed rather than silently added to the proved class.",
+    "The duplicate config path for contextual_local.domain_gated_two_map_local_ifs is treated as one family ID and remains excluded from the proved class."
+  ],
+  "proof_status": "proved_in_note",
+  "proved_class_id": "narrow_hybrid_affine_cylinder_class",
+  "proved_class_label": "Finite-memory affine class with exact cylinder packaging and disjoint cylinder geometry",
+  "rejected_hypotheses": [
+    "quasi_multiplicativity",
+    "tempered_memory",
+    "almost_additivity"
+  ],
+  "schema_version": "1.0",
+  "selected_hypothesis": "narrow_hybrid",
+  "theorem_statement_short": "For K in narrow_hybrid_affine_cylinder_class, dim_H K = s_* where P(s_*) = 0 and P is the common upper/lower pressure.",
+  "witness_families": [
+    "contextual_local.prefix_memory_no_22_base3",
+    "classical.middle_thirds",
+    "classical.restricted_digits_base5_024"
+  ]
+}

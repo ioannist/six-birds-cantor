@@ -1,0 +1,91 @@
+\section{The canonical hybrid object}\label{sec:canonical-object}
+
+The purpose of this section is to identify the mathematical object that the paper is actually about. The key point is that the theorem object is neither the raw trajectory of the continuous substrate nor the cocycle-level object alone nor the completion structure alone. It is a \emph{canonical hybrid object} in which a closed cocycle-pressure theory and a completion-based packaged-object theory coexist on the same audited shell.
+
+\subsection{Why the raw trajectory is not the theorem object}
+
+The continuous substrate evolves by the full six-mechanism update law
+\[
+x\mapsto F(x), \qquad x\in \mathcal{S}_{\mathrm{aud}}.
+\]
+This trajectory is the source of the mathematical structures we study, but it is not itself the theorem object. A theorem stated directly about raw trajectories would be too tied to the simulation-level presentation and would not distinguish between:
+\begin{itemize}
+    \item the cocycle-level object visible through the base theory,
+    \item the packaged fixed-point structure visible only after completion,
+    \item and the extension relation between those two levels.
+\end{itemize}
+What the paper needs is an object that remembers both the closed thermodynamic structure already present at the cocycle level and the new packaged strata created by completion.
+
+\subsection{The base theory \texorpdfstring{$\Tzero$}{T0} as an object map}
+
+The base theory \(\Tzero\) associates to each shell state \(x\in \mathcal{S}_{\mathrm{aud}}\) an object
+\[
+\pi_0(x)\in \mathcal{O}_0,
+\]
+where \(\mathcal{O}_0\) is the cocycle-level object space introduced in Section~\ref{sec:preliminaries}. The map
+\[
+\pi_0:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_0
+\]
+forgets the completion/fixed-point structure and retains only the cocycle-level description relevant to the closed pressure theoremlet. The resulting object theory is already nontrivial: on the audited shell, the associated selector-weighted cocycle pressure object closes and gives a mathematically stable thermodynamic description.
+
+However, the base theory is deliberately coarse. It does not, by itself, distinguish packaged strata created by the completion dynamics. In the language of the later strict-extension theoremlet, \(\Tzero\) is the base theory whose object map is too coarse to express the full packaged future.
+
+\subsection{The completion theory \texorpdfstring{$\Tone$}{T1} as a packaged-object map}
+
+The extended theory \(\Tone\) augments the cocycle-level object theory by the packaging endomap \cite{TsiokosCreateStone,TsiokosFoundations}
+\[
+E_{\tau,\ell}(\mu)=U_{\ell}\!\bigl(Q_{\ell}(\mu K^{\tau})\bigr).
+\]
+For each shell state \(x\), this completion mechanism yields a packaged-object map
+\[
+\pi_1(x)\in \mathcal{O}_1,
+\qquad
+\pi_1:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_1,
+\]
+where \(\mathcal{O}_1\) is the packaged-object space. Concretely, \(\pi_1(x)\) records the persistent fixed-point strata and their organization after completion, saturation, and material \(P4\leftarrow P5\) refinement.
+
+Thus \(\Tzero\) and \(\Tone\) do not differ merely by carrying two different observables on the same object. They define different object maps:
+\[
+\pi_0:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_0,
+\qquad
+\pi_1:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_1.
+\]
+The strict-extension theoremlet later proves that \(\pi_1\) is not definable from \(\pi_0\) on the audited shell.
+
+\subsection{The canonical hybrid object}
+
+The theorem object of the paper is the pair consisting of the base object and the completion object on the same shell state, together with the packaged fixed-point family. We write this schematically as
+\[
+\Hybrid(x)
+=
+\bigl(\pi_0(x),\,\pi_1(x),\,\mathcal{F}(x)\bigr),
+\qquad x\in \mathcal{S}_{\mathrm{aud}}.
+\]
+Here \(\mathcal{F}(x)\) denotes the persistent packaged strata associated with \(x\). The notation suppresses the explicit dependence on the completion endomap \(E_{\tau,\ell}\), but that endomap is part of the structure that defines \(\pi_1\) and \(\mathcal{F}(x)\).
+
+The hybrid object retains the base cocycle-pressure object needed for the pressure closure theoremlet, the packaged fixed-point object needed for the completion and extension theoremlets, and records both at the same shell state. The latter is what makes it possible to ask whether the packaged object is definable from the cocycle object.
+
+\subsection{Definability as factorization}
+
+The correct notion of definability for the extension problem is factorization of object maps \cite{LindMarcus1995SymbolicDynamics,Walters1986RelativePressure}. If the packaged-object map were definable from the cocycle-level object map on the audited shell, then there would exist a map
+\[
+\phi:\mathcal{O}_0\to \mathcal{O}_1
+\]
+such that
+\[
+\pi_1=\phi\circ\pi_0
+\qquad\text{on }\mathcal{S}_{\mathrm{aud}}.
+\]
+In that case the completion theory would add no genuinely new object structure: the packaged object would be recoverable from the base cocycle object.
+
+The strict-extension theoremlet states that this factorization fails on the audited shell: there exist shell states with the same \(\Tzero\)-object but different packaged-object strata in \(\Tone\). Novelty is certified by failure of factorization rather than by family breadth.
+
+\subsection{Saturation, forcing, and packaged strata}
+
+The completion theory is not static. The packaged strata arise through a sequence of completion operations that may saturate at a fixed theory depth. Saturation means that repeated completion at the current lens/timescale no longer produces new packaged objects. Material \(P4\leftarrow P5\) forcing then changes the lens and reveals additional packaged strata at the extended theory depth.
+
+This is why the hybrid object is richer than the cocycle object. The cocycle side supplies a closed thermodynamic base, but the packaged side carries fixed-point strata whose appearance depends on saturation and forcing. The hybrid object therefore has both a thermodynamic face and an extension-theoretic face.
+
+\subsection{Role in the theorem package}
+
+The four theoremlets live at different levels of the same object hierarchy: the lawfulness theoremlet concerns the audited shell carrying the full update law; the cocycle pressure closure theoremlet concerns the \(\Tzero\)-component \(\pi_0(x)\); the strict theory extension theoremlet concerns the relation between \(\pi_0(x)\) and \(\pi_1(x)\); and the conditional disintegration theoremlet concerns thermodynamic quantities on the hybrid object \(\Hybrid(x)\).

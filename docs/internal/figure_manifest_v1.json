@@ -1,0 +1,191 @@
+{
+  "allowed_claim_bindings": [
+    {
+      "allowed_final_paper_use": "core_claim",
+      "claim_id": "continuous_full_loop_lawfulness_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "figure_id": "fig_full_loop_continuous_substrate_regime"
+    },
+    {
+      "allowed_final_paper_use": "core_claim",
+      "claim_id": "continuous_full_loop_lawfulness_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "figure_id": "fig_primitive_knockout_closure"
+    },
+    {
+      "allowed_final_paper_use": "core_claim",
+      "claim_id": "cocycle_pressure_closure_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "figure_id": "tbl_pressure_closure_support"
+    },
+    {
+      "allowed_final_paper_use": "core_claim",
+      "claim_id": "strict_theory_extension_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "figure_id": "tbl_strict_theory_extension"
+    },
+    {
+      "allowed_final_paper_use": "core_claim",
+      "claim_id": "conditional_pressure_disintegration_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "figure_id": "tbl_conditional_disintegration"
+    },
+    {
+      "allowed_final_paper_use": "support_only",
+      "claim_id": "closure_deficit_proxy_support",
+      "claim_status": "supporting_evidence",
+      "figure_id": "tbl_closure_deficit_proxy_diagnostic"
+    }
+  ],
+  "figures": [
+    {
+      "allowed_claim_ids": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ],
+      "figure_id": "fig_full_loop_continuous_substrate_regime",
+      "note": "Manuscript-facing regime figure for the shell-stable six-primitive lawful object.",
+      "role": "core_figure",
+      "source_artifacts": [
+        "docs/internal/continuous_full_loop_theorem_package_v1.md",
+        "docs/internal/proof_dependency_continuous_full_loop_v1.json",
+        "results/level3_theorem_package/report.json"
+      ],
+      "status": "ready",
+      "supports_theoremlets": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ],
+      "title_short": "Continuous Substrate Regime"
+    },
+    {
+      "allowed_claim_ids": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ],
+      "figure_id": "fig_primitive_knockout_closure",
+      "note": "Closure/necessity figure for six-primitive activity within the lawfulness theoremlet.",
+      "role": "core_figure",
+      "source_artifacts": [
+        "docs/internal/proof_dependency_continuous_full_loop_v1.json",
+        "docs/internal/level3_theorem_package_v1.md"
+      ],
+      "status": "ready",
+      "supports_theoremlets": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ],
+      "title_short": "Primitive Closure Evidence"
+    },
+    {
+      "allowed_claim_ids": [],
+      "figure_id": "fig_stratumwise_root_separation_diagnostic",
+      "note": "Reserve-only diagnostic showing why direct stratumwise separation must not be used for core claims.",
+      "role": "reserve_figure",
+      "source_artifacts": [
+        "docs/internal/stratumwise_thermodynamic_distinction_v1.md",
+        "results/stratumwise_distinction/report.json"
+      ],
+      "status": "reserve",
+      "supports_theoremlets": [],
+      "title_short": "Rejected Stratumwise Route"
+    }
+  ],
+  "generated_at_utc": "2026-03-19T00:00:00Z",
+  "manifest_id": "figure_manifest_v1",
+  "nonclaim_bindings": [
+    {
+      "binding_type": "reserve_only",
+      "figure_id": "fig_stratumwise_root_separation_diagnostic",
+      "note": "This diagnostic may illustrate the rejected route internally but must not support a core claim.",
+      "protected_nonclaim_id": "no_direct_stratumwise_root-separation_theorem"
+    },
+    {
+      "binding_type": "support_only_guardrail",
+      "figure_id": "tbl_closure_deficit_proxy_diagnostic",
+      "note": "The proxy table may support interpretation only; it must not be used as a broader external claim.",
+      "protected_nonclaim_id": "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed"
+    },
+    {
+      "binding_type": "scope_guardrail",
+      "figure_id": "fig_full_loop_continuous_substrate_regime",
+      "note": "The regime figure is manuscript-safe only for the audited shell.",
+      "protected_nonclaim_id": "no_shell-general_theorem_beyond_the_audited_shell-stable_class"
+    }
+  ],
+  "notes": [
+    "The manifest is manuscript-facing and bound to the frozen Level-3 package only.",
+    "Core figures/tables may bind only to closed theoremlets or support-only claims allowed by the ledger."
+  ],
+  "paper_core_positioning": "level3_core_on_audited_shell",
+  "schema_version": "v1",
+  "tables": [
+    {
+      "allowed_claim_ids": [
+        "cocycle_pressure_closure_theoremlet"
+      ],
+      "figure_id": "tbl_pressure_closure_support",
+      "note": "Pressure-closure support table for the closed cocycle theoremlet.",
+      "role": "core_table",
+      "source_artifacts": [
+        "docs/internal/continuous_pressure_closure_v1.md",
+        "docs/internal/proof_dependency_continuous_pressure_v1.json",
+        "results/continuous_pressure_closure/report.json"
+      ],
+      "status": "ready",
+      "supports_theoremlets": [
+        "cocycle_pressure_closure_theoremlet"
+      ],
+      "title_short": "Pressure Closure Support"
+    },
+    {
+      "allowed_claim_ids": [
+        "strict_theory_extension_theoremlet"
+      ],
+      "figure_id": "tbl_strict_theory_extension",
+      "note": "Table covering saturation, forcing, non-definability, and macro-admissibility obstruction.",
+      "role": "core_table",
+      "source_artifacts": [
+        "docs/internal/strict_theory_extension_closure_v1.md",
+        "docs/internal/proof_dependency_strict_theory_extension_v1.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "status": "ready",
+      "supports_theoremlets": [
+        "strict_theory_extension_theoremlet"
+      ],
+      "title_short": "Strict Extension Summary"
+    },
+    {
+      "allowed_claim_ids": [
+        "conditional_pressure_disintegration_theoremlet"
+      ],
+      "figure_id": "tbl_conditional_disintegration",
+      "note": "Table for the weighted package-conditioned pressure gap on the canonical hybrid object.",
+      "role": "core_table",
+      "source_artifacts": [
+        "docs/internal/conditional_pressure_disintegration_v1.md",
+        "docs/internal/proof_dependency_conditional_disintegration_v1.json",
+        "results/conditional_disintegration/report.json"
+      ],
+      "status": "ready",
+      "supports_theoremlets": [
+        "conditional_pressure_disintegration_theoremlet"
+      ],
+      "title_short": "Conditional Disintegration"
+    },
+    {
+      "allowed_claim_ids": [
+        "closure_deficit_proxy_support"
+      ],
+      "figure_id": "tbl_closure_deficit_proxy_diagnostic",
+      "note": "Support-only table; may illustrate the interpretation but not serve as a closed KL theorem claim.",
+      "role": "support_table",
+      "source_artifacts": [
+        "results/conditional_disintegration/report.json",
+        "docs/internal/conditional_pressure_disintegration_v1.md"
+      ],
+      "status": "ready",
+      "supports_theoremlets": [
+        "conditional_pressure_disintegration_theoremlet"
+      ],
+      "title_short": "Closure-Deficit Proxy"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "dependency_id": "proof-dependency-overlap-v1",
+  "target_subclass_id": "bounded_overlap_equal_scale_prefix_memory_subclass",
+  "assumptions_path": "docs/internal/theorem_assumptions_v1.json",
+  "based_on_bounded_overlap_target_path": "docs/internal/bounded_overlap_target_v1.md",
+  "theoremlet_statement_short": "On the bounded-overlap equal-scale prefix-memory subclass, bounded cylinder multiplicity implies Z_n^L(s) <= Z_n^U(s) <= M Z_n^L(s), hence P^L(s)=P^U(s).",
+  "assumptions_used": [
+    "uniform_contraction",
+    "finite_memory_bound",
+    "stationary_admissibility_rule",
+    "bounded_distortion",
+    "usable_separation",
+    "feedback_free_admissibility",
+    "fixed_lens",
+    "fixed_packaging",
+    "lower_pressure_packaging_admissible",
+    "exact_cylinder_packaging",
+    "bounded_cylinder_multiplicity",
+    "equal_scale_cylinders"
+  ],
+  "lemmas": [
+    {
+      "lemma_id": "LEM-OVL-1",
+      "label": "Bounded cylinder multiplicity lemma",
+      "statement_short": "Every point lies in at most M depth-n cylinders, with M independent of n, on the target subclass.",
+      "assumptions_used": [
+        "finite_memory_bound",
+        "stationary_admissibility_rule",
+        "usable_separation",
+        "bounded_cylinder_multiplicity",
+        "equal_scale_cylinders"
+      ],
+      "depends_on": [],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "LEM-OVL-2",
+      "label": "Bounded-ratio lemma",
+      "statement_short": "For every relevant s and depth n, Z_n^L(s) <= Z_n^U(s) <= M Z_n^L(s).",
+      "assumptions_used": [
+        "exact_cylinder_packaging",
+        "equal_scale_cylinders",
+        "bounded_cylinder_multiplicity"
+      ],
+      "depends_on": [
+        "LEM-OVL-1"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "COR-OVL-3",
+      "label": "Pressure coincidence corollary",
+      "statement_short": "The bounded-ratio estimate implies P^L(s)=P^U(s) for the target subclass.",
+      "assumptions_used": [
+        "bounded_cylinder_multiplicity"
+      ],
+      "depends_on": [
+        "LEM-OVL-2"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "THM-OVL-1",
+      "label": "Bounded-overlap coincidence theoremlet",
+      "statement_short": "The T19 coincidence step survives on the target subclass after replacing disjointness by bounded multiplicity.",
+      "assumptions_used": [
+        "finite_memory_bound",
+        "stationary_admissibility_rule",
+        "usable_separation",
+        "exact_cylinder_packaging",
+        "bounded_cylinder_multiplicity",
+        "equal_scale_cylinders"
+      ],
+      "depends_on": [
+        "LEM-OVL-1",
+        "LEM-OVL-2",
+        "COR-OVL-3"
+      ],
+      "status": "closed_in_note"
+    }
+  ],
+  "dependency_edges": [
+    {
+      "from": "LEM-OVL-1",
+      "to": "LEM-OVL-2"
+    },
+    {
+      "from": "LEM-OVL-2",
+      "to": "COR-OVL-3"
+    },
+    {
+      "from": "LEM-OVL-1",
+      "to": "THM-OVL-1"
+    },
+    {
+      "from": "LEM-OVL-2",
+      "to": "THM-OVL-1"
+    },
+    {
+      "from": "COR-OVL-3",
+      "to": "THM-OVL-1"
+    }
+  ],
+  "witness_families": [
+    "contextual_local.prefix_memory_last_digit_rule",
+    "contextual_local.prefix_memory_no_22_base3",
+    "classical.middle_thirds"
+  ],
+  "gap_status": [
+    "No localized gap remains for the concrete equal-scale prefix-memory subclass handled here.",
+    "General local-domain overlap counting remains outside this lemma pack and is not claimed closed."
+  ]
+}

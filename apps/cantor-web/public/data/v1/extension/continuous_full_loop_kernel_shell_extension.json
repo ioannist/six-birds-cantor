@@ -1,0 +1,64 @@
+{
+  "schema_version": "v1",
+  "witness_id": "generated.continuous_full_loop_kernel_shell",
+  "base_theory_id": "T0_cocycle_pressure_theory",
+  "extended_theory_id": "T1_hybrid_cocycle_plus_completion_theory",
+  "base_object_map": {
+    "map_id": "t0_cocycle_object_map",
+    "description": "Audited cocycle descriptor quotient on the shell-stable class."
+  },
+  "extended_object_map": {
+    "map_id": "t1_packaged_object_map",
+    "description": "Packaged fixed-point strata induced by the completion endomap plus forcing structure."
+  },
+  "factorization_test": {
+    "factor_through_T0": false,
+    "non_factorization_rate": 0.8333333333333333,
+    "multiple_T1_strata_per_T0_class": 10,
+    "note": "Non-factorization holds on the audited shell because one T0 object class maps to multiple persistent T1 strata."
+  },
+  "verdicts": {
+    "factorization": "non_factorization_closed_on_audited_shell",
+    "object_identity": "t1_objects_finer_than_t0_objects",
+    "saturation": "saturation_active_on_audited_shell",
+    "forcing": "forcing_active_with_persistent_new_strata",
+    "macro_admissibility": "t0_too_coarse_on_canonical_object"
+  },
+  "saturation_summary": {
+    "saturated": false,
+    "saturated_panel_count": 8,
+    "total_panels": 9
+  },
+  "forcing_summary": {
+    "p4_from_p5_event_count": 36,
+    "total_runs": 36
+  },
+  "macro_admissibility_summary": {
+    "obstruction_count": 36,
+    "total_runs": 36
+  },
+  "completion_summary": {
+    "distinct_strata": 8,
+    "fixed_point_runs": 36,
+    "cycle_runs": 0,
+    "nonconvergent_runs": 0
+  },
+  "scope": "audited_shell_only",
+  "theoremlet": {
+    "theoremlet_id": "strict_theory_extension_theoremlet",
+    "status": "closed_in_note",
+    "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+    "allowed_claim_ids": [
+      "strict_theory_extension_theoremlet"
+    ]
+  },
+  "claim_binding": {
+    "theoremlet_id": "strict_theory_extension_theoremlet",
+    "allowed_claim_ids": [
+      "strict_theory_extension_theoremlet"
+    ],
+    "figure_ids": [
+      "tbl_strict_theory_extension"
+    ]
+  }
+}

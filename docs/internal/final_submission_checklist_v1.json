@@ -1,0 +1,86 @@
+{
+  "schema_version": "v1",
+  "checklist_id": "final_submission_checklist_v1",
+  "generated_at_utc": "2026-03-19T10:29:56Z",
+  "items": [
+    {
+      "item_id": "check_theorem_object_integrity",
+      "category": "theorem_object",
+      "description": "Canonical theorem object hierarchy is explicit and tied to the audited-shell Level-3 package.",
+      "status": "ready",
+      "depends_on": [
+        "canonical_hybrid_theorem_object_v1",
+        "level3_theorem_package_v1"
+      ],
+      "note": "The base, completion, and canonical layers are frozen in the handoff JSON."
+    },
+    {
+      "item_id": "check_theoremlet_closure_integrity",
+      "category": "theoremlet",
+      "description": "All 4 core theoremlets are closed_in_note with dependency and witness links.",
+      "status": "ready",
+      "depends_on": [
+        "docs/internal/proof_dependency_continuous_full_loop_v1.json",
+        "docs/internal/proof_dependency_continuous_pressure_v1.json",
+        "docs/internal/proof_dependency_strict_theory_extension_v1.json",
+        "docs/internal/proof_dependency_conditional_disintegration_v1.json"
+      ],
+      "note": "No core theoremlet is left support-only or reserve-only."
+    },
+    {
+      "item_id": "check_audited_shell_scope_integrity",
+      "category": "assumption_scope",
+      "description": "Audited-shell scope remains explicit across theoremlets, claims, figures, and risk posture.",
+      "status": "ready",
+      "depends_on": [
+        "docs/internal/theorem_traceability_matrix_v1.json"
+      ],
+      "note": "Shell widening is blocked by the scope firewall and explicit nonclaims."
+    },
+    {
+      "item_id": "check_claim_nonclaim_integrity",
+      "category": "claim_scope",
+      "description": "Allowed claims, support-only items, reserve items, and nonclaims are separated cleanly.",
+      "status": "ready",
+      "depends_on": [
+        "docs/internal/final_paper_core_claim_ledger_v1.json"
+      ],
+      "note": "Nonclaims are frozen and cannot be promoted by this handoff package."
+    },
+    {
+      "item_id": "check_figure_binding_integrity",
+      "category": "figure_binding",
+      "description": "Every allowed claim is bound to ready figures/tables and no nonclaim leaks into figure support.",
+      "status": "ready",
+      "depends_on": [
+        "docs/internal/figure_manifest_v1.json"
+      ],
+      "note": "The manifest already enforces guardrails and all core claims are bound."
+    },
+    {
+      "item_id": "check_publication_risk_posture",
+      "category": "risk_posture",
+      "description": "Publication posture remains conservative Level-3 on the audited shell.",
+      "status": "manual_check",
+      "depends_on": [
+        "docs/internal/publication_risk_audit_v1.json"
+      ],
+      "note": "Writing still needs to keep the shell-specificity and proxy-risk wording conservative."
+    },
+    {
+      "item_id": "check_manuscript_safe_handoff",
+      "category": "writing_guardrail",
+      "description": "Writing may proceed only through the frozen handoff object and guardrails.",
+      "status": "ready",
+      "depends_on": [
+        "docs/internal/manuscript_theorem_summary_v1.md",
+        "docs/internal/final_prewriting_handoff_v1.json"
+      ],
+      "note": "The handoff package centralizes theorem objects, claims, figures, and risks in one place."
+    }
+  ],
+  "notes": [
+    "Manual checks are claim-discipline reminders, not blockers.",
+    "The checklist is machine-readable so later writing automation can verify the same guardrails."
+  ]
+}

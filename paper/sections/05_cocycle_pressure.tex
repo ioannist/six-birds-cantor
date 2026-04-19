@@ -1,0 +1,82 @@
+\section{Cocycle pressure closure}\label{sec:cocycle-pressure}
+
+This section states the second closed theoremlet in the paper: cocycle pressure closure on the audited shell. The theoremlet belongs entirely to the base theory \(\Tzero\). Its purpose is to show that the shell-stable lawful regime from Section~\ref{sec:lawfulness} already carries a well-defined thermodynamic object before completion-based packaging is adjoined.
+
+\subsection{The pressure route}
+
+The pressure route fixed in the internal theorem package is the \emph{Fekete-sup cocycle route} \cite{Fekete1923DistributionRoots} with the selected observable family given by the \emph{selector-weighted operator growth observable}. The point of this choice is to keep the pressure object tied to the lawful shell as a genuine six-mechanism object rather than to a frozen symbolic proxy.
+
+For each shell state \(x\in\mathcal{S}_{\mathrm{aud}}\), parameter \(s\), and horizon \(n\), let
+\[
+a_n(s;x)
+\]
+denote the selected finite-horizon cocycle observable. We do not need its full implementation-level formula in the paper; what matters here is that it is built from the cocycle/operator evolution together with the active selector structure on the shell. We then define the shell-level envelope
+\[
+\Phi_n(s):=\sup_{x\in\mathcal{S}_{\mathrm{aud}}} a_n(s;x).
+\]
+The base-theory pressure candidate is
+\[
+P_{\Tzero}(s):=\lim_{n\to\infty}\frac{1}{n}\log \Phi_n(s),
+\]
+whenever the limit exists. The cocycle-pressure closure theoremlet states that this pressure object is well-defined on the audited shell and has the regularity needed for the later thermodynamic package. The broader context is the standard subadditive and nonadditive thermodynamic-formalism literature \cite{BarreiraNonadditiveTF,CaoFengHuang2008SubAdditive,Mummert2006AlmostAdditive}, together with the familiar role of subadditive limits in ergodic theory \cite{Kingman1968Subadditive}.
+
+\subsection{Why the pressure object belongs to \texorpdfstring{$\Tzero$}{T0}}
+
+At this stage of the paper the relevant object is still the cocycle-level object map
+\[
+\pi_0:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_0.
+\]
+The completion map \(E_{\tau,\ell}\), packaged fixed-point strata, and strict extension relation belong to later sections. The role of the present theoremlet is therefore deliberately narrower: it closes the thermodynamic object attached to the base cocycle theory before the packaging-completion theory is introduced as a richer object level.
+
+The theoremlet in this section concerns only the shell-stable base theory \(\Tzero\); it says nothing about the packaged-object space \(\mathcal{O}_1\) and does not involve direct stratumwise thermodynamic distinctions.
+
+\begin{theorem}[Cocycle pressure closure on the audited shell]\label{thm:cocycle-pressure}
+Let \(\mathcal{S}_{\mathrm{aud}}\) be the audited shell-stable class from Section~\ref{sec:lawfulness}, and let \(a_n(s;x)\) be the selector-weighted operator growth observable associated with the base cocycle theory \(\Tzero\). Define
+\[
+\Phi_n(s):=\sup_{x\in\mathcal{S}_{\mathrm{aud}}} a_n(s;x).
+\]
+Assume the shell-stable hypotheses of the lawfulness theoremlet, together with the shell-uniform cocycle bounds and bounded-error comparison estimates required by the Fekete-sup route. Then the following hold on the audited shell.
+
+\begin{enumerate}
+    \item The pressure object
+    \[
+    P_{\Tzero}(s)=\lim_{n\to\infty}\frac{1}{n}\log \Phi_n(s)
+    \]
+    exists on the relevant parameter window.
+    \item \(P_{\Tzero}(s)\) is finite and nondegenerate on that window.
+    \item \(P_{\Tzero}(s)\) is monotone in \(s\).
+    \item \(P_{\Tzero}(s)\) has enough regularity to support a later root-based thermodynamic theorem.
+\end{enumerate}
+
+Therefore the cocycle-pressure object of the base theory \(\Tzero\) is closed on the audited shell.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The proof follows the closed pressure-dependency package for the shell-stable class.
+
+\smallskip
+\noindent\emph{Step 1: cocycle observable well-posedness.}
+Because the full-loop substrate is lawful on \(\mathcal{S}_{\mathrm{aud}}\), the selected cocycle observable \(a_n(s;x)\) is well-defined for every shell state \(x\), parameter \(s\), and time horizon \(n\). This uses the shell-level control established in Section~\ref{sec:lawfulness}.
+
+\smallskip
+\noindent\emph{Step 2: shell-uniform control.}
+The audited shell provides uniform finite-horizon control on the selected observable. In particular, the cocycle growth observable remains bounded in the sense needed for the pressure route, and does not escape the shell through selector collapse, budget collapse, or loss of timescale control.
+
+\smallskip
+\noindent\emph{Step 3: bounded-error comparison and the Fekete step.}
+The shell-uniform estimates imply a bounded-error comparison of Fekete type for the logarithmic envelope \(\log \Phi_n(s)\). This is the key almost-subadditive input. It yields existence of the pressure object through the chosen Fekete-sup route.
+
+\smallskip
+\noindent\emph{Step 4: finiteness and nondegeneracy.}
+The same shell estimates rule out both blow-up and trivial collapse on the parameter window relevant to the theorem package. Hence the pressure object is finite and nondegenerate there.
+
+\smallskip
+\noindent\emph{Step 5: monotonicity and root-supporting regularity.}
+Monotonicity in \(s\) follows from the monotonic dependence built into the selected observable family. Combined with the shell-uniform control, this yields the regularity needed for the later root-based thermodynamic consequence statements. From the thermodynamic-formalism side, this is the point where the pressure object should be compared conceptually with standard transfer-operator and operator-growth settings \cite{Ruelle1978ThermodynamicFormalism,Baladi2000TransferOperators}; likewise, the cocycle-growth viewpoint sits naturally beside the classical matrix-product context of \cite{FurstenbergKesten1960RandomMatrices,Oseledets1968MET}, even though the present theoremlet is proved by the audited-shell Fekete route.
+
+These five steps prove the theoremlet.
+\end{proof}
+
+\input{tables/tbl_pressure_closure_support}
+
+Theorem~\ref{thm:cocycle-pressure} closes the thermodynamic side of the base theory before any completion-based extension is invoked, so the later strict-extension theoremlet extends a cocycle theory that is already closed rather than compensating for a defective base. The packaged-object theory \(\Tone\) and the paper's final thermodynamic consequence belong to the later completion/extension and conditional-disintegration sections.

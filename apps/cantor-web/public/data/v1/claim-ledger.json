@@ -1,0 +1,138 @@
+{
+  "schema_version": "v1",
+  "ledger_id": "final_paper_core_claim_ledger_v1",
+  "claim_counts": {
+    "closed_theoremlet": 4,
+    "nonclaim": 5,
+    "reserve": 4,
+    "supporting_evidence": 1
+  },
+  "claims": [
+    {
+      "claim_id": "continuous_full_loop_lawfulness_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "claim_type": "lawfulness",
+      "allowed_final_paper_use": "core_claim",
+      "object_scope": "continuous_full_loop_theorem_package_v1",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "statement_short": "Closed six-primitive lawfulness regime theoremlet on the shell-stable audited package."
+    },
+    {
+      "claim_id": "cocycle_pressure_closure_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "claim_type": "pressure",
+      "allowed_final_paper_use": "core_claim",
+      "object_scope": "continuous_full_loop_theorem_package_v1",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "statement_short": "Closed switched-operator cocycle pressure theoremlet on the shell-stable class."
+    },
+    {
+      "claim_id": "strict_theory_extension_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "claim_type": "strict_extension",
+      "allowed_final_paper_use": "core_claim",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "statement_short": "Closed strict theory extension theoremlet for T1 over T0 on the audited shell."
+    },
+    {
+      "claim_id": "conditional_pressure_disintegration_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "claim_type": "thermodynamic_consequence",
+      "allowed_final_paper_use": "core_claim",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "statement_short": "Closed conditional pressure disintegration theoremlet on the canonical hybrid object over the audited shell."
+    },
+    {
+      "claim_id": "closure_deficit_proxy_support",
+      "claim_status": "supporting_evidence",
+      "claim_type": "thermodynamic_consequence",
+      "allowed_final_paper_use": "support_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "statement_short": "KL-style closure-deficit proxies support the conditional disintegration interpretation but are not themselves the closed theorem object."
+    },
+    {
+      "claim_id": "packaging-completion_broader-class_ambitions",
+      "claim_status": "reserve",
+      "claim_type": "future_work",
+      "allowed_final_paper_use": "reserve_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "outside_audited_shell_core",
+      "statement_short": "packaging-completion broader-class ambitions"
+    },
+    {
+      "claim_id": "hybrid_object_broadening_beyond_audited_shell",
+      "claim_status": "reserve",
+      "claim_type": "stretch_route",
+      "allowed_final_paper_use": "reserve_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "outside_audited_shell_core",
+      "statement_short": "hybrid object broadening beyond audited shell"
+    },
+    {
+      "claim_id": "wider_parameter_shell_theorem",
+      "claim_status": "reserve",
+      "claim_type": "stretch_route",
+      "allowed_final_paper_use": "reserve_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "outside_audited_shell_core",
+      "statement_short": "wider parameter shell theorem"
+    },
+    {
+      "claim_id": "non-SFT_breadth_story_not_already_closed",
+      "claim_status": "reserve",
+      "claim_type": "future_work",
+      "allowed_final_paper_use": "reserve_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "outside_audited_shell_core",
+      "statement_short": "non-SFT breadth story not already closed"
+    },
+    {
+      "claim_id": "no_broader-class_theorem_beyond_the_audited_shell",
+      "claim_status": "nonclaim",
+      "claim_type": "broader_class",
+      "allowed_final_paper_use": "nonclaim_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "outside_audited_shell_core",
+      "statement_short": "no broader-class theorem beyond the audited shell"
+    },
+    {
+      "claim_id": "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+      "claim_status": "nonclaim",
+      "claim_type": "non_sft_scope",
+      "allowed_final_paper_use": "nonclaim_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "outside_audited_shell_core",
+      "statement_short": "no external/non-SFT breadth claim beyond what is actually closed"
+    },
+    {
+      "claim_id": "no_direct_stratumwise_root-separation_theorem",
+      "claim_status": "nonclaim",
+      "claim_type": "thermodynamic_consequence",
+      "allowed_final_paper_use": "nonclaim_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "outside_audited_shell_core",
+      "statement_short": "no direct stratumwise root-separation theorem"
+    },
+    {
+      "claim_id": "no_packaging-induced_broader_theorem_class_claim",
+      "claim_status": "nonclaim",
+      "claim_type": "broader_class",
+      "allowed_final_paper_use": "nonclaim_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "outside_audited_shell_core",
+      "statement_short": "no packaging-induced broader theorem class claim"
+    },
+    {
+      "claim_id": "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+      "claim_status": "nonclaim",
+      "claim_type": "future_work",
+      "allowed_final_paper_use": "nonclaim_only",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "class_scope": "outside_audited_shell_core",
+      "statement_short": "no shell-general theorem beyond the audited shell-stable class"
+    }
+  ]
+}

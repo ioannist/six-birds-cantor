@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "control-middle-thirds-symbolic-baseline",
+  "family_id": "control.middle_thirds_symbolic",
+  "engine": "finite_state_symbolic",
+  "description": "One-state symbolic control matching classical middle-thirds.",
+  "parameters": {
+    "states": [
+      "q0"
+    ],
+    "start_states": [
+      "q0"
+    ],
+    "edges": [
+      {
+        "src": "q0",
+        "dst": "q0",
+        "ratio": 0.3333333333333333,
+        "label": "0"
+      },
+      {
+        "src": "q0",
+        "dst": "q0",
+        "ratio": 0.3333333333333333,
+        "label": "2"
+      }
+    ],
+    "depth_list": [
+      2,
+      4,
+      6,
+      8,
+      10
+    ]
+  },
+  "run_controls": {
+    "seed": 0,
+    "precision_bits": 53,
+    "save_outputs": true
+  },
+  "output_root": "results/finite_state_baselines/control_middle_thirds_symbolic"
+}

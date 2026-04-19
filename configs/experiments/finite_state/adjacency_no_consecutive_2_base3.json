@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "adjacency-no-consecutive-2-base3-baseline",
+  "family_id": "finite_state.adjacency_no_consecutive_2_base3",
+  "engine": "finite_state_symbolic",
+  "description": "Fibonacci-adjacency symbolic control at base-3 scale.",
+  "parameters": {
+    "states": [
+      "a",
+      "b"
+    ],
+    "start_states": [
+      "a"
+    ],
+    "edges": [
+      {
+        "src": "a",
+        "dst": "a",
+        "ratio": 0.3333333333333333,
+        "label": "0"
+      },
+      {
+        "src": "a",
+        "dst": "b",
+        "ratio": 0.3333333333333333,
+        "label": "2"
+      },
+      {
+        "src": "b",
+        "dst": "a",
+        "ratio": 0.3333333333333333,
+        "label": "0"
+      }
+    ],
+    "depth_list": [
+      2,
+      4,
+      6,
+      8,
+      10
+    ]
+  },
+  "run_controls": {
+    "seed": 0,
+    "precision_bits": 53,
+    "save_outputs": true
+  },
+  "output_root": "results/finite_state_baselines/adjacency_no_consecutive_2_base3"
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "v1",
+  "object_id": "canonical_hybrid_theorem_object_v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "base_theory_id": "T0_cocycle_pressure_theory",
+  "extended_theory_id": "T1_hybrid_cocycle_plus_completion_theory",
+  "base_object_map": {
+    "map_id": "t0_cocycle_object_map",
+    "description": "Audited cocycle descriptor quotient on the shell-stable class."
+  },
+  "extended_object_map": {
+    "map_id": "t1_packaged_object_map",
+    "description": "Packaged fixed-point strata induced by the completion endomap plus forcing structure."
+  },
+  "definability_criterion": "T1 is definable from T0 on the audited shell iff the packaged-object map factors through the T0 object map via a deterministic map.",
+  "factorization_test": {
+    "factor_through_T0": false,
+    "non_factorization_rate": 0.8333333333333333,
+    "multiple_T1_strata_per_T0_class": 10,
+    "note": "Non-factorization holds on the audited shell because one T0 object class maps to multiple persistent T1 strata."
+  },
+  "saturation_role": "Saturation marks the point where a fixed completion rule stops producing strict growth inside T0 and therefore activates the forcing step.",
+  "forcing_role": "Material P4<-P5 forcing produces persistent new packaged-object strata after saturation.",
+  "decision": "canonical_object_and_intrinsic_extension_closed",
+  "next_consequence_target": "hybrid_pressure_root_consequence",
+  "object_identity_verdict": "t1_objects_finer_than_t0_objects",
+  "factorization_verdict": "non_factorization_closed_on_audited_shell",
+  "saturation_verdict": "saturation_active_on_audited_shell",
+  "forcing_verdict": "forcing_active_with_persistent_new_strata",
+  "macro_admissibility_verdict": "t0_too_coarse_on_canonical_object",
+  "notes": [
+    "The canonical object is the hybrid object itself, not the cocycle alone or the completion endomap alone.",
+    "Intrinsic extension is closed by non-factorization of the T1 object map through the T0 object map on the audited shell.",
+    "The next consequence theorem should use this canonical hybrid object directly."
+  ]
+}

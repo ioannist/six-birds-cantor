@@ -1,0 +1,158 @@
+{
+  "schema_version": "v1",
+  "dependency_id": "proof_dependency_continuous_pressure_closure_v1",
+  "decision": "closed_on_working_class",
+  "closed_class_id": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "assumptions_path": "docs/internal/continuous_theorem_assumptions_v1.json",
+  "diagnostics_path": "results/continuous_pressure_closure/report.json",
+  "theorem_statement_short": "On the shell-stable continuous full-loop class, the switched-operator cocycle pressure candidate is closed by a Fekete-style route with monotone s-dependence.",
+  "assumptions_used": [
+    "continuous_operator_substrate",
+    "full_six_primitive_closure",
+    "p1_rewrite_active",
+    "p2_gating_active",
+    "p3_timescale_adaptation",
+    "p4_nondegenerate_lens_competition",
+    "p5_nondegenerate_packaging_competition",
+    "p6_budget_dynamics_active",
+    "primitive_knockout_fragility",
+    "persistent_kernel_variation",
+    "hysteresis_stable_selection",
+    "lawful_exploratory_regime",
+    "no_fast_collapse",
+    "parameter_shell_robustness",
+    "generated_object_extraction_plausible"
+  ],
+  "lemmas": [
+    {
+      "lemma_id": "PC-LEM-1",
+      "label": "shell-uniform cocycle control",
+      "statement_short": "The selector-weighted operator growth observable is uniformly controlled on the closed class.",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active"
+      ],
+      "depends_on": [],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "PC-LEM-2",
+      "label": "almost-subadditivity / bounded-error comparison",
+      "statement_short": "The cocycle sequence satisfies a Fekete-compatible bounded-error comparison on the closed class.",
+      "assumptions_used": [
+        "lawful_exploratory_regime",
+        "no_fast_collapse",
+        "persistent_kernel_variation",
+        "hysteresis_stable_selection",
+        "parameter_shell_robustness"
+      ],
+      "depends_on": [
+        "PC-LEM-1"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "PC-LEM-3",
+      "label": "pressure existence theorem",
+      "statement_short": "The pressure object exists on the stated class by the selected Fekete-style route.",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "lawful_exploratory_regime",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "PC-LEM-2"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "PC-LEM-4",
+      "label": "finite, nontrivial pressure range",
+      "statement_short": "The pressure remains finite and nontrivial across the relevant parameter window.",
+      "assumptions_used": [
+        "persistent_kernel_variation",
+        "lawful_exploratory_regime",
+        "parameter_shell_robustness"
+      ],
+      "depends_on": [
+        "PC-LEM-3"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "PC-LEM-5",
+      "label": "monotonicity in s",
+      "statement_short": "The pressure candidate is monotone in s on the evaluated range.",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "PC-LEM-3",
+        "PC-LEM-4"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "PC-COR-6",
+      "label": "root-supporting regularity",
+      "statement_short": "The pressure has enough continuity or semicontinuity to support a later root theorem.",
+      "assumptions_used": [
+        "lawful_exploratory_regime",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "PC-LEM-4",
+        "PC-LEM-5"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "PC-THM-7",
+      "label": "switched-operator cocycle pressure closure theoremlet",
+      "statement_short": "The switched-operator cocycle pressure object is closed on the shell-stable working class.",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "lawful_exploratory_regime",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "PC-LEM-3",
+        "PC-LEM-4",
+        "PC-LEM-5",
+        "PC-COR-6"
+      ],
+      "status": "closed_in_note"
+    }
+  ],
+  "dependency_edges": [
+    ["PC-LEM-1", "PC-LEM-2"],
+    ["PC-LEM-2", "PC-LEM-3"],
+    ["PC-LEM-3", "PC-LEM-4"],
+    ["PC-LEM-4", "PC-LEM-5"],
+    ["PC-LEM-5", "PC-COR-6"],
+    ["PC-COR-6", "PC-THM-7"]
+  ],
+  "witness_families": [
+    {
+      "family_id": "generated.continuous_full_loop_kernel",
+      "role": "required_working_witness"
+    },
+    {
+      "family_id": "generated.continuous_full_loop_kernel_shell",
+      "role": "required_stretch_witness"
+    }
+  ],
+  "gap_status": {}
+}
+

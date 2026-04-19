@@ -1,0 +1,218 @@
+{
+  "schema_version": "v1",
+  "witness_id": "generated.continuous_full_loop_kernel_shell",
+  "base_theory_id": "T0_cocycle_pressure_theory",
+  "extended_theory_id": "T1_hybrid_cocycle_plus_completion_theory",
+  "selected_consequence_object": "weighted_package_conditioned_pressure_gap",
+  "decision": "conditional_disintegration_closed",
+  "scope": "audited_shell_only",
+  "t0_pressure": {
+    "pressure_route": "fekete_sup_cocycle_route",
+    "fekete_gap_proxy": 0.6634180756052307,
+    "pressure_profiles": {
+      "0.5": {
+        "gap_proxy": 0.5049089755387562,
+        "pressure_proxy": 0.010200578545091134,
+        "sign": 1.0
+      },
+      "1.0": {
+        "gap_proxy": 0.6634180756052307,
+        "pressure_proxy": 0.009741280617689837,
+        "sign": 1.0
+      },
+      "1.5": {
+        "gap_proxy": 0.8221007095231652,
+        "pressure_proxy": 0.009283632647137207,
+        "sign": 1.0
+      }
+    }
+  },
+  "descriptor_summaries": [
+    {
+      "lens_state": "audit_flow_quantile_lens",
+      "tau": 0.603,
+      "gap_bounded_away_from_zero": true,
+      "closure_deficit_proxy": 0.0,
+      "pressure_gap": {
+        "0.5": {
+          "gap": 0.05799464758930356,
+          "t0_pressure": 0.010200578545091134,
+          "weighted_conditioned_pressure": -0.04779406904421243
+        },
+        "1.0": {
+          "gap": 0.11023475455289897,
+          "t0_pressure": 0.009741280617689837,
+          "weighted_conditioned_pressure": -0.10049347393520913
+        },
+        "1.5": {
+          "gap": 0.15999033331224452,
+          "t0_pressure": 0.009283632647137207,
+          "weighted_conditioned_pressure": -0.1507067006651073
+        }
+      },
+      "fiber_count": 1
+    },
+    {
+      "lens_state": "row_similarity_cluster_lens",
+      "tau": 0.603,
+      "gap_bounded_away_from_zero": true,
+      "closure_deficit_proxy": 1.077702818094261e-11,
+      "pressure_gap": {
+        "0.5": {
+          "gap": 0.05802309911668937,
+          "t0_pressure": 0.010200578545091134,
+          "weighted_conditioned_pressure": -0.047822520571598234
+        },
+        "1.0": {
+          "gap": 0.11030166700666869,
+          "t0_pressure": 0.009741280617689837,
+          "weighted_conditioned_pressure": -0.10056038638897885
+        },
+        "1.5": {
+          "gap": 0.16009911307241687,
+          "t0_pressure": 0.009283632647137207,
+          "weighted_conditioned_pressure": -0.15081548042527965
+        }
+      },
+      "fiber_count": 3
+    },
+    {
+      "lens_state": "spectral_lens",
+      "tau": 0.603,
+      "gap_bounded_away_from_zero": true,
+      "closure_deficit_proxy": 6.68307967967971e-13,
+      "pressure_gap": {
+        "0.5": {
+          "gap": 0.05800754476430457,
+          "t0_pressure": 0.010200578545091134,
+          "weighted_conditioned_pressure": -0.04780696621921344
+        },
+        "1.0": {
+          "gap": 0.11026350575542157,
+          "t0_pressure": 0.009741280617689837,
+          "weighted_conditioned_pressure": -0.10052222513773174
+        },
+        "1.5": {
+          "gap": 0.1600337834207071,
+          "t0_pressure": 0.009283632647137207,
+          "weighted_conditioned_pressure": -0.15075015077356987
+        }
+      },
+      "fiber_count": 2
+    },
+    {
+      "lens_state": "audit_flow_quantile_lens",
+      "tau": 0.953,
+      "gap_bounded_away_from_zero": true,
+      "closure_deficit_proxy": 0.0,
+      "pressure_gap": {
+        "0.5": {
+          "gap": 0.05799464758930356,
+          "t0_pressure": 0.010200578545091134,
+          "weighted_conditioned_pressure": -0.04779406904421243
+        },
+        "1.0": {
+          "gap": 0.11023475455289897,
+          "t0_pressure": 0.009741280617689837,
+          "weighted_conditioned_pressure": -0.10049347393520913
+        },
+        "1.5": {
+          "gap": 0.15999033331224452,
+          "t0_pressure": 0.009283632647137207,
+          "weighted_conditioned_pressure": -0.1507067006651073
+        }
+      },
+      "fiber_count": 1
+    },
+    {
+      "lens_state": "row_similarity_cluster_lens",
+      "tau": 0.953,
+      "gap_bounded_away_from_zero": true,
+      "closure_deficit_proxy": 1.077702818094261e-11,
+      "pressure_gap": {
+        "0.5": {
+          "gap": 0.05802309911668937,
+          "t0_pressure": 0.010200578545091134,
+          "weighted_conditioned_pressure": -0.047822520571598234
+        },
+        "1.0": {
+          "gap": 0.11030166700666869,
+          "t0_pressure": 0.009741280617689837,
+          "weighted_conditioned_pressure": -0.10056038638897885
+        },
+        "1.5": {
+          "gap": 0.16009911307241687,
+          "t0_pressure": 0.009283632647137207,
+          "weighted_conditioned_pressure": -0.15081548042527965
+        }
+      },
+      "fiber_count": 3
+    },
+    {
+      "lens_state": "spectral_lens",
+      "tau": 0.953,
+      "gap_bounded_away_from_zero": true,
+      "closure_deficit_proxy": 6.68307967967971e-13,
+      "pressure_gap": {
+        "0.5": {
+          "gap": 0.05800754476430457,
+          "t0_pressure": 0.010200578545091134,
+          "weighted_conditioned_pressure": -0.04780696621921344
+        },
+        "1.0": {
+          "gap": 0.11026350575542157,
+          "t0_pressure": 0.009741280617689837,
+          "weighted_conditioned_pressure": -0.10052222513773174
+        },
+        "1.5": {
+          "gap": 0.1600337834207071,
+          "t0_pressure": 0.009283632647137207,
+          "weighted_conditioned_pressure": -0.15075015077356987
+        }
+      },
+      "fiber_count": 2
+    }
+  ],
+  "config_summary": {
+    "disintegration_supported": true,
+    "min_gap": 0.05799464758930356,
+    "max_closure_deficit_proxy": 1.077702818094261e-11,
+    "descriptor_count": 6,
+    "macro_admissibility_summary": {
+      "admissible_count": 0,
+      "inadmissible_count": 18
+    }
+  },
+  "shell_stability": {
+    "gap_bounded_on_both_witnesses": true,
+    "macro_failure_aligns": true,
+    "working_route": "conditional_pressure_disintegration_route"
+  },
+  "rejected_routes": {
+    "direct_stratumwise_separation": {
+      "status": "rejected",
+      "reason": "Direct stratumwise root separation was not closed; the consequence object is the weighted package-conditioned pressure gap instead."
+    },
+    "exact_kl_closure_deficit": {
+      "status": "support_only",
+      "reason": "KL-style closure-deficit proxies are supporting evidence, not the closed theorem object."
+    }
+  },
+  "theoremlet": {
+    "theoremlet_id": "conditional_pressure_disintegration_theoremlet",
+    "status": "closed_in_note",
+    "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+    "allowed_claim_ids": [
+      "conditional_pressure_disintegration_theoremlet"
+    ]
+  },
+  "claim_binding": {
+    "theoremlet_id": "conditional_pressure_disintegration_theoremlet",
+    "allowed_claim_ids": [
+      "conditional_pressure_disintegration_theoremlet"
+    ],
+    "figure_ids": [
+      "tbl_conditional_disintegration"
+    ]
+  }
+}

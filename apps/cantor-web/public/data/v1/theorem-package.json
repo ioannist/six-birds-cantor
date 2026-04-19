@@ -1,0 +1,93 @@
+{
+  "schema_version": "v1",
+  "package_id": "level3_theorem_package_v1",
+  "paper_core_positioning": "level3_core_on_audited_shell",
+  "canonical_object_id": "canonical_hybrid_theorem_object_v1",
+  "core_class_id": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "selected_routes": {
+    "extension_route": "forcing_lemma_nondefinability_route",
+    "lawfulness_route": "deterministic_skew_product_with_budget_feedback",
+    "pressure_route": "fekete_sup_cocycle_route",
+    "thermodynamic_consequence_route": "conditional_pressure_disintegration_route"
+  },
+  "included_theoremlets": [
+    {
+      "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+      "status": "closed_in_note",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "note": "Closed six-primitive lawfulness regime theoremlet on the shell-stable audited package."
+    },
+    {
+      "theoremlet_id": "cocycle_pressure_closure_theoremlet",
+      "status": "closed_in_note",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "note": "Closed switched-operator cocycle pressure theoremlet on the shell-stable class."
+    },
+    {
+      "theoremlet_id": "strict_theory_extension_theoremlet",
+      "status": "closed_in_note",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "note": "Closed strict theory extension theoremlet for T1 over T0 on the audited shell."
+    },
+    {
+      "theoremlet_id": "conditional_pressure_disintegration_theoremlet",
+      "status": "closed_in_note",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "note": "Closed conditional pressure disintegration theoremlet on the canonical hybrid object over the audited shell."
+    }
+  ],
+  "nonclaims": [
+    "no broader-class theorem beyond the audited shell",
+    "no external/non-SFT breadth claim beyond what is actually closed",
+    "no direct stratumwise root-separation theorem",
+    "no packaging-induced broader theorem class claim",
+    "no shell-general theorem beyond the audited shell-stable class"
+  ],
+  "reserve_routes": [
+    "packaging-completion broader-class ambitions",
+    "hybrid object broadening beyond audited shell",
+    "wider parameter shell theorem",
+    "non-SFT breadth story not already closed"
+  ],
+  "canonical_hybrid_object": {
+    "object_id": "canonical_hybrid_theorem_object_v1",
+    "base_theory_id": "T0_cocycle_pressure_theory",
+    "extended_theory_id": "T1_hybrid_cocycle_plus_completion_theory",
+    "decision": "canonical_object_and_intrinsic_extension_closed",
+    "object_identity_verdict": "t1_objects_finer_than_t0_objects",
+    "factorization_verdict": "non_factorization_closed_on_audited_shell"
+  },
+  "claim_posture": {
+    "core_positioning": "level3_core_on_audited_shell",
+    "core_claim_ids": [
+      "continuous_full_loop_lawfulness_theoremlet",
+      "cocycle_pressure_closure_theoremlet",
+      "strict_theory_extension_theoremlet",
+      "conditional_pressure_disintegration_theoremlet"
+    ],
+    "support_only_claim_ids": [
+      "closure_deficit_proxy_support"
+    ],
+    "reserve_claim_ids": [
+      "packaging-completion_broader-class_ambitions",
+      "hybrid_object_broadening_beyond_audited_shell",
+      "wider_parameter_shell_theorem",
+      "non-SFT_breadth_story_not_already_closed"
+    ],
+    "nonclaim_ids": [
+      "no_broader-class_theorem_beyond_the_audited_shell",
+      "no_direct_stratumwise_root-separation_theorem",
+      "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+      "no_packaging-induced_broader_theorem_class_claim",
+      "no_shell-general_theorem_beyond_the_audited_shell-stable_class"
+    ],
+    "manuscript_posture": "State a Level-3 core on the audited shell, emphasize the canonical hybrid object and strict theory extension, and keep broader-scope ambitions outside the paper-core claim set.",
+    "phrases_to_avoid": [
+      "broader-class theorem",
+      "shell-general result",
+      "external/non-SFT breadth",
+      "direct stratumwise root separation",
+      "exact KL closure-deficit theorem"
+    ]
+  }
+}

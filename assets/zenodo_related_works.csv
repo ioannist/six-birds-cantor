@@ -1,0 +1,30 @@
+relation,identifier,scheme,resource_type,bibkey,title
+Cites,9780470848623,ISBN,publication-book,FalconerFractalGeometry,Fractal Geometry: Mathematical Foundations and Applications
+Cites,9780521825382,ISBN,publication-book,MauldinUrbanskiGDMS,Graph Directed Markov Systems: Geometry and Dynamics of Limit Sets
+Cites,9783034802079,ISBN,publication-book,BarreiraNonadditiveTF,Nonadditive Thermodynamic Formalism and Applications to Dimension Theory
+Cites,10.48550/arXiv.2601.07804,DOI,other,OliveiraVarandasLocalIFS,Foundations of local iterated function systems
+Cites,10.48550/arXiv.2602.00134,DOI,other,TsiokosFoundations,Six Birds: Foundations of Emergence Calculus
+Cites,10.5281/zenodo.18838994,DOI,other,TsiokosCreateStone,To Create a Stone with Six Birds: Emergent Geometric and Thermodynamic Regimes from a Minimal Stochastic Substrate
+Cites,10.5281/zenodo.18926433,DOI,other,TsiokosCastStone,To Cast a Stone with Six Birds: A Closure-Deficit Account of Randomness under Packaging and Budget
+Cites,10.1512/iumj.1981.30.30055,DOI,publication-article,Hutchinson1981Fractals,Fractals and self similarity
+Cites,10.1017/S0305004100022684,DOI,publication-article,Moran1946AdditiveFunctions,Additive functions of intervals and Hausdorff measure
+Cites,10.1007/BF02684767,DOI,publication-article,Bowen1979Quasicircles,Hausdorff dimension of quasicircles
+Cites,9780201135046,ISBN,publication-book,Ruelle1978ThermodynamicFormalism,Thermodynamic Formalism
+Cites,9780387951522,ISBN,publication-book,WaltersErgodic1982,An Introduction to Ergodic Theory
+Cites,10.3934/dcds.2008.20.639,DOI,publication-article,CaoFengHuang2008SubAdditive,The thermodynamic formalism for sub-additive potentials
+Cites,10.3934/dcds.2006.16.435,DOI,publication-article,Mummert2006AlmostAdditive,The thermodynamic formalism for almost-additive sequences
+Cites,9789810233280,ISBN,publication-book,Baladi2000TransferOperators,Positive Transfer Operators and Decay of Correlations
+Cites,https://www.numdam.org/item/AIHPB_1988__24_3_367_0/,URL,publication-article,BarnsleyDemkoEltonGeronimo1988,Invariant measures for Markov processes arising from iterated function systems with place-dependent probabilities
+Cites,10.1017/S0305004100066299,DOI,publication-article,FalconerRandomFractals1986,Random fractals
+Cites,10.1090/tran/6864,DOI,publication-article,RempeGillenUrbanski2016NonAutonomousCIFS,Non-autonomous conformal iterated function systems and Moran set constructions
+Cites,10.1007/BF01504345,DOI,publication-article,Fekete1923DistributionRoots,Über die Verteilung der Wurzeln bei gewissen algebraischen Gleichungen mit ganzzahligen Koeffizienten
+Cites,10.1111/j.2517-6161.1968.tb00749.x,DOI,publication-article,Kingman1968Subadditive,The ergodic theory of subadditive stochastic processes
+Cites,9780691153896,ISBN,publication-book,GoebelSanfeliceTeel2012Hybrid,Hybrid Dynamical Systems: Modeling, Stability, and Robustness
+Cites,MR0031534,MR,publication-article,Rokhlin1949FundamentalIdeas,On the fundamental ideas of measure theory
+Cites,10.1112/jlms/s2-16.3.568,DOI,publication-article,LedrappierWalters1977RelativisedVP,A relativised variational principle for the pressure of a continuous transformation
+Cites,10.1090/S0002-9947-1986-0837796-8,DOI,publication-article,Walters1986RelativePressure,Relative pressure for expansive maps and flows
+Cites,9780387901947,ISBN,publication-book,KemenySnell1976FiniteMarkovChains,Finite Markov Chains
+Cites,9780521559003,ISBN,publication-book,LindMarcus1995SymbolicDynamics,An Introduction to Symbolic Dynamics and Coding
+Cites,9780471241959,ISBN,publication-book,CoverThomas2006InfoTheory,Elements of Information Theory
+Cites,10.1214/aoms/1177705909,DOI,publication-article,FurstenbergKesten1960RandomMatrices,Products of random matrices
+Cites,MR0240280,MR,publication-article,Oseledets1968MET,A multiplicative ergodic theorem: Lyapunov characteristic numbers for dynamical systems

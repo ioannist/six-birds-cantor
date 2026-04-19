@@ -1,0 +1,84 @@
+\section{Conditional pressure disintegration}\label{sec:conditional-disintegration}
+
+We now state the fourth closed theoremlet in the paper: the thermodynamic consequence theoremlet. The key point is that the relevant thermodynamic consequence of the strict extension is \emph{not} direct stratumwise root separation. The consequence object used here is a \emph{conditional disintegration} of the base cocycle pressure over the packaged-object fibers of the extended theory \cite{Rokhlin1949FundamentalIdeas}.
+
+\subsection{What is being decomposed}
+
+Section~\ref{sec:cocycle-pressure} closed the cocycle pressure object of the base theory \(\Tzero\). Section~\ref{sec:strict-extension} then showed that the packaged-object theory \(\Tone\) is a strict extension of \(\Tzero\) on the audited shell. The thermodynamic question is therefore not whether different packaged strata behave as independent thermodynamic systems. Rather, the question is whether the cocycle-level pressure is thermodynamically sufficient for the packaged future.
+
+The answer is negative on the audited shell. The packaged object carries thermodynamic information that is not already exhausted by the cocycle-level object map. The correct consequence is therefore a package-conditioned pressure gap.
+
+\subsection{Why the direct stratumwise route is rejected}
+
+A tempting but ultimately incorrect route would be to assign independent pressure roots to each persistent packaged stratum and try to prove direct root separation inside a fixed \(\Tzero\)-object class. That is \emph{not} the route taken here. The reason is conceptual, not merely technical: packaged strata are fiber-averages of the same underlying lawful dynamics and need not be thermodynamically autonomous objects. The paper therefore does not claim a direct stratumwise root-separation theorem.
+
+Instead, the thermodynamic object is global first and conditional second. One starts with the global cocycle pressure \(P_{\Tzero}(s)\), then disintegrates it over the packaged fibers defined by \(\Tone\). Conceptually this is closer to relative pressure and disintegration over factor fibers than to independent-per-stratum pressure roots \cite{LedrappierWalters1977RelativisedVP,Walters1986RelativePressure}.
+
+\subsection{The consequence object}
+
+Let \(\mathcal{F}(x)\) be the family of persistent packaged strata at a shell state \(x\in \mathcal{S}_{\mathrm{aud}}\), and let \(w_{\Sigma}(x)\) be the corresponding package weights. The consequence quantity is
+\[
+\Delta_{\Tzero\to \Tone}(s)
+:=
+P_{\Tzero}(s)
+-
+\sum_{\Sigma\in\mathcal{F}(x)} w_{\Sigma}(x)\,P_{\Sigma}(s),
+\]
+where \(P_{\Sigma}(s)\) denotes the package-conditioned pressure profile attached to the stratum \(\Sigma\).
+
+The meaning of \(\Delta_{\Tzero\to \Tone}(s)\) is that it measures the thermodynamic insufficiency of the base theory for the packaged future. If \(\Delta_{\Tzero\to \Tone}(s)\) vanished identically, then the cocycle-level pressure would already be sufficient for the packaged thermodynamic future. The theoremlet below states that, on the audited shell, this does not happen.
+
+\subsection{Closure-deficit interpretation}
+
+The pressure gap is a thermodynamic analogue of a closure-deficit quantity: it measures how much information about the packaged future is not captured at the cocycle level. The theoremlet is therefore a conditional consequence of strict theory extension: once the packaged object is strictly richer than the cocycle object, the global cocycle pressure need not remain sufficient for the packaged future.
+
+The section does \emph{not} claim an exact KL-based closure-deficit identity as a closed theorem. Such KL-style quantities remain support-only diagnostics in the present package \cite{CoverThomas2006InfoTheory,TsiokosCastStone}. The closed theoremlet is formulated on the weighted package-conditioned pressure gap itself.
+
+\begin{theorem}[Conditional pressure disintegration on the audited shell]\label{thm:conditional-disintegration}
+Let \(\mathcal{S}_{\mathrm{aud}}\) be the audited shell-stable class, let \(P_{\Tzero}(s)\) be the closed cocycle pressure object of the base theory \(\Tzero\), and let \(\mathcal{F}(x)\) be the persistent packaged strata of the extended theory \(\Tone\) with weights \(w_{\Sigma}(x)\). Define
+\[
+\Delta_{\Tzero\to \Tone}(s)
+:=
+P_{\Tzero}(s)
+-
+\sum_{\Sigma\in\mathcal{F}(x)} w_{\Sigma}(x)\,P_{\Sigma}(s).
+\]
+Assume:
+\begin{enumerate}
+    \item the cocycle pressure object of \(\Tzero\) is closed on \(\mathcal{S}_{\mathrm{aud}}\),
+    \item the packaged-object theory \(\Tone\) is well-defined on \(\mathcal{S}_{\mathrm{aud}}\),
+    \item the strict theory-extension theoremlet holds on \(\mathcal{S}_{\mathrm{aud}}\),
+    \item and the package-conditioned pressure profiles are well-defined on the audited shell.
+\end{enumerate}
+Then the weighted package-conditioned pressure gap is nontrivial on the audited shell. Equivalently, the cocycle-level pressure is not sufficient for the packaged future, and the thermodynamic consequence of the extension is a nontrivial conditional pressure disintegration.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The proof is built on the canonical hybrid object and the already-closed theoremlets.
+
+\smallskip
+\noindent\emph{Step 1: the global base pressure is closed.}
+By Theorem~\ref{thm:cocycle-pressure}, the cocycle pressure \(P_{\Tzero}(s)\) is well-defined on the audited shell.
+
+\smallskip
+\noindent\emph{Step 2: package-conditioned profiles are well-defined.}
+The packaged-object theory \(\Tone\) supplies the family of persistent packaged strata \(\mathcal{F}(x)\), and the corresponding weighted package-conditioned pressure profiles \(P_{\Sigma}(s)\) are well-defined on the shell.
+
+\smallskip
+\noindent\emph{Step 3: strict extension implies thermodynamic insufficiency.}
+By Theorem~\ref{thm:strict-extension}, the packaged-object map is not definable from the cocycle-level object map on the audited shell. Thus the packaged future carries structure that is not already exhausted by the base cocycle object.
+
+\smallskip
+\noindent\emph{Step 4: the correct consequence is conditional, not independent-per-stratum.}
+Because the packaged strata are not treated as autonomous thermodynamic systems, the relevant comparison is not direct root separation across strata. Instead it is the weighted disintegration of the global pressure over the packaging fibers. This is precisely what \(\Delta_{\Tzero\to \Tone}(s)\) measures.
+
+\smallskip
+\noindent\emph{Step 5: nontriviality of the gap.}
+The audited-shell support package shows that the weighted package-conditioned pressure gap is bounded away from zero on the shell. Hence the cocycle-level pressure is thermodynamically insufficient for the packaged future, and the conditional disintegration consequence is nontrivial.
+
+These points prove the theoremlet.
+\end{proof}
+
+\input{tables/tbl_conditional_disintegration}
+
+Theorem~\ref{thm:conditional-disintegration} shows that the strict theory extension is not merely structural: it changes the thermodynamic content of the object theory in a measurable way on the canonical hybrid object.

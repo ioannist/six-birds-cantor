@@ -1,0 +1,22 @@
+{
+  "description": "Imported external witness skeleton from The dimension spectrum of graph directed Markov systems.",
+  "engine": "external_schematic",
+  "experiment_id": "external-countable-gdms-countable-alphabet",
+  "family_id": "external.countable_gdms_countable_alphabet",
+  "output_root": "results/external_witness_import/external-countable-gdms-countable-alphabet",
+  "paper_ref": "arXiv:1802.01125",
+  "parameters": {
+    "countable_alphabet": true,
+    "geometric_type": "graph_directed_markov",
+    "import_status": "skeletal",
+    "symbolic_type": "countable_markov_shift"
+  },
+  "run_controls": {
+    "save_outputs": false,
+    "seed": 0
+  },
+  "schema_version": "1.0",
+  "source_id": "countable_gdms_dimension_spectrum",
+  "source_title_short": "The dimension spectrum of graph directed Markov systems",
+  "theorem_route_fit": "countable_state_pressure"
+}

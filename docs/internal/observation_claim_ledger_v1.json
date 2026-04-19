@@ -1,0 +1,359 @@
+{
+  "entries": [
+    {
+      "artifact_paths": [
+        "results/certified_bracketing/middle-thirds-baseline/result_manifest.json",
+        "results/local_pressure/middle-thirds-baseline/result_manifest.json",
+        "results/transfer_operator/baseline_comparison.json"
+      ],
+      "claim_id": "OBS-001",
+      "family_ids": [
+        "classical.middle_thirds"
+      ],
+      "qualitative_note": "Middle-thirds agrees across partition, certified, and transfer baselines at very small error scales.",
+      "quantitative_support": {
+        "certified_width": 8.881784197001252e-16,
+        "partition_abs_error": 8.789080574445052e-12,
+        "reference_root": 0.6309297535714574,
+        "transfer_abs_error": 7.849276784099857e-14
+      },
+      "run_ids": [
+        "middle-thirds-baseline-certified-dps90-steps70",
+        "middle-thirds-baseline-local-pressure-run-0001"
+      ],
+      "status": "baseline_fact",
+      "tags": [
+        "baseline",
+        "agreement",
+        "classical"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/local_pressure/restricted-digits-base5-024-baseline/result_manifest.json",
+        "results/transfer_operator/baseline_comparison.json"
+      ],
+      "claim_id": "OBS-002",
+      "family_ids": [
+        "classical.restricted_digits_base5_024"
+      ],
+      "qualitative_note": "Base-5 restricted-digit baseline also shows exact-method agreement at tested precision.",
+      "quantitative_support": {
+        "partition_abs_error": 2.4860113967406505e-12,
+        "reference_root": 0.6826061944859854,
+        "transfer_abs_error": 1.509903313490213e-14
+      },
+      "run_ids": [
+        "restricted-digits-base5-024-baseline-local-pressure-run-0001"
+      ],
+      "status": "baseline_fact",
+      "tags": [
+        "baseline",
+        "agreement",
+        "classical"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/certified_bracketing/adjacency-no-consecutive-2-base3-baseline/result_manifest.json",
+        "results/local_pressure/adjacency-no-consecutive-2-base3-baseline/result_manifest.json",
+        "results/transfer_operator/baseline_comparison.json"
+      ],
+      "claim_id": "OBS-003",
+      "family_ids": [
+        "finite_state.adjacency_no_consecutive_2_base3"
+      ],
+      "qualitative_note": "Finite-state adjacency exact value is certified and transfer-accurate, while partition remains biased upward.",
+      "quantitative_support": {
+        "certified_width": 3.552713678800501e-15,
+        "partition_abs_error": 0.014354021939124939,
+        "reference_root": 0.4380178794859424,
+        "transfer_abs_error": 7.30526750203353e-14
+      },
+      "run_ids": [
+        "adjacency-no-consecutive-2-base3-baseline-certified-dps90-steps70",
+        "adjacency-no-consecutive-2-base3-baseline-local-pressure-run-0001"
+      ],
+      "status": "baseline_fact",
+      "tags": [
+        "baseline",
+        "finite_state",
+        "bias"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/transfer_operator/baseline_comparison.json"
+      ],
+      "claim_id": "OBS-004",
+      "family_ids": [
+        "classical.middle_thirds",
+        "finite_state.adjacency_no_consecutive_2_base3",
+        "classical.restricted_digits_base5_024"
+      ],
+      "qualitative_note": "Transfer operator is faster and more accurate on current baselines than partition estimates.",
+      "quantitative_support": {
+        "partition_runtime_ms": {
+          "adjacency": 2.8864406049251556,
+          "base5": 760.4914642870426,
+          "middle_thirds": 29.386140406131744
+        },
+        "transfer_runtime_ms": {
+          "adjacency": 2.3974627256393433,
+          "base5": 0.16789883375167847,
+          "middle_thirds": 0.17938017845153809
+        }
+      },
+      "run_ids": [
+        "middle-thirds-baseline-local-pressure-run-0001",
+        "adjacency-no-consecutive-2-base3-baseline-local-pressure-run-0001",
+        "restricted-digits-base5-024-baseline-local-pressure-run-0001"
+      ],
+      "status": "empirical_pattern",
+      "tags": [
+        "comparison",
+        "runtime",
+        "accuracy"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/local_pressure/prefix-memory-no-22-base3/result_manifest.json",
+        "results/robustness/local_pressure_stability_v1/stability_summary.json",
+        "results/robustness/local_pressure_stability_v1/stability_table.csv"
+      ],
+      "claim_id": "OBS-005",
+      "family_ids": [
+        "contextual_local.prefix_memory_no_22_base3"
+      ],
+      "qualitative_note": "Prefix-memory family shows upper/lower equality at tested depths and moderate stability under OFAT ablations.",
+      "quantitative_support": {
+        "final_lower_root": 0.4499801892961841,
+        "final_upper_root": 0.4499801892961841,
+        "max_drift": 0.011323356971843168,
+        "max_spread": 0.009502056782366708
+      },
+      "run_ids": [
+        "prefix-memory-no-22-base3-local-pressure-run-0001"
+      ],
+      "status": "empirical_pattern",
+      "tags": [
+        "contextual",
+        "memory",
+        "stability"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/local_pressure/feedback-budget-gate-and-packaging/result_manifest.json",
+        "results/feedback_contextual/feedback-budget-gate-and-packaging/feedback-budget-gate-and-packaging-run-0001_summary.json"
+      ],
+      "claim_id": "OBS-006",
+      "family_ids": [
+        "contextual_local.feedback_budget_gate_and_packaging"
+      ],
+      "qualitative_note": "Budget-driven feedback family yields tractable pressure outputs while recording explicit packaging and gating-driven state changes.",
+      "quantitative_support": {
+        "cells_fired": [
+          "P2<-P6",
+          "P5<-P6"
+        ],
+        "final_lower_root": 0.6309297536499798,
+        "final_upper_root": 0.6309297535335645,
+        "packaging_switches": 3
+      },
+      "run_ids": [
+        "feedback-budget-gate-and-packaging-local-pressure-run-0001",
+        "feedback-budget-gate-and-packaging-run-0001"
+      ],
+      "status": "empirical_pattern",
+      "tags": [
+        "feedback",
+        "budget",
+        "tractable"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/local_pressure/feedback-lens-protocol-coupled/result_manifest.json",
+        "results/feedback_contextual/feedback-lens-protocol-coupled/feedback-lens-protocol-coupled-run-0001_summary.json"
+      ],
+      "claim_id": "OBS-007",
+      "family_ids": [
+        "contextual_local.feedback_lens_protocol_coupled"
+      ],
+      "qualitative_note": "Lens/protocol feedback family audibly realizes P2<-P4, P3<-P4, P4<-P3, and P5<-P4 in the recorded sample run.",
+      "quantitative_support": {
+        "cells_fired": [
+          "P2<-P4",
+          "P3<-P4",
+          "P4<-P3",
+          "P5<-P4"
+        ],
+        "lens_switches": 1,
+        "packaging_switches": 1,
+        "protocol_switches": 1
+      },
+      "run_ids": [
+        "feedback-lens-protocol-coupled-local-pressure-run-0001",
+        "feedback-lens-protocol-coupled-run-0001"
+      ],
+      "status": "empirical_pattern",
+      "tags": [
+        "feedback",
+        "pica",
+        "auditable"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/feedback_contextual/feedback-budget-gate-and-packaging/feedback-budget-gate-and-packaging-run-0001_summary.json",
+        "results/local_pressure/feedback-budget-gate-and-packaging/result_manifest.json"
+      ],
+      "claim_id": "OBS-008",
+      "family_ids": [
+        "contextual_local.feedback_budget_gate_and_packaging"
+      ],
+      "qualitative_note": "Budget family realizes auditable P2<-P6 and P5<-P6 while retaining usable pressure outputs.",
+      "quantitative_support": {
+        "cells_fired": [
+          "P2<-P6",
+          "P5<-P6"
+        ],
+        "final_interval_root_width": 1.1641532182693481e-10,
+        "packaging_switches": 3
+      },
+      "run_ids": [
+        "feedback-budget-gate-and-packaging-run-0001",
+        "feedback-budget-gate-and-packaging-local-pressure-run-0001"
+      ],
+      "status": "empirical_pattern",
+      "tags": [
+        "feedback",
+        "budget",
+        "pica"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/robustness/local_pressure_stability_v1/stability_summary.json",
+        "results/robustness/local_pressure_stability_v1/stability_table.csv"
+      ],
+      "claim_id": "OBS-009",
+      "family_ids": [
+        "finite_state.adjacency_no_consecutive_2_base3",
+        "contextual_local.prefix_memory_no_22_base3"
+      ],
+      "qualitative_note": "Adjacency and prefix-memory controls show depth-sensitive improvement patterns without crossing current instability thresholds.",
+      "quantitative_support": {
+        "adjacency_max_drift": 0.011323356971843168,
+        "adjacency_max_spread": 0.009502056782366708,
+        "prefix_max_drift": 0.011323356971843168,
+        "prefix_max_spread": 0.009502056782366708
+      },
+      "run_ids": [
+        "adjacency-no-consecutive-2-base3-baseline-local-pressure-run-0001",
+        "prefix-memory-no-22-base3-local-pressure-run-0001"
+      ],
+      "status": "empirical_pattern",
+      "tags": [
+        "ablation",
+        "depth",
+        "controls"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/local_pressure/feedback-lens-protocol-coupled/result_manifest.json",
+        "results/robustness/local_pressure_stability_v1/stability_summary.json",
+        "results/robustness/local_pressure_stability_v1/stability_table.csv"
+      ],
+      "claim_id": "OBS-010",
+      "family_ids": [
+        "contextual_local.feedback_lens_protocol_coupled"
+      ],
+      "qualitative_note": "Feedback lens/protocol family is depth-sensitive and currently unstable under the present OFAT thresholds.",
+      "quantitative_support": {
+        "default_drift": 0.02628873972571455,
+        "max_spread": 0.04206198357860558,
+        "unstable_case_count": 3
+      },
+      "run_ids": [
+        "feedback-lens-protocol-coupled-local-pressure-run-0001",
+        "local_pressure_stability_v1-contextual_local-feedback_lens_protocol_coupled-depth_cutoff-6",
+        "local_pressure_stability_v1-contextual_local-feedback_lens_protocol_coupled-depth_cutoff-8",
+        "local_pressure_stability_v1-contextual_local-feedback_lens_protocol_coupled-depth_cutoff-12"
+      ],
+      "status": "risky_open",
+      "tags": [
+        "risk",
+        "feedback",
+        "stability"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "docs/internal/rigorous_method_decision_v1.md",
+        "results/transfer_operator/baseline_comparison.json",
+        "results/local_pressure/feedback-lens-protocol-coupled/result_manifest.json"
+      ],
+      "claim_id": "OBS-011",
+      "family_ids": [
+        "classical.middle_thirds",
+        "finite_state.adjacency_no_consecutive_2_base3",
+        "contextual_local.feedback_lens_protocol_coupled"
+      ],
+      "qualitative_note": "Project default method remains partition sums plus certified bracketing because it covers contextual families now.",
+      "quantitative_support": {
+        "contextual_coverage_present": true,
+        "method_decision": "partition_sums_plus_certified_bracketing",
+        "transfer_contextual_coverage_present": false
+      },
+      "run_ids": [
+        "middle-thirds-baseline-local-pressure-run-0001",
+        "adjacency-no-consecutive-2-base3-baseline-local-pressure-run-0001",
+        "feedback-lens-protocol-coupled-local-pressure-run-0001"
+      ],
+      "status": "baseline_fact",
+      "tags": [
+        "decision",
+        "coverage",
+        "method"
+      ]
+    },
+    {
+      "artifact_paths": [
+        "results/transfer_operator/baseline_comparison.json",
+        "docs/internal/rigorous_method_decision_v1.md"
+      ],
+      "claim_id": "OBS-012",
+      "family_ids": [
+        "classical.middle_thirds",
+        "finite_state.adjacency_no_consecutive_2_base3",
+        "contextual_local.feedback_lens_protocol_coupled"
+      ],
+      "qualitative_note": "Transfer route is a strong baseline validator but is not yet implemented for contextual/local families.",
+      "quantitative_support": {
+        "transfer_baseline_abs_errors": {
+          "adjacency": 7.30526750203353e-14,
+          "middle_thirds": 7.849276784099857e-14
+        },
+        "transfer_contextual_support": null
+      },
+      "run_ids": [
+        "middle-thirds-baseline-local-pressure-run-0001",
+        "adjacency-no-consecutive-2-base3-baseline-local-pressure-run-0001",
+        "feedback-lens-protocol-coupled-local-pressure-run-0001"
+      ],
+      "status": "risky_open",
+      "tags": [
+        "risk",
+        "transfer",
+        "coverage"
+      ]
+    }
+  ],
+  "generated_at_utc": "2026-03-19T17:07:52.798326Z",
+  "ledger_id": "observation_claim_ledger_v1",
+  "schema_version": "1.0"
+}

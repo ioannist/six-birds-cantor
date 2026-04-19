@@ -1,0 +1,184 @@
+{
+  "schema_version": "v1",
+  "dependency_id": "conditional_disintegration_v1",
+  "base_theory_id": "T0_cocycle_pressure_theory",
+  "extended_theory_id": "T1_hybrid_cocycle_plus_completion_theory",
+  "canonical_object_path": "docs/internal/canonical_hybrid_theorem_object_v1.md",
+  "selected_consequence_object": "weighted_package_conditioned_pressure_gap",
+  "assumptions_path": "docs/internal/continuous_theorem_assumptions_v1.json",
+  "theorem_statement_short": "On the canonical hybrid object over the audited shell, the weighted package-conditioned pressure gap is positive across audited T0 descriptor fibers and the working s-grid, so the global T0 cocycle pressure decomposes nontrivially over T1 packaging fibers and T0 is insufficient for the packaged future.",
+  "assumptions_used": [
+    "continuous_operator_substrate",
+    "full_six_primitive_closure",
+    "p1_rewrite_active",
+    "p2_gating_active",
+    "p3_timescale_adaptation",
+    "p4_nondegenerate_lens_competition",
+    "p5_nondegenerate_packaging_competition",
+    "p6_budget_dynamics_active",
+    "persistent_kernel_variation",
+    "hysteresis_stable_selection",
+    "lawful_exploratory_regime",
+    "no_fast_collapse",
+    "parameter_shell_robustness",
+    "generated_object_extraction_plausible"
+  ],
+  "lemmas": [
+    {
+      "lemma_id": "CDI-LEM-1",
+      "label": "packaged-future / fiber-average well-posedness",
+      "statement_short": "Audited T1 packaging fibers and their fiber-average packaged futures are well-defined over audited T0 descriptor classes on the canonical hybrid object.",
+      "assumptions_used": [
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CH-THM-7"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CDI-LEM-2",
+      "label": "conditional disintegration quantity well-posedness",
+      "statement_short": "The weighted package-conditioned pressure gap is well-defined from the closed T0 pressure object and audited T1 fiber weights/profiles.",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "p1_rewrite_active",
+        "p3_timescale_adaptation",
+        "persistent_kernel_variation"
+      ],
+      "depends_on": [
+        "CDI-LEM-1",
+        "CP-THM-7"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CDI-LEM-3",
+      "label": "non-τ-closedness / macro-admissibility obstruction lemma",
+      "statement_short": "Macro-admissibility failure on the audited shell witnesses non-τ-closedness of the T0 description relative to the packaged future object.",
+      "assumptions_used": [
+        "p2_gating_active",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active",
+        "lawful_exploratory_regime",
+        "no_fast_collapse"
+      ],
+      "depends_on": [
+        "SE-COR-5"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CDI-LEM-4",
+      "label": "positivity or nontriviality of the disintegration quantity",
+      "statement_short": "The weighted package-conditioned pressure gap is positive and bounded away from zero on the audited descriptor fibers and working s-grid.",
+      "assumptions_used": [
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CDI-LEM-2",
+        "CDI-LEM-3"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CDI-LEM-5",
+      "label": "relation between disintegration quantity and T0 insufficiency",
+      "statement_short": "A positive weighted package-conditioned pressure gap witnesses that T0 is insufficient for the packaged future in the audited thermodynamic sense.",
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "p5_nondegenerate_packaging_competition",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CDI-LEM-4"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CDI-COR-6",
+      "label": "thermodynamic consequence of strict extension",
+      "statement_short": "The strict extension from T0 to T1 has a thermodynamic consequence because the T0 pressure decomposes nontrivially over T1 packaging fibers.",
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CDI-LEM-5",
+        "SE-THM-6"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "CDI-THM-7",
+      "label": "conditional pressure disintegration theoremlet",
+      "statement_short": "On the audited shell, the canonical hybrid object supports a nontrivial conditional pressure disintegration theoremlet: the global T0 pressure decomposes over T1 packaging fibers and T0 is not sufficient for the packaged future.",
+      "assumptions_used": [
+        "full_six_primitive_closure",
+        "parameter_shell_robustness",
+        "generated_object_extraction_plausible"
+      ],
+      "depends_on": [
+        "CDI-COR-6"
+      ],
+      "status": "closed_in_note"
+    }
+  ],
+  "dependency_edges": [
+    {
+      "from": "CH-THM-7",
+      "to": "CDI-LEM-1"
+    },
+    {
+      "from": "CP-THM-7",
+      "to": "CDI-LEM-2"
+    },
+    {
+      "from": "CDI-LEM-1",
+      "to": "CDI-LEM-2"
+    },
+    {
+      "from": "SE-COR-5",
+      "to": "CDI-LEM-3"
+    },
+    {
+      "from": "CDI-LEM-2",
+      "to": "CDI-LEM-4"
+    },
+    {
+      "from": "CDI-LEM-3",
+      "to": "CDI-LEM-4"
+    },
+    {
+      "from": "CDI-LEM-4",
+      "to": "CDI-LEM-5"
+    },
+    {
+      "from": "CDI-LEM-5",
+      "to": "CDI-COR-6"
+    },
+    {
+      "from": "SE-THM-6",
+      "to": "CDI-COR-6"
+    },
+    {
+      "from": "CDI-COR-6",
+      "to": "CDI-THM-7"
+    }
+  ],
+  "witness_families": [
+    "generated.continuous_full_loop_kernel",
+    "generated.continuous_full_loop_kernel_shell"
+  ],
+  "gap_status": {
+    "status": "conditional_disintegration_closed",
+    "note": "The theoremlet is closed in note on the audited shell using the weighted package-conditioned pressure gap as the explicit consequence object."
+  }
+}

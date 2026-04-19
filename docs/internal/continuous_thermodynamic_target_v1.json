@@ -1,0 +1,93 @@
+{
+  "schema_version": "v1",
+  "target_id": "continuous_thermodynamic_target_v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "base_theorem_package": "docs/internal/continuous_full_loop_theorem_package_v1.json",
+  "candidate_routes": [
+    {
+      "route_id": "skew_product_path_pressure",
+      "label": "Skew-product path pressure",
+      "depends_on_full_loop_primitives": ["P1", "P2", "P3", "P4", "P5", "P6"],
+      "thermodynamic_value": {
+        "proxy_mean": 0.0,
+        "proxy_stability": 0.0,
+        "notes": "Reserve route that measures path segments directly."
+      },
+      "proof_outlook": "reserve",
+      "selection_status": "reserve"
+    },
+    {
+      "route_id": "switched_operator_cocycle_pressure",
+      "label": "Switched operator cocycle pressure",
+      "depends_on_full_loop_primitives": ["P1", "P2", "P3", "P4", "P5", "P6"],
+      "thermodynamic_value": {
+        "proxy_mean": 0.0,
+        "proxy_stability": 0.0,
+        "notes": "Working route built from the evolving operator/kernel cocycle and selector state."
+      },
+      "proof_outlook": "soon",
+      "selection_status": "working"
+    },
+    {
+      "route_id": "packaging_induced_pressure",
+      "label": "Packaging-induced pressure",
+      "depends_on_full_loop_primitives": ["P1", "P2", "P3", "P4", "P5", "P6"],
+      "thermodynamic_value": {
+        "proxy_mean": 0.0,
+        "proxy_stability": 0.0,
+        "notes": "Stretch route extracted from the active packaging and return object."
+      },
+      "proof_outlook": "high_upside",
+      "selection_status": "stretch"
+    }
+  ],
+  "candidate_observables": [
+    {
+      "observable_id": "operator_kernel_cocycle_observable",
+      "label": "Operator/kernel cocycle observable",
+      "route_id": "switched_operator_cocycle_pressure",
+      "description": "Finite-horizon observable built from kernel variation, selector changes, and update-cocycle activity."
+    },
+    {
+      "observable_id": "selector_competition_observable",
+      "label": "Selector/competition observable",
+      "route_id": "switched_operator_cocycle_pressure",
+      "description": "Observable encoding lens and packaging switching richness under hysteresis."
+    },
+    {
+      "observable_id": "budget_packaging_weighted_observable",
+      "label": "Budget/packaging-weighted observable",
+      "route_id": "packaging_induced_pressure",
+      "description": "Observable coupling budget, packaging score, and return/core activity."
+    }
+  ],
+  "candidate_measures": [
+    {
+      "measure_id": "empirical_skew_product_invariant_measure_candidate",
+      "label": "Empirical skew-product invariant measure candidate",
+      "route_id": "switched_operator_cocycle_pressure",
+      "description": "Finite-horizon empirical measure on the cocycle state and selector evolution."
+    },
+    {
+      "measure_id": "selector_package_conditional_measure_candidate",
+      "label": "Selector/package conditional measure candidate",
+      "route_id": "packaging_induced_pressure",
+      "description": "Conditional empirical measure of active packaging given the selector state."
+    },
+    {
+      "measure_id": "reserve_stretch_measure_object",
+      "label": "Reserve/stretch measure object",
+      "route_id": "skew_product_path_pressure",
+      "description": "Fallback path-based measure object kept as a reserve comparison."
+    }
+  ],
+  "working_target": "switched_operator_cocycle_pressure",
+  "stretch_target": "packaging_induced_pressure",
+  "decision": "thermodynamic_working_target_extracted",
+  "notes": [
+    "The thermodynamic target is distinct from the closed lawfulness theorem object.",
+    "The selected working route stays six-birds-native and does not drop active primitive dependence.",
+    "The stretch route carries the most Level-3 upside, but it is not the default proof path."
+  ]
+}
+

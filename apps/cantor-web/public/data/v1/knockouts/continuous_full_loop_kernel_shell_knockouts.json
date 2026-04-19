@@ -1,0 +1,145 @@
+{
+  "schema_version": "v1",
+  "witness_id": "generated.continuous_full_loop_kernel_shell",
+  "scope": "audited_shell_only",
+  "full_loop": {
+    "lens_switch_count": 149,
+    "packaging_switch_count": 149,
+    "tau_switch_count": 4,
+    "budget_min": 2.7385,
+    "budget_max": 12.0,
+    "tau_min": 0.6,
+    "tau_max": 0.861,
+    "mean_variation": 0.20389,
+    "closure_defect_proxy": 0.204338
+  },
+  "knockouts": [
+    {
+      "removed": "P1",
+      "material_degradation": false,
+      "material_reasons": [],
+      "closure_defect_proxy": 0.172789,
+      "summary": {
+        "lens_switch_count": 149,
+        "packaging_switch_count": 149,
+        "tau_switch_count": 3,
+        "budget_min": 2.7395,
+        "budget_max": 12.0,
+        "tau_min": 0.6,
+        "tau_max": 0.8615,
+        "mean_variation": 0.172925
+      }
+    },
+    {
+      "removed": "P2",
+      "material_degradation": true,
+      "material_reasons": [
+        "tau switching collapsed"
+      ],
+      "closure_defect_proxy": 0.098325,
+      "summary": {
+        "lens_switch_count": 149,
+        "packaging_switch_count": 149,
+        "tau_switch_count": 0,
+        "budget_min": 2.7691,
+        "budget_max": 12.0,
+        "tau_min": 0.6,
+        "tau_max": 0.8907,
+        "mean_variation": 0.099285
+      }
+    },
+    {
+      "removed": "P3",
+      "material_degradation": true,
+      "material_reasons": [
+        "lens switching collapsed",
+        "packaging switching collapsed",
+        "tau switching collapsed",
+        "variation damped"
+      ],
+      "closure_defect_proxy": 0.056623,
+      "summary": {
+        "lens_switch_count": 0,
+        "packaging_switch_count": 0,
+        "tau_switch_count": 0,
+        "budget_min": 2.7558,
+        "budget_max": 12.0,
+        "tau_min": 0.88,
+        "tau_max": 0.88,
+        "mean_variation": 0.057544
+      }
+    },
+    {
+      "removed": "P4",
+      "material_degradation": true,
+      "material_reasons": [
+        "lens switching collapsed"
+      ],
+      "closure_defect_proxy": 0.198598,
+      "summary": {
+        "lens_switch_count": 0,
+        "packaging_switch_count": 149,
+        "tau_switch_count": 4,
+        "budget_min": 2.6402,
+        "budget_max": 12.0,
+        "tau_min": 0.6,
+        "tau_max": 0.861,
+        "mean_variation": 0.198128
+      }
+    },
+    {
+      "removed": "P5",
+      "material_degradation": true,
+      "material_reasons": [
+        "packaging switching collapsed",
+        "variation damped"
+      ],
+      "closure_defect_proxy": 0.057195,
+      "summary": {
+        "lens_switch_count": 149,
+        "packaging_switch_count": 0,
+        "tau_switch_count": 2,
+        "budget_min": 2.3609,
+        "budget_max": 12.0,
+        "tau_min": 0.8034,
+        "tau_max": 4.0,
+        "mean_variation": 0.056888
+      }
+    },
+    {
+      "removed": "P6",
+      "material_degradation": true,
+      "material_reasons": [
+        "budget range collapsed"
+      ],
+      "closure_defect_proxy": 0.185883,
+      "summary": {
+        "lens_switch_count": 149,
+        "packaging_switch_count": 149,
+        "tau_switch_count": 4,
+        "budget_min": 2.5,
+        "budget_max": 2.5,
+        "tau_min": 0.6,
+        "tau_max": 0.861,
+        "mean_variation": 0.185685
+      }
+    }
+  ],
+  "theoremlet": {
+    "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+    "status": "closed_in_note",
+    "allowed_claim_ids": [
+      "continuous_full_loop_lawfulness_theoremlet"
+    ]
+  },
+  "claim_binding": {
+    "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+    "allowed_claim_ids": [
+      "continuous_full_loop_lawfulness_theoremlet"
+    ],
+    "figure_ids": [
+      "fig_full_loop_continuous_substrate_regime",
+      "fig_primitive_knockout_closure"
+    ]
+  }
+}

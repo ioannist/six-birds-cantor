@@ -1,0 +1,28 @@
+{
+  "schema_version": "v1",
+  "package_id": "continuous_full_loop_theorem_package_v1",
+  "closed_class_id": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "theorem_statement_short": "A continuous six-primitive skew-product cocycle has a shell-stable forward-invariant lawful regime class with active hysteretic lens/packaging competition and nondegenerate budget/tau feedback.",
+  "assumptions_path": "docs/internal/continuous_theorem_assumptions_v1.json",
+  "dependency_paths": [
+    "docs/internal/proof_dependency_continuous_full_loop_v1.json",
+    "docs/internal/proof_dependency_forward_invariant_regime_v1.json"
+  ],
+  "witness_configs": [
+    {
+      "family_id": "generated.continuous_full_loop_kernel",
+      "path": "configs/experiments/generated/continuous_full_loop_kernel.json"
+    },
+    {
+      "family_id": "generated.continuous_full_loop_kernel_shell",
+      "path": "configs/experiments/generated/continuous_full_loop_kernel_shell.json"
+    }
+  ],
+  "selected_theorem_route": "deterministic_skew_product_with_budget_feedback",
+  "proof_status": "closed_in_note",
+  "notes": [
+    "This package freezes the lawfulness theorem object, not the thermodynamic target.",
+    "The continuous full-loop regime remains six-birds-native and shell-stable."
+  ]
+}
+

@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cantor PICA Alignment v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "alignment_id",
+    "project_scope",
+    "p1_policy",
+    "primitive_semantics",
+    "reduced_cell_set",
+    "family_alignment"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "alignment_id": {
+      "type": "string"
+    },
+    "project_scope": {
+      "type": "string"
+    },
+    "p1_policy": {
+      "type": "string"
+    },
+    "primitive_semantics": {
+      "type": "object",
+      "required": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "P1": {
+          "type": "string"
+        },
+        "P2": {
+          "type": "string"
+        },
+        "P3": {
+          "type": "string"
+        },
+        "P4": {
+          "type": "string"
+        },
+        "P5": {
+          "type": "string"
+        },
+        "P6": {
+          "type": "string"
+        }
+      }
+    },
+    "reduced_cell_set": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "cell",
+          "code",
+          "status",
+          "notes"
+        ],
+        "properties": {
+          "cell": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "current",
+              "planned",
+              "not_in_scope"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "family_alignment": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "family_id",
+          "role",
+          "pica_status",
+          "primitive_tags",
+          "active_cells_current",
+          "active_cells_target",
+          "lens_modes_current",
+          "lens_modes_target",
+          "packaging_modes_current",
+          "packaging_modes_target",
+          "notes"
+        ],
+        "properties": {
+          "family_id": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "baseline",
+              "control",
+              "probe",
+              "toy"
+            ]
+          },
+          "pica_status": {
+            "type": "string",
+            "enum": [
+              "representative",
+              "partial",
+              "control_only"
+            ]
+          },
+          "primitive_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "active_cells_current": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "active_cells_target": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lens_modes_current": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lens_modes_target": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "packaging_modes_current": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "packaging_modes_target": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

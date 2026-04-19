@@ -1,0 +1,100 @@
+\section{Strict theory extension}\label{sec:strict-extension}
+
+We now state the third closed theoremlet in the paper: the strict theory extension theoremlet. This is the point where the paper moves from a closed thermodynamic base theory to a deeper theorem object. The key claim is not that the paper has found a broader theorem class, but that the packaged-object theory \(\Tone\) carries object structure not definable from the cocycle theory \(\Tzero\) on the same audited shell.
+
+\subsection{From the base theory to the extension problem}
+
+Section~\ref{sec:cocycle-pressure} closed the cocycle-pressure theory \(\Tzero\) on the audited shell. Section~\ref{sec:canonical-object} then introduced the packaged-object map
+\[
+\pi_1:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_1
+\]
+alongside the cocycle-level object map
+\[
+\pi_0:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_0.
+\]
+The extension problem is therefore intrinsic: does the packaged-object map \(\pi_1\) factor through the cocycle-level object map \(\pi_0\), or does the completion-based theory define additional object structure \cite{LindMarcus1995SymbolicDynamics,Walters1986RelativePressure}?
+
+If there exists a map
+\[
+\phi:\mathcal{O}_0\to\mathcal{O}_1
+\]
+such that
+\[
+\pi_1=\phi\circ \pi_0
+\qquad \text{on } \mathcal{S}_{\mathrm{aud}},
+\]
+then the completion theory adds no new object depth. The packaged-object structure would simply be reconstructible from the base cocycle theory. The theoremlet below states that this does \emph{not} happen on the audited shell.
+
+\subsection{The extension mechanism}
+
+Three ingredients drive the extension.
+
+\paragraph{Saturation.}
+For fixed lens \(\ell\) and timescale \(\tau\), the completion endomap
+\[
+E_{\tau,\ell}(\mu)=U_{\ell}\!\bigl(Q_{\ell}(\mu K^\tau)\bigr)
+\]
+may saturate: repeated completion stops producing new packaged objects at the current theory depth. Saturation is therefore not the end of the story, but the signal that the current object vocabulary has stabilized.
+
+\paragraph{Material \texorpdfstring{$P4\leftarrow P5$}{P4<-P5} forcing.}
+Once saturation occurs, packaging feeds back into the lens layer. Material \(P4\leftarrow P5\) forcing changes the active lens and reveals new packaged strata that were not visible at the previous theory depth. This is the mechanism by which the extension moves from the base theory to the packaged-object theory.
+
+\paragraph{Macro-admissibility obstruction.}
+The cocycle-level theory is too coarse to support closed macro-dynamics on the packaged future. This macro-admissibility obstruction is not an accidental diagnostic. It is one of the certificates that the base theory cannot already express the packaged-object structure, and it is conceptually closest to a failure of admissible aggregation or lumpability at the macro level \cite{KemenySnell1976FiniteMarkovChains}.
+
+Together, saturation, forcing, and macro-admissibility obstruction provide the structural route from \(\Tzero\) to \(\Tone\) \cite{TsiokosFoundations}.
+
+\begin{theorem}[Strict theory extension on the audited shell]\label{thm:strict-extension}
+Let \(\mathcal{S}_{\mathrm{aud}}\) be the audited shell-stable class, let
+\[
+\pi_0:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_0
+\]
+be the cocycle-level object map of the base theory \(\Tzero\), and let
+\[
+\pi_1:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_1
+\]
+be the packaged-object map defined by the completion theory \(\Tone\). Assume:
+\begin{enumerate}
+    \item the cocycle-pressure theory \(\Tzero\) is closed on \(\mathcal{S}_{\mathrm{aud}}\),
+    \item the completion endomap is well-defined on \(\mathcal{S}_{\mathrm{aud}}\),
+    \item saturation of the completion dynamics occurs on the audited shell,
+    \item material \(P4\leftarrow P5\) forcing produces new packaged strata after saturation,
+    \item and the cocycle-level theory exhibits macro-admissibility obstruction on the packaged future.
+\end{enumerate}
+Then \(\Tone\) is a strict theory extension of \(\Tzero\) on \(\mathcal{S}_{\mathrm{aud}}\). Equivalently, there is no factorization
+\[
+\pi_1=\phi\circ \pi_0
+\qquad \text{on } \mathcal{S}_{\mathrm{aud}}
+\]
+for any map \(\phi:\mathcal{O}_0\to\mathcal{O}_1\).
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The proof follows the closed strict-extension package and is organized around factorization failure rather than family broadening.
+
+\smallskip
+\noindent\emph{Step 1: the base theory is already closed.}
+By Theorem~\ref{thm:cocycle-pressure}, the cocycle-pressure object of \(\Tzero\) is well-defined on the audited shell. Thus the later extension result is not compensating for a defective or undefined base theory.
+
+\smallskip
+\noindent\emph{Step 2: completion defines packaged-object strata.}
+The completion endomap \(E_{\tau,\ell}\) is well-defined on the shell and yields persistent packaged strata. These strata define the packaged-object map \(\pi_1\).
+
+\smallskip
+\noindent\emph{Step 3: saturation plus forcing produces genuinely new packaged strata.}
+Saturation shows that the current completion rule has stabilized at the present theory depth. Material \(P4\leftarrow P5\) forcing then changes the lens and reveals new packaged strata. Thus the extension is not merely an iteration of a fixed completion rule, but a genuine change in theory depth.
+
+\smallskip
+\noindent\emph{Step 4: non-definability from \(\Tzero\).}
+If \(\pi_1\) factored through \(\pi_0\), then the packaged-object strata revealed after forcing would already be reconstructible from the cocycle-level object map. The audited-shell non-definability step rules this out: shell states with the same \(\Tzero\)-object can carry different packaged-object strata in \(\Tone\).
+
+\smallskip
+\noindent\emph{Step 5: macro-admissibility obstruction.}
+The failure of macro-admissibility at the cocycle level shows that \(\Tzero\) is too coarse to support closed macro-dynamics on the same packaged future. This obstruction is therefore a positive certificate that the packaged-object theory is not already contained in the base theory.
+
+Combining these points yields the claimed failure of factorization and hence the strict theory extension theoremlet.
+\end{proof}
+
+\input{tables/tbl_strict_theory_extension}
+
+Theorem~\ref{thm:strict-extension} records the object-level gap between the two theories: the packaged-object theory is not a more elaborate presentation of the cocycle-pressure theory but a deeper theory on the same audited shell.

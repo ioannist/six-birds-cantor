@@ -1,0 +1,28 @@
+{
+  "schema_version": "v1",
+  "endomap_id": "packaging_completion_endomap_v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "base_closed_class": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "state_space": "Probability simplex over the continuous kernel states, together with lens and packaging selectors and timescale tau.",
+  "lens_family": [
+    "spectral_lens",
+    "row_similarity_cluster_lens",
+    "audit_flow_quantile_lens"
+  ],
+  "timescale_family": [
+    "tau_values derived from the frozen continuous configs",
+    "shell-stable tau shell around the working continuous kernel"
+  ],
+  "completion_map_definition": "E_{tau,f}(mu) = U_f!(Q_f(mu K^tau)), where Q_f coarse-grains by the lens-dependent packaging and U_f reinstantiates package prototypes.",
+  "fixed_point_protocol": "Iterate E_{tau,f} from multiple initial conditions until convergence, cycle detection, or saturation; record distinct fixed points across multiple tau values and lens states.",
+  "saturation_definition": "Saturation occurs when further initial conditions at the checked tau/lens shell do not produce new fixed-point signatures and the completion family stops growing.",
+  "p4_from_p5_feedback_rule": "If packaging fixed-point complexity or saturation is nontrivial, update the active lens from packaging feedback; packaging can refine the lens state instead of merely being observed.",
+  "macro_admissibility_rule": "A macro transition is admissible when the completion map converges or saturates with a stable fixed-point family and the packaged object persists under the selected tau/lens shell.",
+  "decision": "completion_object_real_but_not_broader",
+  "notes": [
+    "The completion object is mathematically real and distinct from the cocycle object.",
+    "Current evidence does not support a broader theorem class than the closed cocycle route.",
+    "The fixed-point object is the packaging theorem object, not a packaging score."
+  ]
+}
+

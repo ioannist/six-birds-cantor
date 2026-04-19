@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "sample-middle-thirds-baseline",
+  "family_id": "classical.middle_thirds",
+  "engine": "classical_similarity",
+  "description": "Minimal baseline configuration for middle-thirds construction.",
+  "tags": [
+    "baseline",
+    "sample"
+  ],
+  "notes": null,
+  "parameters": {
+    "base": 3,
+    "allowed_digits": [
+      0,
+      2
+    ],
+    "max_depth": 8
+  },
+  "run_controls": {
+    "seed": 0,
+    "precision_bits": 53,
+    "save_outputs": true
+  },
+  "output_root": "results/samples/sample-middle-thirds-run-0001",
+  "provenance": {
+    "created_by": "t01-bootstrap"
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "claim_counts": {
+    "closed_theoremlet": 4,
+    "nonclaim": 5,
+    "reserve": 4,
+    "supporting_evidence": 1
+  },
+  "claims": [
+    {
+      "allowed_final_paper_use": "core_claim",
+      "claim_id": "continuous_full_loop_lawfulness_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "claim_type": "lawfulness",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_paths": [
+        "docs/internal/proof_dependency_continuous_full_loop_v1.json"
+      ],
+      "evidence_paths": [
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json",
+        "results/conditional_disintegration/report.json"
+      ],
+      "note": "Closed theoremlet included in the frozen Level-3 core package.",
+      "object_scope": "continuous_full_loop_theorem_package_v1",
+      "statement_short": "Closed six-primitive lawfulness regime theoremlet on the shell-stable audited package.",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "core_claim",
+      "claim_id": "cocycle_pressure_closure_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "claim_type": "pressure",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_paths": [
+        "docs/internal/proof_dependency_continuous_pressure_v1.json"
+      ],
+      "evidence_paths": [
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json",
+        "results/conditional_disintegration/report.json"
+      ],
+      "note": "Closed theoremlet included in the frozen Level-3 core package.",
+      "object_scope": "continuous_full_loop_theorem_package_v1",
+      "statement_short": "Closed switched-operator cocycle pressure theoremlet on the shell-stable class.",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "core_claim",
+      "claim_id": "strict_theory_extension_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "claim_type": "strict_extension",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_paths": [
+        "docs/internal/proof_dependency_strict_theory_extension_v1.json"
+      ],
+      "evidence_paths": [
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json",
+        "results/conditional_disintegration/report.json"
+      ],
+      "note": "Closed theoremlet included in the frozen Level-3 core package.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "Closed strict theory extension theoremlet for T1 over T0 on the audited shell.",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "core_claim",
+      "claim_id": "conditional_pressure_disintegration_theoremlet",
+      "claim_status": "closed_theoremlet",
+      "claim_type": "thermodynamic_consequence",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_paths": [
+        "docs/internal/proof_dependency_conditional_disintegration_v1.json"
+      ],
+      "evidence_paths": [
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json",
+        "results/conditional_disintegration/report.json"
+      ],
+      "note": "Closed theoremlet included in the frozen Level-3 core package.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "Closed conditional pressure disintegration theoremlet on the canonical hybrid object over the audited shell.",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "support_only",
+      "claim_id": "closure_deficit_proxy_support",
+      "claim_status": "supporting_evidence",
+      "claim_type": "thermodynamic_consequence",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_paths": [
+        "docs/internal/proof_dependency_conditional_disintegration_v1.json"
+      ],
+      "evidence_paths": [
+        "results/conditional_disintegration/report.json"
+      ],
+      "note": "Support-only diagnostic; not a closed KL theorem.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "KL-style closure-deficit proxies support the conditional disintegration interpretation but are not themselves the closed theorem object.",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "reserve_only",
+      "claim_id": "packaging-completion_broader-class_ambitions",
+      "claim_status": "reserve",
+      "claim_type": "future_work",
+      "class_scope": "outside_audited_shell_core",
+      "dependency_paths": [],
+      "evidence_paths": [],
+      "note": "Marked explicitly as reserve/stretch, not paper-core.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "packaging-completion broader-class ambitions",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "reserve_only",
+      "claim_id": "hybrid_object_broadening_beyond_audited_shell",
+      "claim_status": "reserve",
+      "claim_type": "stretch_route",
+      "class_scope": "outside_audited_shell_core",
+      "dependency_paths": [],
+      "evidence_paths": [],
+      "note": "Marked explicitly as reserve/stretch, not paper-core.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "hybrid object broadening beyond audited shell",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "reserve_only",
+      "claim_id": "wider_parameter_shell_theorem",
+      "claim_status": "reserve",
+      "claim_type": "stretch_route",
+      "class_scope": "outside_audited_shell_core",
+      "dependency_paths": [],
+      "evidence_paths": [],
+      "note": "Marked explicitly as reserve/stretch, not paper-core.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "wider parameter shell theorem",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "reserve_only",
+      "claim_id": "non-SFT_breadth_story_not_already_closed",
+      "claim_status": "reserve",
+      "claim_type": "future_work",
+      "class_scope": "outside_audited_shell_core",
+      "dependency_paths": [],
+      "evidence_paths": [],
+      "note": "Marked explicitly as reserve/stretch, not paper-core.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "non-SFT breadth story not already closed",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_id": "no_broader-class_theorem_beyond_the_audited_shell",
+      "claim_status": "nonclaim",
+      "claim_type": "broader_class",
+      "class_scope": "outside_audited_shell_core",
+      "dependency_paths": [],
+      "evidence_paths": [],
+      "note": "Explicit anti-overclaim guardrail.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "no broader-class theorem beyond the audited shell",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_id": "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+      "claim_status": "nonclaim",
+      "claim_type": "non_sft_scope",
+      "class_scope": "outside_audited_shell_core",
+      "dependency_paths": [],
+      "evidence_paths": [],
+      "note": "Explicit anti-overclaim guardrail.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "no external/non-SFT breadth claim beyond what is actually closed",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_id": "no_direct_stratumwise_root-separation_theorem",
+      "claim_status": "nonclaim",
+      "claim_type": "thermodynamic_consequence",
+      "class_scope": "outside_audited_shell_core",
+      "dependency_paths": [],
+      "evidence_paths": [],
+      "note": "Explicit anti-overclaim guardrail.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "no direct stratumwise root-separation theorem",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_id": "no_packaging-induced_broader_theorem_class_claim",
+      "claim_status": "nonclaim",
+      "claim_type": "broader_class",
+      "class_scope": "outside_audited_shell_core",
+      "dependency_paths": [],
+      "evidence_paths": [],
+      "note": "Explicit anti-overclaim guardrail.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "no packaging-induced broader theorem class claim",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_final_paper_use": "nonclaim_only",
+      "claim_id": "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+      "claim_status": "nonclaim",
+      "claim_type": "future_work",
+      "class_scope": "outside_audited_shell_core",
+      "dependency_paths": [],
+      "evidence_paths": [],
+      "note": "Explicit anti-overclaim guardrail.",
+      "object_scope": "canonical_hybrid_theorem_object_v1",
+      "statement_short": "no shell-general theorem beyond the audited shell-stable class",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    }
+  ],
+  "generated_at_utc": "2026-03-19T00:00:00Z",
+  "ledger_id": "final_paper_core_claim_ledger_v1",
+  "notes": [
+    "The claim ledger is the anti-drift control for the final paper-core package.",
+    "Only closed theoremlets are available for core theorem claims."
+  ],
+  "schema_version": "v1"
+}

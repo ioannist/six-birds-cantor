@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "impact_check_id": "post-overlap-impact-v1",
+  "based_on_bowen_class": "docs/internal/bowen_class_v2.json",
+  "domain_gated_audit": "not yet but promising",
+  "non_sft_blocker_status": "remains",
+  "impact_decision": "stronger_sft_like_theorem",
+  "newly_included_families": [
+    "contextual_local.prefix_memory_last_digit_rule"
+  ],
+  "plausible_next_families": [
+    "contextual_local.domain_gated_two_map_local_ifs"
+  ],
+  "blocked_frontier_families": [
+    "contextual_local.stage_dependent_alternating_removal",
+    "contextual_local.feedback_lens_protocol_coupled",
+    "contextual_local.feedback_budget_gate_and_packaging"
+  ]
+}

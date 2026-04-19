@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "middle-thirds-baseline",
+  "family_id": "classical.middle_thirds",
+  "engine": "classical_similarity",
+  "description": "Classical middle-thirds similarity baseline.",
+  "parameters": {
+    "base": 3,
+    "allowed_digits": [
+      0,
+      2
+    ],
+    "max_depth": 8
+  },
+  "run_controls": {
+    "seed": 0,
+    "precision_bits": 53,
+    "save_outputs": true
+  },
+  "output_root": "results/classical_baselines/middle_thirds"
+}

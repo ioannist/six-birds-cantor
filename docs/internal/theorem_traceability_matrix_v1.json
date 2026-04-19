@@ -1,0 +1,572 @@
+{
+  "assumption_index": [
+    {
+      "assumption_id": "continuous_operator_substrate",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "continuous_full_loop_lawfulness_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "full_six_primitive_closure",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "continuous_full_loop_lawfulness_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "generated_object_extraction_plausible",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "continuous_full_loop_lawfulness_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "hysteresis_stable_selection",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "lawful_exploratory_regime",
+      "relevance_category": "core",
+      "scope_role": "shell_specific",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "continuous_full_loop_lawfulness_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "no_fast_collapse",
+      "relevance_category": "core",
+      "scope_role": "shell_specific",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "p1_rewrite_active",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "p2_gating_active",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "p3_timescale_adaptation",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "p4_nondegenerate_lens_competition",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "p5_nondegenerate_packaging_competition",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "p6_budget_dynamics_active",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "parameter_shell_robustness",
+      "relevance_category": "core",
+      "scope_role": "shell_specific",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "persistent_kernel_variation",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "assumption_id": "primitive_knockout_fragility",
+      "relevance_category": "core",
+      "scope_role": "generic_inside_current_class",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    }
+  ],
+  "claim_bindings": [
+    {
+      "allowed_claim_ids": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ],
+      "figure_ids": [
+        "fig_full_loop_continuous_substrate_regime",
+        "fig_primitive_knockout_closure"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ],
+      "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet"
+    },
+    {
+      "allowed_claim_ids": [
+        "cocycle_pressure_closure_theoremlet"
+      ],
+      "figure_ids": [
+        "tbl_pressure_closure_support"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ],
+      "theoremlet_id": "cocycle_pressure_closure_theoremlet"
+    },
+    {
+      "allowed_claim_ids": [
+        "strict_theory_extension_theoremlet"
+      ],
+      "figure_ids": [
+        "tbl_strict_theory_extension"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ],
+      "theoremlet_id": "strict_theory_extension_theoremlet"
+    },
+    {
+      "allowed_claim_ids": [
+        "conditional_pressure_disintegration_theoremlet"
+      ],
+      "figure_ids": [
+        "tbl_conditional_disintegration"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ],
+      "theoremlet_id": "conditional_pressure_disintegration_theoremlet"
+    }
+  ],
+  "decision": "traceability_complete",
+  "dependency_index": [
+    {
+      "dependency_path": "docs/internal/proof_dependency_conditional_disintegration_v1.json",
+      "theoremlets": [
+        "conditional_pressure_disintegration_theoremlet"
+      ]
+    },
+    {
+      "dependency_path": "docs/internal/proof_dependency_continuous_full_loop_v1.json",
+      "theoremlets": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ]
+    },
+    {
+      "dependency_path": "docs/internal/proof_dependency_continuous_pressure_v1.json",
+      "theoremlets": [
+        "cocycle_pressure_closure_theoremlet"
+      ]
+    },
+    {
+      "dependency_path": "docs/internal/proof_dependency_strict_theory_extension_v1.json",
+      "theoremlets": [
+        "strict_theory_extension_theoremlet"
+      ]
+    }
+  ],
+  "evidence_index": [
+    {
+      "artifact_path": "docs/internal/conditional_pressure_disintegration_v1.md",
+      "artifact_role": "theorem_supporting",
+      "manuscript_safe": true,
+      "supports_theoremlets": [
+        "conditional_pressure_disintegration_theoremlet"
+      ]
+    },
+    {
+      "artifact_path": "docs/internal/continuous_full_loop_theorem_package_v1.md",
+      "artifact_role": "theorem_supporting",
+      "manuscript_safe": true,
+      "supports_theoremlets": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ]
+    },
+    {
+      "artifact_path": "docs/internal/continuous_pressure_closure_v1.md",
+      "artifact_role": "theorem_supporting",
+      "manuscript_safe": true,
+      "supports_theoremlets": [
+        "cocycle_pressure_closure_theoremlet"
+      ]
+    },
+    {
+      "artifact_path": "docs/internal/strict_theory_extension_closure_v1.md",
+      "artifact_role": "theorem_supporting",
+      "manuscript_safe": true,
+      "supports_theoremlets": [
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "artifact_path": "results/conditional_disintegration/report.json",
+      "artifact_role": "diagnostic_only",
+      "manuscript_safe": true,
+      "supports_theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "continuous_full_loop_lawfulness_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "artifact_path": "results/continuous_pressure_closure/report.json",
+      "artifact_role": "theorem_supporting",
+      "manuscript_safe": true,
+      "supports_theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "continuous_full_loop_lawfulness_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    },
+    {
+      "artifact_path": "results/level3_theorem_package/report.json",
+      "artifact_role": "diagnostic_only",
+      "manuscript_safe": true,
+      "supports_theoremlets": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ]
+    },
+    {
+      "artifact_path": "results/strict_theory_extension_closure/report.json",
+      "artifact_role": "theorem_supporting",
+      "manuscript_safe": true,
+      "supports_theoremlets": [
+        "cocycle_pressure_closure_theoremlet",
+        "conditional_pressure_disintegration_theoremlet",
+        "continuous_full_loop_lawfulness_theoremlet",
+        "strict_theory_extension_theoremlet"
+      ]
+    }
+  ],
+  "generated_at_utc": "2026-03-19T00:00:00Z",
+  "matrix_id": "theorem_traceability_matrix_v1",
+  "notes": [
+    "The matrix is formal and audit-oriented; it is not a manuscript outline.",
+    "Core theoremlets may bind only to closed theoremlet claims; support-only and nonclaim entries are firewalled explicitly."
+  ],
+  "paper_core_positioning": "level3_core_on_audited_shell",
+  "schema_version": "v1",
+  "scope_firewall": {
+    "core_closed_claims": [
+      "cocycle_pressure_closure_theoremlet",
+      "conditional_pressure_disintegration_theoremlet",
+      "continuous_full_loop_lawfulness_theoremlet",
+      "strict_theory_extension_theoremlet"
+    ],
+    "explicit_nonclaims": [
+      "no_broader-class_theorem_beyond_the_audited_shell",
+      "no_direct_stratumwise_root-separation_theorem",
+      "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+      "no_packaging-induced_broader_theorem_class_claim",
+      "no_shell-general_theorem_beyond_the_audited_shell-stable_class"
+    ],
+    "reserve_routes": [
+      "hybrid_object_broadening_beyond_audited_shell",
+      "non-SFT_breadth_story_not_already_closed",
+      "packaging-completion_broader-class_ambitions",
+      "wider_parameter_shell_theorem"
+    ],
+    "scope_boundaries": [
+      "audited shell only",
+      "no broader-class theorem",
+      "no shell-general theorem",
+      "no direct stratumwise root-separation theorem",
+      "no external/non-SFT breadth claim beyond what is closed"
+    ],
+    "support_only_claims": [
+      "closure_deficit_proxy_support"
+    ]
+  },
+  "theoremlets": [
+    {
+      "allowed_claim_ids": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ],
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "generated_object_extraction_plausible",
+        "lawful_exploratory_regime"
+      ],
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_paths": [
+        "docs/internal/proof_dependency_continuous_full_loop_v1.json"
+      ],
+      "evidence_paths": [
+        "docs/internal/continuous_full_loop_theorem_package_v1.md",
+        "results/conditional_disintegration/report.json",
+        "results/continuous_pressure_closure/report.json",
+        "results/level3_theorem_package/report.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ],
+      "note": "Closed six-primitive lawfulness regime theoremlet on the shell-stable audited package.",
+      "status": "closed_in_note",
+      "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_claim_ids": [
+        "cocycle_pressure_closure_theoremlet"
+      ],
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "generated_object_extraction_plausible",
+        "hysteresis_stable_selection",
+        "lawful_exploratory_regime",
+        "no_fast_collapse",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active",
+        "parameter_shell_robustness",
+        "persistent_kernel_variation",
+        "primitive_knockout_fragility"
+      ],
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_paths": [
+        "docs/internal/proof_dependency_continuous_pressure_v1.json"
+      ],
+      "evidence_paths": [
+        "docs/internal/continuous_pressure_closure_v1.md",
+        "results/conditional_disintegration/report.json",
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ],
+      "note": "Closed switched-operator cocycle pressure theoremlet on the shell-stable class.",
+      "status": "closed_in_note",
+      "theoremlet_id": "cocycle_pressure_closure_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_claim_ids": [
+        "strict_theory_extension_theoremlet"
+      ],
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "generated_object_extraction_plausible",
+        "hysteresis_stable_selection",
+        "lawful_exploratory_regime",
+        "no_fast_collapse",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active",
+        "parameter_shell_robustness",
+        "persistent_kernel_variation",
+        "primitive_knockout_fragility"
+      ],
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_paths": [
+        "docs/internal/proof_dependency_strict_theory_extension_v1.json"
+      ],
+      "evidence_paths": [
+        "docs/internal/strict_theory_extension_closure_v1.md",
+        "results/conditional_disintegration/report.json",
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ],
+      "note": "Closed strict theory extension theoremlet for T1 over T0 on the audited shell.",
+      "status": "closed_in_note",
+      "theoremlet_id": "strict_theory_extension_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    },
+    {
+      "allowed_claim_ids": [
+        "conditional_pressure_disintegration_theoremlet"
+      ],
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "generated_object_extraction_plausible",
+        "hysteresis_stable_selection",
+        "lawful_exploratory_regime",
+        "no_fast_collapse",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active",
+        "parameter_shell_robustness",
+        "persistent_kernel_variation"
+      ],
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "dependency_paths": [
+        "docs/internal/proof_dependency_conditional_disintegration_v1.json"
+      ],
+      "evidence_paths": [
+        "docs/internal/conditional_pressure_disintegration_v1.md",
+        "results/conditional_disintegration/report.json",
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "forbidden_claim_ids": [
+        "hybrid_object_broadening_beyond_audited_shell",
+        "no_broader-class_theorem_beyond_the_audited_shell",
+        "no_direct_stratumwise_root-separation_theorem",
+        "no_external/non-SFT_breadth_claim_beyond_what_is_actually_closed",
+        "no_packaging-induced_broader_theorem_class_claim",
+        "no_shell-general_theorem_beyond_the_audited_shell-stable_class",
+        "non-SFT_breadth_story_not_already_closed",
+        "packaging-completion_broader-class_ambitions",
+        "wider_parameter_shell_theorem"
+      ],
+      "note": "Closed conditional pressure disintegration theoremlet on the canonical hybrid object over the audited shell.",
+      "status": "closed_in_note",
+      "theoremlet_id": "conditional_pressure_disintegration_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ]
+    }
+  ]
+}

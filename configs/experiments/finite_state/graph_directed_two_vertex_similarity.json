@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "graph-directed-two-vertex-similarity-baseline",
+  "family_id": "finite_state.graph_directed_two_vertex_similarity",
+  "engine": "finite_state_symbolic",
+  "description": "Two-vertex graph-directed similarity baseline without closed-form target.",
+  "parameters": {
+    "states": [
+      "u",
+      "v"
+    ],
+    "start_states": [
+      "u",
+      "v"
+    ],
+    "edges": [
+      {
+        "src": "u",
+        "dst": "u",
+        "ratio": 0.3333333333333333,
+        "label": "e1"
+      },
+      {
+        "src": "u",
+        "dst": "v",
+        "ratio": 0.25,
+        "label": "e2"
+      },
+      {
+        "src": "v",
+        "dst": "u",
+        "ratio": 0.2,
+        "label": "e3"
+      },
+      {
+        "src": "v",
+        "dst": "v",
+        "ratio": 0.25,
+        "label": "e4"
+      }
+    ],
+    "depth_list": [
+      2,
+      4,
+      6,
+      8,
+      10
+    ]
+  },
+  "run_controls": {
+    "seed": 0,
+    "precision_bits": 53,
+    "save_outputs": true
+  },
+  "output_root": "results/finite_state_baselines/graph_directed_two_vertex_similarity"
+}

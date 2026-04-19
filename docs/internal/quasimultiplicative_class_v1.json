@@ -1,0 +1,429 @@
+{
+  "candidate_class_label": "finite-memory or local-domain families with bounded bridge defect and stable almost-additive partition growth",
+  "decision": "stop_qm_branch",
+  "families": [
+    {
+      "artifact_paths": [
+        "results/classical_baselines/middle_thirds"
+      ],
+      "bridge_defect_summary": {
+        "bridge_window": 2,
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_bridge_defect": 2.220449778542406e-16
+          },
+          "reference_root": {
+            "max_bridge_defect": 1.1102230246251565e-16
+          }
+        },
+        "overall_max_bridge_defect": 2.220449778542406e-16
+      },
+      "classification_note": "Control family has small normalized defect and bounded bridge defect on checked splits.",
+      "config_path": "configs/experiments/classical/middle_thirds.json",
+      "depth_stability_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "drift": 6.215486821511735e-23
+          },
+          "reference_root": {
+            "drift": 2.3129646346357438e-17
+          }
+        },
+        "max_drift": 2.3129646346357438e-17
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "domain_truncation_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_domain_truncation_defect": 0.0
+          },
+          "reference_root": {
+            "max_domain_truncation_defect": 0.0
+          }
+        },
+        "overall_max_domain_truncation_defect": 0.0
+      },
+      "family_id": "classical.middle_thirds",
+      "qm_defect_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_normalized_qm_defect": 5.551124446356015e-17,
+            "max_raw_qm_defect": 2.220449778542406e-16
+          },
+          "reference_root": {
+            "max_normalized_qm_defect": 3.7007434154171895e-17,
+            "max_raw_qm_defect": 2.2204460492503136e-16
+          }
+        },
+        "overall_max_normalized_qm_defect": 5.551124446356015e-17
+      },
+      "qm_status": "promising",
+      "root_proxies_used": {
+        "empirical_upper_root": 0.6309297535626683,
+        "reference_root": 0.6309297535714574
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/classical_baselines/restricted_digits_base5_024"
+      ],
+      "bridge_defect_summary": {
+        "bridge_window": 2,
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_bridge_defect": 2.220448610731402e-16
+          },
+          "reference_root": {
+            "max_bridge_defect": 9.860761315262648e-32
+          }
+        },
+        "overall_max_bridge_defect": 2.220448610731402e-16
+      },
+      "classification_note": "Control family has small normalized defect and bounded bridge defect on checked splits.",
+      "config_path": "configs/experiments/classical/restricted_digits_base5_024.json",
+      "depth_stability_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "drift": 9.251869211380842e-18
+          },
+          "reference_root": {
+            "drift": 4.625929269271497e-18
+          }
+        },
+        "max_drift": 9.251869211380842e-18
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "domain_truncation_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_domain_truncation_defect": 0.0
+          },
+          "reference_root": {
+            "max_domain_truncation_defect": 0.0
+          }
+        },
+        "overall_max_domain_truncation_defect": 0.0
+      },
+      "family_id": "classical.restricted_digits_base5_024",
+      "qm_defect_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_normalized_qm_defect": 2.7755607634142527e-17,
+            "max_raw_qm_defect": 2.220448610731402e-16
+          },
+          "reference_root": {
+            "max_normalized_qm_defect": 2.7755575615628926e-17,
+            "max_raw_qm_defect": 1.110223024625157e-16
+          }
+        },
+        "overall_max_normalized_qm_defect": 2.7755607634142527e-17
+      },
+      "qm_status": "promising",
+      "root_proxies_used": {
+        "empirical_upper_root": 0.6826061944884714,
+        "reference_root": 0.6826061944859854
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/contextual_family_samples/prefix_memory_no_22_base3"
+      ],
+      "bridge_defect_summary": {
+        "bridge_window": 2,
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_bridge_defect": 0.15154989812720118
+          }
+        },
+        "overall_max_bridge_defect": 0.15154989812720118
+      },
+      "classification_note": "Control family has small normalized defect and bounded bridge defect on checked splits.",
+      "config_path": "configs/experiments/contextual/prefix_memory_no_22_base3.json",
+      "depth_stability_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "drift": 0.0033114948381869763
+          }
+        },
+        "max_drift": 0.0033114948381869763
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "domain_truncation_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_domain_truncation_defect": 0.78515625
+          }
+        },
+        "overall_max_domain_truncation_defect": 0.78515625
+      },
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "qm_defect_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_normalized_qm_defect": 0.029445758914095888,
+            "max_raw_qm_defect": 0.15154989812720118
+          }
+        },
+        "overall_max_normalized_qm_defect": 0.029445758914095888
+      },
+      "qm_status": "promising",
+      "root_proxies_used": {
+        "empirical_upper_root": 0.45237190142506734
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/contextual_family_samples/prefix_memory_last_digit_rule"
+      ],
+      "bridge_defect_summary": {
+        "bridge_window": 2,
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_bridge_defect": 0.5278976076646383
+          }
+        },
+        "overall_max_bridge_defect": 0.5278976076646383
+      },
+      "classification_note": "Prefix-memory last-digit rule is not obstructed, but the defect is larger than the clean controls.",
+      "config_path": "configs/experiments/contextual/prefix_memory_last_digit_rule.json",
+      "depth_stability_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "drift": 0.015713855135796026
+          }
+        },
+        "max_drift": 0.015713855135796026
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "domain_truncation_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_domain_truncation_defect": 0.9769852156683433
+          }
+        },
+        "overall_max_domain_truncation_defect": 0.9769852156683433
+      },
+      "family_id": "contextual_local.prefix_memory_last_digit_rule",
+      "qm_defect_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_normalized_qm_defect": 0.11157177565710484,
+            "max_raw_qm_defect": 0.5278976076646383
+          }
+        },
+        "overall_max_normalized_qm_defect": 0.11157177565710484
+      },
+      "qm_status": "inconclusive",
+      "root_proxies_used": {
+        "empirical_upper_root": 0.5590723377827089
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/contextual_family_samples/domain_gated_two_map_local_ifs"
+      ],
+      "bridge_defect_summary": {
+        "bridge_window": 2,
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_bridge_defect": 0.6931471805599454
+          }
+        },
+        "overall_max_bridge_defect": 0.6931471805599454
+      },
+      "classification_note": "Domain-gated local IFS shows defects too large for a clean bounded-bridge route.",
+      "config_path": "configs/experiments/contextual/domain_gated_two_map_local_ifs.json",
+      "depth_stability_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "drift": 0.028881132523331063
+          }
+        },
+        "max_drift": 0.028881132523331063
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "domain_truncation_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_domain_truncation_defect": 0.9921875
+          }
+        },
+        "overall_max_domain_truncation_defect": 0.9921875
+      },
+      "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+      "qm_defect_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_normalized_qm_defect": 0.17328679513998635,
+            "max_raw_qm_defect": 0.6931471805599454
+          }
+        },
+        "overall_max_normalized_qm_defect": 0.17328679513998635
+      },
+      "qm_status": "blocked",
+      "root_proxies_used": {
+        "empirical_upper_root": 0.10000000000582077
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/local_ifs_toys/nested_three_map_local_ifs"
+      ],
+      "bridge_defect_summary": {
+        "bridge_window": 2,
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_bridge_defect": 1.5916013682819368
+          }
+        },
+        "overall_max_bridge_defect": 1.5916013682819368
+      },
+      "classification_note": "Nested local IFS shows defect growth too large for the intended quasi-multiplicative route.",
+      "config_path": "configs/experiments/local_ifs/nested_three_map_local_ifs.json",
+      "depth_stability_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "drift": 0.02629065081882473
+          }
+        },
+        "max_drift": 0.02629065081882473
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "domain_truncation_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_domain_truncation_defect": 0.9880841581028876
+          }
+        },
+        "overall_max_domain_truncation_defect": 0.9880841581028876
+      },
+      "family_id": "toy.local_ifs.nested_three_map_local_ifs",
+      "qm_defect_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_normalized_qm_defect": 0.1989501710352421,
+            "max_raw_qm_defect": 1.5916013682819368
+          }
+        },
+        "overall_max_normalized_qm_defect": 0.1989501710352421
+      },
+      "qm_status": "blocked",
+      "root_proxies_used": {
+        "empirical_upper_root": 0.416897901246557
+      }
+    },
+    {
+      "artifact_paths": [
+        "results/finite_state_baselines/adjacency_no_consecutive_2_base3"
+      ],
+      "bridge_defect_summary": {
+        "bridge_window": 2,
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_bridge_defect": 0.1515498981272008
+          },
+          "reference_root": {
+            "max_bridge_defect": 0.15145853868713585
+          }
+        },
+        "overall_max_bridge_defect": 0.1515498981272008
+      },
+      "classification_note": "Checked defects are mixed and do not yet justify the lemma branch.",
+      "config_path": "configs/experiments/finite_state/adjacency_no_consecutive_2_base3.json",
+      "depth_stability_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "drift": 0.0033114948381870284
+          },
+          "reference_root": {
+            "drift": 0.00331149483818698
+          }
+        },
+        "max_drift": 0.0033114948381870284
+      },
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "domain_truncation_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_domain_truncation_defect": 0.0
+          },
+          "reference_root": {
+            "max_domain_truncation_defect": 0.0
+          }
+        },
+        "overall_max_domain_truncation_defect": 0.0
+      },
+      "family_id": "finite_state.adjacency_no_consecutive_2_base3",
+      "qm_defect_summary": {
+        "by_proxy": {
+          "empirical_upper_root": {
+            "max_normalized_qm_defect": 0.029445758914095937,
+            "max_raw_qm_defect": 0.1515498981272008
+          },
+          "reference_root": {
+            "max_normalized_qm_defect": 0.02944575891409583,
+            "max_raw_qm_defect": 0.1515498981272011
+          }
+        },
+        "overall_max_normalized_qm_defect": 0.029445758914095937
+      },
+      "qm_status": "inconclusive",
+      "root_proxies_used": {
+        "empirical_upper_root": 0.45237190142506734,
+        "reference_root": 0.4380178794859424
+      }
+    }
+  ],
+  "fixed_assumptions_from_t15": [
+    "uniform_contraction",
+    "finite_memory_bound",
+    "stationary_admissibility_rule",
+    "bounded_distortion",
+    "usable_separation",
+    "feedback_free_admissibility"
+  ],
+  "generated_at_utc": "2026-03-19T17:09:44.878737Z",
+  "new_qm_assumption": "bounded_bridge_quasimultiplicativity",
+  "notes": [
+    "This route holds the T15/T19 stationary finite-memory geometry fixed and explores replacing packaging-coincidence by almost-additive / bounded-bridge control on upper partition sums.",
+    "The key stress-test family is contextual_local.domain_gated_two_map_local_ifs because it is the simplest genuinely local-domain candidate near the current theorem frontier."
+  ],
+  "qm_id": "quasimultiplicative-v1",
+  "schema_version": "1.0",
+  "target_route": "quasi_multiplicative_or_bounded_bridge_pressure"
+}

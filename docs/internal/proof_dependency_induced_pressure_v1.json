@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "dependency_id": "induced-pressure-v1",
+  "decision": "pressure_closed_for_working_class",
+  "proved_pressure_class_id": "bounded_return_delayed_gate_subclass",
+  "assumptions_path": "docs/internal/delayed_return_theorem_assumptions_v1.json",
+  "diagnostics_path": "results/delayed_return_diagnostics/report.json",
+  "theorem_statement_short": "For the bounded_return_delayed_gate_subclass, the induced pressure exists as a true limit, is monotone and continuous in s, and has a unique candidate root s_*.",
+  "assumptions_used": [
+    "delayed_return_core_exists",
+    "bounded_return_times",
+    "stationary_local_admissibility",
+    "local_domain_compatibility",
+    "induced_alphabet_control",
+    "bounded_bridge_property",
+    "feedback_free_admissibility",
+    "core_return_coverage",
+    "nontrivial_induced_structure",
+    "strict_return_contraction"
+  ],
+  "lemmas": [
+    {
+      "lemma_id": "IP-LEM-1",
+      "label": "Induced partition-sum finiteness",
+      "statement_short": "Induced partition sums are finite because the return alphabet is finite and each return-block weight is finite.",
+      "assumptions_used": [
+        "delayed_return_core_exists",
+        "bounded_return_times",
+        "stationary_local_admissibility",
+        "local_domain_compatibility",
+        "induced_alphabet_control",
+        "strict_return_contraction"
+      ],
+      "depends_on": [],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "IP-LEM-2",
+      "label": "Bounded-bridge / almost-subadditivity lemma",
+      "statement_short": "For the working class, induced partition sums are exactly multiplicative, hence almost-subadditivity holds with bridge constant 0.",
+      "assumptions_used": [
+        "delayed_return_core_exists",
+        "bounded_return_times",
+        "stationary_local_admissibility",
+        "local_domain_compatibility",
+        "bounded_bridge_property",
+        "induced_alphabet_control"
+      ],
+      "depends_on": [
+        "IP-LEM-1"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "IP-LEM-3",
+      "label": "Induced pressure existence theorem",
+      "statement_short": "The induced pressure exists as the true limit P_ind(s) = log Lambda(s).",
+      "assumptions_used": [
+        "bounded_bridge_property",
+        "induced_alphabet_control",
+        "strict_return_contraction"
+      ],
+      "depends_on": [
+        "IP-LEM-1",
+        "IP-LEM-2"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "IP-LEM-4",
+      "label": "Monotonicity lemma",
+      "statement_short": "The induced pressure P_ind(s) is strictly decreasing in s.",
+      "assumptions_used": [
+        "strict_return_contraction",
+        "induced_alphabet_control",
+        "nontrivial_induced_structure"
+      ],
+      "depends_on": [
+        "IP-LEM-3"
+      ],
+      "status": "closed_in_note"
+    },
+    {
+      "lemma_id": "IP-COR-5",
+      "label": "Continuity / root corollary",
+      "statement_short": "P_ind(s) is continuous and has a unique candidate root s_*.",
+      "assumptions_used": [
+        "strict_return_contraction",
+        "nontrivial_induced_structure",
+        "core_return_coverage"
+      ],
+      "depends_on": [
+        "IP-LEM-3",
+        "IP-LEM-4"
+      ],
+      "status": "closed_in_note"
+    }
+  ],
+  "dependency_edges": [
+    {
+      "from": "IP-LEM-1",
+      "to": "IP-LEM-2"
+    },
+    {
+      "from": "IP-LEM-1",
+      "to": "IP-LEM-3"
+    },
+    {
+      "from": "IP-LEM-2",
+      "to": "IP-LEM-3"
+    },
+    {
+      "from": "IP-LEM-3",
+      "to": "IP-LEM-4"
+    },
+    {
+      "from": "IP-LEM-3",
+      "to": "IP-COR-5"
+    },
+    {
+      "from": "IP-LEM-4",
+      "to": "IP-COR-5"
+    }
+  ],
+  "witness_families": [
+    "frontier.fw_delayed_return_gate_a3",
+    "frontier.fw_delayed_return_gate_a1",
+    "frontier.fw_delayed_return_gate_a2"
+  ],
+  "gap_status": [
+    "Pressure existence and root-supporting monotonicity/continuity are closed for the working class.",
+    "The next live gap is no longer induced pressure existence; it is the lower-transfer / truncation-control step from the delayed-return scaffold."
+  ]
+}

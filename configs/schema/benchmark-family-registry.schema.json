@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contextual Cantor Benchmark Family Registry v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry_id",
+    "tiers"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "registry_id": {
+      "type": "string"
+    },
+    "tiers": {
+      "type": "object",
+      "required": [
+        "classical",
+        "finite_state",
+        "contextual_local"
+      ],
+      "properties": {
+        "classical": {
+          "$ref": "#/$defs/familyArray"
+        },
+        "finite_state": {
+          "$ref": "#/$defs/familyArray"
+        },
+        "contextual_local": {
+          "$ref": "#/$defs/familyArray"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "familyArray": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/familyEntry"
+      }
+    },
+    "familyEntry": {
+      "type": "object",
+      "required": [
+        "family_id",
+        "label",
+        "parameter_list",
+        "engine",
+        "known_exact_quantities",
+        "notes"
+      ],
+      "properties": {
+        "family_id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "parameter_list": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "engine": {
+          "type": "string",
+          "enum": [
+            "classical_similarity",
+            "finite_state_symbolic",
+            "graph_directed_similarity",
+            "nonautonomous_symbolic",
+            "local_ifs"
+          ]
+        },
+        "known_exact_quantities": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

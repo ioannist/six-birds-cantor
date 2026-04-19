@@ -1,0 +1,153 @@
+{
+  "candidate_families": [
+    {
+      "candidate_id": "external.local_ifs_non_sft_bridge",
+      "countable_state_relevance": "medium",
+      "countable_state_signal": "medium",
+      "finite_state_compressibility": "likely_no",
+      "frontier_status": "promising",
+      "geometric_type": "local_domain",
+      "importability_to_repo": "high",
+      "local_domain_relevance": "strong",
+      "local_domain_signal": "strong",
+      "note": "Best bridge into the repo language: local admissibility and non-SFT examples already live in the source family.",
+      "renewal_like_compressibility": "likely_no",
+      "repo_import_difficulty": "low",
+      "source_id": "local_ifs_foundations",
+      "symbolic_type": "extended_shift_non_sft",
+      "theorem_amenability": "medium",
+      "theorem_route_fit": "bounded_overlap"
+    },
+    {
+      "candidate_id": "external.countable_gdms_countable_alphabet",
+      "countable_state_relevance": "strong",
+      "countable_state_signal": "strong",
+      "finite_state_compressibility": "likely_no",
+      "frontier_status": "promising",
+      "geometric_type": "graph_directed_markov",
+      "importability_to_repo": "medium",
+      "local_domain_relevance": "medium",
+      "local_domain_signal": "medium",
+      "note": "Explicit countable-alphabet GDMS with pressure asymptotics; clearly beyond the delayed-return finite-state-renewal limit.",
+      "renewal_like_compressibility": "likely_no",
+      "repo_import_difficulty": "medium",
+      "source_id": "countable_gdms_dimension_spectrum",
+      "symbolic_type": "countable_markov_shift",
+      "theorem_amenability": "strong",
+      "theorem_route_fit": "countable_state_pressure"
+    },
+    {
+      "candidate_id": "external.pseudo_markov_countable_alphabet",
+      "countable_state_relevance": "strong",
+      "countable_state_signal": "strong",
+      "finite_state_compressibility": "likely_no",
+      "frontier_status": "promising",
+      "geometric_type": "pseudo_markov",
+      "importability_to_repo": "medium",
+      "local_domain_relevance": "medium",
+      "local_domain_signal": "medium",
+      "note": "Pseudo-Markov coding over a countable alphabet is the cleanest non-finite-state witness in the external pool.",
+      "renewal_like_compressibility": "likely_no",
+      "repo_import_difficulty": "medium",
+      "source_id": "kuperberg_pseudomarkov_minimal_sets",
+      "symbolic_type": "countable_pseudomarkov_shift",
+      "theorem_amenability": "strong",
+      "theorem_route_fit": "countable_state_pressure"
+    },
+    {
+      "candidate_id": "external.countable_ifs_complete_connections",
+      "countable_state_relevance": "strong",
+      "countable_state_signal": "medium",
+      "finite_state_compressibility": "likely_no",
+      "frontier_status": "partial",
+      "geometric_type": "countable_conformal_ifs_with_overlaps",
+      "importability_to_repo": "medium",
+      "local_domain_relevance": "medium",
+      "local_domain_signal": "medium",
+      "note": "Countable-overlap geometry is useful, but the route is more measure-theoretic than a clean next theorem target.",
+      "renewal_like_compressibility": "unknown",
+      "repo_import_difficulty": "medium",
+      "source_id": "countable_ifs_overlaps_complete_connections",
+      "symbolic_type": "complete_connections_countable_shift",
+      "theorem_amenability": "medium",
+      "theorem_route_fit": "induced_renewal"
+    }
+  ],
+  "decision": "external_witness_imported",
+  "generated_at_utc": "2026-03-18T09:35:16.487463Z",
+  "notes": [
+    "Imported candidates are literature-backed skeletons, not yet numerically run through the repo's current engines.",
+    "The goal is to move from a finite-state-renewal-like theorem branch to a countable-state or local-domain bridge branch."
+  ],
+  "schema_version": "1.0",
+  "selection_rule": "Prefer external families that are explicitly countable-state or non-SFT, with a usable geometric bridge into the repo's local-domain language.",
+  "shortlist_id": "external-witness-import-v1",
+  "source_families_examined": [
+    {
+      "paper_ref": "arXiv:2601.07804",
+      "paper_title_short": "Foundations of local iterated function systems",
+      "source_id": "local_ifs_foundations",
+      "source_type": "local_ifs_framework",
+      "why_considered": "Gives the repo-language bridge: local admissibility, extended shift, and examples not modeled by SFT."
+    },
+    {
+      "paper_ref": "arXiv:1802.01125",
+      "paper_title_short": "The dimension spectrum of graph directed Markov systems",
+      "source_id": "countable_gdms_dimension_spectrum",
+      "source_type": "countable_conformal_gdms",
+      "why_considered": "Countable-state GDMS with topological pressure estimates and explicit countable alphabet dynamics."
+    },
+    {
+      "paper_ref": "arXiv:1801.04034",
+      "paper_title_short": "Hausdorff dimension of Kuperberg minimal sets",
+      "source_id": "kuperberg_pseudomarkov_minimal_sets",
+      "source_type": "graph_directed_pseudo_markov",
+      "why_considered": "Pseudo-Markov system over a countable alphabet, a genuine step beyond finite-state renewal-like control."
+    },
+    {
+      "paper_ref": "arXiv:2202.07335",
+      "paper_title_short": "Geometry of measures in random systems with complete connections",
+      "source_id": "countable_ifs_overlaps_complete_connections",
+      "source_type": "countable_ifs_overlap",
+      "why_considered": "Countable conformal IFS with overlaps and exact dimensional stationary measures, useful as a geometric pressure target."
+    }
+  ],
+  "top_candidates": [
+    {
+      "candidate_id": "external.countable_gdms_countable_alphabet",
+      "countable_state_relevance": "strong",
+      "frontier_status": "promising",
+      "geometric_type": "graph_directed_markov",
+      "importability_to_repo": "medium",
+      "local_domain_relevance": "medium",
+      "note": "Explicit countable-alphabet GDMS with pressure asymptotics; clearly beyond the delayed-return finite-state-renewal limit.",
+      "source_id": "countable_gdms_dimension_spectrum",
+      "symbolic_type": "countable_markov_shift",
+      "theorem_amenability": "strong"
+    },
+    {
+      "candidate_id": "external.pseudo_markov_countable_alphabet",
+      "countable_state_relevance": "strong",
+      "frontier_status": "promising",
+      "geometric_type": "pseudo_markov",
+      "importability_to_repo": "medium",
+      "local_domain_relevance": "medium",
+      "note": "Pseudo-Markov coding over a countable alphabet is the cleanest non-finite-state witness in the external pool.",
+      "source_id": "kuperberg_pseudomarkov_minimal_sets",
+      "symbolic_type": "countable_pseudomarkov_shift",
+      "theorem_amenability": "strong"
+    },
+    {
+      "candidate_id": "external.local_ifs_non_sft_bridge",
+      "countable_state_relevance": "medium",
+      "frontier_status": "promising",
+      "geometric_type": "local_domain",
+      "importability_to_repo": "high",
+      "local_domain_relevance": "strong",
+      "note": "Best bridge into the repo language: local admissibility and non-SFT examples already live in the source family.",
+      "source_id": "local_ifs_foundations",
+      "symbolic_type": "extended_shift_non_sft",
+      "theorem_amenability": "medium"
+    }
+  ]
+}

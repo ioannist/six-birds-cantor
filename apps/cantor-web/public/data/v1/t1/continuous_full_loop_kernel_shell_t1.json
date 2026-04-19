@@ -1,0 +1,953 @@
+{
+  "schema_version": "v1",
+  "witness_id": "generated.continuous_full_loop_kernel_shell",
+  "theory_id": "T1_hybrid_cocycle_plus_completion_theory",
+  "extended_object_map": {
+    "map_id": "t1_packaged_object_map",
+    "description": "Packaged fixed-point strata induced by the completion endomap plus forcing structure."
+  },
+  "completion_config": {
+    "tau_values": [
+      0.6,
+      0.75,
+      0.9
+    ],
+    "lens_states": [
+      "spectral_lens",
+      "row_similarity_cluster_lens",
+      "audit_flow_quantile_lens"
+    ],
+    "initial_distribution_count": 4,
+    "kernel_dim": 20
+  },
+  "fixed_point_strata": {
+    "distinct_count": 8,
+    "signatures": [
+      [
+        0.019445,
+        0.017466,
+        0.146317,
+        0.144923,
+        0.145261,
+        0.01834,
+        0.01953,
+        0.01802,
+        0.017384,
+        0.019088,
+        0.016881,
+        0.01723,
+        0.018716,
+        0.018724,
+        0.015462,
+        0.025027,
+        0.143339,
+        0.017525,
+        0.016555,
+        0.144765
+      ],
+      [
+        0.019445,
+        0.017466,
+        0.146317,
+        0.144923,
+        0.145261,
+        0.01834,
+        0.01953,
+        0.01802,
+        0.017384,
+        0.019088,
+        0.016881,
+        0.01723,
+        0.018716,
+        0.018724,
+        0.015462,
+        0.025028,
+        0.143339,
+        0.017525,
+        0.016555,
+        0.144765
+      ],
+      [
+        0.019445,
+        0.017466,
+        0.146317,
+        0.144923,
+        0.145261,
+        0.01834,
+        0.01953,
+        0.01802,
+        0.017384,
+        0.019088,
+        0.016881,
+        0.017231,
+        0.018716,
+        0.018724,
+        0.015462,
+        0.025028,
+        0.143339,
+        0.017525,
+        0.016555,
+        0.144765
+      ],
+      [
+        0.019739,
+        0.018274,
+        0.148883,
+        0.148719,
+        0.142804,
+        0.017119,
+        0.018326,
+        0.017899,
+        0.017744,
+        0.018325,
+        0.016622,
+        0.016828,
+        0.018123,
+        0.019386,
+        0.017786,
+        0.025307,
+        0.141799,
+        0.016941,
+        0.016818,
+        0.142559
+      ],
+      [
+        0.019739,
+        0.018274,
+        0.148884,
+        0.148719,
+        0.142804,
+        0.017119,
+        0.018326,
+        0.017899,
+        0.017744,
+        0.018325,
+        0.016622,
+        0.016828,
+        0.018123,
+        0.019386,
+        0.017786,
+        0.025307,
+        0.141799,
+        0.016941,
+        0.016818,
+        0.14256
+      ],
+      [
+        0.019771,
+        0.018304,
+        0.148943,
+        0.148778,
+        0.142861,
+        0.017147,
+        0.018356,
+        0.017928,
+        0.017773,
+        0.018355,
+        0.016649,
+        0.016855,
+        0.018153,
+        0.019417,
+        0.017816,
+        0.024606,
+        0.141855,
+        0.016969,
+        0.016846,
+        0.142617
+      ],
+      [
+        0.019771,
+        0.018304,
+        0.148943,
+        0.148778,
+        0.142861,
+        0.017147,
+        0.018356,
+        0.017928,
+        0.017773,
+        0.018355,
+        0.016649,
+        0.016855,
+        0.018153,
+        0.019417,
+        0.017816,
+        0.024606,
+        0.141856,
+        0.016969,
+        0.016846,
+        0.142617
+      ],
+      [
+        0.019771,
+        0.018304,
+        0.148943,
+        0.148778,
+        0.142861,
+        0.017147,
+        0.018356,
+        0.017928,
+        0.017773,
+        0.018355,
+        0.016649,
+        0.016855,
+        0.018153,
+        0.019418,
+        0.017816,
+        0.024606,
+        0.141855,
+        0.016969,
+        0.016846,
+        0.142617
+      ]
+    ]
+  },
+  "saturation": {
+    "saturated": false,
+    "saturated_panel_count": 8,
+    "total_panels": 9,
+    "panel_summaries": [
+      {
+        "tau": 0.6,
+        "lens_state": "spectral_lens",
+        "distinct_fixed_points": 2,
+        "saturated": true
+      },
+      {
+        "tau": 0.6,
+        "lens_state": "row_similarity_cluster_lens",
+        "distinct_fixed_points": 3,
+        "saturated": true
+      },
+      {
+        "tau": 0.6,
+        "lens_state": "audit_flow_quantile_lens",
+        "distinct_fixed_points": 2,
+        "saturated": true
+      },
+      {
+        "tau": 0.75,
+        "lens_state": "spectral_lens",
+        "distinct_fixed_points": 2,
+        "saturated": true
+      },
+      {
+        "tau": 0.75,
+        "lens_state": "row_similarity_cluster_lens",
+        "distinct_fixed_points": 3,
+        "saturated": true
+      },
+      {
+        "tau": 0.75,
+        "lens_state": "audit_flow_quantile_lens",
+        "distinct_fixed_points": 3,
+        "saturated": false
+      },
+      {
+        "tau": 0.9,
+        "lens_state": "spectral_lens",
+        "distinct_fixed_points": 2,
+        "saturated": true
+      },
+      {
+        "tau": 0.9,
+        "lens_state": "row_similarity_cluster_lens",
+        "distinct_fixed_points": 3,
+        "saturated": true
+      },
+      {
+        "tau": 0.9,
+        "lens_state": "audit_flow_quantile_lens",
+        "distinct_fixed_points": 2,
+        "saturated": true
+      }
+    ]
+  },
+  "run_summaries": [
+    {
+      "tau": 0.6,
+      "lens_state": "spectral_lens",
+      "initial_index": 0,
+      "status": "fixed_point",
+      "iterations": 24,
+      "residual": 1e-07,
+      "final_signature_hash": 77744202,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "spectral_lens",
+      "initial_index": 1,
+      "status": "fixed_point",
+      "iterations": 47,
+      "residual": 1e-07,
+      "final_signature_hash": 77744202,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "spectral_lens",
+      "initial_index": 2,
+      "status": "fixed_point",
+      "iterations": 45,
+      "residual": 1e-07,
+      "final_signature_hash": 31014261,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "spectral_lens",
+      "initial_index": 3,
+      "status": "fixed_point",
+      "iterations": 47,
+      "residual": 1e-07,
+      "final_signature_hash": 77744202,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 0,
+      "status": "fixed_point",
+      "iterations": 1,
+      "residual": 0.0,
+      "final_signature_hash": 49834226,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 1,
+      "status": "fixed_point",
+      "iterations": 48,
+      "residual": 9e-08,
+      "final_signature_hash": 73634276,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 2,
+      "status": "fixed_point",
+      "iterations": 45,
+      "residual": 1e-07,
+      "final_signature_hash": 80622640,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 3,
+      "status": "fixed_point",
+      "iterations": 48,
+      "residual": 9e-08,
+      "final_signature_hash": 73634276,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 0,
+      "status": "fixed_point",
+      "iterations": 25,
+      "residual": 8e-08,
+      "final_signature_hash": 45386560,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 1,
+      "status": "fixed_point",
+      "iterations": 48,
+      "residual": 8e-08,
+      "final_signature_hash": 45386560,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 2,
+      "status": "fixed_point",
+      "iterations": 43,
+      "residual": 8e-08,
+      "final_signature_hash": 75581853,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 3,
+      "status": "fixed_point",
+      "iterations": 48,
+      "residual": 9e-08,
+      "final_signature_hash": 45386560,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "spectral_lens",
+      "initial_index": 0,
+      "status": "fixed_point",
+      "iterations": 24,
+      "residual": 8e-08,
+      "final_signature_hash": 77744202,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "spectral_lens",
+      "initial_index": 1,
+      "status": "fixed_point",
+      "iterations": 46,
+      "residual": 8e-08,
+      "final_signature_hash": 77744202,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "spectral_lens",
+      "initial_index": 2,
+      "status": "fixed_point",
+      "iterations": 44,
+      "residual": 8e-08,
+      "final_signature_hash": 31014261,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "spectral_lens",
+      "initial_index": 3,
+      "status": "fixed_point",
+      "iterations": 46,
+      "residual": 8e-08,
+      "final_signature_hash": 77744202,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 0,
+      "status": "fixed_point",
+      "iterations": 1,
+      "residual": 0.0,
+      "final_signature_hash": 49834226,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 1,
+      "status": "fixed_point",
+      "iterations": 46,
+      "residual": 9e-08,
+      "final_signature_hash": 73634276,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 2,
+      "status": "fixed_point",
+      "iterations": 44,
+      "residual": 8e-08,
+      "final_signature_hash": 80622640,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 3,
+      "status": "fixed_point",
+      "iterations": 46,
+      "residual": 9e-08,
+      "final_signature_hash": 73634276,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 0,
+      "status": "fixed_point",
+      "iterations": 24,
+      "residual": 8e-08,
+      "final_signature_hash": 45386560,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 1,
+      "status": "fixed_point",
+      "iterations": 46,
+      "residual": 9e-08,
+      "final_signature_hash": 45386560,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 2,
+      "status": "fixed_point",
+      "iterations": 41,
+      "residual": 9e-08,
+      "final_signature_hash": 75581853,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 3,
+      "status": "fixed_point",
+      "iterations": 46,
+      "residual": 9e-08,
+      "final_signature_hash": 75798799,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "spectral_lens",
+      "initial_index": 0,
+      "status": "fixed_point",
+      "iterations": 23,
+      "residual": 9e-08,
+      "final_signature_hash": 77744202,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "spectral_lens",
+      "initial_index": 1,
+      "status": "fixed_point",
+      "iterations": 44,
+      "residual": 9e-08,
+      "final_signature_hash": 77744202,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "spectral_lens",
+      "initial_index": 2,
+      "status": "fixed_point",
+      "iterations": 42,
+      "residual": 9e-08,
+      "final_signature_hash": 31014261,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "spectral_lens",
+      "initial_index": 3,
+      "status": "fixed_point",
+      "iterations": 44,
+      "residual": 9e-08,
+      "final_signature_hash": 77744202,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 0,
+      "status": "fixed_point",
+      "iterations": 1,
+      "residual": 0.0,
+      "final_signature_hash": 49834226,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 1,
+      "status": "fixed_point",
+      "iterations": 45,
+      "residual": 8e-08,
+      "final_signature_hash": 73634276,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 2,
+      "status": "fixed_point",
+      "iterations": 42,
+      "residual": 1e-07,
+      "final_signature_hash": 80622640,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "row_similarity_cluster_lens",
+      "initial_index": 3,
+      "status": "fixed_point",
+      "iterations": 45,
+      "residual": 8e-08,
+      "final_signature_hash": 73634276,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 0,
+      "status": "fixed_point",
+      "iterations": 23,
+      "residual": 9e-08,
+      "final_signature_hash": 45386560,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 1,
+      "status": "fixed_point",
+      "iterations": 45,
+      "residual": 7e-08,
+      "final_signature_hash": 45386560,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 2,
+      "status": "fixed_point",
+      "iterations": 40,
+      "residual": 8e-08,
+      "final_signature_hash": 75581853,
+      "macro_admissible": false
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "audit_flow_quantile_lens",
+      "initial_index": 3,
+      "status": "fixed_point",
+      "iterations": 45,
+      "residual": 8e-08,
+      "final_signature_hash": 45386560,
+      "macro_admissible": false
+    }
+  ],
+  "p4_from_p5_events": [
+    {
+      "tau": 0.6,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.6,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.75,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "spectral_lens",
+      "to_lens": "row_similarity_cluster_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "row_similarity_cluster_lens",
+      "to_lens": "audit_flow_quantile_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    },
+    {
+      "tau": 0.9,
+      "from_lens": "audit_flow_quantile_lens",
+      "to_lens": "spectral_lens",
+      "trigger_status": "fixed_point",
+      "package_count": 0
+    }
+  ],
+  "packaging_identity_changes": [
+    {
+      "tau": 0.6,
+      "lens_state": "spectral_lens",
+      "packaging_name": "completion_spectral_packaging",
+      "packaging_score": 0.376,
+      "group_count": 2
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "row_similarity_cluster_lens",
+      "packaging_name": "completion_cluster_packaging",
+      "packaging_score": 0.538,
+      "group_count": 20
+    },
+    {
+      "tau": 0.6,
+      "lens_state": "audit_flow_quantile_lens",
+      "packaging_name": "completion_audit_packaging",
+      "packaging_score": 0.376,
+      "group_count": 2
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "spectral_lens",
+      "packaging_name": "completion_spectral_packaging",
+      "packaging_score": 0.379,
+      "group_count": 2
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "row_similarity_cluster_lens",
+      "packaging_name": "completion_cluster_packaging",
+      "packaging_score": 0.541,
+      "group_count": 20
+    },
+    {
+      "tau": 0.75,
+      "lens_state": "audit_flow_quantile_lens",
+      "packaging_name": "completion_audit_packaging",
+      "packaging_score": 0.379,
+      "group_count": 2
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "spectral_lens",
+      "packaging_name": "completion_spectral_packaging",
+      "packaging_score": 0.382,
+      "group_count": 2
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "row_similarity_cluster_lens",
+      "packaging_name": "completion_cluster_packaging",
+      "packaging_score": 0.544,
+      "group_count": 20
+    },
+    {
+      "tau": 0.9,
+      "lens_state": "audit_flow_quantile_lens",
+      "packaging_name": "completion_audit_packaging",
+      "packaging_score": 0.382,
+      "group_count": 2
+    }
+  ],
+  "t0_comparison": {
+    "_scope": "comparison_only",
+    "base_theory_id": "T0_cocycle_pressure_theory",
+    "base_object_map_id": "t0_cocycle_object_map",
+    "object_identity_verdict": "t1_objects_finer_than_t0_objects",
+    "macro_admissibility_verdict": "t0_too_coarse_on_canonical_object"
+  }
+}

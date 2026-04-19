@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "ablation_id": "local_pressure_stability_v1",
+  "description": "OFAT stability harness around local-pressure defaults.",
+  "default_settings": {
+    "depth_cutoff": 10,
+    "numerical_precision": "default",
+    "discretization_choice": "fine",
+    "branch_ordering": "lex",
+    "random_seed": 0,
+    "tol": 1e-10,
+    "s_max": 2.0
+  },
+  "factors": {
+    "depth_cutoff": [6, 8, 10, 12],
+    "numerical_precision": ["loose", "default", "tight"],
+    "discretization_choice": ["coarse", "fine"],
+    "branch_ordering": ["lex", "reverse", "shuffled"],
+    "random_seed": [0, 1]
+  },
+  "families": [
+    {
+      "family_id": "classical.middle_thirds",
+      "config_path": "configs/experiments/classical/middle_thirds.json"
+    },
+    {
+      "family_id": "classical.restricted_digits_base5_024",
+      "config_path": "configs/experiments/classical/restricted_digits_base5_024.json"
+    },
+    {
+      "family_id": "finite_state.adjacency_no_consecutive_2_base3",
+      "config_path": "configs/experiments/finite_state/adjacency_no_consecutive_2_base3.json"
+    },
+    {
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "config_path": "configs/experiments/contextual/prefix_memory_no_22_base3.json"
+    },
+    {
+      "family_id": "contextual_local.feedback_lens_protocol_coupled",
+      "config_path": "configs/experiments/contextual/feedback_lens_protocol_coupled.json"
+    }
+  ]
+}

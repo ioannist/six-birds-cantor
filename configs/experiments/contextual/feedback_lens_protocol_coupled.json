@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "feedback-lens-protocol-coupled",
+  "family_id": "contextual_local.feedback_lens_protocol_coupled",
+  "engine": "contextual_feedback",
+  "description": "Lens observation drives protocol updates, and protocol drives lens-mode updates.",
+  "lens_mode": "prefix_sectors",
+  "packaging_mode": "identity",
+  "parameters": {
+    "family_kind": "lens_protocol_coupled",
+    "base": 3,
+    "steps": 8,
+    "initial_protocol_state": "loose",
+    "initial_gating_state": "permissive",
+    "protocol_digits": {
+      "loose": [0, 2],
+      "strict": [0]
+    },
+    "gating_digits_by_state": {
+      "permissive": [0, 2],
+      "strict": [0]
+    },
+    "gating_digits_strict": [0],
+    "lens_gating_strict_threshold": 1.5,
+    "lens_gating_relax_threshold": 1.0,
+    "strict_threshold": 2.0,
+    "loose_threshold": 1.0,
+    "prefix_sector_count": 4,
+    "lens_by_protocol": {
+      "loose": "prefix_sectors",
+      "strict": "coalesced_intervals"
+    },
+    "packaging_by_lens_mode": {
+      "prefix_sectors": "identity",
+      "coalesced_intervals": "merge_touching",
+      "raw_cylinders": "identity"
+    }
+  },
+  "run_controls": {
+    "seed": 0,
+    "save_outputs": true
+  },
+  "output_root": "results/feedback_contextual/feedback-lens-protocol-coupled"
+}

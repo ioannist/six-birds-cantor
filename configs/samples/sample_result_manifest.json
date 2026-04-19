@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "run_id": "sample-middle-thirds-run-0001",
+  "timestamp_utc": "2026-03-16T00:00:00Z",
+  "status": "success",
+  "code_version": "UNSET",
+  "config_path": "configs/samples/sample_experiment_config.json",
+  "config_hash_method": "sha256-json-canonical-v1",
+  "config_hash_sha256": "ca1e467883862973aecd671cd9940332858af3106ad85444fa3b927a61d5c8de",
+  "family_id": "classical.middle_thirds",
+  "engine": "classical_similarity",
+  "parameters": {
+    "base": 3,
+    "allowed_digits": [
+      0,
+      2
+    ],
+    "max_depth": 8
+  },
+  "artifacts": [
+    {
+      "path": "results/samples/sample-middle-thirds-run-0001/intervals.json",
+      "kind": "intervals"
+    },
+    {
+      "path": "results/samples/sample-middle-thirds-run-0001/summary.json",
+      "kind": "summary"
+    }
+  ],
+  "summary_metrics": {
+    "estimated_dimension": 0.6309297536,
+    "max_depth": 8,
+    "interval_count": 256
+  },
+  "command": "python -m contextual_cantor.run --config configs/samples/sample_experiment_config.json",
+  "exit_status": 0,
+  "warnings": [],
+  "notes": null,
+  "environment": {
+    "python": "3.10"
+  }
+}

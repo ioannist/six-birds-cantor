@@ -1,0 +1,28 @@
+relation,identifier,scheme,resource_type,bibkey,title
+Cites,10.1017/S0143385700010117,DOI,publication-article,BarreiraNonadditiveTF,A Non-Additive Thermodynamic Formalism and Applications to Dimension Theory of Hyperbolic Dynamical Systems
+Cites,978-981-02-3328-0,ISBN,publication-book,Baladi2000TransferOperators,Positive Transfer Operators and Decay of Correlations
+Cites,AIHPB_1988__24_3_367_0,URL,publication-article,BarnsleyDemkoEltonGeronimo1988,Invariant measures for Markov processes arising from iterated function systems with place-dependent probabilities
+Cites,10.1007/BF02684767,DOI,publication-article,Bowen1979Quasicircles,Hausdorff dimension of quasicircles
+Cites,10.3934/dcds.2008.20.639,DOI,publication-article,CaoFengHuang2008SubAdditive,The thermodynamic formalism for sub-additive potentials
+Cites,978-0-471-24195-9,ISBN,publication-book,CoverThomas2006InfoTheory,Elements of Information Theory
+Cites,978-0-470-84862-3,ISBN,publication-book,FalconerFractalGeometry,Fractal Geometry: Mathematical Foundations and Applications
+Cites,10.1017/S0305004100066299,DOI,publication-article,FalconerRandomFractals1986,Random fractals
+Cites,10.1007/BF01504345,DOI,publication-article,Fekete1923DistributionRoots,Über die Verteilung der Wurzeln bei gewissen algebraischen Gleichungen
+Cites,10.1214/aoms/1177705909,DOI,publication-article,FurstenbergKesten1960RandomMatrices,Products of random matrices
+Cites,978-0-691-15389-6,ISBN,publication-book,GoebelSanfeliceTeel2012Hybrid,Hybrid Dynamical Systems: Modeling Stability and Robustness
+Cites,10.1512/iumj.1981.30.30055,DOI,publication-article,Hutchinson1981Fractals,Fractals and self similarity
+Cites,978-0-387-90192-3,ISBN,publication-book,KemenySnell1976FiniteMarkovChains,Finite Markov Chains
+Cites,10.1111/j.2517-6161.1968.tb00749.x,DOI,publication-article,Kingman1968Subadditive,The ergodic theory of subadditive stochastic processes
+Cites,10.1112/jlms/s2-16.3.568,DOI,publication-article,LedrappierWalters1977RelativisedVP,A relativised variational principle for continuous transformations
+Cites,978-0-521-55900-3,ISBN,publication-book,LindMarcus1995SymbolicDynamics,An Introduction to Symbolic Dynamics and Coding
+Cites,978-0-521-82538-2,ISBN,publication-book,MauldinUrbanskiGDMS,Graph Directed Markov Systems: Geometry and Dynamics of Limit Sets
+Cites,10.1017/S0305004100022684,DOI,publication-article,Moran1946AdditiveFunctions,Additive functions of intervals and Hausdorff measure
+Cites,10.3934/dcds.2006.16.435,DOI,publication-article,Mummert2006AlmostAdditive,The thermodynamic formalism for almost-additive sequences
+Cites,2601.07804,arXiv,publication-preprint,OliveiraVarandasLocalIFS,Foundations of Local Iterated Function Systems
+Cites,978-0-201-13504-6,ISBN,publication-book,Ruelle1978ThermodynamicFormalism,Thermodynamic Formalism: The Mathematical Structures of Equilibrium Statistical Mechanics
+Cites,10.1090/tran/6864,DOI,publication-article,RempeGillenUrbanski2016NonAutonomousCIFS,Non-autonomous conformal iterated function systems and Moran-set constructions
+Cites,2602.00134,arXiv,publication-preprint,TsiokosFoundations,Six Birds: Foundations of Emergence Calculus
+Cites,10.5281/zenodo.18838994,DOI,publication-preprint,TsiokosCreateStone,To Create a Stone with Six Birds: Emergent Geometric and Thermodynamic Regimes from a Minimal Stochastic Substrate
+Cites,10.5281/zenodo.18926433,DOI,publication-preprint,TsiokosCastStone,To Cast a Stone with Six Birds: A Closure-Deficit Account of Randomness under Packaging and Budget
+Cites,978-0-387-95152-2,ISBN,publication-book,WaltersErgodic1982,An Introduction to Ergodic Theory
+Cites,10.1090/S0002-9947-1986-0837796-8,DOI,publication-article,Walters1986RelativePressure,Relative pressure relative equilibrium states compensation functions and many-to-one codes between subshifts

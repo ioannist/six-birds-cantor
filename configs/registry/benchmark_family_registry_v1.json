@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "benchmark_family_registry_v1",
+  "tiers": {
+    "classical": [
+      {
+        "family_id": "classical.middle_thirds",
+        "label": "Classical middle-thirds Cantor set",
+        "parameter_list": [
+          "base",
+          "allowed_digits"
+        ],
+        "engine": "classical_similarity",
+        "known_exact_quantities": {
+          "hausdorff_dimension_formula": "log(2)/log(3)"
+        },
+        "notes": "Canonical baseline; exact dimension is standard."
+      },
+      {
+        "family_id": "classical.restricted_digits_base4_02",
+        "label": "Base-4 restricted digits {0,2}",
+        "parameter_list": [
+          "base",
+          "allowed_digits"
+        ],
+        "engine": "classical_similarity",
+        "known_exact_quantities": {
+          "hausdorff_dimension_formula": "log(2)/log(4)",
+          "hausdorff_dimension_exact": "1/2"
+        },
+        "notes": "Simple restricted-digit self-similar family with closed-form dimension."
+      },
+      {
+        "family_id": "classical.restricted_digits_base5_024",
+        "label": "Base-5 restricted digits {0,2,4}",
+        "parameter_list": [
+          "base",
+          "allowed_digits"
+        ],
+        "engine": "classical_similarity",
+        "known_exact_quantities": {
+          "hausdorff_dimension_formula": "log(3)/log(5)"
+        },
+        "notes": "Three-map uniform-ratio restricted-digit baseline."
+      }
+    ],
+    "finite_state": [
+      {
+        "family_id": "finite_state.adjacency_no_consecutive_2_base3",
+        "label": "Base-3 symbolic rule with no consecutive digit 2",
+        "parameter_list": [
+          "base",
+          "forbidden_patterns",
+          "adjacency_matrix"
+        ],
+        "engine": "finite_state_symbolic",
+        "known_exact_quantities": {
+          "hausdorff_dimension_formula": "log(phi)/log(3)"
+        },
+        "notes": "Fibonacci adjacency model assumption; formula depends on that encoding."
+      },
+      {
+        "family_id": "finite_state.graph_directed_two_vertex_similarity",
+        "label": "Two-vertex graph-directed similarity baseline",
+        "parameter_list": [
+          "graph",
+          "edge_maps",
+          "contraction_ratios"
+        ],
+        "engine": "graph_directed_similarity",
+        "known_exact_quantities": null,
+        "notes": "Exact closed form left open pending chosen incidence and ratios."
+      },
+      {
+        "family_id": "finite_state.nonautonomous_alternating_digit_baseline",
+        "label": "Nonautonomous alternating digit constraints",
+        "parameter_list": [
+          "base",
+          "stage_rules",
+          "period"
+        ],
+        "engine": "nonautonomous_symbolic",
+        "known_exact_quantities": null,
+        "notes": "Dimension formula deferred until transfer-operator convention is fixed."
+      }
+    ],
+    "contextual_local": [
+      {
+        "family_id": "contextual_local.prefix_memory_last_digit_rule",
+        "label": "Prefix-memory local rule keyed by last emitted digit",
+        "parameter_list": [
+          "base",
+          "memory_order",
+          "context_rules"
+        ],
+        "engine": "local_ifs",
+        "known_exact_quantities": null,
+        "notes": "Context-coupled local dynamics; no stable closed-form dimension yet."
+      },
+      {
+        "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+        "label": "Domain-gated two-map local IFS",
+        "parameter_list": [
+          "domain_partition",
+          "local_maps",
+          "gate_rule"
+        ],
+        "engine": "local_ifs",
+        "known_exact_quantities": null,
+        "notes": "Designed for local gating benchmarks; analytical formula unresolved."
+      },
+      {
+        "family_id": "contextual_local.stage_dependent_alternating_removal",
+        "label": "Stage-dependent alternating removal construction",
+        "parameter_list": [
+          "stage_schedule",
+          "removal_profile",
+          "base"
+        ],
+        "engine": "local_ifs",
+        "known_exact_quantities": null,
+        "notes": "Alternating stage policy benchmark; exact invariants to be derived later."
+      }
+    ]
+  }
+}

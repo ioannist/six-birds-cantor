@@ -1,0 +1,126 @@
+{
+  "schema_version": "v1",
+  "witness_id": "generated.continuous_full_loop_kernel",
+  "theory_id": "T0_cocycle_pressure_theory",
+  "core_class_id": "continuous_full_loop_lawful_kernel_class_shell_stable",
+  "shell_stable": true,
+  "t0_object_map": {
+    "map_id": "t0_cocycle_object_map",
+    "description": "Audited cocycle descriptor quotient on the shell-stable class."
+  },
+  "theoremlets": [
+    {
+      "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+      "status": "closed_in_note",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "generated_object_extraction_plausible",
+        "lawful_exploratory_regime"
+      ],
+      "allowed_claim_ids": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ]
+    },
+    {
+      "theoremlet_id": "cocycle_pressure_closure_theoremlet",
+      "status": "closed_in_note",
+      "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
+      "assumptions_used": [
+        "continuous_operator_substrate",
+        "full_six_primitive_closure",
+        "generated_object_extraction_plausible",
+        "hysteresis_stable_selection",
+        "lawful_exploratory_regime",
+        "no_fast_collapse",
+        "p1_rewrite_active",
+        "p2_gating_active",
+        "p3_timescale_adaptation",
+        "p4_nondegenerate_lens_competition",
+        "p5_nondegenerate_packaging_competition",
+        "p6_budget_dynamics_active",
+        "parameter_shell_robustness",
+        "persistent_kernel_variation",
+        "primitive_knockout_fragility"
+      ],
+      "allowed_claim_ids": [
+        "cocycle_pressure_closure_theoremlet"
+      ]
+    }
+  ],
+  "claim_bindings": [
+    {
+      "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+      "allowed_claim_ids": [
+        "continuous_full_loop_lawfulness_theoremlet"
+      ],
+      "figure_ids": [
+        "fig_full_loop_continuous_substrate_regime",
+        "fig_primitive_knockout_closure"
+      ]
+    },
+    {
+      "theoremlet_id": "cocycle_pressure_closure_theoremlet",
+      "allowed_claim_ids": [
+        "cocycle_pressure_closure_theoremlet"
+      ],
+      "figure_ids": [
+        "tbl_pressure_closure_support"
+      ]
+    }
+  ],
+  "pressure_object": {
+    "pressure_route": "fekete_sup_cocycle_route",
+    "observable_family": "selector_weighted_operator_growth_observable",
+    "fekete_gap_proxy": 0.6557544277778513,
+    "growth_bound_proxy": 0.255686927745179,
+    "pressure_profiles": {
+      "0.5": {
+        "gap_proxy": 0.5010937942562466,
+        "pressure_proxy": 0.006632373409356469,
+        "sign": 1.0
+      },
+      "1.0": {
+        "gap_proxy": 0.6557544277778513,
+        "pressure_proxy": 0.006358130374760051,
+        "sign": 1.0
+      },
+      "1.5": {
+        "gap_proxy": 0.8105553725774015,
+        "pressure_proxy": 0.00608500369962312,
+        "sign": 1.0
+      }
+    },
+    "budget_range": [
+      2.7141689793974115,
+      12.0
+    ],
+    "tau_range": [
+      0.6,
+      0.9823713697869205
+    ],
+    "shell_exit_count": 0,
+    "min_lens_margin": 0.43710997375849425,
+    "min_packaging_margin": 0.6917826326703813,
+    "all_six_primitives_active": true
+  },
+  "shell_uniform_bounds": {
+    "budget_range": [
+      2.7141689793974115,
+      12.0
+    ],
+    "lens_margin_min": 0.4331332198094861,
+    "packaging_margin_min": 0.6724301392686046,
+    "tau_range": [
+      0.6,
+      0.9823713697869205
+    ]
+  },
+  "t1_comparison": {
+    "_scope": "comparison_only",
+    "object_identity_verdict": "t1_objects_finer_than_t0_objects",
+    "factorization_verdict": "non_factorization_closed_on_audited_shell",
+    "macro_admissibility_verdict": "t0_too_coarse_on_canonical_object"
+  }
+}

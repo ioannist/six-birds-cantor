@@ -1,0 +1,254 @@
+{
+  "candidate_route": "induced_core_return_block_coding",
+  "decision": "advance_to_induced_pressure",
+  "families": [
+    {
+      "artifact_paths": [
+        "results/contextual_family_samples/domain_gated_two_map_local_ifs"
+      ],
+      "classification_note": "Induction collapses the blocked direct coding to a recurrent one-step core with zero QM/bridge defect and only constant-factor mass loss.",
+      "config_path": "configs/experiments/contextual/domain_gated_two_map_local_ifs.json",
+      "core_definition": "max-mass recurrent one-step image of map index 0",
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+      "induced_alphabet_growth_summary": {
+        "alphabet_sizes_by_cap": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        },
+        "growth_behavior": "stabilizes"
+      },
+      "induced_bridge_defect_summary": {
+        "max_bridge_defect": 1.1102230246251565e-16
+      },
+      "induced_qm_defect_summary": {
+        "max_normalized_qm_defect": 1.3877787807814457e-17,
+        "max_raw_qm_defect": 1.1102230246251565e-16
+      },
+      "induced_status": "promising",
+      "induced_truncation_defect_summary": {
+        "max_domain_truncation_defect": 0.5
+      },
+      "original_bridge_defect_summary": {
+        "max_bridge_defect": 0.6931471805599454
+      },
+      "original_qm_defect_summary": {
+        "max_normalized_qm_defect": 0.17328679513998635,
+        "max_raw_qm_defect": 0.6931471805599454
+      },
+      "return_length_cap": 4,
+      "return_time_summary": {
+        "max_return_time": 1,
+        "observed_return_lengths": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support_behavior": "bounded"
+      },
+      "root_proxy_used": 0.10000000000582077
+    },
+    {
+      "artifact_paths": [
+        "results/local_ifs_toys/nested_three_map_local_ifs"
+      ],
+      "classification_note": "Induction does not produce a credible improved core on the checked cap.",
+      "config_path": "configs/experiments/local_ifs/nested_three_map_local_ifs.json",
+      "core_definition": "max-mass recurrent one-step image of map index 0",
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "toy.local_ifs.nested_three_map_local_ifs",
+      "induced_alphabet_growth_summary": {
+        "alphabet_sizes_by_cap": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1
+        },
+        "growth_behavior": "stabilizes"
+      },
+      "induced_bridge_defect_summary": {
+        "max_bridge_defect": 0.0
+      },
+      "induced_qm_defect_summary": {
+        "max_normalized_qm_defect": 0.0,
+        "max_raw_qm_defect": 0.0
+      },
+      "induced_status": "blocked",
+      "induced_truncation_defect_summary": {
+        "max_domain_truncation_defect": 0.630865217653408
+      },
+      "original_bridge_defect_summary": {
+        "max_bridge_defect": 1.5916013682819368
+      },
+      "original_qm_defect_summary": {
+        "max_normalized_qm_defect": 0.1989501710352421,
+        "max_raw_qm_defect": 1.5916013682819368
+      },
+      "return_length_cap": 4,
+      "return_time_summary": {
+        "max_return_time": 1,
+        "observed_return_lengths": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "support_behavior": "bounded"
+      },
+      "root_proxy_used": 0.416897901246557
+    },
+    {
+      "artifact_paths": [
+        "results/contextual_family_samples/prefix_memory_no_22_base3"
+      ],
+      "classification_note": "Control family remains well behaved under the induced coding.",
+      "config_path": "configs/experiments/contextual/prefix_memory_no_22_base3.json",
+      "core_definition": "whole recurrent prefix-memory context system",
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "induced_alphabet_growth_summary": {
+        "alphabet_sizes_by_cap": {},
+        "growth_behavior": "none"
+      },
+      "induced_bridge_defect_summary": {
+        "max_bridge_defect": 0.0
+      },
+      "induced_qm_defect_summary": {
+        "max_normalized_qm_defect": 0.0,
+        "max_raw_qm_defect": 0.0
+      },
+      "induced_status": "promising",
+      "induced_truncation_defect_summary": {
+        "max_domain_truncation_defect": 0.0
+      },
+      "original_bridge_defect_summary": {
+        "max_bridge_defect": 0.15154989812720118
+      },
+      "original_qm_defect_summary": {
+        "max_normalized_qm_defect": 0.029445758914095888,
+        "max_raw_qm_defect": 0.15154989812720118
+      },
+      "return_length_cap": 4,
+      "return_time_summary": {
+        "max_return_time": null,
+        "observed_return_lengths": [],
+        "support_behavior": "none"
+      },
+      "root_proxy_used": 0.45237190142506734
+    },
+    {
+      "artifact_paths": [
+        "results/classical_baselines/middle_thirds"
+      ],
+      "classification_note": "Control family remains well behaved under the induced coding.",
+      "config_path": "configs/experiments/classical/middle_thirds.json",
+      "core_definition": "whole one-state symbolic core",
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "classical.middle_thirds",
+      "induced_alphabet_growth_summary": {
+        "alphabet_sizes_by_cap": {},
+        "growth_behavior": "none"
+      },
+      "induced_bridge_defect_summary": {
+        "max_bridge_defect": 0.0
+      },
+      "induced_qm_defect_summary": {
+        "max_normalized_qm_defect": 0.0,
+        "max_raw_qm_defect": 0.0
+      },
+      "induced_status": "promising",
+      "induced_truncation_defect_summary": {
+        "max_domain_truncation_defect": 0.0
+      },
+      "original_bridge_defect_summary": {
+        "max_bridge_defect": 1.1102230246251565e-16
+      },
+      "original_qm_defect_summary": {
+        "max_normalized_qm_defect": 3.7007434154171895e-17,
+        "max_raw_qm_defect": 2.2204460492503136e-16
+      },
+      "return_length_cap": 4,
+      "return_time_summary": {
+        "max_return_time": null,
+        "observed_return_lengths": [],
+        "support_behavior": "none"
+      },
+      "root_proxy_used": 0.6309297535714574
+    },
+    {
+      "artifact_paths": [
+        "results/contextual_family_samples/prefix_memory_last_digit_rule"
+      ],
+      "classification_note": "Induction improves the defect picture, but this family still does not by itself settle the frontier question.",
+      "config_path": "configs/experiments/contextual/prefix_memory_last_digit_rule.json",
+      "core_definition": "whole recurrent prefix-memory context system",
+      "depths_checked": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "family_id": "contextual_local.prefix_memory_last_digit_rule",
+      "induced_alphabet_growth_summary": {
+        "alphabet_sizes_by_cap": {},
+        "growth_behavior": "none"
+      },
+      "induced_bridge_defect_summary": {
+        "max_bridge_defect": 8.881784197001252e-16
+      },
+      "induced_qm_defect_summary": {
+        "max_normalized_qm_defect": 1.1102230246251565e-16,
+        "max_raw_qm_defect": 8.881784197001252e-16
+      },
+      "induced_status": "inconclusive",
+      "induced_truncation_defect_summary": {
+        "max_domain_truncation_defect": 0.0
+      },
+      "original_bridge_defect_summary": {
+        "max_bridge_defect": 0.5278976076646383
+      },
+      "original_qm_defect_summary": {
+        "max_normalized_qm_defect": 0.11157177565710484,
+        "max_raw_qm_defect": 0.5278976076646383
+      },
+      "return_length_cap": 4,
+      "return_time_summary": {
+        "max_return_time": null,
+        "observed_return_lengths": [],
+        "support_behavior": "none"
+      },
+      "root_proxy_used": 0.5590723377827089
+    }
+  ],
+  "generated_at_utc": "2026-03-19T17:07:50.438271Z",
+  "induced_core_id": "induced-core-v1",
+  "notes": [
+    "The induced core is explicit in this repo as a selected recurrent return component plus first-return block coding up to the cap.",
+    "For the domain-gated family, the main question is whether isolating a recurrent component removes the blocked direct-coding defect without exponential mass loss."
+  ],
+  "schema_version": "1.0",
+  "target_family": "contextual_local.domain_gated_two_map_local_ifs"
+}

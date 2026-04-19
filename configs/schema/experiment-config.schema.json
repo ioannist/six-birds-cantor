@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contextual Cantor Experiment Config",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "family_id",
+    "engine",
+    "parameters",
+    "run_controls",
+    "output_root"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "experiment_id": {
+      "type": "string"
+    },
+    "family_id": {
+      "type": "string"
+    },
+    "engine": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "run_controls": {
+      "type": "object"
+    },
+    "output_root": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "shortlist_id": "induced-target-class-shortlist-v1",
+  "generated_at_utc": "2026-03-17T21:42:36.788340Z",
+  "selected_target_class": "finite_state_induced_core_subclass",
+  "decision": "advance_finite_state_induced_only",
+  "candidate_classes": [
+    {
+      "class_id": "finite_state_induced_core_subclass",
+      "label": "Finite-state induced core subclass",
+      "one_line_definition": "Induction improves the target family only by collapsing to a small stationary finite-state recurrent core.",
+      "frontier_value": "low_to_medium",
+      "proof_outlook": "good",
+      "current_family_support": [
+        "contextual_local.domain_gated_two_map_local_ifs"
+      ],
+      "selection_status": "selected"
+    },
+    {
+      "class_id": "finite_state_renewal_subclass",
+      "label": "Finite-state renewal subclass",
+      "one_line_definition": "Induced coding uses finite return blocks with a nontrivial bounded-return regime.",
+      "frontier_value": "medium",
+      "proof_outlook": "unclear",
+      "current_family_support": [],
+      "selection_status": "rejected"
+    },
+    {
+      "class_id": "countable_state_renewal_local_domain_class",
+      "label": "Countable-state renewal/local-domain class",
+      "one_line_definition": "Induced coding shows genuinely nontrivial return structure or countable-state behavior beyond finite-state collapse.",
+      "frontier_value": "high",
+      "proof_outlook": "poor_currently",
+      "current_family_support": [],
+      "selection_status": "reserve"
+    }
+  ],
+  "family_evaluation": [
+    {
+      "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+      "induced_core_type": "trivial_finite_state",
+      "return_time_regime": "bounded_constant",
+      "effective_alphabet_regime": "size_1",
+      "frontier_relevance": "medium",
+      "supports_candidate_classes": [
+        "finite_state_induced_core_subclass"
+      ],
+      "blocking_issue": "Current induced core collapses to a single recurrent symbol with return time 1, so it does not yet witness renewal or countable-state complexity.",
+      "note": "Best interpreted as trivial_finite_state_collapse, not as a meaningful renewal signal."
+    },
+    {
+      "family_id": "toy.local_ifs.nested_three_map_local_ifs",
+      "induced_core_type": "trivial_finite_state",
+      "return_time_regime": "bounded_constant",
+      "effective_alphabet_regime": "size_1",
+      "frontier_relevance": "low",
+      "supports_candidate_classes": [],
+      "blocking_issue": "Induced truncation loss is too large for the resulting one-symbol core to be credible as a theorem target.",
+      "note": "Induction improves defect metrics but only through an overly lossy collapse."
+    },
+    {
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "induced_core_type": "finite_state",
+      "return_time_regime": "unknown",
+      "effective_alphabet_regime": "finite_small",
+      "frontier_relevance": "low",
+      "supports_candidate_classes": [
+        "finite_state_induced_core_subclass"
+      ],
+      "blocking_issue": "Already a symbolic/finite-state control, so it does not add frontier value.",
+      "note": "Useful control showing the induced machinery behaves as expected on a symbolic witness."
+    },
+    {
+      "family_id": "contextual_local.prefix_memory_last_digit_rule",
+      "induced_core_type": "finite_state",
+      "return_time_regime": "unknown",
+      "effective_alphabet_regime": "finite_small",
+      "frontier_relevance": "low",
+      "supports_candidate_classes": [
+        "finite_state_induced_core_subclass"
+      ],
+      "blocking_issue": "Still symbolic/finite-state after induction, so not a frontier witness.",
+      "note": "Induction improves the coding but does not change the theorem-impact category."
+    }
+  ],
+  "evidence_refs": [
+    "docs/internal/induced_core_target_v1.md",
+    "docs/internal/induced_core_class_v1.json",
+    "results/induced_core_diagnostics/report.json",
+    "docs/internal/post_overlap_impact_check_v1.md",
+    "docs/internal/bowen_class_v2.json"
+  ],
+  "notes": [
+    "The domain-gated family improved enough under induction to justify studying induced pressure, but not enough to justify a countable-state or renewal-frontier theorem target yet.",
+    "Current evidence supports only the finite_state_induced_core_subclass as the default next induced target."
+  ]
+}

@@ -1,0 +1,948 @@
+{
+  "alignment_id": "cantor_pica_alignment_v1",
+  "family_alignment": [
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "classical.middle_thirds",
+      "lens_modes_current": [
+        "cylinder-depth"
+      ],
+      "lens_modes_target": [
+        "cylinder-depth",
+        "pressure-depth"
+      ],
+      "notes": "Baseline classical self-similar family.",
+      "packaging_modes_current": [
+        "interval-union-coalesced"
+      ],
+      "packaging_modes_target": [
+        "interval-union-coalesced",
+        "branch-package-audit"
+      ],
+      "pica_status": "representative",
+      "primitive_tags": [
+        "P2",
+        "P4",
+        "P5"
+      ],
+      "role": "baseline"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "classical.restricted_digits_base4_02",
+      "lens_modes_current": [
+        "cylinder-depth"
+      ],
+      "lens_modes_target": [
+        "cylinder-depth",
+        "pressure-depth"
+      ],
+      "notes": "Classical restricted-digit baseline.",
+      "packaging_modes_current": [
+        "interval-union-coalesced"
+      ],
+      "packaging_modes_target": [
+        "interval-union-coalesced"
+      ],
+      "pica_status": "representative",
+      "primitive_tags": [
+        "P2",
+        "P4",
+        "P5"
+      ],
+      "role": "baseline"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "classical.restricted_digits_base5_024",
+      "lens_modes_current": [
+        "cylinder-depth"
+      ],
+      "lens_modes_target": [
+        "cylinder-depth",
+        "pressure-depth"
+      ],
+      "notes": "Classical restricted-digit baseline.",
+      "packaging_modes_current": [
+        "interval-union-coalesced"
+      ],
+      "packaging_modes_target": [
+        "interval-union-coalesced"
+      ],
+      "pica_status": "representative",
+      "primitive_tags": [
+        "P2",
+        "P4",
+        "P5"
+      ],
+      "role": "baseline"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4",
+        "P6<-P6"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4",
+        "P5<-P6",
+        "P6<-P6"
+      ],
+      "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+      "lens_modes_current": [
+        "fixed-domain-lens"
+      ],
+      "lens_modes_target": [
+        "fixed-domain-lens",
+        "pressure-depth"
+      ],
+      "notes": "Primary behavior is P2/P5/P6 with fixed lens and packaging choices in current code.",
+      "packaging_modes_current": [
+        "interval-union-coalesced"
+      ],
+      "packaging_modes_target": [
+        "interval-union-coalesced",
+        "audit-tagged-packaging"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P5",
+        "P6"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P2<-P6",
+        "P5<-P6",
+        "P6<-P6"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P2<-P6",
+        "P5<-P4",
+        "P5<-P6",
+        "P6<-P6"
+      ],
+      "family_id": "contextual_local.feedback_budget_gate_and_packaging",
+      "lens_modes_current": [
+        "raw_cylinders"
+      ],
+      "lens_modes_target": [
+        "raw_cylinders",
+        "coalesced_intervals"
+      ],
+      "notes": "Current family has internal feedback: budget/audit observations drive gating protocol adaptation and packaging adaptation.",
+      "packaging_modes_current": [
+        "merge_touching",
+        "budget_capped_merge"
+      ],
+      "packaging_modes_target": [
+        "merge_touching",
+        "budget_capped_merge"
+      ],
+      "pica_status": "representative",
+      "primitive_tags": [
+        "P2",
+        "P5",
+        "P6"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P2<-P4",
+        "P3<-P4",
+        "P4<-P3",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P3<-P4",
+        "P4<-P3",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "contextual_local.feedback_lens_protocol_coupled",
+      "lens_modes_current": [
+        "prefix_sectors",
+        "coalesced_intervals"
+      ],
+      "lens_modes_target": [
+        "raw_cylinders",
+        "prefix_sectors",
+        "coalesced_intervals"
+      ],
+      "notes": "Current family has internal feedback: lens observation updates protocol and gating (P3<-P4, P2<-P4), protocol adaptation updates lens mode (P4<-P3), and lens signals can switch packaging mode (P5<-P4).",
+      "packaging_modes_current": [
+        "merge_touching"
+      ],
+      "packaging_modes_target": [
+        "merge_touching",
+        "budget_capped_merge"
+      ],
+      "pica_status": "representative",
+      "primitive_tags": [
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4"
+      ],
+      "family_id": "contextual_local.prefix_memory_last_digit_rule",
+      "lens_modes_current": [
+        "memory-annotated-symbolic-depth"
+      ],
+      "lens_modes_target": [
+        "memory-annotated-symbolic-depth"
+      ],
+      "notes": "Primarily P2-with-memory gating; not a full P3 realization.",
+      "packaging_modes_current": [
+        "branch-sum"
+      ],
+      "packaging_modes_target": [
+        "branch-sum",
+        "coalesced-interval-projection"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4"
+      ],
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "lens_modes_current": [
+        "memory-annotated-symbolic-depth"
+      ],
+      "lens_modes_target": [
+        "memory-annotated-symbolic-depth",
+        "pressure-depth"
+      ],
+      "notes": "Primarily P2-with-memory constraint; no internal protocol adaptation.",
+      "packaging_modes_current": [
+        "branch-sum"
+      ],
+      "packaging_modes_target": [
+        "branch-sum",
+        "coalesced-interval-projection"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P3<-P4",
+        "P4<-P3"
+      ],
+      "family_id": "contextual_local.stage_dependent_alternating_removal",
+      "lens_modes_current": [
+        "stage-scheduled-symbolic-depth"
+      ],
+      "lens_modes_target": [
+        "stage-scheduled-symbolic-depth",
+        "protocol-adaptive-depth"
+      ],
+      "notes": "Nonautonomous schedule control only; not a genuine P3 family with internal feedback/protocol adaptation.",
+      "packaging_modes_current": [
+        "interval-union-coalesced"
+      ],
+      "packaging_modes_target": [
+        "interval-union-coalesced",
+        "audit-tagged-packaging"
+      ],
+      "pica_status": "control_only",
+      "primitive_tags": [
+        "P2",
+        "P4"
+      ],
+      "role": "control"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4"
+      ],
+      "family_id": "control.middle_thirds_symbolic",
+      "lens_modes_current": [
+        "symbolic-control"
+      ],
+      "lens_modes_target": [
+        "symbolic-control"
+      ],
+      "notes": "Control mirror of classical middle-thirds.",
+      "packaging_modes_current": [
+        "branch-sum"
+      ],
+      "packaging_modes_target": [
+        "branch-sum"
+      ],
+      "pica_status": "control_only",
+      "primitive_tags": [
+        "P2",
+        "P4"
+      ],
+      "role": "control"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4"
+      ],
+      "family_id": "control.restricted_digits_base5_024_symbolic",
+      "lens_modes_current": [
+        "symbolic-control"
+      ],
+      "lens_modes_target": [
+        "symbolic-control"
+      ],
+      "notes": "Control mirror of restricted base-5 family.",
+      "packaging_modes_current": [
+        "branch-sum"
+      ],
+      "packaging_modes_target": [
+        "branch-sum"
+      ],
+      "pica_status": "control_only",
+      "primitive_tags": [
+        "P2",
+        "P4"
+      ],
+      "role": "control"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4"
+      ],
+      "family_id": "finite_state.adjacency_no_consecutive_2_base3",
+      "lens_modes_current": [
+        "symbolic-graph-depth"
+      ],
+      "lens_modes_target": [
+        "symbolic-graph-depth",
+        "pressure-depth"
+      ],
+      "notes": "Finite-state SFT baseline with symbolic admissibility.",
+      "packaging_modes_current": [
+        "branch-sum"
+      ],
+      "packaging_modes_target": [
+        "branch-sum",
+        "audit-tagged-branch-sum"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P4"
+      ],
+      "role": "baseline"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4"
+      ],
+      "family_id": "finite_state.graph_directed_two_vertex_similarity",
+      "lens_modes_current": [
+        "graph-directed-depth"
+      ],
+      "lens_modes_target": [
+        "graph-directed-depth",
+        "pressure-depth"
+      ],
+      "notes": "Graph-directed finite-state probe without closed-form target.",
+      "packaging_modes_current": [
+        "branch-sum"
+      ],
+      "packaging_modes_target": [
+        "branch-sum"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P4"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "frontier.fw_delayed_return_gate_a1",
+      "lens_modes_current": [
+        "fixed-domain-lens"
+      ],
+      "lens_modes_target": [
+        "fixed-domain-lens",
+        "pressure-depth"
+      ],
+      "notes": "Delayed-return local-domain frontier witness candidate with explicit gate/hold/return structure; current evidence is exploratory rather than theorem-complete.",
+      "packaging_modes_current": [
+        "interval-union-coalesced"
+      ],
+      "packaging_modes_target": [
+        "interval-union-coalesced",
+        "return-block-packaging"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P5"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "frontier.fw_delayed_return_gate_a2",
+      "lens_modes_current": [
+        "fixed-domain-lens"
+      ],
+      "lens_modes_target": [
+        "fixed-domain-lens",
+        "pressure-depth"
+      ],
+      "notes": "Delayed-return local-domain frontier witness candidate with stronger holding branch; used as a reserve/stress-test member of the frontier search set.",
+      "packaging_modes_current": [
+        "interval-union-coalesced"
+      ],
+      "packaging_modes_target": [
+        "interval-union-coalesced",
+        "return-block-packaging"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P5"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "frontier.fw_delayed_return_gate_a3",
+      "lens_modes_current": [
+        "fixed-domain-lens"
+      ],
+      "lens_modes_target": [
+        "fixed-domain-lens",
+        "pressure-depth"
+      ],
+      "notes": "Primary delayed-return frontier witness from the search ticket; nontrivial induced return structure without immediate size-1 collapse.",
+      "packaging_modes_current": [
+        "interval-union-coalesced"
+      ],
+      "packaging_modes_target": [
+        "interval-union-coalesced",
+        "return-block-packaging"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P5"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "external.countable_gdms_countable_alphabet",
+      "lens_modes_current": [
+        "countable-markov-depth"
+      ],
+      "lens_modes_target": [
+        "countable-markov-depth",
+        "pressure-depth"
+      ],
+      "notes": "Imported countable-GDMS witness skeleton with explicit countable-alphabet pressure geometry.",
+      "packaging_modes_current": [
+        "countable-branch-sum"
+      ],
+      "packaging_modes_target": [
+        "countable-branch-sum",
+        "pressure-depth"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P4"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "external.local_ifs_non_sft_bridge",
+      "lens_modes_current": [
+        "local-domain-lens"
+      ],
+      "lens_modes_target": [
+        "local-domain-lens",
+        "pressure-depth"
+      ],
+      "notes": "Imported local-IFS bridge skeleton emphasizes admissible compositions beyond SFT control.",
+      "packaging_modes_current": [
+        "local-interval-coalesced"
+      ],
+      "packaging_modes_target": [
+        "local-interval-coalesced",
+        "pressure-depth"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P4",
+        "P5"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "external.pseudo_markov_countable_alphabet",
+      "lens_modes_current": [
+        "countable-pseudomarkov-depth"
+      ],
+      "lens_modes_target": [
+        "countable-pseudomarkov-depth",
+        "pressure-depth"
+      ],
+      "notes": "Imported pseudo-Markov witness skeleton with countable-alphabet coding.",
+      "packaging_modes_current": [
+        "countable-return-blocks"
+      ],
+      "packaging_modes_target": [
+        "countable-return-blocks",
+        "pressure-depth"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P4"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "active_cells_target": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "family_id": "toy.local_ifs.nested_three_map_local_ifs",
+      "lens_modes_current": [
+        "fixed-domain-lens"
+      ],
+      "lens_modes_target": [
+        "fixed-domain-lens"
+      ],
+      "notes": "Toy local-IFS family for qualitative behavior checks.",
+      "packaging_modes_current": [
+        "interval-union-coalesced"
+      ],
+      "packaging_modes_target": [
+        "interval-union-coalesced"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P2",
+        "P5"
+      ],
+      "role": "toy"
+    },
+    {
+      "active_cells_current": [
+        "P3<-P4",
+        "P4<-P3",
+        "P3<-P3"
+      ],
+      "active_cells_target": [
+        "P3<-P4",
+        "P4<-P3",
+        "P3<-P3"
+      ],
+      "family_id": "generated.pg_protocol_lens",
+      "lens_modes_current": [
+        "protocol-lens"
+      ],
+      "lens_modes_target": [
+        "protocol-lens",
+        "pressure-depth"
+      ],
+      "notes": "Frozen generated protocol/lens substrate from SB-T1; stable structural anchor with internal feedback via protocol adaptation.",
+      "packaging_modes_current": [
+        "protocol-packaging"
+      ],
+      "packaging_modes_target": [
+        "protocol-packaging",
+        "branch-package-audit"
+      ],
+      "pica_status": "representative",
+      "primitive_tags": [
+        "P3",
+        "P4"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P1<-P3",
+        "P2<-P1",
+        "P4<-P3",
+        "P6<-P4"
+      ],
+      "active_cells_target": [
+        "P1<-P3",
+        "P2<-P1",
+        "P4<-P3",
+        "P6<-P4"
+      ],
+      "family_id": "generated.pg_rewrite_bundle",
+      "lens_modes_current": [
+        "rewrite-protocol-lens"
+      ],
+      "lens_modes_target": [
+        "rewrite-protocol-lens",
+        "pressure-depth"
+      ],
+      "notes": "Frozen generated rewrite bundle from SB-T1; strongest primitive-interaction signal with internal feedback and protocol adaptation.",
+      "packaging_modes_current": [
+        "rewrite-package"
+      ],
+      "packaging_modes_target": [
+        "rewrite-package",
+        "branch-package-audit"
+      ],
+      "pica_status": "representative",
+      "primitive_tags": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P6"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P1<-P3",
+        "P2<-P1",
+        "P3<-P4",
+        "P4<-P3",
+        "P5<-P4",
+        "P6<-P5"
+      ],
+      "active_cells_target": [
+        "P1<-P3",
+        "P2<-P1",
+        "P3<-P4",
+        "P4<-P3",
+        "P5<-P4",
+        "P6<-P5"
+      ],
+      "family_id": "generated.pg_full_loop_bundle",
+      "lens_modes_current": [
+        "full-loop-lens"
+      ],
+      "lens_modes_target": [
+        "full-loop-lens",
+        "pressure-depth"
+      ],
+      "notes": "Attempted full six-primitive loop from the rewritten primitive bundle search; internal feedback and protocol adaptation are present, but packaging still needs causal proof, not just bookkeeping.",
+      "packaging_modes_current": [
+        "full-loop-package"
+      ],
+      "packaging_modes_target": [
+        "full-loop-package",
+        "branch-package-audit"
+      ],
+      "pica_status": "representative",
+      "primitive_tags": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P1<-P5",
+        "P2<-P5",
+        "P3<-P4",
+        "P4<-P3",
+        "P5<-P3",
+        "P5<-P4",
+        "P5<-P6",
+        "P6<-P5"
+      ],
+      "active_cells_target": [
+        "P1<-P5",
+        "P2<-P5",
+        "P3<-P4",
+        "P4<-P3",
+        "P5<-P3",
+        "P5<-P4",
+        "P5<-P6",
+        "P6<-P5"
+      ],
+      "family_id": "generated.continuous_full_loop_kernel",
+      "lens_modes_current": [
+        "continuous-kernel-spectral",
+        "continuous-kernel-similarity",
+        "continuous-kernel-audit"
+      ],
+      "lens_modes_target": [
+        "continuous-kernel-spectral",
+        "continuous-kernel-similarity",
+        "continuous-kernel-audit"
+      ],
+      "notes": "Frozen continuous full-loop kernel with closed-loop internal feedback; tracked as a theorem-bridge control rather than a PICA-native family.",
+      "packaging_modes_current": [
+        "partition_cluster",
+        "return_core",
+        "budget_audit"
+      ],
+      "packaging_modes_target": [
+        "partition_cluster",
+        "return_core",
+        "budget_audit"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "role": "probe"
+    },
+    {
+      "active_cells_current": [
+        "P1<-P5",
+        "P2<-P5",
+        "P3<-P4",
+        "P4<-P3",
+        "P5<-P3",
+        "P5<-P4",
+        "P5<-P6",
+        "P6<-P5"
+      ],
+      "active_cells_target": [
+        "P1<-P5",
+        "P2<-P5",
+        "P3<-P4",
+        "P4<-P3",
+        "P5<-P3",
+        "P5<-P4",
+        "P5<-P6",
+        "P6<-P5"
+      ],
+      "family_id": "generated.continuous_full_loop_kernel_shell",
+      "lens_modes_current": [
+        "continuous-kernel-spectral",
+        "continuous-kernel-similarity",
+        "continuous-kernel-audit"
+      ],
+      "lens_modes_target": [
+        "continuous-kernel-spectral",
+        "continuous-kernel-similarity",
+        "continuous-kernel-audit"
+      ],
+      "notes": "Wider shell around the frozen continuous full-loop kernel with closed-loop internal feedback; tracked as a theorem-bridge control rather than a PICA-native family.",
+      "packaging_modes_current": [
+        "partition_cluster",
+        "return_core",
+        "budget_audit"
+      ],
+      "packaging_modes_target": [
+        "partition_cluster",
+        "return_core",
+        "budget_audit"
+      ],
+      "pica_status": "partial",
+      "primitive_tags": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "role": "probe"
+    }
+  ],
+  "p1_policy": "P1 is inter-family only for now; no within-run P1 actor is claimed.",
+  "primitive_semantics": {
+    "P1": "operator rewrite / inter-family law change",
+    "P2": "admissibility / gating / forbidden branches",
+    "P3": "internally informed protocol or timescale adaptation",
+    "P4": "lens selection / coarse representation choice",
+    "P5": "packaging / grouping / coalescing choice",
+    "P6": "accounting / budget / audit feedback"
+  },
+  "project_scope": "Cantor-family computational probes with conservative PICA tagging.",
+  "reduced_cell_set": [
+    {
+      "cell": "P2<-P4",
+      "code": "A10",
+      "notes": "Feedback family now updates gating strictness directly from lens observation.",
+      "status": "current"
+    },
+    {
+      "cell": "P4<-P4",
+      "code": "A15",
+      "notes": "Fixed coarse representations are currently selected per family.",
+      "status": "current"
+    },
+    {
+      "cell": "P4<-P3",
+      "code": "A14",
+      "notes": "Feedback family now updates lens from internal protocol state.",
+      "status": "current"
+    },
+    {
+      "cell": "P3<-P4",
+      "code": "A19",
+      "notes": "Feedback family now updates protocol from lens observation.",
+      "status": "current"
+    },
+    {
+      "cell": "P2<-P6",
+      "code": "A12",
+      "notes": "Budget-driven family now updates gating strictness from audit metric.",
+      "status": "current"
+    },
+    {
+      "cell": "P5<-P4",
+      "code": "A22",
+      "notes": "Interval and branch coalescing choices depend on active lens.",
+      "status": "current"
+    },
+    {
+      "cell": "P5<-P6",
+      "code": "A23",
+      "notes": "Budget-driven family now updates packaging mode from audit metric.",
+      "status": "current"
+    },
+    {
+      "cell": "P6<-P6",
+      "code": "A25",
+      "notes": "Manifest-level accounting loops are active for run metadata.",
+      "status": "current"
+    }
+  ],
+  "schema_version": "1.0"
+}

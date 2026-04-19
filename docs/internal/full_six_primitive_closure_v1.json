@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0",
+  "closure_audit_id": "full-six-primitive-closure-v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "closure_rule": "No six-birds working target unless P1-P6 are all causally active in the same substrate loop and knockouts break the loop materially.",
+  "candidate_substrates": [
+    {
+      "attempted_primitives": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "active_primitives": [
+        "P3",
+        "P4"
+      ],
+      "bundle_origin": "pg.protocol_lens",
+      "causal_roles": {
+        "P1": "absent",
+        "P2": "absent",
+        "P3": "active",
+        "P4": "active",
+        "P5": "observational",
+        "P6": "absent"
+      },
+      "family_id": "generated.pg_protocol_lens",
+      "lawfulness_status": "stable",
+      "missing_primitives": [
+        "P1",
+        "P2",
+        "P5",
+        "P6"
+      ],
+      "active_packaging_sources": [],
+      "full_loop_status": "control_only",
+      "note": "Control-only structural/protocol substrate; useful baseline but not a six-birds working target.",
+      "p1_from_p5_status": "inactive",
+      "p2_from_p5_status": "inactive",
+      "p5_knockout_effect": "nonmaterial",
+      "packaging_selection_status": "inactive",
+      "packaging_selector": "best_packaging_score_with_hysteresis",
+      "theorem_target_status": "control_only"
+    },
+    {
+      "attempted_primitives": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "active_primitives": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "bundle_origin": "pg.rewrite_bundle",
+      "causal_roles": {
+        "P1": "active",
+        "P2": "active",
+        "P3": "active",
+        "P4": "active",
+        "P5": "observational",
+        "P6": "active"
+      },
+      "family_id": "generated.pg_rewrite_bundle",
+      "lawfulness_status": "metastable",
+      "missing_primitives": [],
+      "active_packaging_sources": [
+        "P5<-P3",
+        "P5<-P4",
+        "P5<-P6"
+      ],
+      "full_loop_status": "true_full_loop",
+      "note": "Strongest primitive-interaction signal so far, with active P5 packaging that now feeds both rewrite and gating.",
+      "p1_from_p5_status": "active",
+      "p2_from_p5_status": "active",
+      "p5_knockout_effect": "material",
+      "packaging_selection_status": "active",
+      "packaging_selector": "hysteresis_best_score",
+      "theorem_target_status": "working_candidate"
+    },
+    {
+      "attempted_primitives": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "active_primitives": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P6"
+      ],
+      "bundle_origin": "pg.full_loop_bundle",
+      "causal_roles": {
+        "P1": "active",
+        "P2": "active",
+        "P3": "active",
+        "P4": "active",
+        "P5": "observational",
+        "P6": "active"
+      },
+      "family_id": "generated.pg_full_loop_bundle",
+      "lawfulness_status": "metastable",
+      "missing_primitives": [
+        "P5"
+      ],
+      "active_packaging_sources": [
+        "P5<-P4"
+      ],
+      "full_loop_status": "blocked",
+      "note": "Full-loop attempt: P5 is wired into the substrate, but the knockout audit still treats it as observational rather than causally indispensable.",
+      "p1_from_p5_status": "inactive",
+      "p2_from_p5_status": "inactive",
+      "p5_knockout_effect": "nonmaterial",
+      "packaging_selection_status": "inactive",
+      "packaging_selector": "best_packaging_score_with_hysteresis",
+      "theorem_target_status": "blocked"
+    }
+  ],
+  "knockout_results": [
+    {
+      "family_id": "generated.pg_protocol_lens",
+      "knockouts": [
+        {"removed": "P1", "stable_family_emerged": true, "closure_idempotence_defect": 0.0, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false},
+        {"removed": "P2", "stable_family_emerged": true, "closure_idempotence_defect": 0.0, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false},
+        {"removed": "P3", "stable_family_emerged": false, "closure_idempotence_defect": 1.0, "induced_structure_type": "finite_state", "theorem_amenable": false, "multi_primitive_signal_collapses": true},
+        {"removed": "P4", "stable_family_emerged": false, "closure_idempotence_defect": 1.0, "induced_structure_type": "finite_state", "theorem_amenable": false, "multi_primitive_signal_collapses": true},
+        {"removed": "P5", "stable_family_emerged": true, "closure_idempotence_defect": 0.0, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false},
+        {"removed": "P6", "stable_family_emerged": true, "closure_idempotence_defect": 0.0, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false}
+      ]
+    },
+    {
+      "family_id": "generated.pg_rewrite_bundle",
+      "knockouts": [
+        {"removed": "P1", "stable_family_emerged": false, "closure_idempotence_defect": 1.0, "induced_structure_type": "finite_state", "theorem_amenable": false, "multi_primitive_signal_collapses": true},
+        {"removed": "P2", "stable_family_emerged": true, "closure_idempotence_defect": 0.25, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false},
+        {"removed": "P3", "stable_family_emerged": false, "closure_idempotence_defect": 1.0, "induced_structure_type": "finite_state", "theorem_amenable": false, "multi_primitive_signal_collapses": true},
+        {"removed": "P4", "stable_family_emerged": true, "closure_idempotence_defect": 0.375, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false},
+        {"removed": "P5", "stable_family_emerged": true, "closure_idempotence_defect": 0.375, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false, "lawful_loop_changes_materially": true},
+        {"removed": "P6", "stable_family_emerged": false, "closure_idempotence_defect": 1.0, "induced_structure_type": "finite_state", "theorem_amenable": false, "multi_primitive_signal_collapses": true}
+      ]
+    },
+    {
+      "family_id": "generated.pg_full_loop_bundle",
+      "knockouts": [
+        {"removed": "P1", "stable_family_emerged": false, "closure_idempotence_defect": 1.0, "induced_structure_type": "finite_state", "theorem_amenable": false, "multi_primitive_signal_collapses": true},
+        {"removed": "P2", "stable_family_emerged": true, "closure_idempotence_defect": 0.24, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false},
+        {"removed": "P3", "stable_family_emerged": false, "closure_idempotence_defect": 1.0, "induced_structure_type": "finite_state", "theorem_amenable": false, "multi_primitive_signal_collapses": true},
+        {"removed": "P4", "stable_family_emerged": true, "closure_idempotence_defect": 0.255, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false},
+        {"removed": "P5", "stable_family_emerged": true, "closure_idempotence_defect": 0.255, "induced_structure_type": "finite_state_renewal_like", "theorem_amenable": true, "multi_primitive_signal_collapses": false},
+        {"removed": "P6", "stable_family_emerged": false, "closure_idempotence_defect": 1.0, "induced_structure_type": "finite_state", "theorem_amenable": false, "multi_primitive_signal_collapses": true}
+      ]
+    }
+  ],
+  "working_target_decision": "p5_causally_closed",
+  "notes": [
+    "The rewrite bundle is now the working full-loop candidate with active P5 packaging.",
+    "Protocol_lens remains a control-only structural baseline.",
+    "P5 is causal because removing it materially changes the lawful loop."
+  ]
+}

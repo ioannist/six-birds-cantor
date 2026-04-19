@@ -1,0 +1,74 @@
+{
+  "schema_version": "v1",
+  "package_witness_families": [
+    "generated.continuous_full_loop_kernel",
+    "generated.continuous_full_loop_kernel_shell"
+  ],
+  "witnesses": [
+    {
+      "theoremlet_id": "continuous_full_loop_lawfulness_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ],
+      "evidence_paths": [
+        "docs/internal/continuous_full_loop_theorem_package_v1.md",
+        "results/conditional_disintegration/report.json",
+        "results/continuous_pressure_closure/report.json",
+        "results/level3_theorem_package/report.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "dependency_paths": [
+        "docs/internal/proof_dependency_continuous_full_loop_v1.json"
+      ]
+    },
+    {
+      "theoremlet_id": "cocycle_pressure_closure_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ],
+      "evidence_paths": [
+        "docs/internal/continuous_pressure_closure_v1.md",
+        "results/conditional_disintegration/report.json",
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "dependency_paths": [
+        "docs/internal/proof_dependency_continuous_pressure_v1.json"
+      ]
+    },
+    {
+      "theoremlet_id": "strict_theory_extension_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ],
+      "evidence_paths": [
+        "docs/internal/strict_theory_extension_closure_v1.md",
+        "results/conditional_disintegration/report.json",
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "dependency_paths": [
+        "docs/internal/proof_dependency_strict_theory_extension_v1.json"
+      ]
+    },
+    {
+      "theoremlet_id": "conditional_pressure_disintegration_theoremlet",
+      "witness_families": [
+        "generated.continuous_full_loop_kernel",
+        "generated.continuous_full_loop_kernel_shell"
+      ],
+      "evidence_paths": [
+        "docs/internal/conditional_pressure_disintegration_v1.md",
+        "results/conditional_disintegration/report.json",
+        "results/continuous_pressure_closure/report.json",
+        "results/strict_theory_extension_closure/report.json"
+      ],
+      "dependency_paths": [
+        "docs/internal/proof_dependency_conditional_disintegration_v1.json"
+      ]
+    }
+  ]
+}

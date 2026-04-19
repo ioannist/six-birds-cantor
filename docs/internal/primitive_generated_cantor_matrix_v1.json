@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0",
+  "matrix_id": "primitive-generated-cantor-matrix-v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "minimal_substrate": {
+    "base_affine_map_pool": [
+      {
+        "label": "exit_left",
+        "a": 0.42,
+        "b": 0.02,
+        "domain": [0.0, 0.18]
+      },
+      {
+        "label": "exit_right",
+        "a": 0.39,
+        "b": 0.12,
+        "domain": [0.16, 0.34]
+      },
+      {
+        "label": "wait_hold",
+        "a": 0.55,
+        "b": 0.1,
+        "domain": [0.28, 0.62]
+      },
+      {
+        "label": "return_branch",
+        "a": 0.32,
+        "b": 0.0,
+        "domain": [0.42, 0.72]
+      },
+      {
+        "label": "bridge",
+        "a": 0.47,
+        "b": 0.05,
+        "domain": [0.58, 0.84]
+      }
+    ],
+    "domain_pool": {
+      "core": [0.0, 0.22],
+      "waiting": [0.22, 0.58],
+      "return": [0.58, 0.86],
+      "overflow": [0.86, 1.0]
+    },
+    "optional_internal_phase_state": {
+      "values": [0, 1, 2, 3, 4],
+      "role": "small update protocol that can bias lenses and rewrites"
+    },
+    "lens_choices": [
+      "raw_cylinders",
+      "overlap_sectors",
+      "return_core",
+      "package_compactness"
+    ],
+    "packaging_choices": [
+      "singleton",
+      "overlap_sector",
+      "return_length",
+      "slope_cluster"
+    ],
+    "audit_budget_ledger": {
+      "initial_budget": 0.0,
+      "income_sources": [
+        "coverage",
+        "return_support",
+        "package_balance"
+      ],
+      "amplification_source": "positive audit surplus"
+    }
+  },
+  "cantor_primitive_roles": {
+    "P1": {
+      "role": "rewrite",
+      "analogue": "affine/domain rewrite operator",
+      "writes": [
+        "map parameters",
+        "branch pool"
+      ]
+    },
+    "P2": {
+      "role": "gate",
+      "analogue": "admissibility gating of branches/domains",
+      "writes": [
+        "active branch set"
+      ]
+    },
+    "P3": {
+      "role": "protocol",
+      "analogue": "internal phase/state update",
+      "writes": [
+        "phase",
+        "update order"
+      ]
+    },
+    "P4": {
+      "role": "lens",
+      "analogue": "competing lens selector",
+      "writes": [
+        "partition",
+        "return-core view"
+      ]
+    },
+    "P5": {
+      "role": "package",
+      "analogue": "competing packaging map",
+      "writes": [
+        "coalesced packages",
+        "return blocks"
+      ]
+    },
+    "P6": {
+      "role": "audit",
+      "analogue": "endogenous audit/budget/income ledger",
+      "writes": [
+        "budget",
+        "branch amplification"
+      ]
+    }
+  },
+  "candidate_bundles": [
+    {
+      "bundle_id": "pg.structural_baseline",
+      "active_cells": [
+        "P2<-P4",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "bundle_label": "structural baseline",
+      "primitive_coverage": [
+        "P2",
+        "P4",
+        "P5"
+      ],
+      "intended_generation_role": "Gating plus lens/packaging without feedback, as the simplest lawful baseline.",
+      "notes": "Checks whether the substrate can stabilize with only structural primitive interactions."
+    },
+    {
+      "bundle_id": "pg.structural_competition",
+      "active_cells": [
+        "P2<-P4",
+        "P2<-P5",
+        "P4<-P4",
+        "P5<-P4"
+      ],
+      "bundle_label": "structural competition",
+      "primitive_coverage": [
+        "P2",
+        "P4",
+        "P5"
+      ],
+      "intended_generation_role": "Lens and packaging compete to control admissibility and grouping.",
+      "notes": "A slightly richer static bundle that still lacks endogenous feedback."
+    },
+    {
+      "bundle_id": "pg.budget_feedback",
+      "active_cells": [
+        "P2<-P6",
+        "P5<-P6",
+        "P6<-P4"
+      ],
+      "bundle_label": "budget feedback",
+      "primitive_coverage": [
+        "P2",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "intended_generation_role": "Budget-led gating and packaging with audit-fed income.",
+      "notes": "Tests whether P6 can generate a nontrivial but still controlled substrate."
+    },
+    {
+      "bundle_id": "pg.protocol_lens",
+      "active_cells": [
+        "P3<-P4",
+        "P4<-P3",
+        "P3<-P3"
+      ],
+      "bundle_label": "protocol lens",
+      "primitive_coverage": [
+        "P3",
+        "P4"
+      ],
+      "intended_generation_role": "Phase and lens co-generate a cycling update protocol.",
+      "notes": "Checks whether the protocol variable can keep the substrate from collapsing to a fixed lens."
+    },
+    {
+      "bundle_id": "pg.rewrite_bundle",
+      "active_cells": [
+        "P1<-P3",
+        "P2<-P1",
+        "P4<-P3",
+        "P6<-P4"
+      ],
+      "bundle_label": "rewrite bundle",
+      "primitive_coverage": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P6"
+      ],
+      "intended_generation_role": "A true rewrite path where protocol and audit shape branch mutation.",
+      "notes": "This is the first bundle with a real P1 analogue and a P3/P6-driven rewrite loop."
+    },
+    {
+      "bundle_id": "pg.amplifying_bundle",
+      "active_cells": [
+        "P1<-P6",
+        "P2<-P6",
+        "P3<-P6",
+        "P4<-P6",
+        "P5<-P6",
+        "P6<-P6"
+      ],
+      "bundle_label": "amplifying bundle",
+      "primitive_coverage": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "P6"
+      ],
+      "intended_generation_role": "Endogenous audit surplus amplifies the substrate and can sustain nontrivial generated regimes.",
+      "notes": "The strongest active bundle: P6 is income/amplification, not just penalty or veto."
+    }
+  ],
+  "lawfulness_metrics": [
+    {
+      "metric_id": "closure_idempotence_defect",
+      "meaning": "Normalized change between the final state and one more bundle step.",
+      "good_range": "<= 0.15"
+    },
+    {
+      "metric_id": "induced_core_nontriviality",
+      "meaning": "The induced core should have more than one effective package/state.",
+      "good_range": ">= 2"
+    },
+    {
+      "metric_id": "return_richness",
+      "meaning": "The induced return structure should involve multiple return lengths or packages.",
+      "good_range": ">= 3"
+    },
+    {
+      "metric_id": "multi_primitive_interaction_score",
+      "meaning": "At least three primitive families should contribute nontrivially to the generated substrate.",
+      "good_range": ">= 3"
+    },
+    {
+      "metric_id": "constraint_only_share",
+      "meaning": "Fraction of changes attributable purely to P2-style gating without active P1/P3/P6 generation.",
+      "good_range": "<= 0.5"
+    }
+  ],
+  "decision": "primitive_generation_working",
+  "notes": [
+    "This matrix resets the search space around bundle-generated substrates rather than imported theorem classes.",
+    "A bundle is good only if it produces a stable attractor with nontrivial induced structure via multi-primitive interaction."
+  ]
+}

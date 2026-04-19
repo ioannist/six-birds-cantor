@@ -1,0 +1,78 @@
+{
+  "schema_version": "v1",
+  "generated_at_utc": "2026-03-20T06:49:30Z",
+  "datasets": [
+    {
+      "name": "theorem-package",
+      "path": "theorem-package.json"
+    },
+    {
+      "name": "claim-ledger",
+      "path": "claim-ledger.json"
+    },
+    {
+      "name": "traceability",
+      "path": "traceability.json"
+    },
+    {
+      "name": "figure-manifest",
+      "path": "figure-manifest.json"
+    },
+    {
+      "name": "witnesses",
+      "path": "witnesses.json"
+    },
+    {
+      "name": "continuous/continuous_full_loop_kernel",
+      "path": "continuous/continuous_full_loop_kernel.json"
+    },
+    {
+      "name": "continuous/continuous_full_loop_kernel_shell",
+      "path": "continuous/continuous_full_loop_kernel_shell.json"
+    },
+    {
+      "name": "t0/continuous_full_loop_kernel_t0",
+      "path": "t0/continuous_full_loop_kernel_t0.json"
+    },
+    {
+      "name": "t0/continuous_full_loop_kernel_shell_t0",
+      "path": "t0/continuous_full_loop_kernel_shell_t0.json"
+    },
+    {
+      "name": "t1/continuous_full_loop_kernel_t1",
+      "path": "t1/continuous_full_loop_kernel_t1.json"
+    },
+    {
+      "name": "t1/continuous_full_loop_kernel_shell_t1",
+      "path": "t1/continuous_full_loop_kernel_shell_t1.json"
+    },
+    {
+      "name": "extension/continuous_full_loop_kernel_extension",
+      "path": "extension/continuous_full_loop_kernel_extension.json"
+    },
+    {
+      "name": "extension/continuous_full_loop_kernel_shell_extension",
+      "path": "extension/continuous_full_loop_kernel_shell_extension.json"
+    },
+    {
+      "name": "disintegration/continuous_full_loop_kernel_disintegration",
+      "path": "disintegration/continuous_full_loop_kernel_disintegration.json"
+    },
+    {
+      "name": "disintegration/continuous_full_loop_kernel_shell_disintegration",
+      "path": "disintegration/continuous_full_loop_kernel_shell_disintegration.json"
+    },
+    {
+      "name": "knockouts/continuous_full_loop_kernel_knockouts",
+      "path": "knockouts/continuous_full_loop_kernel_knockouts.json"
+    },
+    {
+      "name": "knockouts/continuous_full_loop_kernel_shell_knockouts",
+      "path": "knockouts/continuous_full_loop_kernel_shell_knockouts.json"
+    },
+    {
+      "name": "policy/annotation_policy",
+      "path": "policy/annotation_policy.json"
+    }
+  ]
+}

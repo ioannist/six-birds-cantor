@@ -1,0 +1,90 @@
+{
+  "audit_id": "non-sft-audit-v2",
+  "candidate_families": [
+    "frontier.fw_delayed_return_gate_a3",
+    "frontier.fw_delayed_return_gate_a1",
+    "frontier.fw_delayed_return_gate_a2",
+    "contextual_local.prefix_memory_last_digit_rule",
+    "contextual_local.prefix_memory_no_22_base3",
+    "contextual_local.domain_gated_two_map_local_ifs"
+  ],
+  "decision": "finite_state_renewal_like_only",
+  "evidence_items": [
+    {
+      "artifact_paths": [
+        "/home/repos/six-birds-cantor/docs/internal/delayed_return_theorem_package_v1.json"
+      ],
+      "family_id": "frontier.fw_delayed_return_gate_a3",
+      "finite_state_renewal_like_status": "yes",
+      "in_class_status": "yes",
+      "non_sft_status": "no",
+      "note": "Frozen delayed-return witness remains a controlled finite-return / renewal-like system on the closed class.",
+      "status": "finite_state_renewal_like_only"
+    },
+    {
+      "artifact_paths": [
+        "/home/repos/six-birds-cantor/docs/internal/delayed_return_theorem_package_v1.json"
+      ],
+      "family_id": "frontier.fw_delayed_return_gate_a1",
+      "finite_state_renewal_like_status": "yes",
+      "in_class_status": "yes",
+      "non_sft_status": "no",
+      "note": "Frozen delayed-return witness remains a controlled finite-return / renewal-like system on the closed class.",
+      "status": "finite_state_renewal_like_only"
+    },
+    {
+      "artifact_paths": [
+        "/home/repos/six-birds-cantor/docs/internal/delayed_return_theorem_package_v1.json"
+      ],
+      "family_id": "frontier.fw_delayed_return_gate_a2",
+      "finite_state_renewal_like_status": "yes",
+      "in_class_status": "yes",
+      "non_sft_status": "no",
+      "note": "Frozen delayed-return witness remains a controlled finite-return / renewal-like system on the closed class.",
+      "status": "finite_state_renewal_like_only"
+    },
+    {
+      "artifact_paths": [
+        "/home/repos/six-birds-cantor/docs/internal/delayed_return_theorem_package_v1.json"
+      ],
+      "family_id": "contextual_local.prefix_memory_last_digit_rule",
+      "finite_state_renewal_like_status": "unknown",
+      "in_class_status": "no",
+      "non_sft_status": "unknown",
+      "note": "Comparison family is outside the closed theorem class and does not force a non-SFT conclusion.",
+      "status": "finite_state_renewal_like_only"
+    },
+    {
+      "artifact_paths": [
+        "/home/repos/six-birds-cantor/docs/internal/delayed_return_theorem_package_v1.json"
+      ],
+      "family_id": "contextual_local.prefix_memory_no_22_base3",
+      "finite_state_renewal_like_status": "yes",
+      "in_class_status": "no",
+      "non_sft_status": "no",
+      "note": "Comparison family is finite-state-like and not part of the closed theorem class.",
+      "status": "finite_state_renewal_like_only"
+    },
+    {
+      "artifact_paths": [
+        "/home/repos/six-birds-cantor/docs/internal/delayed_return_theorem_package_v1.json"
+      ],
+      "family_id": "contextual_local.domain_gated_two_map_local_ifs",
+      "finite_state_renewal_like_status": "yes",
+      "in_class_status": "no",
+      "non_sft_status": "no",
+      "note": "Old domain-gated family still collapses to finite-state renewal-like control.",
+      "status": "finite_state_renewal_like_only"
+    }
+  ],
+  "finite_state_renewal_like_status": "yes",
+  "in_class_status": "yes",
+  "non_sft_status": "no",
+  "notes": [
+    "Audit is against the frozen closed delayed-return package, not the older Bowen classes.",
+    "The selected witness is in-class but remains finite-state renewal-like on the evidence currently available in the repo."
+  ],
+  "schema_version": "1.0",
+  "selected_family": "frontier.fw_delayed_return_gate_a3",
+  "target_class_id": "bounded_return_full_core_delayed_gate_subclass"
+}

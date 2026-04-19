@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "target_id": "primitive-generated-theorem-targets-v1",
+  "generated_at_utc": "2026-03-18T00:00:00Z",
+  "frozen_generated_families": [
+    {
+      "family_id": "generated.pg_protocol_lens",
+      "bundle_origin": "pg.protocol_lens",
+      "closure_status": "stable",
+      "primitive_dependence_status": "mostly_structural",
+      "induced_structure_type": "finite_state_renewal_like",
+      "theorem_amenability_status": "working_candidate",
+      "frontier_status": "promising",
+      "note": "Stable protocol/lens attractor; best conservative theorem anchor."
+    },
+    {
+      "family_id": "generated.pg_rewrite_bundle",
+      "bundle_origin": "pg.rewrite_bundle",
+      "closure_status": "metastable",
+      "primitive_dependence_status": "genuinely_multi_primitive",
+      "induced_structure_type": "finite_state_renewal_like",
+      "theorem_amenability_status": "stretch_candidate",
+      "frontier_status": "promising",
+      "note": "First P1/P3/P6 rewrite loop; strongest frontier signal in SB-T1."
+    }
+  ],
+  "lawfulness_metrics": {
+    "stable_rule_family_count": 2,
+    "promising_family_count": 2,
+    "multi_primitive_max": 6,
+    "closure_idempotence_min": 0.0,
+    "closure_idempotence_max": 0.375,
+    "frontier_signal": "rewrite_bundle is now the full-loop primitive-interaction signal; protocol_lens remains control-only."
+  },
+  "candidate_theorem_targets": [
+    {
+      "class_id": "primitive_generated_structural_class",
+      "label": "Primitive-generated structural class",
+      "one_line_definition": "Stable primitive-generated substrates with controlled closure and finite-state-renewal-like induced structure.",
+      "frontier_value": "control / reserve branch",
+      "proof_outlook": "high",
+      "selection_status": "reserve"
+    },
+    {
+      "class_id": "primitive_generated_delayed_return_class",
+      "label": "Primitive-generated delayed-return class",
+      "one_line_definition": "A delayed-return branch with explicit return-block control, retained as a reserve class for later expansion.",
+      "frontier_value": "stretch theorem branch",
+      "proof_outlook": "medium",
+      "selection_status": "stretch"
+    },
+    {
+      "class_id": "primitive_generated_rewrite_protocol_class",
+      "label": "Primitive-generated rewrite-protocol class",
+      "one_line_definition": "Multi-primitive rewrite/protocol substrates with active P1/P2/P3/P4/P5/P6 interaction and richer generated structure.",
+      "frontier_value": "working theorem branch",
+      "proof_outlook": "medium",
+      "selection_status": "working"
+    }
+  ],
+  "working_target": "primitive_generated_rewrite_protocol_class",
+  "stretch_target": "primitive_generated_delayed_return_class",
+  "decision": "working_target_extracted",
+  "notes": [
+    "SB-T1 produced useful generated substrates, and rewrite_bundle now closes the six-primitive causal loop with active P5 packaging.",
+    "protocol_lens is still control-only, and the delayed-return class remains a reserve comparison target.",
+    "The full-loop candidate now uses active packaging producers, selected packaging, and P1/P2 consumption of the selected packaging."
+  ]
+}

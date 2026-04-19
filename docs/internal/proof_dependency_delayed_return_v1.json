@@ -1,0 +1,200 @@
+{
+  "assumptions_path": "docs/internal/delayed_return_theorem_assumptions_v1.json",
+  "assumptions_used": [
+    "delayed_return_core_exists",
+    "bounded_return_times",
+    "stationary_local_admissibility",
+    "local_domain_compatibility",
+    "induced_alphabet_control",
+    "bounded_bridge_property",
+    "feedback_free_admissibility",
+    "core_return_coverage",
+    "nontrivial_induced_structure",
+    "usable_overlap_control",
+    "strict_return_contraction",
+    "full_core_induction",
+    "uniform_entry_exit_bound"
+  ],
+  "closed_subclass_id": "bounded_return_full_core_delayed_gate_subclass",
+  "dependency_edges": [
+    {
+      "from": "DR-LEM-1",
+      "to": "DR-LEM-2"
+    },
+    {
+      "from": "DR-LEM-1",
+      "to": "DR-LEM-3"
+    },
+    {
+      "from": "DR-LEM-3",
+      "to": "DR-LEM-4"
+    },
+    {
+      "from": "DR-LEM-2",
+      "to": "DR-LEM-5"
+    },
+    {
+      "from": "DR-LEM-3",
+      "to": "DR-LEM-5"
+    },
+    {
+      "from": "DR-LEM-4",
+      "to": "DR-LEM-5"
+    },
+    {
+      "from": "DR-LEM-2",
+      "to": "DR-LEM-6"
+    },
+    {
+      "from": "DR-LEM-3",
+      "to": "DR-LEM-6"
+    },
+    {
+      "from": "DR-LEM-4",
+      "to": "DR-LEM-6"
+    },
+    {
+      "from": "DR-LEM-5",
+      "to": "DR-THM-7"
+    },
+    {
+      "from": "DR-LEM-6",
+      "to": "DR-THM-7"
+    }
+  ],
+  "dependency_id": "delayed-return-proof-v1",
+  "diagnostics_path": "results/delayed_return_diagnostics/report.json",
+  "gap_status": [
+    "DR-LEM-3 and DR-LEM-4 are closed by induced_pressure_existence_v1.md on the working class.",
+    "DR-LEM-6 and DR-THM-7 are closed by lower_transfer_truncation_control_v1.md on the narrowed full-core delayed-gate subclass.",
+    "Open strategic question: whether the broader bounded_return_delayed_gate_subclass can be upgraded to the full-core closure class without narrowing."
+  ],
+  "lemmas": [
+    {
+      "assumptions_used": [
+        "delayed_return_core_exists",
+        "stationary_local_admissibility",
+        "local_domain_compatibility",
+        "feedback_free_admissibility"
+      ],
+      "depends_on": [],
+      "label": "Induced coding lemma",
+      "lemma_id": "DR-LEM-1",
+      "statement_short": "The delayed-return family admits a well-defined first-return coding over return blocks on the chosen core.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "bounded_return_times",
+        "delayed_return_core_exists",
+        "local_domain_compatibility"
+      ],
+      "depends_on": [
+        "DR-LEM-1"
+      ],
+      "label": "Bounded-return comparison lemma",
+      "lemma_id": "DR-LEM-2",
+      "statement_short": "Bounded return times compare induced depth and original depth up to uniform constants.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "induced_alphabet_control",
+        "bounded_bridge_property",
+        "nontrivial_induced_structure",
+        "core_return_coverage",
+        "strict_return_contraction"
+      ],
+      "depends_on": [
+        "DR-LEM-1"
+      ],
+      "label": "Induced pressure existence lemma",
+      "lemma_id": "DR-LEM-3",
+      "statement_short": "The induced partition sums define a well-behaved pressure object P_ind(s) for the working class.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "induced_alphabet_control",
+        "bounded_bridge_property",
+        "nontrivial_induced_structure",
+        "strict_return_contraction"
+      ],
+      "depends_on": [
+        "DR-LEM-3"
+      ],
+      "label": "Induced Bowen root lemma",
+      "lemma_id": "DR-LEM-4",
+      "statement_short": "There is a candidate root s_* determined by P_ind(s_*) = 0.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "bounded_return_times",
+        "local_domain_compatibility",
+        "core_return_coverage",
+        "usable_overlap_control"
+      ],
+      "depends_on": [
+        "DR-LEM-2",
+        "DR-LEM-3",
+        "DR-LEM-4"
+      ],
+      "label": "Transfer upper-bound lemma",
+      "lemma_id": "DR-LEM-5",
+      "statement_short": "Induced upper-pressure decay gives an upper Hausdorff-dimension bound for the original attractor.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "bounded_return_times",
+        "bounded_bridge_property",
+        "local_domain_compatibility",
+        "core_return_coverage",
+        "usable_overlap_control",
+        "full_core_induction",
+        "uniform_entry_exit_bound",
+        "strict_return_contraction"
+      ],
+      "depends_on": [
+        "DR-LEM-2",
+        "DR-LEM-3",
+        "DR-LEM-4"
+      ],
+      "label": "Transfer lower-bound / measure lemma",
+      "lemma_id": "DR-LEM-6",
+      "statement_short": "An induced cylinder premeasure transfers to a lower bound on the original attractor.",
+      "status": "closed_in_note"
+    },
+    {
+      "assumptions_used": [
+        "bounded_return_times",
+        "induced_alphabet_control",
+        "bounded_bridge_property",
+        "core_return_coverage",
+        "local_domain_compatibility",
+        "nontrivial_induced_structure",
+        "full_core_induction",
+        "uniform_entry_exit_bound",
+        "strict_return_contraction"
+      ],
+      "depends_on": [
+        "DR-LEM-5",
+        "DR-LEM-6"
+      ],
+      "label": "Final delayed-return Bowen theoremlet",
+      "lemma_id": "DR-THM-7",
+      "statement_short": "Combining the induced upper and lower transfer steps gives dim_H K = s_* for the working class.",
+      "status": "closed_in_note"
+    }
+  ],
+  "schema_version": "1.0",
+  "selected_lower_route": "induced_cylinder_premeasure",
+  "theorem_statement_short": "For K in the bounded_return_full_core_delayed_gate_subclass, dim_H K = s_* where P_ind(s_*) = 0.",
+  "witness_families": [
+    "frontier.fw_delayed_return_gate_a3",
+    "frontier.fw_delayed_return_gate_a1",
+    "frontier.fw_delayed_return_gate_a2"
+  ],
+  "working_class_id": "bounded_return_delayed_gate_subclass"
+}

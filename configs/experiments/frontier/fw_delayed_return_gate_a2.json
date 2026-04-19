@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "fw-delayed-return-gate-a2",
+  "family_id": "frontier.fw_delayed_return_gate_a2",
+  "engine": "local_ifs",
+  "description": "Delayed-return domain-gated frontier witness candidate a2.",
+  "parameters": {
+    "maps": [
+      {
+        "a": 0.42,
+        "b": 0.24,
+        "domain": [0.0, 0.2],
+        "label": "to_wait"
+      },
+      {
+        "a": 0.5,
+        "b": 0.12,
+        "domain": [0.22, 0.56],
+        "label": "wait_loop"
+      },
+      {
+        "a": 0.42,
+        "b": 0.0,
+        "domain": [0.22, 0.56],
+        "label": "wait_return"
+      }
+    ],
+    "iterations": 8
+  },
+  "run_controls": {
+    "save_outputs": true,
+    "seed": 0
+  },
+  "output_root": "results/frontier/fw_delayed_return_gate_a2"
+}
