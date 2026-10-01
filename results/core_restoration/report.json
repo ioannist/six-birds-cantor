@@ -1,0 +1,133 @@
+{
+  "all_four_original_theorems_restored": false,
+  "consequence": {
+    "initial_conditioned_history_pressure_gap_in_this_positive_instance": 0,
+    "initial_conditioning_finite_horizon_differences": [
+      0.00014076733704981859,
+      0.00014003701915947056
+    ],
+    "predictive_KL_rate_lower_bound": "855037867943/1025712538718750",
+    "predictive_scope": "stationary_completion_processes_vs_best_current_state_only_autonomous_predictor",
+    "relative_affinity_pressure": {
+      "completion_channel_frozen_in_augmented_carrier": true,
+      "exact_rational_gap_lower_bound": "3283594060761/134912463042781250",
+      "explicit_changed_path_potential": "minus_t_log_completed_transition_over_common_lower_predictor",
+      "finite_weighted_gap": 0.0005073890874516828,
+      "hybrid_gap_formula": "P0(s)-sum_w(P0(s)+Q_z(t))=-sum_w Q_z(t)",
+      "original_measure_disintegration_identified": false,
+      "parameter": 0.5
+    },
+    "survival_is_persistent_fixed_point_disintegration": false,
+    "two_actual_package_survival_finite_pressure_gaps": [
+      0.6477726319932299,
+      0.6089491341714055
+    ]
+  },
+  "extension": {
+    "exact_split_pair": true,
+    "fixed_forward": [
+      "4063/15745",
+      "3842/15745",
+      "784/3149",
+      "784/3149"
+    ],
+    "fixed_reverse": [
+      "4063/15849",
+      "3842/15849",
+      "1324/5283",
+      "1324/5283"
+    ],
+    "forced_lens": "spectral_lens",
+    "forcing_changes_fixed_object": true,
+    "full_evolving_cocycle_collision_certified": false,
+    "groups": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "kernel": [
+      [
+        "2/5",
+        "3/10",
+        "1/5",
+        "1/10"
+      ],
+      [
+        "1/10",
+        "7/20",
+        "1/4",
+        "3/10"
+      ],
+      [
+        "1/4",
+        "3/20",
+        "3/10",
+        "3/10"
+      ],
+      [
+        "1/4",
+        "1/5",
+        "1/4",
+        "3/10"
+      ]
+    ],
+    "partition_identity_scope": "every_real_entrywise_weight_function_and_every_horizon",
+    "post_forcing_fixed": [
+      "239/891",
+      "226/891",
+      "71/297",
+      "71/297"
+    ],
+    "scope": "all_frozen_kernel_total_history_partitions_same_lens_tau_and_package"
+  },
+  "lawfulness": {
+    "epsilon": "1/25",
+    "noncollapse": {
+      "all_six_functions_nonredundant_on_new_carrier": "analytic_counterfactual_construction",
+      "conditional_probability": "1/512",
+      "coordinate_jump": "75/1073296",
+      "original_stronger_shell_sixfold_activity_certified": false,
+      "scope": "almost_sure_under_ideal_independent_uniform_noise_in_real_arithmetic",
+      "strong_original_shell_certified": false
+    },
+    "sample_min_entry": 0.007975806318183735,
+    "sample_steps": 96,
+    "uniform_entry_floor_real_arithmetic": "1/200",
+    "variant": "explicit_uniform_minorization_after_noise_and_at_initialization"
+  },
+  "paper_changed": false,
+  "pressure": {
+    "existence_and_unique_root": "analytic_theorem_applies_to_real_arithmetic_variant",
+    "fully_mechanized_matrix_instance": false,
+    "observable_range": [
+      0.05,
+      10
+    ],
+    "sample_at_one_identity_error": 1.4210854715202004e-14,
+    "scope": "full_repaired_loop_on_global_positive_box_with_clamped_selector_potential"
+  },
+  "retained_memory_extension": {
+    "actual_P5_retained": true,
+    "exact_rational_recoupling": true,
+    "fully_mechanized_simulator_bridge": false,
+    "initial_conditioned_history_pressure_gap_in_this_positive_instance": 0,
+    "maximum_exact_noise_below": "1/1000000",
+    "rational_algebra_instance_lens_score": "4/5",
+    "readout_changes_exactly": true,
+    "relative_affinity_pressure_gap_lower_bound_at_half": "1/100000000000000000000",
+    "same_kernel_completion_predictive_KL_rate_lower_bound": "1/100000000000000000000",
+    "scope": "real_arithmetic_full_future_kernel_and_selector_cocycle_on_declared_positive_warm_start_carrier",
+    "shared_future_cocycle": "analytic_source_readset_and_recoupling_proof",
+    "source_lens_score_interval": [
+      "37/50",
+      "21/25"
+    ],
+    "warm_start_carrier_is_original_stronger_shell": false
+  },
+  "schema_version": "v1"
+}

@@ -1,5 +1,11 @@
 # Kernel-history pressure construction
 
+Follow-up: [the all-core construction](all_core_restoration_2026_10_01.md)
+supplies a nonempty invariant positive carrier via an explicit optional
+minorization repair and proves ideal-noise noncollapse and six-operation
+nonredundancy there. The pressure theorem below now applies analytically to
+that repaired carrier. The original stronger shell remains an open bridge.
+
 Status: general analytic construction proved under explicit hypotheses;
 original-shell and object-map applicability bridges remain open. The theorem below is proved here
 under explicit shell hypotheses. Applying it to the full simulator requires

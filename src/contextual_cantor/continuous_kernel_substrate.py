@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+import copy
 import math
 import random
 from typing import Any
@@ -24,6 +25,18 @@ def _normalize_row(row: list[float]) -> list[float]:
 
 def _normalize_kernel(kernel: list[list[float]]) -> list[list[float]]:
     return [_normalize_row(row) for row in kernel]
+
+
+def _minorize_kernel(kernel: list[list[float]], epsilon: float) -> list[list[float]]:
+    """Blend an already stochastic kernel with the uniform kernel.
+
+    In real arithmetic every entry is at least epsilon/n and all row sums
+    stay one. This helper is used only by the explicitly opted-in variant.
+    """
+    if not epsilon:
+        return kernel
+    n = len(kernel)
+    return [[(1.0 - epsilon) * value + epsilon / n for value in row] for row in kernel]
 
 
 def _copy_kernel(kernel: list[list[float]]) -> list[list[float]]:
@@ -208,6 +221,9 @@ class PilotParameters:
     tau_initial: float = 1.0
     action_temperature_bias: float = 0.0
     lens_temperature_shift: float = 0.0
+    # Explicit repaired variant; zero preserves the historical update law.
+    # After noise, blend K with the uniform kernel by this amount.
+    kernel_minorization: float = 0.0
 
     def __post_init__(self) -> None:
         if any(not math.isfinite(value) for value in vars(self).values()):
@@ -216,6 +232,8 @@ class PilotParameters:
                 or self.budget_income_scale < 0 or self.budget_cost_scale < 0
                 or self.tau_initial <= 0):
             raise ValueError("hysteresis and budget scales must be nonnegative; tau must be positive")
+        if not 0 <= self.kernel_minorization < 1:
+            raise ValueError("kernel minorization must lie in [0,1)")
 
 
 @dataclass
@@ -246,6 +264,9 @@ class KernelSubstrateState:
     cache_hits: int = 0
     cache_misses: int = 0
     pilot_parameters: PilotParameters = field(default_factory=PilotParameters)
+    # Retain the actual P5 object used by the step, rather than just its name.
+    # It was selected on previous_kernel, before the P1/P2/noise update.
+    retained_packaging: dict[str, Any] | None = None
 
     def snapshot(self) -> dict[str, Any]:
         return {
@@ -258,6 +279,7 @@ class KernelSubstrateState:
             "active_lens": self.active_lens,
             "active_packaging": self.active_packaging,
             "kernel_signature": _kernel_signature(self.kernel),
+            "retained_packaging": copy.deepcopy(self.retained_packaging),
         }
 
 
@@ -269,6 +291,7 @@ def build_initial_state(
     rng = random.Random(seed)
     kernel = _initial_kernel(n, rng)
     pilot_parameters = pilot_parameters or PilotParameters()
+    kernel = _minorize_kernel(kernel, pilot_parameters.kernel_minorization)
     return KernelSubstrateState(
         kernel=kernel,
         tau=pilot_parameters.tau_initial,
@@ -764,6 +787,7 @@ def step_substrate(
         state.invalidation_counts["packaging"] += 1
     state.active_packaging = packaging_choice["name"]
     state.packaging_history.append(state.active_packaging)
+    state.retained_packaging = copy.deepcopy(packaging_choice)
 
     kernel_after_p1, p1_info = apply_p1_rewrite(state, packaging_choice, lens_choice, primitive_activity)
     kernel_after_p2, p2_info = apply_p2_gating(state, kernel_after_p1, packaging_choice, lens_choice, informants, primitive_activity)
@@ -788,6 +812,8 @@ def step_substrate(
 
     state.previous_kernel = _copy_kernel(state.kernel)
     state.kernel = _normalize_kernel(kernel_after_p2)
+    minorization = state.pilot_parameters.kernel_minorization
+    state.kernel = _minorize_kernel(state.kernel, minorization)
     if primitive_activity.get("P5", True) and packaging_choice["name"] == "fallback_uniform_packaging":
         state.invalidation_counts["packaging"] += 1
     if variation > 0.02:
@@ -836,6 +862,7 @@ def step_substrate(
             "packaging_margin": _score_margin(packagings),
         },
         "variation": final_variation,
+        "kernel_minorization": minorization,
         "lens": lens_choice,
         "packaging": packaging_choice,
         "p1": p1_info,
@@ -1174,6 +1201,28 @@ def packaging_macro_admissibility(
         "criterion": "strong_lumpability_numerical",
         "certified": False,
     }
+
+
+def complete_retained_packaging(
+    state: KernelSubstrateState,
+    mu: list[float],
+    *,
+    max_iter: int = 48,
+    tol: float = 1e-7,
+) -> dict[str, Any]:
+    """Complete the actual last-selected P5 object against the current K.
+
+    This readout does not mutate the substrate or replace its package by the
+    separate lens-to-package helper. A fresh initial state has no retained
+    P5 object and must take a step before using this readout.
+    """
+    if state.retained_packaging is None:
+        raise ValueError("no retained P5 package; take a substrate step first")
+    return iterate_completion_endomap(
+        mu, state.kernel, state.tau, state.active_lens,
+        packaging_state=copy.deepcopy(state.retained_packaging),
+        max_iter=max_iter, tol=tol,
+    )
 
 
 def compute_packaging_fixed_points(

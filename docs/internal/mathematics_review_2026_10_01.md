@@ -1,5 +1,11 @@
 # Mathematical review, 2026-10-01
 
+Constructive follow-up: [the all-core restoration](all_core_restoration_2026_10_01.md)
+now proves lawfulness/pressure on an explicit positive repair, supplies an
+actual-P5 full-future cocycle split, and constructs a genuine relative-likelihood
+pressure payoff. The original smaller shell and original conditioning semantics
+remain separate obligations. The review below records the initial audit.
+
 ## Scope and status
 
 Baseline: commit `60e9096`, the clean checkpoint requested before review.

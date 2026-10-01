@@ -2,6 +2,11 @@ import CantorAudit
 import KernelCocycle
 import KernelEscape
 import CompletionWitness
+import KernelLawfulness
+import PressureExtension
+import PressureRegularity
+import RetainedMemory
+import AffinityPressure
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -27,3 +32,29 @@ import CompletionWitness
 #print axioms CantorAudit.witness_pair_lumpability_obstruction
 #print axioms CantorAudit.witnessFullCompletion_formula
 #print axioms CantorAudit.witnessSingletonCompletion_formula
+
+#print axioms CantorAudit.noiseNormalizedRow_stochastic
+#print axioms CantorAudit.minorizedRow_stochastic
+#print axioms CantorAudit.minorizedRow_positive
+#print axioms CantorAudit.normalized_coordinate_difference
+#print axioms CantorAudit.clamped_interval
+#print axioms CantorAudit.transpose_historyTotal
+#print axioms CantorAudit.pressureKernelChoice_stochastic
+#print axioms CantorAudit.pressureKernelChoice_uniform
+#print axioms CantorAudit.pressureCompletion_formula
+#print axioms CantorAudit.pressureFixed_stationary
+#print axioms CantorAudit.pressureCompletion_positive
+#print axioms CantorAudit.pressureFixed_unique
+#print axioms CantorAudit.pressureBase_equal
+#print axioms CantorAudit.pressure_profile_extension
+#print axioms CantorAudit.pressure_lipschitz
+#print axioms CantorAudit.pressure_strictAnti
+#print axioms CantorAudit.pressure_unique_zero
+#print axioms CantorAudit.completion_stationary_ratio
+#print axioms CantorAudit.retained_prototype_split
+#print axioms CantorAudit.midpoint_noise_recouples
+#print axioms CantorAudit.affinity_row_loss
+#print axioms CantorAudit.sqrt_affinity_row_loss
+#print axioms CantorAudit.matrixPathValue_upper
+#print axioms CantorAudit.matrix_partition_exponential_loss
+#print axioms CantorAudit.pressure_upper_of_exponential

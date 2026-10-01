@@ -48,6 +48,37 @@ paper's four main theoremlets. `AxiomAudit.lean`, checked with
 contain only standard Lean foundations (`propext`, `Classical.choice`,
 `Quot.sound`), or no axioms, and no `sorryAx` or project-specific axioms.
 
+The next constructive pass adds:
+
+- `KernelLawfulness.lean`: exact stochasticity after clipping/normalization
+  for d sigma<1, a uniform positive floor for the explicit minorization
+  repair, clamp bounds, and the finite-difference identity underlying the
+  analytic almost-sure noise noncollapse proof.
+- `PressureRegularity.lean`: Lipschitz continuity, strict decrease, and a
+  unique zero in (0,1), derived from the pressure family's secant bounds
+  and endpoint signs. The matrix-to-secant bridge is still analytic.
+- `PressureExtension.lean`: transposition preserves EVERY total frozen-kernel
+  history partition at EVERY horizon and real entrywise weight function.
+  A concrete same-lens/same-package example has different uniquely stationary
+  completion limits. The base keeps the entire reinstatement operator but
+  explicitly omits the labelled kernel. This is a stronger scalar-object
+  witness than the previous (K,tau)-descriptor example, with a different base.
+- `RetainedMemory.lean`: stationarity transfers within-cell reinstatement
+  ratios to fixed distributions; changing a prototype against a common
+  positive anchor forces a split. Exact midpoint noise recouples two preimages.
+  The complete actual-P5 source construction and its equality of full future
+  cocycles are proved analytically in the new restoration note, rather than
+  claimed as fully mechanized here.
+- `AffinityPressure.lean`: Cauchy--Schwarz gives an explicit row loss for
+  relative-likelihood history weights, and that row loss implies exponential
+  loss of the actual partition at every horizon. This supports the new
+  weighted affinity-pressure gap, with its changed path potential explicit.
+
+See [the all-core construction note](../docs/internal/all_core_restoration_2026_10_01.md)
+for exact carrier changes, the stronger actual-P5 memory split pair,
+counterfactual necessity of all six operations, surviving thermodynamic
+obstructions, new consequence candidates, and remaining original-shell bridges.
+
 The rational a3 statements interpret the displayed decimal map parameters
 as exact rationals. They prove a waiting-domain invariant and return
 availability. The accompanying review explains why the domain disjointness

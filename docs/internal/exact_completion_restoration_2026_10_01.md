@@ -1,5 +1,11 @@
 # Exact completion and a declared descriptor-relative extension
 
+Follow-up: [the all-core construction](all_core_restoration_2026_10_01.md)
+adds an actual-P5 memory witness with an identical full future kernel/selector
+cocycle on a declared positive warm-start carrier, and a second same-lens,
+same-package split over the entire frozen scalar partition family. The older
+descriptor witness below keeps its original scope and limitations.
+
 This is an exact rational mathematical instance of the implemented lazy
 completion. It does not certify floating execution or membership in the
 stronger all-time shell. The base descriptor below is explicitly `(K,tau)`;
