@@ -7,6 +7,8 @@ import PressureExtension
 import PressureRegularity
 import RetainedMemory
 import AffinityPressure
+import MatrixPressure
+import CompletionAffinityWitness
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -58,3 +60,29 @@ import AffinityPressure
 #print axioms CantorAudit.matrixPathValue_upper
 #print axioms CantorAudit.matrix_partition_exponential_loss
 #print axioms CantorAudit.pressure_upper_of_exponential
+
+#print axioms CantorAudit.positiveMatrix_row_le_norm
+#print axioms CantorAudit.positiveMatrix_norm_le
+#print axioms CantorAudit.matrixHistory_nonnegative
+#print axioms CantorAudit.matrixHistory_rows
+#print axioms CantorAudit.matrix_pressure_exists
+#print axioms CantorAudit.constant_matrixHistoryEnvelope
+#print axioms CantorAudit.matrixPathValue_eq_row
+#print axioms CantorAudit.positiveMatrixPartition_bounds
+#print axioms CantorAudit.positiveMatrixPartition_pressure_exists
+#print axioms CantorAudit.finite_positive_matrix_bounds
+#print axioms CantorAudit.matrixPathValue_positive
+#print axioms CantorAudit.positiveMatrixPartition_positive
+#print axioms CantorAudit.positiveMatrixPartition_pressure_exists_of_positive
+#print axioms CantorAudit.affinity_pressure_exists_strict
+#print axioms CantorAudit.stochasticMatrix_pressure_zero
+#print axioms CantorAudit.affinityMatrix_self
+#print axioms CantorAudit.weighted_affinity_pressure_gap
+#print axioms CantorAudit.pressureFixed_positive
+#print axioms CantorAudit.pressureCompletion_stochastic
+#print axioms CantorAudit.pressurePredictor_positive
+#print axioms CantorAudit.pressurePredictor_stochastic
+#print axioms CantorAudit.pressurePredictor_loss
+#print axioms CantorAudit.completedInitial_stationary
+#print axioms CantorAudit.completion_affinity_witness_gap
+#print axioms CantorAudit.completion_reference_pressure_zero

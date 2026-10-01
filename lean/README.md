@@ -24,8 +24,9 @@ cache; no local filesystem paths are present in the committed manifest.
 `KernelCocycle.lean` additionally defines a genuine product over forward
 iterations, proves its split identity, derives submultiplicativity of its
 state supremum, and proves the finite logarithmic limit under visible uniform
-exponential bounds. Its normed-ring interface is abstract; no simulator
-instance or matrix operator-norm instance is smuggled into the file.
+exponential bounds. Its normed-ring interface is abstract; the concrete
+maximum-row-sum matrix instance is now supplied in `MatrixPressure.lean`,
+with its exponential bounds derived from one-step row estimates.
 
 `KernelEscape.lean` proves the positive two-step matrix escape estimate,
 transfers an explicit even-horizon comparison to a pressure gap between
@@ -73,6 +74,22 @@ The next constructive pass adds:
   relative-likelihood history weights, and that row loss implies exponential
   loss of the actual partition at every horizon. This supports the new
   weighted affinity-pressure gap, with its changed path potential explicit.
+- `MatrixPressure.lean`: instantiate the operator norm for actual finite
+  nonnegative matrix products; derive all-horizon bounds and pressure existence
+  from one-step row bounds. For a fixed positive matrix, prove existence for
+  every initial probability law, including laws with zero entries. Combine
+  existence with the affinity row loss to obtain strictly negative pressure,
+  the weighted positive gap, and zero-pressure stochastic/equal-channel controls.
+- `CompletionAffinityWitness.lean`: apply those theorems to the actual B Q U
+  operators of the transpose split pair, their stationary laws, and their exact
+  common predictor. Prove an explicit rational lower bound on the weighted
+  pressure gap for every probability weighting. No pressure limit, exponential
+  gap, or row discrepancy is assumed for this concrete instance.
+
+See [the matrix-pressure follow-up](../docs/internal/matrix_pressure_mechanization_2026_10_01.md)
+for its precise scope. The potential is changed and the completion channels
+are frozen. Simulator bridges, the parameter-to-secant bridge, persistent
+outer-loop packages, and the historical smaller shell remain open.
 
 See [the all-core construction note](../docs/internal/all_core_restoration_2026_10_01.md)
 for exact carrier changes, the stronger actual-P5 memory split pair,

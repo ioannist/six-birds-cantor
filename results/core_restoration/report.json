@@ -10,10 +10,12 @@
     "predictive_scope": "stationary_completion_processes_vs_best_current_state_only_autonomous_predictor",
     "relative_affinity_pressure": {
       "completion_channel_frozen_in_augmented_carrier": true,
+      "concrete_frozen_pair_gap_mechanized": true,
       "exact_rational_gap_lower_bound": "3283594060761/134912463042781250",
       "explicit_changed_path_potential": "minus_t_log_completed_transition_over_common_lower_predictor",
       "finite_weighted_gap": 0.0005073890874516828,
       "hybrid_gap_formula": "P0(s)-sum_w(P0(s)+Q_z(t))=-sum_w Q_z(t)",
+      "lean_endpoint": "CantorAudit.completion_affinity_witness_gap",
       "original_measure_disintegration_identified": false,
       "parameter": 0.5
     },
@@ -103,13 +105,16 @@
   "paper_changed": false,
   "pressure": {
     "existence_and_unique_root": "analytic_theorem_applies_to_real_arithmetic_variant",
+    "finite_matrix_history_existence_mechanized": true,
     "fully_mechanized_matrix_instance": false,
     "observable_range": [
       0.05,
       10
     ],
+    "parameter_secant_bridge_mechanized": false,
     "sample_at_one_identity_error": 1.4210854715202004e-14,
-    "scope": "full_repaired_loop_on_global_positive_box_with_clamped_selector_potential"
+    "scope": "full_repaired_loop_on_global_positive_box_with_clamped_selector_potential",
+    "simulator_bridge_mechanized": false
   },
   "retained_memory_extension": {
     "actual_P5_retained": true,

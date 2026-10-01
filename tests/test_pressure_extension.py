@@ -77,7 +77,9 @@ def test_actual_feedback_changes_the_post_completion_limit_at_fixed_kernel():
 def test_true_relative_pressure_loss_and_false_target_endpoints():
     w = construct_pressure_extension()
     loss = completion_affinity_loss_bound(w.forward, w.backward)
-    assert loss > 0
+    # Cross-language witness bridge: the Lean application verifies this exact
+    # constant from its B Q U operators and stationary predictor independently.
+    assert loss == Q(3283594060761, 134912463042781250)
     for choice in (0, 1):
         assert affinity_pressure_proxy(w.forward, w.backward, choice, 0.5, 256) <= -float(loss)
         for endpoint in (0.0, 1.0):

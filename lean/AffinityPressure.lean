@@ -84,8 +84,9 @@ theorem matrix_partition_exponential_loss {d : ℕ} (M : Fin d → Fin d → ℝ
     _ = (∑ i, p i) * c^n := by rw [Finset.sum_mul]
     _ = c^n := by rw [mass, one_mul]
 
-/-- The limit step is separate from existence, proved analytically for the
-positive finite matrix. Its exponential input is supplied by the theorem above. -/
+/-- The limit step is separate from existence, now supplied for concrete
+positive matrices by MatrixPressure. Its exponential input comes from the
+theorem above. -/
 theorem pressure_upper_of_exponential (Z : ℕ → ℝ) (c Q : ℝ)
     (_hc : 0 < c) (positive : ∀ n, 0 < Z n) (upper : ∀ n, Z n ≤ c^n)
     (limit : Tendsto (fun n => Real.log (Z n) / n) atTop (𝓝 Q)) :

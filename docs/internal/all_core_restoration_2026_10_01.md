@@ -407,6 +407,12 @@ unspecified conditional-disintegration object remains a target decision.
 
 ## Corpus use and remaining work
 
+Follow-up: [concrete matrix pressure and completion-gap mechanization](matrix_pressure_mechanization_2026_10_01.md)
+now closes the matrix-norm instance for pressure existence and supplies an
+end-to-end Lean application for the transpose pair's frozen affinity-pressure
+gap. The simulator, parameter-secant, and outer-persistence bridges below
+remain separate obligations.
+
 Read sources as available locally on 2026-10-01:
 
 * `../six-birds-papers/Tsiokos_2026_Institutions_Are_Strict_Extensions_of_the_Game.tex`,

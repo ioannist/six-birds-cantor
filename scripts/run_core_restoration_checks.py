@@ -80,6 +80,9 @@ def build_report(count: int) -> dict:
             "sample_at_one_identity_error": abs(history_log_norm(history, 1) + sum(step.observable for step in history)),
             "existence_and_unique_root": "analytic_theorem_applies_to_real_arithmetic_variant",
             "fully_mechanized_matrix_instance": False,
+            "finite_matrix_history_existence_mechanized": True,
+            "parameter_secant_bridge_mechanized": False,
+            "simulator_bridge_mechanized": False,
         },
         "extension": {
             "scope": "all_frozen_kernel_total_history_partitions_same_lens_tau_and_package",
@@ -117,6 +120,8 @@ def build_report(count: int) -> dict:
                 "explicit_changed_path_potential": "minus_t_log_completed_transition_over_common_lower_predictor",
                 "parameter": 0.5,
                 "exact_rational_gap_lower_bound": str(affinity_loss),
+                "concrete_frozen_pair_gap_mechanized": True,
+                "lean_endpoint": "CantorAudit.completion_affinity_witness_gap",
                 "finite_weighted_gap": -sum(affinity_pressure_proxy(witness.forward, witness.backward, z, 0.5, count)
                                             for z in (0, 1)) / 2,
                 "hybrid_gap_formula": "P0(s)-sum_w(P0(s)+Q_z(t))=-sum_w Q_z(t)",
