@@ -7,7 +7,7 @@ name = "contextual_cantor"
 version = "0.0.1"
 description = "Minimal scaffold for contextual cantor experiments"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = ["matplotlib>=3.5", "mpmath>=1.3"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7"]
@@ -17,3 +17,7 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

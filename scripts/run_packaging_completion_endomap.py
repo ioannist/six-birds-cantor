@@ -58,6 +58,7 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
         PilotParameters,
         compute_p4_lenses,
         compute_packaging_fixed_points,
+        detect_packaging_saturation,
         packaging_macro_admissibility,
         refresh_informants,
         simulate_substrate,
@@ -118,13 +119,21 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
             panel_runs = [run for run in runs if run["tau"] == tau and run["lens_state"] == lens_state]
             fixed_point_counts_by_panel[f"{tau}:{lens_state}"] = {
                 "run_count": len(panel_runs),
-                "distinct_fixed_points": len({tuple(run["completion_summary"]["final_signature"]) for run in panel_runs}),
+                "distinct_fixed_points": len({tuple(run["completion_summary"]["final_signature"])
+                                               for run in panel_runs
+                                               if run["completion_summary"]["numerically_converged"]}),
                 "statuses": dict(Counter(run["completion_summary"]["status"] for run in panel_runs)),
             }
 
+    saturation_check = detect_packaging_saturation(
+        runs, tau_values=tau_values, lens_states=lens_values, initial_count=len(initials),
+    )
     saturation = {
-        "saturated": all(panel["distinct_fixed_points"] <= 3 for panel in fixed_point_counts_by_panel.values()),
-        "distinct_fixed_point_total": len({tuple(run["completion_summary"]["final_signature"]) for run in runs}),
+        "saturated": (saturation_check["total_panels"] > 0
+                      and saturation_check["saturated_panel_count"] == saturation_check["total_panels"]),
+        "saturation_verified": False,
+        "scope": saturation_check["scope"],
+        "distinct_fixed_point_total": completion["distinct_fixed_point_count"],
         "panel_summaries": fixed_point_counts_by_panel,
     }
     macro_admissibility = {
@@ -141,9 +150,11 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
     }
     p4_feedback_summary = {
         "feedback_events": feedback_events,
-        "material_feedback_events": material_feedback,
+        "material_feedback_events": 0,
+        "proposed_lens_change_count": material_feedback,
         "feedback_rate": feedback_events / max(1, len(runs)),
-        "material_feedback_rate": material_feedback / max(1, len(runs)),
+        "material_feedback_rate": 0.0,
+        "proposal_rate": material_feedback / max(1, len(runs)),
         "lens_changes": [
             {
                 "from_lens": run["feedback"]["from_lens"],
@@ -156,7 +167,9 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
         ],
     }
 
-    theorem_object_changed = feedback_events > 0 and admissible_count > 0
+    # A proposed lens change is not a comparison of the pre/post completion
+    # objects. No certificate of changed theorem objects is constructed here.
+    theorem_object_changed = False
     broadening_verdict = "not_broader"
     p5_object_role_verdict = "theorem_object_generator_but_class_equivalent"
     decision = "completion_object_real_but_not_broader"
@@ -239,8 +252,8 @@ def run() -> int:
                 for summary in summaries
             }
         },
-        "broadening_verdict": "object_changed_but_not_broader" if decision != "completion_endomap_blocked" else "blocked",
-        "p5_object_role_verdict": "theorem_object_generator_but_class_equivalent" if decision != "completion_endomap_blocked" else "blocked",
+        "broadening_verdict": "not_decided_by_finite_completion_samples",
+        "p5_object_role_verdict": "numerical_completion_candidates_only",
         "theorem_object_changed_from_cocycle_route": theorem_object_changed,
         "notes": [
             "The packaging map is now treated as a theorem-object generator via its fixed points.",
@@ -260,6 +273,11 @@ def run() -> int:
 
     out_dir = repo_root / "results" / "packaging_completion_endomap"
     out_dir.mkdir(parents=True, exist_ok=True)
+    import sys
+    sys.path.insert(0, str(repo_root / "src"))
+    from contextual_cantor.audit_status import mark_diagnostic_report
+    mark_diagnostic_report(report, "numerical_completion_candidates_and_feedback_proposals")
+
     (out_dir / "report.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
     with (out_dir / "report.csv").open("w", encoding="utf-8", newline="") as fh:

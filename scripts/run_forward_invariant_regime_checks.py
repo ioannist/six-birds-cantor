@@ -19,9 +19,6 @@ def _compute_margins(repo_root: Path, config: dict[str, Any]) -> dict[str, Any]:
     from contextual_cantor.continuous_kernel_substrate import (
         PilotParameters,
         build_initial_state,
-        compute_p4_lenses,
-        compute_p5_packagings,
-        refresh_informants,
         step_substrate,
     )
     import random
@@ -51,26 +48,17 @@ def _compute_margins(repo_root: Path, config: dict[str, Any]) -> dict[str, Any]:
     min_lens_margin = float("inf")
     min_packaging_margin = float("inf")
     for _ in range(steps):
-        informants = refresh_informants(state, state.primitive_activity, rng)
-        lenses = compute_p4_lenses(state, informants, state.primitive_activity)
-        lens_scores = sorted((float(item["score"]) for item in lenses), reverse=True)
-        lens_margin = lens_scores[0] - lens_scores[1] if len(lens_scores) > 1 else lens_scores[0] if lens_scores else 0.0
-        min_lens_margin = min(min_lens_margin, lens_margin)
-        selected_lens = max(lenses, key=lambda item: item["score"])
-        packagings = compute_p5_packagings(state, informants, selected_lens, state.primitive_activity)
-        packaging_scores = sorted((float(item["score"]) for item in packagings), reverse=True)
-        packaging_margin = packaging_scores[0] - packaging_scores[1] if len(packaging_scores) > 1 else packaging_scores[0] if packaging_scores else 0.0
-        min_packaging_margin = min(min_packaging_margin, packaging_margin)
         snapshot = step_substrate(state, rng, state.primitive_activity)
+        lens_margin = snapshot["selector_diagnostics"]["lens_margin"]
+        min_lens_margin = min(min_lens_margin, lens_margin)
+        packaging_margin = snapshot["selector_diagnostics"]["packaging_margin"]
+        min_packaging_margin = min(min_packaging_margin, packaging_margin)
         budget = float(snapshot["p6"]["budget"])
         tau = float(snapshot["p3"]["tau"])
-        if not (shell_bounds["budget"][0] <= budget <= shell_bounds["budget"][1]):
-            shell_exit_count += 1
-        if not (shell_bounds["tau"][0] <= tau <= shell_bounds["tau"][1]):
-            shell_exit_count += 1
-        if lens_margin < shell_bounds["lens_margin"]:
-            shell_exit_count += 1
-        if packaging_margin < shell_bounds["packaging_margin"]:
+        if (not shell_bounds["budget"][0] <= budget <= shell_bounds["budget"][1]
+                or not shell_bounds["tau"][0] <= tau <= shell_bounds["tau"][1]
+                or lens_margin < shell_bounds["lens_margin"]
+                or packaging_margin < shell_bounds["packaging_margin"]):
             shell_exit_count += 1
     return {
         "family_id": config["family_id"],
@@ -85,6 +73,8 @@ def _compute_margins(repo_root: Path, config: dict[str, Any]) -> dict[str, Any]:
         "tau_range": [min(state.tau_history), max(state.tau_history)] if state.tau_history else [state.tau, state.tau],
         "primitive_activity_indicators": dict(state.primitive_activity),
         "all_six_primitives_active": all(state.primitive_activity.values()),
+        "scope": "sampled_trajectory_only",
+        "forward_invariance_certified": False,
     }
 
 
@@ -122,6 +112,11 @@ def run() -> int:
             "The narrowed shell keeps selector margins and budget/tau ranges bounded away from collapse."
         ],
     }
+    import sys
+    sys.path.insert(0, str(repo_root / "src"))
+    from contextual_cantor.audit_status import mark_diagnostic_report
+    mark_diagnostic_report(report, "sampled_trajectory_only")
+
     (out_dir / "report.json").write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
     with (out_dir / "report.csv").open("w", encoding="utf-8", newline="") as f:
         csv_fieldnames = [

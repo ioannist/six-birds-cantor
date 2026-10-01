@@ -1,0 +1,29 @@
+import CantorAudit
+import KernelCocycle
+import KernelEscape
+import CompletionWitness
+
+#print axioms CantorAudit.collision_obstructs_factorization
+#print axioms CantorAudit.factorization_iff_constant_on_fibers
+#print axioms CantorAudit.extension_with_zero_gap
+#print axioms CantorAudit.coarse_collision_with_exact_factorization
+#print axioms CantorAudit.conditional_fekete
+#print axioms CantorAudit.linear_partition_zero_pressure
+#print axioms CantorAudit.bounded_weight_sum_zero_pressure
+#print axioms CantorAudit.selector_time_sum_zero
+#print axioms CantorAudit.a3_arbitrarily_long_waits
+#print axioms CantorAudit.a3_wait_then_return
+
+#print axioms CantorAudit.kernelProduct_split
+#print axioms CantorAudit.kernelEnvelope_submultiplicative
+#print axioms CantorAudit.kernel_pressure_exists
+#print axioms CantorAudit.matrix_two_step_escape
+#print axioms CantorAudit.pressure_gap_of_even_escape
+#print axioms CantorAudit.bounded_factor_same_pressure
+#print axioms CantorAudit.witnessKernel_stochastic
+#print axioms CantorAudit.witnessFullCompletion_saturates
+#print axioms CantorAudit.witnessSingleton_unique
+#print axioms CantorAudit.witness_package_extension
+#print axioms CantorAudit.witness_pair_lumpability_obstruction
+#print axioms CantorAudit.witnessFullCompletion_formula
+#print axioms CantorAudit.witnessSingletonCompletion_formula

@@ -135,6 +135,11 @@
       "role": "required_shell_witness"
     }
   ],
-  "working_class_id": "continuous_full_loop_lawful_kernel_class"
+  "working_class_id": "continuous_full_loop_lawful_kernel_class",
+  "mathematical_certification": {
+    "main_theorems_certified": false,
+    "current_status": "requires_mathematical_repair",
+    "review": "docs/internal/mathematics_review_2026_10_01.md",
+    "legacy_status_scope": "historical_workflow_assessment_only"
+  }
 }
-

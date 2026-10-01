@@ -130,5 +130,11 @@
   "gap_status": [
     "Pressure existence and root-supporting monotonicity/continuity are closed for the working class.",
     "The next live gap is no longer induced pressure existence; it is the lower-transfer / truncation-control step from the delayed-return scaffold."
-  ]
+  ],
+  "mathematical_certification": {
+    "main_theorems_certified": false,
+    "current_status": "requires_mathematical_repair",
+    "review": "docs/internal/mathematics_review_2026_10_01.md",
+    "legacy_status_scope": "historical_workflow_assessment_only"
+  }
 }

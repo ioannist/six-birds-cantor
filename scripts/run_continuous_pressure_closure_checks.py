@@ -48,9 +48,10 @@ def _observable(step: dict[str, Any]) -> float:
 
 
 def _fekete_proxy(values: list[float], s: float) -> dict[str, float]:
+    from contextual_cantor.time_partition import time_partition_pressure_proxy
     if not values:
         return {"pressure_proxy": 0.0, "gap_proxy": 0.0, "sign": 0.0}
-    logs = [math.log(sum(math.exp(-s * v) for v in values[:i])) / i for i in range(1, len(values) + 1)]
+    logs = [time_partition_pressure_proxy(values[:i], s) for i in range(1, len(values) + 1)]
     pressure = logs[-1]
     gap = max((abs(b - a) for a, b in zip(logs, logs[1:])), default=0.0)
     sign = 1.0 if pressure > 0 else (-1.0 if pressure < 0 else 0.0)
@@ -89,9 +90,15 @@ def _run_config(repo_root: Path, cfg_path: Path) -> dict[str, Any]:
         "seed": int(params["seed"]),
         "steps": len(trajectory),
         "all_six_primitives_active": all(state.primitive_activity.get(p, False) for p in PRIMITIVES),
-        "shell_exit_count": 0,
-        "min_lens_margin": min(step["lens"]["score"] for step in trajectory) if trajectory else 0.0,
-        "min_packaging_margin": min(step["packaging"]["score"] for step in trajectory) if trajectory else 0.0,
+        "shell_exit_count": sum(
+            not (2.1 <= step["p6"]["budget"] <= 12.1
+                 and 0.55 <= step["p3"]["tau"] <= 1.05
+                 and step["selector_diagnostics"]["lens_margin"] >= 0.01
+                 and step["selector_diagnostics"]["packaging_margin"] >= 0.01)
+            for step in trajectory
+        ),
+        "min_lens_margin": min(step["selector_diagnostics"]["lens_margin"] for step in trajectory) if trajectory else 0.0,
+        "min_packaging_margin": min(step["selector_diagnostics"]["packaging_margin"] for step in trajectory) if trajectory else 0.0,
         "budget_range": [min(state.budget_history), max(state.budget_history)] if state.budget_history else [state.budget, state.budget],
         "tau_range": [min(state.tau_history), max(state.tau_history)] if state.tau_history else [state.tau, state.tau],
         "growth_bound_proxy": max(values) - min(values) if values else 0.0,
@@ -150,7 +157,7 @@ def run() -> int:
             "pressure_proxy_mean": statistics.fmean(
                 [pressure_report["support_summary"]["pressure_proxy_mean"], statistics.fmean(run["pressure_profiles"]["1.0"]["pressure_proxy"] for run in runs)]
             ),
-            "shell_uniform_bounds": {
+            "sampled_bounds": {
                 "lens_margin_min": min(run["min_lens_margin"] for run in runs),
                 "packaging_margin_min": min(run["min_packaging_margin"] for run in runs),
                 "budget_range": [min(run["budget_range"][0] for run in runs), max(run["budget_range"][1] for run in runs)],
@@ -167,6 +174,11 @@ def run() -> int:
 
     out_dir = repo_root / "results" / "continuous_pressure_closure"
     out_dir.mkdir(parents=True, exist_ok=True)
+    import sys
+    sys.path.insert(0, str(repo_root / "src"))
+    from contextual_cantor.audit_status import mark_diagnostic_report
+    mark_diagnostic_report(report, "bounded_observable_time_sum_diagnostic")
+
     (out_dir / "report.json").write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
 
     rows = []
@@ -193,4 +205,3 @@ def run() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(run())
-

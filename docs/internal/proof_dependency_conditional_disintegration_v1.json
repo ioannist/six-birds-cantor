@@ -180,5 +180,11 @@
   "gap_status": {
     "status": "conditional_disintegration_closed",
     "note": "The theoremlet is closed in note on the audited shell using the weighted package-conditioned pressure gap as the explicit consequence object."
+  },
+  "mathematical_certification": {
+    "current_status": "requires_mathematical_repair",
+    "legacy_status_scope": "historical_workflow_assessment_only",
+    "main_theorems_certified": false,
+    "review": "docs/internal/mathematics_review_2026_10_01.md"
   }
 }

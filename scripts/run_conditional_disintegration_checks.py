@@ -29,18 +29,26 @@ def _sig_key(signature: list[float]) -> tuple[float, ...]:
 
 
 def _normalize(vec: list[float]) -> list[float]:
-    total = sum(max(float(x), 0.0) for x in vec)
+    if not vec or any(not math.isfinite(x) or x < 0 for x in vec):
+        raise ValueError("future signatures must be finite nonnegative vectors")
+    total = math.fsum(vec)
     if total <= 0.0:
-        return [0.0 for _ in vec]
-    return [max(float(x), 0.0) / total for x in vec]
+        raise ValueError("future signatures must have positive mass")
+    return [x / total for x in vec]
 
 
 def _kl_divergence(p: list[float], q: list[float]) -> float:
+    if len(p) != len(q) or not p:
+        raise ValueError("KL vectors must have the same nonzero dimension")
+    if any(not math.isfinite(x) or x < 0 for x in p + q):
+        raise ValueError("KL vectors must have finite nonnegative entries")
+    if not math.isclose(sum(p), 1.0, abs_tol=1e-10) or not math.isclose(sum(q), 1.0, abs_tol=1e-10):
+        raise ValueError("KL vectors must be probability vectors")
     out = 0.0
     for px, qx in zip(p, q):
-        px = max(float(px), 0.0)
-        qx = max(float(qx), 1e-12)
         if px > 0.0:
+            if qx == 0.0:
+                return math.inf
             out += px * math.log(px / qx)
     return out
 
@@ -49,11 +57,19 @@ def _stratum_pressure_profile(
     signature: tuple[float, ...],
     pressure_profiles: dict[str, dict[str, float]],
 ) -> dict[str, float]:
+    """A synthetic moment correction, not pressure conditioned on a fiber.
+
+    Its deficit can be positive even with one fiber. It therefore cannot
+    establish information loss or pressure disintegration.
+    """
+    signature = tuple(_normalize(list(signature)))
     support = sum(1 for x in signature if x > 1e-9)
     out: dict[str, float] = {}
     for s_key, payload in pressure_profiles.items():
         s = float(s_key)
-        moment = sum(max(float(x), 1e-12) ** (1.0 + s) for x in signature)
+        if s < 0:
+            raise ValueError("moment diagnostic requires s >= 0")
+        moment = math.fsum(x ** (1.0 + s) for x in signature)
         out[s_key] = float(payload["pressure_proxy"]) + math.log(moment) / max(1, support)
     return out
 
@@ -66,6 +82,8 @@ def _summarize_config(
 ) -> dict[str, Any]:
     descriptor_groups: dict[tuple[Any, ...], list[tuple[float, ...]]] = defaultdict(list)
     for run in completion_cfg["runs"]:
+        if not run["completion_summary"].get("numerically_converged", False):
+            continue
         descriptor = (
             config_id,
             round(float(run["tau"]), 3),
@@ -142,7 +160,8 @@ def _summarize_config(
 
     macro_counts = strict_cfg
     support = (
-        all(item["gap_bounded_away_from_zero"] for item in descriptor_summaries)
+        bool(descriptor_summaries)
+        and all(item["gap_bounded_away_from_zero"] for item in descriptor_summaries)
         and macro_counts["admissible_count"] == 0
     )
 
@@ -150,13 +169,15 @@ def _summarize_config(
         "config_id": config_id,
         "package_fiber_descriptor_count": len(descriptor_summaries),
         "descriptor_summaries": descriptor_summaries,
-        "min_gap_across_descriptors": min_gap,
-        "min_closure_deficit_proxy": min_kl,
+        "min_gap_across_descriptors": min_gap if descriptor_summaries else 0.0,
+        "min_closure_deficit_proxy": min_kl if descriptor_summaries else 0.0,
         "max_closure_deficit_proxy": max_kl,
         "positive_closure_deficit_descriptor_count": descriptor_positive_count,
         "macro_admissibility_summary": macro_counts,
-        "non_tau_closedness_supported": macro_counts["admissible_count"] == 0,
-        "disintegration_supported": support,
+        "non_tau_closedness_supported": macro_counts["admissible_count"] == 0 and macro_counts["inadmissible_count"] > 0,
+        "disintegration_supported": False,
+        "synthetic_moment_signal": support,
+        "weight_scope": "frequency_of_numerically_converged_sampled_starts",
     }
 
 
@@ -231,12 +252,23 @@ def run() -> int:
         "notes": [
             "The selected consequence object is the weighted package-conditioned pressure gap, not a direct stratumwise root gap.",
             "The KL-style closure-deficit quantity is treated as supporting evidence for the same insufficiency interpretation.",
-            "The theoremlet is closed only on the audited shell."
+            "The moment-corrected profiles are synthetic; their positive gap does not certify conditional pressure or insufficiency."
         ]
+    }
+    report["mathematical_certification"] = {
+        "conditional_pressure_profiles_constructed": False,
+        "pressure_disintegration_certified": False,
+        "scope": "finite_synthetic_moment_diagnostic",
+        "review": "docs/internal/mathematics_review_2026_10_01.md",
     }
 
     out_dir = repo_root / "results" / "conditional_disintegration"
     out_dir.mkdir(parents=True, exist_ok=True)
+    import sys
+    sys.path.insert(0, str(repo_root / "src"))
+    from contextual_cantor.audit_status import mark_diagnostic_report
+    mark_diagnostic_report(report, "synthetic_moment_diagnostic")
+
     (out_dir / "report.json").write_text(
         json.dumps(report, indent=2, sort_keys=True) + "\n",
         encoding="utf-8"

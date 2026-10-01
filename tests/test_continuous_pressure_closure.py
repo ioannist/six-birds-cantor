@@ -46,7 +46,10 @@ def test_continuous_pressure_closure_structure() -> None:
     assert closure["decision"] == "closed_on_working_class"
     assert report["support_summary"]["all_six_primitives_active"] is True
     assert report["support_summary"]["monotonicity_support_fraction"] == 1.0
-    assert report["support_summary"]["shell_exit_count"] == 0
+    assert report["decision"] == "diagnostic_only_not_certified"
+    assert report["mathematical_certification"]["main_theorem_certified"] is False
+    assert report["support_summary"]["shell_exit_count"] == sum(run["shell_exit_count"] for run in report["runs"])
+    assert dependency["mathematical_certification"]["main_theorems_certified"] is False
     assert dependency["lemmas"][1]["status"] == "closed_in_note"
     assert dependency["lemmas"][2]["status"] == "closed_in_note"
     assert dependency["lemmas"][-1]["status"] == "closed_in_note"

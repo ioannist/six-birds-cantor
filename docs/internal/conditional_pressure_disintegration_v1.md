@@ -1,3 +1,5 @@
+> Historical proof proposal, superseded by the [2026-10-01 mathematical review](mathematics_review_2026_10_01.md). Closure labels below are workflow provenance, not mathematical certification. Consult the review and restoration notes for valid statements and outstanding hypotheses.
+
 # Conditional Pressure Disintegration v1
 
 ## Question being proved

@@ -52,9 +52,5 @@ def test_assumptions_report_and_witnesses() -> None:
         "generated.continuous_full_loop_kernel",
         "generated.continuous_full_loop_kernel_shell",
     }
-    assert report["decision"] in {
-        "conditional_disintegration_closed",
-        "conditional_disintegration_signal_but_not_closed",
-        "conditional_disintegration_not_supported",
-    }
-
+    assert report["decision"] == "diagnostic_only_not_certified"
+    assert report["mathematical_certification"]["pressure_disintegration_certified"] is False

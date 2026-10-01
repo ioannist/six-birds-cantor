@@ -114,6 +114,11 @@ def build() -> int:
         "docs/internal/proof_dependency_conditional_disintegration_v1.json": disintegration_dep,
     }
 
+    # Do not regenerate obsolete proof flags into a fresh closed theorem ledger.
+    if any(dep.get("mathematical_certification", {}).get("main_theorems_certified") is False
+           for dep in dependency_map.values()):
+        raise SystemExit("Mathematical audit requires repairs; see docs/internal/mathematics_review_2026_10_01.md")
+
     included_theoremlets = []
     missing = []
     for theoremlet_id, spec in REQUIRED_THEOREMLETS.items():

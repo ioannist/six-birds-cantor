@@ -45,8 +45,19 @@ def certify_monotone_decreasing_root(
     precision_dps: int,
     max_steps: int,
 ) -> CertifiedBracket:
+    """Enclose a root assuming a continuous decreasing real function.
+
+    The caller supplies a valid interval extension; endpoint signs are checked,
+    while continuity and monotonicity are mathematical premises of this API.
+    """
     lo = float(s_min)
     hi = float(s_max)
+    if not math.isfinite(lo) or not math.isfinite(hi) or lo >= hi:
+        raise ValueError("root interval must have finite increasing endpoints")
+    if precision_dps < 1 or max_steps < 1:
+        raise ValueError("precision_dps and max_steps must be positive")
+    if not HAS_MPMATH_IV or func_interval is None:
+        raise ValueError("certified bracketing requires an interval evaluator; heuristic margins are not certificates")
 
     f_lo = _refine_sign(lo, precision_dps, func_interval, func_point)
     f_hi = _refine_sign(hi, precision_dps, func_interval, func_point)
@@ -59,6 +70,8 @@ def certify_monotone_decreasing_root(
     backend = f_lo.backend
     for step in range(1, max_steps + 1):
         mid = 0.5 * (lo + hi)
+        if mid == lo or mid == hi:
+            break
         f_mid = _refine_sign(mid, precision_dps, func_interval, func_point)
         backend = f_mid.backend
 
@@ -160,10 +173,18 @@ def certify_config_root(
     params = config.get("parameters", {})
 
     if engine == "classical_similarity":
-        base = int(params["base"])
-        digits = params["allowed_digits"]
-        ratios = [1.0 / float(base) for _ in digits]
-        func_interval, func_point = _classical_funcs(ratios)
+        from .classical_similarity import maps_from_restricted_digits, integer_parameter
+
+        base = integer_parameter(params["base"], "base")
+        maps = maps_from_restricted_digits(base, params["allowed_digits"])
+        # The digit construction has the exact mathematical ratio 1/base,
+        # not the nearest binary float to 1/base.
+        def func_interval(s: Any) -> Any:
+            assert mp is not None
+            return len(maps) * (mp.iv.mpf(1) / base) ** s - 1
+
+        def func_point(s: Any) -> Any:
+            return len(maps) * (1 / base) ** s - 1
         bracket = certify_monotone_decreasing_root(
             func_interval=func_interval,
             func_point=func_point,
@@ -175,6 +196,17 @@ def certify_config_root(
         route = "classical-sum-r_i^s"
 
     elif family_id == "finite_state.adjacency_no_consecutive_2_base3":
+        # A family label alone cannot justify using the Fibonacci formula.
+        from collections import Counter
+        from .finite_state_symbolic import normalize_edges
+
+        edges = normalize_edges(params["edges"])
+        if (engine != "finite_state_symbolic"
+                or Counter((e.src, e.dst) for e in edges) != Counter({("a", "a"): 1, ("a", "b"): 1, ("b", "a"): 1})
+                or any(e.ratio != 1.0 / 3.0 for e in edges)
+                or not set(params.get("start_states", ["a", "b"])) <= {"a", "b"}
+                or not params.get("start_states", ["a", "b"])):
+            raise ValueError("Fibonacci reduction requires the declared base-3 adjacency data")
         func_interval, func_point = _adjacency_no_consecutive_2_funcs()
         bracket = certify_monotone_decreasing_root(
             func_interval=func_interval,
@@ -207,4 +239,6 @@ def certify_config_root(
         "certification_method": bracket.certification_method,
         "function_backend": bracket.function_backend,
         "route": route,
+        "certified": True,
+        "ratio_interpretation": "exact_restricted_digit_ratio",
     }

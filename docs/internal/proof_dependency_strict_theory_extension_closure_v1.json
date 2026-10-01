@@ -164,5 +164,11 @@
   "gap_status": {
     "status": "closed_on_audited_shell_class",
     "note": "No remaining localized gaps inside the audited-shell strict-extension closure."
+  },
+  "mathematical_certification": {
+    "current_status": "requires_mathematical_repair",
+    "legacy_status_scope": "historical_workflow_assessment_only",
+    "main_theorems_certified": false,
+    "review": "docs/internal/mathematics_review_2026_10_01.md"
   }
 }

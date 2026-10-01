@@ -196,5 +196,11 @@
     "status": "closed_on_audited_shell_class",
     "primary_open_point": "none_on_audited_shell_class",
     "note": "ST-LEM-5 and ST-THM-7 are closed in note on the audited shell class by the closure note and support report."
+  },
+  "mathematical_certification": {
+    "current_status": "requires_mathematical_repair",
+    "legacy_status_scope": "historical_workflow_assessment_only",
+    "main_theorems_certified": false,
+    "review": "docs/internal/mathematics_review_2026_10_01.md"
   }
 }

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import math
 import random
 from typing import Iterable, Sequence
 
@@ -16,6 +17,8 @@ class Interval:
     def __post_init__(self) -> None:
         l = float(self.left)
         r = float(self.right)
+        if not math.isfinite(l) or not math.isfinite(r):
+            raise ValueError("interval endpoints must be finite")
         if r < l:
             raise ValueError(f"invalid interval [{l}, {r}]")
         object.__setattr__(self, "left", l)
@@ -34,7 +37,7 @@ class Interval:
     def intersection(self, other: "Interval") -> "Interval | None":
         l = max(self.left, other.left)
         r = min(self.right, other.right)
-        if r < l - EPS:
+        if r < l:
             return None
         return Interval(l, r)
 
@@ -95,7 +98,7 @@ class LocalAffineMap:
         b = float(self.b)
         object.__setattr__(self, "a", a)
         object.__setattr__(self, "b", b)
-        if abs(a) >= 1.0:
+        if not math.isfinite(a) or not math.isfinite(b) or abs(a) >= 1.0:
             raise ValueError("local affine map must be contractive: |a| < 1")
         if self.domain.left < -EPS or self.domain.right > 1.0 + EPS:
             raise ValueError("map domain must lie in [0,1]")

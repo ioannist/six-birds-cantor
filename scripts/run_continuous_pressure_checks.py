@@ -66,26 +66,23 @@ def _observable_value(step_values: dict[str, float]) -> float:
 
 
 def _pressure_proxy(series: list[float], s: float) -> float:
+    from contextual_cantor.time_partition import time_partition_pressure_proxy
     n = len(series)
     if n == 0:
         return 0.0
-    partition = sum(math.exp(-s * value) for value in series)
-    return math.log(partition) / n
+    return time_partition_pressure_proxy(series, s)
 
 
 def _subadditivity_defect(series: list[float], s: float) -> float:
+    from contextual_cantor.time_partition import time_partition_log
     if len(series) < 4:
         return 0.0
-    prefix = []
-    running = 0.0
-    for value in series:
-        running += math.exp(-s * value)
-        prefix.append(math.log(running))
+    whole = time_partition_log(series, s)
     splits = []
-    for k in range(1, len(prefix) - 1):
-        left = prefix[k - 1]
-        right = prefix[-1] - prefix[k - 1]
-        defect = abs(prefix[-1] - (left + right))
+    for k in range(1, len(series)):
+        left = time_partition_log(series[:k], s)
+        right = time_partition_log(series[k:], s)
+        defect = abs(whole - (left + right))
         splits.append(defect)
     return statistics.fmean(splits) if splits else 0.0
 
@@ -207,6 +204,11 @@ def run() -> int:
 
     out_dir = repo_root / "results" / "continuous_pressure_existence"
     out_dir.mkdir(parents=True, exist_ok=True)
+    import sys
+    sys.path.insert(0, str(repo_root / "src"))
+    from contextual_cantor.audit_status import mark_diagnostic_report
+    mark_diagnostic_report(report, "bounded_observable_time_sum_diagnostic")
+
     (out_dir / "report.json").write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
     rows = []
     for run in runs:

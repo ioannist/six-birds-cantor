@@ -3,29 +3,13 @@ from __future__ import annotations
 import math
 from typing import Any
 
+from .classical_similarity import maps_from_restricted_digits, integer_parameter
+from .finite_state_symbolic import normalize_edges
+from .nonnegative_matrix import spectral_radius
+
 
 def _matvec(matrix: list[list[float]], vec: list[float]) -> list[float]:
     return [sum(a * b for a, b in zip(row, vec)) for row in matrix]
-
-
-def spectral_radius(matrix: list[list[float]], max_iter: int = 500, tol: float = 1e-14) -> float:
-    n = len(matrix)
-    if n == 0:
-        return 0.0
-    if any(len(row) != n for row in matrix):
-        raise ValueError("matrix must be square")
-    v = [1.0 / n] * n
-    prev = 0.0
-    for _ in range(max_iter):
-        w = _matvec(matrix, v)
-        m = max(abs(x) for x in w)
-        if m == 0.0:
-            return 0.0
-        v = [x / m for x in w]
-        if abs(m - prev) <= tol * max(1.0, abs(m)):
-            return m
-        prev = m
-    return prev
 
 
 def build_transfer_matrix(config: dict[str, Any], s: float) -> list[list[float]]:
@@ -35,36 +19,45 @@ def build_transfer_matrix(config: dict[str, Any], s: float) -> list[list[float]]
         raise ValueError("config.parameters must be object")
 
     if engine == "classical_similarity":
-        base = int(params["base"])
+        base = integer_parameter(params["base"], "base")
         digits = params["allowed_digits"]
         if not isinstance(digits, list):
             raise ValueError("allowed_digits must be list")
-        weight = sum((1.0 / float(base)) ** s for _ in digits)
+        weight = sum(smap.ratio ** s for smap in maps_from_restricted_digits(base, digits))
         return [[weight]]
 
     if engine == "finite_state_symbolic":
         edges = params.get("edges")
         if not isinstance(edges, list):
             raise ValueError("finite_state_symbolic requires parameters.edges list")
+        edge_list = normalize_edges(edges)
         state_set: set[str] = set()
         states_raw = params.get("states")
         if isinstance(states_raw, list) and states_raw:
             for st in states_raw:
                 state_set.add(str(st))
-        for e in edges:
-            if isinstance(e, dict):
-                state_set.add(str(e["src"]))
-                state_set.add(str(e["dst"]))
+        for e in edge_list:
+            state_set.update((e.src, e.dst))
+        if "start_states" in params:
+            reachable = {str(st) for st in params["start_states"]}
+            if not reachable or not reachable <= state_set:
+                raise ValueError("start_states must be nonempty known states")
+            while True:
+                expanded = reachable | {e.dst for e in edge_list if e.src in reachable}
+                if expanded == reachable:
+                    break
+                reachable = expanded
+            state_set = reachable
         states = sorted(state_set)
         index = {st: i for i, st in enumerate(states)}
         n = len(states)
         mat = [[0.0 for _ in range(n)] for _ in range(n)]
-        for e in edges:
-            if not isinstance(e, dict):
+        for e in edge_list:
+            if e.src not in index:
                 continue
-            i = index[str(e["src"])]
-            j = index[str(e["dst"])]
-            ratio = float(e["ratio"])
+            i = index[e.src]
+            j = index[e.dst]
+            ratio = e.ratio
             mat[i][j] += ratio**s
         return mat
 

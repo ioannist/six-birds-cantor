@@ -91,5 +91,11 @@
   "witness_families": [
     "generated.continuous_full_loop_kernel",
     "generated.continuous_full_loop_kernel_shell"
-  ]
+  ],
+  "mathematical_certification": {
+    "current_status": "requires_mathematical_repair",
+    "legacy_status_scope": "historical_workflow_assessment_only",
+    "main_theorems_certified": false,
+    "review": "docs/internal/mathematics_review_2026_10_01.md"
+  }
 }

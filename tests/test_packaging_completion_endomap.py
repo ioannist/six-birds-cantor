@@ -27,7 +27,8 @@ def test_packaging_completion_structure() -> None:
     report = json.loads(REPORT_PATH.read_text(encoding="utf-8"))
 
     assert spec["decision"] in ALLOWED_DECISIONS
-    assert report["decision"] in ALLOWED_DECISIONS
+    assert report["decision"] == "diagnostic_only_not_certified"
+    assert report["mathematical_certification"]["main_theorem_certified"] is False
     assert set(report["frozen_configs"]) == {
         "configs/experiments/generated/continuous_full_loop_kernel.json",
         "configs/experiments/generated/continuous_full_loop_kernel_shell.json",

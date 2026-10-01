@@ -5,6 +5,7 @@ from fractions import Fraction
 from typing import Any
 
 from .interval_utils import HAS_MPMATH_IV
+from .classical_similarity import integer_parameter
 
 try:
     import mpmath as mp  # type: ignore
@@ -20,12 +21,24 @@ def parse_digit_transition_config(config: dict[str, Any]) -> dict[str, Any]:
     params = config.get("parameters", {})
     if not isinstance(params, dict):
         raise ValueError("config.parameters must be an object")
-    base = int(params["base"])
-    start_digits = [int(d) for d in params["start_digits"]]
+    base = integer_parameter(params["base"], "base")
+    if base < 2 or base != params["base"]:
+        raise ValueError("base must be an integer greater than 1")
+    start_digits = [integer_parameter(d, "digit") for d in params["start_digits"]]
     raw_transitions = params["transition_digits"]
     if not isinstance(raw_transitions, dict):
         raise ValueError("parameters.transition_digits must be an object")
-    transitions = {int(src): [int(dst) for dst in dsts] for src, dsts in raw_transitions.items()}
+    transitions = {integer_parameter(src, "source digit"): [integer_parameter(dst, "target digit") for dst in dsts]
+                   for src, dsts in raw_transitions.items()}
+    if len(transitions) != len(raw_transitions):
+        raise ValueError("duplicate normalized transition source digits")
+    if not start_digits or len(set(start_digits)) != len(start_digits):
+        raise ValueError("start_digits must be nonempty and distinct")
+    for digit in start_digits + list(transitions) + [d for ds in transitions.values() for d in ds]:
+        if not 0 <= digit < base:
+            raise ValueError("digits must lie in range(base)")
+    if any(len(set(dsts)) != len(dsts) for dsts in transitions.values()):
+        raise ValueError("duplicate digit transitions do not define distinct geometric cylinders")
     return {"base": base, "start_digits": start_digits, "transitions": transitions}
 
 
@@ -70,6 +83,8 @@ def perron_bounds_collatz_wielandt(matrix: list[list[int]], steps: int) -> tuple
     n = len(matrix)
     if n == 0 or any(len(row) != n for row in matrix):
         raise ValueError("matrix must be non-empty square")
+    if any(not isinstance(v, int) or v < 0 for row in matrix for v in row):
+        raise ValueError("Collatz-Wielandt requires nonnegative integer entries")
 
     vec = [1 for _ in range(n)]
     for _ in range(steps):
@@ -100,28 +115,24 @@ def certify_markov_equal_ratio_dimension(
     rho_lower, rho_upper = perron_bounds_collatz_wielandt(matrix, steps=perron_steps)
 
     backend = "collatz-wielandt+mpmath-iv"
-    if HAS_MPMATH_IV and mp is not None:
-        mp.mp.dps = max(30, precision_dps)
+    if not HAS_MPMATH_IV or mp is None:
+        raise ValueError("dimension certification requires mpmath.iv; floating margins are not certificates")
+    if precision_dps < 1:
+        raise ValueError("precision_dps must be positive")
+    previous = mp.iv.dps
+    try:
+        mp.iv.dps = max(30, precision_dps)
         log_base_iv = mp.iv.log(mp.iv.mpf([base, base]))
         lower_iv = mp.iv.log(_fraction_point_iv(rho_lower)) / log_base_iv
         upper_iv = mp.iv.log(_fraction_point_iv(rho_upper)) / log_base_iv
-        certified_lower = float(lower_iv.a)
-        certified_upper = float(upper_iv.b)
-    else:  # pragma: no cover - exercised only if interval backend unavailable
-        backend = "collatz-wielandt+float-fallback"
-        if mp is not None:
-            mp.mp.dps = max(30, precision_dps)
-            lower_val = mp.log(mp.mpf(rho_lower.numerator) / rho_lower.denominator) / mp.log(base)
-            upper_val = mp.log(mp.mpf(rho_upper.numerator) / rho_upper.denominator) / mp.log(base)
-            certified_lower = math.nextafter(float(lower_val), -math.inf)
-            certified_upper = math.nextafter(float(upper_val), math.inf)
-        else:
-            lower_val = math.log(float(rho_lower)) / math.log(float(base))
-            upper_val = math.log(float(rho_upper)) / math.log(float(base))
-            certified_lower = math.nextafter(lower_val, -math.inf)
-            certified_upper = math.nextafter(upper_val, math.inf)
+        certified_lower = math.nextafter(float(lower_iv.a), -math.inf)
+        certified_upper = math.nextafter(float(upper_iv.b), math.inf)
+    finally:
+        mp.iv.dps = previous
 
-    reference_root = math.log((1.0 + math.sqrt(5.0)) / 2.0) / math.log(3.0)
+    # This reference applies only to the Fibonacci witness, not every Markov config.
+    is_fibonacci = base == 3 and parsed["transitions"] == {0: [0, 2], 2: [0]} and set(parsed["start_digits"]) <= {0, 2}
+    reference_root = math.log((1.0 + math.sqrt(5.0)) / 2.0) / math.log(3.0) if is_fibonacci else None
     return {
         "family_id": family_id,
         "states": states,
@@ -135,7 +146,8 @@ def certify_markov_equal_ratio_dimension(
         "certified_upper": certified_upper,
         "certified_width": certified_upper - certified_lower,
         "reference_root": reference_root,
-        "contains_reference_root": certified_lower <= reference_root <= certified_upper,
+        "contains_reference_root": None if reference_root is None else certified_lower <= reference_root <= certified_upper,
+        "certified": True,
         "method_backend": backend,
         "prototype_scope": "digit-transition Markov, equal ratio (1/base), affine maps",
     }

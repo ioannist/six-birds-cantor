@@ -1,15 +1,16 @@
 {
   "claim_counts": {
-    "closed_theoremlet": 4,
+    "closed_theoremlet": 0,
     "nonclaim": 5,
+    "requires_mathematical_repair": 4,
     "reserve": 4,
     "supporting_evidence": 1
   },
   "claims": [
     {
-      "allowed_final_paper_use": "core_claim",
+      "allowed_final_paper_use": "review_required",
       "claim_id": "continuous_full_loop_lawfulness_theoremlet",
-      "claim_status": "closed_theoremlet",
+      "claim_status": "requires_mathematical_repair",
       "claim_type": "lawfulness",
       "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
       "dependency_paths": [
@@ -20,6 +21,7 @@
         "results/strict_theory_extension_closure/report.json",
         "results/conditional_disintegration/report.json"
       ],
+      "historical_claim_status": "closed_theoremlet",
       "note": "Closed theoremlet included in the frozen Level-3 core package.",
       "object_scope": "continuous_full_loop_theorem_package_v1",
       "statement_short": "Closed six-primitive lawfulness regime theoremlet on the shell-stable audited package.",
@@ -29,9 +31,9 @@
       ]
     },
     {
-      "allowed_final_paper_use": "core_claim",
+      "allowed_final_paper_use": "review_required",
       "claim_id": "cocycle_pressure_closure_theoremlet",
-      "claim_status": "closed_theoremlet",
+      "claim_status": "requires_mathematical_repair",
       "claim_type": "pressure",
       "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
       "dependency_paths": [
@@ -42,6 +44,7 @@
         "results/strict_theory_extension_closure/report.json",
         "results/conditional_disintegration/report.json"
       ],
+      "historical_claim_status": "closed_theoremlet",
       "note": "Closed theoremlet included in the frozen Level-3 core package.",
       "object_scope": "continuous_full_loop_theorem_package_v1",
       "statement_short": "Closed switched-operator cocycle pressure theoremlet on the shell-stable class.",
@@ -51,9 +54,9 @@
       ]
     },
     {
-      "allowed_final_paper_use": "core_claim",
+      "allowed_final_paper_use": "review_required",
       "claim_id": "strict_theory_extension_theoremlet",
-      "claim_status": "closed_theoremlet",
+      "claim_status": "requires_mathematical_repair",
       "claim_type": "strict_extension",
       "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
       "dependency_paths": [
@@ -64,6 +67,7 @@
         "results/strict_theory_extension_closure/report.json",
         "results/conditional_disintegration/report.json"
       ],
+      "historical_claim_status": "closed_theoremlet",
       "note": "Closed theoremlet included in the frozen Level-3 core package.",
       "object_scope": "canonical_hybrid_theorem_object_v1",
       "statement_short": "Closed strict theory extension theoremlet for T1 over T0 on the audited shell.",
@@ -73,9 +77,9 @@
       ]
     },
     {
-      "allowed_final_paper_use": "core_claim",
+      "allowed_final_paper_use": "review_required",
       "claim_id": "conditional_pressure_disintegration_theoremlet",
-      "claim_status": "closed_theoremlet",
+      "claim_status": "requires_mathematical_repair",
       "claim_type": "thermodynamic_consequence",
       "class_scope": "continuous_full_loop_lawful_kernel_class_shell_stable",
       "dependency_paths": [
@@ -86,6 +90,7 @@
         "results/strict_theory_extension_closure/report.json",
         "results/conditional_disintegration/report.json"
       ],
+      "historical_claim_status": "closed_theoremlet",
       "note": "Closed theoremlet included in the frozen Level-3 core package.",
       "object_scope": "canonical_hybrid_theorem_object_v1",
       "statement_short": "Closed conditional pressure disintegration theoremlet on the canonical hybrid object over the audited shell.",
@@ -261,6 +266,12 @@
   ],
   "generated_at_utc": "2026-03-19T00:00:00Z",
   "ledger_id": "final_paper_core_claim_ledger_v1",
+  "mathematical_certification": {
+    "current_status": "requires_mathematical_repair",
+    "legacy_status_scope": "historical_workflow_assessment_only",
+    "main_theorems_certified": false,
+    "review": "docs/internal/mathematics_review_2026_10_01.md"
+  },
   "notes": [
     "The claim ledger is the anti-drift control for the final paper-core package.",
     "Only closed theoremlets are available for core theorem claims."

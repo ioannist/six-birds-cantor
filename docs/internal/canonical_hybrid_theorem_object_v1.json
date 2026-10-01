@@ -32,5 +32,11 @@
     "The canonical object is the hybrid object itself, not the cocycle alone or the completion endomap alone.",
     "Intrinsic extension is closed by non-factorization of the T1 object map through the T0 object map on the audited shell.",
     "The next consequence theorem should use this canonical hybrid object directly."
-  ]
+  ],
+  "mathematical_certification": {
+    "current_status": "requires_mathematical_repair",
+    "legacy_status_scope": "historical_workflow_assessment_only",
+    "main_theorems_certified": false,
+    "review": "docs/internal/mathematics_review_2026_10_01.md"
+  }
 }

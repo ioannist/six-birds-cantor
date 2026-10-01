@@ -17,10 +17,24 @@ class SimilarityMap1D:
         return (self.offset + self.ratio * start, self.offset + self.ratio * end)
 
 
+def integer_parameter(value: object, name: str) -> int:
+    """Accept exact integer parameters without silently truncating decimals."""
+    if isinstance(value, bool):
+        raise ValueError(f"{name} must be an integer")
+    try:
+        result = int(value)
+    except (TypeError, ValueError, OverflowError) as exc:
+        raise ValueError(f"{name} must be an integer") from exc
+    if not isinstance(value, str) and value != result:
+        raise ValueError(f"{name} must be an integer")
+    return result
+
+
 def maps_from_restricted_digits(base: int, allowed_digits: Iterable[int]) -> list[SimilarityMap1D]:
+    base = integer_parameter(base, "base")
     if base <= 1:
         raise ValueError("base must be greater than 1")
-    digits = sorted(set(int(d) for d in allowed_digits))
+    digits = sorted(set(integer_parameter(d, "digit") for d in allowed_digits))
     if not digits:
         raise ValueError("allowed_digits must be non-empty")
     for digit in digits:

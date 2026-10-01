@@ -52,6 +52,11 @@ def _transpose(kernel: list[list[float]]) -> list[list[float]]:
 
 
 def _stationary_distribution(kernel: list[list[float]], steps: int = 80) -> list[float]:
+    """Finite power-iteration estimate, with no stationarity certificate.
+
+    Periodic/reducible kernels may not converge. Exact rational completion
+    certificates use stationary_distribution_exact in exact_completion.
+    """
     n = len(kernel)
     if n == 0:
         return []
@@ -203,6 +208,14 @@ class PilotParameters:
     tau_initial: float = 1.0
     action_temperature_bias: float = 0.0
     lens_temperature_shift: float = 0.0
+
+    def __post_init__(self) -> None:
+        if any(not math.isfinite(value) for value in vars(self).values()):
+            raise ValueError("pilot parameters must be finite")
+        if (self.lens_hysteresis < 0 or self.packaging_hysteresis < 0
+                or self.budget_income_scale < 0 or self.budget_cost_scale < 0
+                or self.tau_initial <= 0):
+            raise ValueError("hysteresis and budget scales must be nonnegative; tau must be positive")
 
 
 @dataclass
@@ -627,9 +640,9 @@ def apply_p3_timescale_update(
     if not primitive_activity.get("P3", True):
         return {"applied": False, "tau": state.tau, "phase": state.phase, "protocol_state": state.protocol_state}
     switch_penalty = 0.0
-    if state.lens_history and state.active_lens != state.lens_history[-1]:
+    if len(state.lens_history) >= 2 and state.active_lens != state.lens_history[-2]:
         switch_penalty += 0.07
-    if state.packaging_history and state.active_packaging != state.packaging_history[-1]:
+    if len(state.packaging_history) >= 2 and state.active_packaging != state.packaging_history[-2]:
         switch_penalty += 0.05
     stability = max(0.0, 0.12 - variation)
     tau_next = _clamp(state.tau + 0.11 * stability - 0.06 * variation - switch_penalty, 0.6, 4.0)
@@ -667,9 +680,9 @@ def apply_p6_budget_update(
         0.24 * packaging_score + 0.12 * lens_score + 0.08 * max(0.0, 1.0 - variation)
     )
     cost = state.pilot_parameters.budget_cost_scale * (0.06 + 0.018 * state.phase + 0.04 * variation)
-    if state.lens_history and state.active_lens != state.lens_history[-1]:
+    if len(state.lens_history) >= 2 and state.active_lens != state.lens_history[-2]:
         cost += 0.03
-    if state.packaging_history and state.active_packaging != state.packaging_history[-1]:
+    if len(state.packaging_history) >= 2 and state.active_packaging != state.packaging_history[-2]:
         cost += 0.03
     budget_next = _clamp(state.budget + income - cost, 0.0, 12.0)
     state.income = income
@@ -684,6 +697,11 @@ def _default_role_flags(primitive_activity: dict[str, bool] | None) -> dict[str,
         for primitive, active in primitive_activity.items():
             flags[str(primitive)] = bool(active)
     return flags
+
+
+def _score_margin(candidates: list[dict[str, Any]]) -> float:
+    scores = sorted((float(item["score"]) for item in candidates), reverse=True)
+    return scores[0] - scores[1] if len(scores) >= 2 else 0.0
 
 
 def step_substrate(
@@ -813,6 +831,10 @@ def step_substrate(
 
     return {
         "step": state.step_index,
+        "selector_diagnostics": {
+            "lens_margin": _score_margin(lenses),
+            "packaging_margin": _score_margin(packagings),
+        },
         "variation": final_variation,
         "lens": lens_choice,
         "packaging": packaging_choice,
@@ -932,7 +954,11 @@ def evolve_forget_reinstate(
     *,
     return_meta: bool = False,
 ) -> tuple[list[float], dict[str, Any]] | list[float]:
-    """Apply the packaging completion endomap E_{tau,f}(mu) = U_f!(Q_f(mu K^tau)).
+    """Apply U_f(Q_f(mu B_tau)) using the lazy blend B_tau of K and I.
+
+    B_tau is defined by _completion_kernel_blend; it is not a fractional
+    matrix power K^tau. With a fixed partition and prototypes this is a
+    linear stochastic map on probability vectors.
 
     Q_f forgets within-package detail by coarse-graining mu to the lens-selected
     package masses. U_f reinstantiates a packaged state from those masses using
@@ -944,6 +970,16 @@ def evolve_forget_reinstate(
         return ([], meta) if return_meta else []
     if len(mu) != n:
         raise ValueError("mu and kernel must have the same dimension")
+    if any(len(row) != n for row in kernel):
+        raise ValueError("kernel must be square")
+    if any(not math.isfinite(x) or x < 0 for row in kernel for x in row):
+        raise ValueError("kernel entries must be finite and nonnegative")
+    if any(abs(sum(row) - 1.0) > 1e-10 for row in kernel):
+        raise ValueError("kernel must be row-stochastic")
+    if any(not math.isfinite(x) or x < 0 for x in mu) or sum(mu) <= 0:
+        raise ValueError("mu must have finite nonnegative entries and positive mass")
+    if not math.isfinite(tau) or tau <= 0:
+        raise ValueError("tau must be finite and positive")
     packaging_state = packaging_state or _completion_packaging_from_lens(kernel, tau, lens_state)
     kernel_tau = _completion_kernel_blend(kernel, tau)
     transport = _normalize_row(
@@ -956,11 +992,16 @@ def evolve_forget_reinstate(
     groups = [group for group in packaging_state.get("groups", []) if group]
     if not groups:
         groups = [list(range(n))]
+    members = [i for group in groups for i in group]
+    if sorted(members) != list(range(n)):
+        raise ValueError("packaging groups must partition the kernel states")
 
     package_masses = [sum(transport[i] for i in group) for group in groups]
     reinstated = [0.0 for _ in range(n)]
     stationary = _stationary_distribution(kernel)
     support = packaging_state.get("support") or [1.0 / n for _ in range(n)]
+    if len(support) != n or any(not math.isfinite(x) or x < 0 for x in support):
+        raise ValueError("packaging support must be finite, nonnegative, and dimension-matched")
     for group, mass in zip(groups, package_masses):
         proto = [
             max(0.0, 0.55 * stationary[i] + 0.25 * support[i] + 0.20 * kernel[i][i])
@@ -996,8 +1037,16 @@ def iterate_completion_endomap(
     tol: float = 1e-7,
     packaging_state: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    if max_iter < 1 or not math.isfinite(tol) or tol <= 0:
+        raise ValueError("max_iter and tol must be positive")
+    if not kernel or len(mu0) != len(kernel):
+        raise ValueError("completion requires a nonempty kernel and matching mu0")
+    if any(not math.isfinite(x) or x < 0 for x in mu0) or sum(mu0) <= 0:
+        raise ValueError("mu0 must have finite nonnegative entries and positive mass")
     current = _normalize_row(list(mu0))
-    seen: dict[tuple[float, ...], int] = {}
+    # Rounded bins can repeat while the map is still converging. Only a
+    # repeated full floating vector is recorded as a numerical cycle.
+    seen: dict[tuple[float, ...], int] = {tuple(current): 0}
     history: list[list[float]] = [current]
     meta_history: list[dict[str, Any]] = []
     status = "nonconvergent"
@@ -1013,7 +1062,7 @@ def iterate_completion_endomap(
         )
         meta_history.append(meta)
         diff = math.sqrt(sum((a - b) ** 2 for a, b in zip(current, nxt)))
-        sig = tuple(round(x, 7) for x in nxt)
+        sig = tuple(nxt)
         if diff <= tol:
             status = "fixed_point"
             current = nxt
@@ -1021,17 +1070,21 @@ def iterate_completion_endomap(
             break
         if sig in seen:
             status = "cycle"
-            cycle_length = step - seen[sig]
+            cycle_length = step + 1 - seen[sig]
             current = nxt
             history.append(current)
             break
-        seen[sig] = step
+        seen[sig] = step + 1
         current = nxt
         history.append(current)
     else:
         current = history[-1]
 
     fixed_point_signature = tuple(round(x, 6) for x in current)
+    image, final_meta = evolve_forget_reinstate(
+        current, kernel, tau, lens_state, packaging_state, return_meta=True,
+    )
+    residual = math.sqrt(sum((a - b) ** 2 for a, b in zip(current, image)))
     return {
         "status": status,
         "cycle_length": cycle_length,
@@ -1041,7 +1094,11 @@ def iterate_completion_endomap(
         "final_signature": fixed_point_signature,
         "history": history,
         "meta_history": meta_history,
-        "residual": math.sqrt(sum((a - b) ** 2 for a, b in zip(history[-2], history[-1]))) if len(history) >= 2 else 0.0,
+        "residual": residual,
+        "package_count": final_meta["package_count"],
+        "package_entropy": final_meta["package_entropy"],
+        "numerically_converged": status == "fixed_point" and residual <= tol,
+        "certified_fixed_point": False,
     }
 
 
@@ -1073,16 +1130,49 @@ def update_lens_from_packaging(
     }
 
 
-def packaging_macro_admissibility(completion_summary: dict[str, Any]) -> dict[str, Any]:
+def packaging_macro_admissibility(
+    completion_summary: dict[str, Any],
+    *,
+    kernel: list[list[float]] | None = None,
+    groups: list[list[int]] | None = None,
+    tol: float = 1e-10,
+) -> dict[str, Any]:
+    """Numerically test strong lumpability of transport under a partition.
+
+    Convergence of the completion iteration is a separate question. When the
+    transport and partition are absent, admissibility is unknown.
+    """
     status = str(completion_summary.get("status", "nonconvergent"))
+    if not math.isfinite(tol) or tol <= 0:
+        raise ValueError("tol must be finite and positive")
     residual = float(completion_summary.get("residual", 1.0))
     package_count = int(completion_summary.get("package_count", 0))
-    admissible = status == "fixed_point" and residual <= 1e-6 and package_count >= 2
+    defect = None
+    if kernel is not None and groups is not None:
+        n = len(kernel)
+        if not n or any(len(row) != n for row in kernel):
+            raise ValueError("kernel must be nonempty square")
+        if any(not math.isfinite(x) or x < 0 for row in kernel for x in row):
+            raise ValueError("kernel must have finite nonnegative entries")
+        if any(abs(sum(row) - 1.0) > tol for row in kernel):
+            raise ValueError("kernel must be row-stochastic")
+        if any(not group for group in groups) or sorted(i for group in groups for i in group) != list(range(n)):
+            raise ValueError("groups must be a partition")
+        defect = max(
+            (max(sum(kernel[i][j] for j in target) for i in source)
+             - min(sum(kernel[i][j] for j in target) for i in source))
+            for source in groups for target in groups
+        )
+    admissible = None if defect is None else defect <= tol
     return {
         "admissible": admissible,
         "status": status,
         "residual": residual,
         "package_count": package_count,
+        "lumpability_checked": defect is not None,
+        "max_lumpability_defect": defect,
+        "criterion": "strong_lumpability_numerical",
+        "certified": False,
     }
 
 
@@ -1111,8 +1201,12 @@ def compute_packaging_fixed_points(
                     packaging_state=packaging_state,
                 )
                 next_lens, feedback = update_lens_from_packaging(lens_state, summary)
-                admissibility = packaging_macro_admissibility(summary)
-                fixed_signatures.add(summary["final_signature"])
+                admissibility = packaging_macro_admissibility(
+                    summary, kernel=_completion_kernel_blend(kernel, tau),
+                    groups=packaging_state["groups"],
+                )
+                if summary["numerically_converged"]:
+                    fixed_signatures.add(summary["final_signature"])
                 runs.append(
                     {
                         "tau": tau,
@@ -1129,6 +1223,8 @@ def compute_packaging_fixed_points(
         "runs": runs,
         "distinct_fixed_point_count": len(fixed_signatures),
         "distinct_fixed_point_signatures": [list(sig) for sig in sorted(fixed_signatures)],
+        "fixed_point_count_scope": "rounded_numerically_converged_candidates_only",
+        "certified_fixed_point_count": 0,
     }
 
 
@@ -1149,11 +1245,14 @@ def detect_packaging_saturation(
         seen: set[tuple[float, ...]] = set()
         new_counts: list[int] = []
         for entry in entries:
+            if not entry["completion_summary"].get("numerically_converged", False):
+                continue
             sig = tuple(entry["completion_summary"]["final_signature"])
             before = len(seen)
             seen.add(sig)
             new_counts.append(len(seen) - before)
-        saturated = bool(entries) and new_counts[-1] == 0 and len(seen) <= max(1, initial_count - 1)
+        saturated = (bool(new_counts) and len(new_counts) == len(entries)
+                     and new_counts[-1] == 0 and len(seen) <= max(1, initial_count - 1))
         saturated_panels += 1 if saturated else 0
         panel_summaries.append(
             {
@@ -1167,6 +1266,8 @@ def detect_packaging_saturation(
         "panel_summaries": panel_summaries,
         "saturated_panel_count": saturated_panels,
         "total_panels": len(panel_summaries),
+        "saturation_verified": False,
+        "scope": "finite_start_duplicate_candidate_diagnostic",
         "tau_values": tau_values,
         "lens_states": lens_states,
         "initial_count": initial_count,

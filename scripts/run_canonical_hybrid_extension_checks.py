@@ -40,9 +40,9 @@ def _summarize_config(
         ],
     }
     extended_object_map = {
-        "object_type": "T1 packaged fixed-point strata",
+        "object_type": "T1 numerical completion candidates",
         "strata_count": completion_cfg["fixed_point_count_summary"]["distinct_fixed_point_total"],
-        "strata_source": "completion final-signature classes after E_{tau,f} iteration",
+        "strata_source": "rounded signatures of numerically converged completion candidates",
     }
 
     mismatch_rows = closure_cfg["mismatch_matrix"]
@@ -62,10 +62,11 @@ def _summarize_config(
             "growth_slope": pressure_cfg["growth_bound_proxy"],
         },
         "factorization_test": {
-            "factor_through_T0": factor_through_t0,
+            "factor_through_T0": None,
+            "rounded_descriptor_has_no_sampled_split": factor_through_t0,
             "non_factorization_rate": non_factorization_rate,
             "multiple_T1_strata_per_T0_class": len(multi_strata_rows),
-            "note": "If one T0 object class supports multiple persistent T1 packaged strata, the T1 object map does not factor through the T0 object map on the audited shell.",
+            "note": "A split of rounded readouts is a sampled descriptor collision only; exact base-object factorization is not decided.",
         },
         "saturation_summary": completion_cfg["saturation_summary"],
         "forcing_summary": forcing_summary,
@@ -94,7 +95,7 @@ def run() -> int:
     ]
 
     intrinsic_extension = all(
-        not item["factorization_test"]["factor_through_T0"] for item in per_config
+        not item["factorization_test"]["rounded_descriptor_has_no_sampled_split"] for item in per_config
     )
     saturation_active = all(
         bool(item["saturation_summary"]["saturated"]) for item in per_config
@@ -137,7 +138,7 @@ def run() -> int:
             "description": "Packaged fixed-point strata map induced by the completion endomap and forcing structure.",
         },
         "factorization_test": {
-            "factor_through_T0": not intrinsic_extension,
+            "factor_through_T0": None,
             "non_factorization_rate": sum(
                 item["factorization_test"]["non_factorization_rate"] for item in per_config
             )
@@ -150,28 +151,20 @@ def run() -> int:
                 item["config_id"]: item["factorization_test"] for item in per_config
             },
         },
-        "object_identity_verdict": (
-            "t1_objects_finer_than_t0_objects"
-            if intrinsic_extension
-            else "t1_objects_factor_through_t0"
-        ),
-        "factorization_verdict": (
-            "non_factorization_closed_on_audited_shell"
-            if intrinsic_extension
-            else "factorization_not_ruled_out"
-        ),
+        "object_identity_verdict": "exact_object_identity_not_decided",
+        "factorization_verdict": "exact_factorization_not_decided",
         "saturation_verdict": (
-            "saturation_active_on_audited_shell"
+            "finite_start_duplicate_signal_only"
             if saturation_active
             else "saturation_not_stable"
         ),
         "forcing_verdict": (
-            "forcing_active_with_persistent_new_strata"
+            "feedback_proposals_without_post_change_certificate"
             if forcing_active
             else "forcing_not_stably_object_generating"
         ),
         "macro_admissibility_verdict": (
-            "t0_too_coarse_on_canonical_object"
+            "numerical_lumpability_obstruction_only"
             if macro_obstruction
             else "macro_obstruction_not_global"
         ),
@@ -185,6 +178,11 @@ def run() -> int:
 
     out_dir = repo_root / "results" / "canonical_hybrid_extension"
     out_dir.mkdir(parents=True, exist_ok=True)
+    import sys
+    sys.path.insert(0, str(repo_root / "src"))
+    from contextual_cantor.audit_status import mark_diagnostic_report
+    mark_diagnostic_report(report, "rounded_descriptor_collision_diagnostic")
+
     (out_dir / "report.json").write_text(
         json.dumps(report, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",

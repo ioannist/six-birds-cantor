@@ -4,6 +4,8 @@ from dataclasses import dataclass
 import math
 from typing import Iterable
 
+from .nonnegative_matrix import spectral_radius
+
 
 @dataclass(frozen=True)
 class Edge:
@@ -163,25 +165,7 @@ def spectral_radius_power_iteration(
     tol: float = 1e-14,
     max_iter: int = 4096,
 ) -> float:
-    n = len(matrix)
-    if n == 0:
-        return 0.0
-    for row in matrix:
-        if len(row) != n:
-            raise ValueError("matrix must be square")
-
-    v = [1.0 / n for _ in range(n)]
-    lam_old = 0.0
-    for _ in range(max_iter):
-        w = [sum(matrix[i][j] * v[j] for j in range(n)) for i in range(n)]
-        norm = max(abs(x) for x in w)
-        if norm == 0.0:
-            return 0.0
-        v = [x / norm for x in w]
-        if abs(norm - lam_old) <= tol * max(1.0, norm):
-            return norm
-        lam_old = norm
-    return lam_old
+    return spectral_radius(matrix, max_iter=max_iter, tol=tol)
 
 
 def spectral_radius_for_s(

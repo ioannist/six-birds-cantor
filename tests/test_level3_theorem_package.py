@@ -38,7 +38,9 @@ def test_package_and_ledger_load() -> None:
     } <= nonclaims
 
     assert package["reserve_routes"]
-    assert ledger["claim_counts"]["closed_theoremlet"] >= 4
+    assert ledger["claim_counts"]["closed_theoremlet"] == 0
+    assert ledger["claim_counts"]["requires_mathematical_repair"] == 4
+    assert package["mathematical_certification"]["main_theorems_certified"] is False
 
 
 def test_report_and_core_status() -> None:

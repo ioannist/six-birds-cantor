@@ -51,6 +51,8 @@ def _summarize_config(
     forced_strata_counter: Counter[tuple[float, ...]] = Counter()
 
     for run in runs:
+        if not run["completion_summary"].get("numerically_converged", False):
+            continue
         descriptor = _descriptor_tuple(config_id, run, pressure_cfg)
         sig = _signature(run["completion_summary"]["final_signature"])
         descriptor_to_strata[descriptor].add(sig)
@@ -81,8 +83,9 @@ def _summarize_config(
     forcing_summary = completion_cfg["p4_from_p5_feedback_summary"]
     material_events = int(forcing_summary["material_feedback_events"])
     persistent_forced_strata = sum(1 for count in forced_strata_counter.values() if count > 1)
-    new_strata_after_forcing = material_events > 0 and len(forced_strata_counter) > 0
-    persistence_after_forcing = persistent_forced_strata > 0
+    # Only the pre-change signature was recorded; no new-operator result was computed.
+    new_strata_after_forcing = False
+    persistence_after_forcing = False
 
     macro_summary = completion_cfg["macro_admissibility_summary"]
     admissible_count = int(macro_summary["admissible_count"])
@@ -97,7 +100,8 @@ def _summarize_config(
         "forcing_to_new_strata_summary": {
             "material_p4_from_p5_events": material_events,
             "new_strata_after_forcing": new_strata_after_forcing,
-            "persistent_forced_strata_count": persistent_forced_strata,
+            "persistent_forced_strata_count": 0,
+            "repeated_pre_feedback_signature_count": persistent_forced_strata,
             "persistence_after_forcing": persistence_after_forcing,
         },
         "admissibility_obstruction_summary": {
@@ -105,9 +109,9 @@ def _summarize_config(
             "inadmissible_count": inadmissible_count,
         },
         "definability_verdict": (
-            "not_definable_on_audited_shell"
+            "rounded_descriptor_collision_only"
             if multiple_strata_descriptor_count > 0
-            else "definable_on_audited_shell"
+            else "no_collision_in_finite_sample"
         ),
         "forcing_verdict": (
             "forcing_generates_persistent_new_strata"
@@ -117,7 +121,7 @@ def _summarize_config(
             else "forcing_not_shown"
         ),
         "macro_admissibility_verdict": (
-            "T0_too_coarse_on_audited_shell"
+            "numerical_lumpability_obstruction_only"
             if admissible_count == 0 and inadmissible_count > 0
             else "no_global_macro_obstruction"
         ),
@@ -175,11 +179,7 @@ def run() -> int:
             item["config_id"]: item["same_T0_descriptor_maps_to_multiple_T1_strata"]
             for item in per_config
         },
-        "definability_verdict": (
-            "not_definable_on_audited_shell"
-            if all(item["definability_verdict"] == "not_definable_on_audited_shell" for item in per_config)
-            else "partially_not_definable_on_audited_shell"
-        ),
+        "definability_verdict": "exact_factorization_not_decided",
         "p4_from_p5_forcing_verdict": (
             "forcing_generates_persistent_new_strata"
             if all(
@@ -189,9 +189,9 @@ def run() -> int:
             else "forcing_requires_narrowing"
         ),
         "macro_admissibility_verdict": (
-            "T0_too_coarse_on_audited_shell"
+            "numerical_lumpability_obstruction_only"
             if all(
-                item["macro_admissibility_verdict"] == "T0_too_coarse_on_audited_shell"
+                item["macro_admissibility_verdict"] == "numerical_lumpability_obstruction_only"
                 for item in per_config
             )
             else "macro_obstruction_requires_narrowing"
@@ -207,6 +207,11 @@ def run() -> int:
 
     out_dir = repo_root / "results" / "strict_theory_extension_closure"
     out_dir.mkdir(parents=True, exist_ok=True)
+    import sys
+    sys.path.insert(0, str(repo_root / "src"))
+    from contextual_cantor.audit_status import mark_diagnostic_report
+    mark_diagnostic_report(report, "rounded_descriptor_collision_diagnostic")
+
     (out_dir / "report.json").write_text(
         json.dumps(report, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",

@@ -51,7 +51,9 @@ def test_closure_dependency_json_is_consistent() -> None:
 def test_closure_support_report_exists_and_loads() -> None:
     report = _load("results/strict_theory_extension_closure/report.json")
 
-    assert report["decision"] in {"closed_on_audited_shell_class", "narrowed_and_closed"}
+    assert report["decision"] == "diagnostic_only_not_certified"
+    assert report["mathematical_certification"]["main_theorem_certified"] is False
+    assert report["definability_verdict"] == "exact_factorization_not_decided"
     assert report["selected_extension_route"] == "forcing_lemma_nondefinability_route"
     assert set(report["configs"]) == {
         "generated.continuous_full_loop_kernel",

@@ -157,5 +157,11 @@
     "CP-LEM-4": "closed by the selected cocycle-pressure route",
     "CP-LEM-5": "closed by the monotone sign profile across the sampled s-range",
     "CP-COR-6": "closed by root-supporting regularity on the closed class"
+  },
+  "mathematical_certification": {
+    "current_status": "requires_mathematical_repair",
+    "legacy_status_scope": "historical_workflow_assessment_only",
+    "main_theorems_certified": false,
+    "review": "docs/internal/mathematics_review_2026_10_01.md"
   }
 }

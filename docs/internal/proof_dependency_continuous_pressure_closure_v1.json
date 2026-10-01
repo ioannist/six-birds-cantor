@@ -153,6 +153,11 @@
       "role": "required_stretch_witness"
     }
   ],
-  "gap_status": {}
+  "gap_status": {},
+  "mathematical_certification": {
+    "current_status": "requires_mathematical_repair",
+    "legacy_status_scope": "historical_workflow_assessment_only",
+    "main_theorems_certified": false,
+    "review": "docs/internal/mathematics_review_2026_10_01.md"
+  }
 }
-
