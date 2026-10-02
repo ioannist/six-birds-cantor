@@ -1113,9 +1113,10 @@ def iterate_completion_endomap(
     )
     residual = math.sqrt(sum((a - b) ** 2 for a, b in zip(current, image)))
     l1_residual = sum(abs(a - b) for a, b in zip(current, image))
-    # A posteriori error = residual/(1-contraction) in the ideal linear
-    # stochastic model. Compute its one-step minorization from B Q U; this
-    # floating estimate is explicitly not an outward-rounded certificate.
+    # A posteriori error = block residual/(1-block contraction) in the
+    # ideal linear stochastic model. A finite positive power is sufficient:
+    # the ORIGINAL pilot clips some entries to zero. These floating estimates
+    # are explicitly not outward-rounded certificates.
     package = final_meta["packaging_state"]
     stationary = _stationary_distribution(kernel)
     support = package.get("support") or [1.0 / len(kernel)] * len(kernel)
@@ -1128,10 +1129,27 @@ def iterate_completion_endomap(
         for j in group:
             shares[j] = weights[j] / total if total > 0 else 1.0 / len(group)
     blend = _completion_kernel_blend(kernel, tau)
-    entry_floor = min(sum(blend[i][h] for h in group) * shares[j]
-                      for i in range(len(kernel)) for group in groups for j in group)
+    group_of = {j: group for group in groups for j in group}
+    operator = [[sum(blend[i][h] for h in group_of[j]) * shares[j]
+                 for j in range(len(kernel))] for i in range(len(kernel))]
+    entry_floor = min(value for row in operator for value in row)
     minorization_mass = len(kernel) * entry_floor
-    error_estimate = l1_residual / minorization_mass if minorization_mass > 0 else None
+    power = operator
+    mixing_power = 1
+    power_floor = entry_floor
+    # Finite diagnostic search; failure here is inconclusive about longer
+    # powers or reducibility, not a declaration that the map has many limits.
+    while power_floor <= 0 and mixing_power < min(len(kernel), 8):
+        power = [[math.fsum(power[i][h] * operator[h][j] for h in range(len(kernel)))
+                  for j in range(len(kernel))] for i in range(len(kernel))]
+        mixing_power += 1
+        power_floor = min(value for row in power for value in row)
+    block_mass = len(kernel) * power_floor
+    block_image = current
+    for _ in range(mixing_power):
+        block_image = evolve_forget_reinstate(block_image, kernel, tau, lens_state, package)
+    block_residual = sum(abs(a-b) for a,b in zip(current, block_image))
+    error_estimate = block_residual / block_mass if block_mass > 0 else None
     return {
         "status": status,
         "cycle_length": cycle_length,
@@ -1144,6 +1162,9 @@ def iterate_completion_endomap(
         "residual": residual,
         "l1_residual": l1_residual,
         "minorization_mass_estimate": minorization_mass,
+        "minorization_power_estimate": mixing_power if block_mass > 0 else None,
+        "block_minorization_mass_estimate": block_mass,
+        "block_l1_residual": block_residual,
         "stationary_l1_error_estimate": error_estimate,
         "error_bound_certified": False,
         "tolerance": tol,

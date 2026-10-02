@@ -110,6 +110,14 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
     )
 
     runs = completion["runs"]
+    from contextual_cantor.completion_support import completion_support_certificate
+    # Exact adjacency/path witnesses for the recorded ORIGINAL snapshot.
+    # The real operator interpretation and seeded-shell exclusions are
+    # explicit in each certificate; floating iterates remain diagnostic.
+    support_certificates = {
+        lens: completion_support_certificate(kernel, next(run["packaging_state"]["groups"]
+            for run in runs if run["lens_state"] == lens)) for lens in lens_values
+    }
     status_counts = Counter(run["completion_summary"]["status"] for run in runs)
     admissible_count = sum(1 for run in runs if run["macro_admissibility"]["admissible"])
     feedback_events = sum(1 for run in runs if run["feedback"]["applied"])
@@ -206,6 +214,8 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
         "theorem_object_changed_from_cocycle_route": theorem_object_changed,
         "note": "Packaging completion is a real fixed-point object, but on current evidence it does not broaden the theorem class beyond the closed cocycle route.",
         "runs": runs,
+        "recorded_input_kernel": kernel,
+        "fixed_input_completion_support": support_certificates,
     }
 
 
@@ -296,15 +306,24 @@ def run() -> int:
         "outer_substrate_update_changed": False,
         "persistent_memory_carrier_added": False,
         "original_main_theorems_certified": False,
-        "scope": "floating_pre_post_completion_on_original_config_snapshots",
+        "scope": "floating_pre_post_candidates_and_exact_fixed_input_support_witnesses",
         "source_sha256": hashlib.sha256((repo_root / "src/contextual_cantor/continuous_kernel_substrate.py").read_bytes()).hexdigest(),
+        "support_verifier_sha256": hashlib.sha256((repo_root / "src/contextual_cantor/completion_support.py").read_bytes()).hexdigest(),
         "full_report_sha256": hashlib.sha256((out_dir / "report.json").read_bytes()).hexdigest(),
         "formal_endpoints": [
             "CantorAudit.audit_completion_saturates",
             "CantorAudit.forced_completion_saturates",
             "CantorAudit.completion_refinement_family_extension",
+            "CantorAudit.primitive_completion_saturates",
+            "CantorAudit.primitive_completion_unique",
+            "CantorAudit.primitive_completion_stationary_error",
         ],
-        "formal_instance_scope": "existing_exact_four_state_witness_not_original_shell_membership",
+        "formal_instance_scope": {
+            "strict_extension": "existing_exact_four_state_witness",
+            "saturation": "general_primitive_real_operator_and_recorded_original_snapshot_support",
+            "original_global_shell_membership": "not_established",
+            "snapshot_real_normalization_and_prototype_bridge": "analytic",
+        },
         "configs": [],
     }
     for summary in summaries:
@@ -322,6 +341,13 @@ def run() -> int:
             "numerically_material_count": feedback["numerically_material_feedback_events"],
             "minimum_estimated_stationary_separation": min(numerical_changes) if numerical_changes else None,
             "materiality_certified": False,
+            "completion_support_certificates": summary["fixed_input_completion_support"],
+            "mixing_power_estimates": {
+                lens: sorted({run["completion_summary"]["minorization_power_estimate"]
+                              for run in summary["runs"] if run["lens_state"] == lens
+                              and run["completion_summary"]["minorization_power_estimate"] is not None})
+                for lens in summary["lens_values_checked"]
+            },
         })
     (out_dir / "support_summary.json").write_text(
         json.dumps(support, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8",

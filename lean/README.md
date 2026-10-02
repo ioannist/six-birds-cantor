@@ -127,6 +127,20 @@ criterion for a positive gap: different conditional pressure limits. Those
 limits must be derived from a genuine disintegration; object strictness alone
 does not establish their inequality.
 
+`PrimitiveCompletion.lean` removes one-step positivity from the completion
+saturation argument: a positive finite power suffices. It CONSTRUCTS stationary
+existence from a Cauchy sequence, proves full convergence including remainder
+steps, uniqueness, a block-residual error bound, and an idempotent limiting
+closure. It proves the return through the actual B Q U prototype constructor
+and the positive-path certificate implication. `completion_support.py` records
+exact support paths on the original 16/20-state snapshots; the real input
+normalization and full seeded-shell exclusions are explicit in the follow-up.
+
+`HistoryConditioning.lean` proves initial-law/norm comparison for arbitrary
+nonautonomous nonnegative history matrices. At s=1 it proves exact
+initial-law independence for the original weighted stochastic cocycle,
+including initial distributions with zero coordinates.
+
 `OriginalShell.lean` proves selector isolation, the variance bound and the
 clamped timescale escape of a uniform 20-state warm state under the original
 parameters. The full Python-to-formula bridge is analytic, not mechanized;

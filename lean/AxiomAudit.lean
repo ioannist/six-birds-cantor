@@ -13,6 +13,8 @@ import CompletionDynamics
 import CompletionForcing
 import ConditionalPressure
 import OriginalShell
+import PrimitiveCompletion
+import HistoryConditioning
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -130,3 +132,32 @@ import OriginalShell
 #print axioms CantorAudit.uniformShell_selector_and_eta_bounds
 #print axioms CantorAudit.uniformShellVariation_cap
 #print axioms CantorAudit.uniformShellTimescale_exit
+
+#print axioms CantorAudit.completionIterate_nonnegative
+#print axioms CantorAudit.completionIterate_succ_initial
+#print axioms CantorAudit.completionIterate_distance
+#print axioms CantorAudit.positive_completion_stationary_exists
+#print axioms CantorAudit.completionIterate_eq_vecMul
+#print axioms CantorAudit.completionIterate_add
+#print axioms CantorAudit.completionIterate_pow
+#print axioms CantorAudit.completionIterate_fixed
+#print axioms CantorAudit.stochastic_power_rows
+#print axioms CantorAudit.primitive_completion_error
+#print axioms CantorAudit.primitive_completion_saturates
+#print axioms CantorAudit.primitive_completion_unique
+#print axioms CantorAudit.primitive_completion_stationary_error
+#print axioms CantorAudit.completionIterate_positive_columns
+#print axioms CantorAudit.nonnegative_matrix_product
+#print axioms CantorAudit.stochastic_matrix_product
+#print axioms CantorAudit.prototype_lift_retains_transport
+#print axioms CantorAudit.matrix_power_domination
+#print axioms CantorAudit.primitive_transport_completion_saturates
+#print axioms CantorAudit.matrix_power_positive_of_path
+#print axioms CantorAudit.primitive_completion_readout_factorizes
+#print axioms CantorAudit.completionLimitClosure_idempotent
+#print axioms CantorAudit.completionLimitClosure_absorbs
+#print axioms CantorAudit.primitive_completion_idempotent_limit
+#print axioms CantorAudit.full_support_history_bounds
+#print axioms CantorAudit.full_support_history_same_pressure
+#print axioms CantorAudit.scalar_row_history
+#print axioms CantorAudit.stochastic_cocycle_initial_law_independent
