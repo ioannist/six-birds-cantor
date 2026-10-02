@@ -10,4 +10,5 @@ require mathlib from git
 lean_lib CantorAudit where
   roots := #[`CantorAudit, `KernelCocycle, `KernelEscape, `CompletionWitness,
     `KernelLawfulness, `PressureExtension, `PressureRegularity, `RetainedMemory,
-    `AffinityPressure, `MatrixPressure, `CompletionAffinityWitness]
+    `AffinityPressure, `MatrixPressure, `CompletionAffinityWitness,
+    `CompletionDynamics, `CompletionForcing]

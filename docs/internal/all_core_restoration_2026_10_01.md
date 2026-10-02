@@ -407,6 +407,12 @@ unspecified conditional-disintegration object remains a target decision.
 
 ## Corpus use and remaining work
 
+Target correction and new support on 2026-10-02:
+[original fixed-state completion and material forcing](original_completion_support_2026_10_02.md).
+The paper's fixed-point persistence is now distinguished from the stronger
+outer-loop persistence interpretation. The new work addresses the former,
+including actual evaluation after feedback, without adding a new memory law.
+
 Follow-up: [concrete matrix pressure and completion-gap mechanization](matrix_pressure_mechanization_2026_10_01.md)
 now closes the matrix-norm instance for pressure existence and supplies an
 end-to-end Lean application for the transpose pair's frozen affinity-pressure
@@ -432,14 +438,18 @@ a circular import. The local derivations and split pairs above stand on their
 own. The exact factorization lemma is the formal endpoint of the witnesses.
 
 The remaining original-target obligations are preservation/nonemptiness of
-the historical smaller shell; reachability from its historical initializer;
-agreement on which exact current versus future package data T0 retains;
-persistence under the outer F rather than just frozen E; automatic material
-feedback on the retained-package carrier; and adoption of a valid consequence
-endpoint. No source theorem eliminates these distinctions. The matrix-instance,
-noise probability argument, and source-level read-set bridge still need fuller
-mechanization. The new Lean files have no `sorry` or added axioms, but that is
-not represented as full mechanization of the simulator or of all four originals.
+the historical smaller shell; agreement on the exact T0 map and its retained
+package data; applicability of completion/refinement on that same carrier;
+and adoption of a valid consequence endpoint. Reachability from the historical
+initializer is required only if the adopted shell definition requires it.
+Preservation of a historical package under every outer F update is a stronger
+possible continuation, not imposed by the literal fixed-completion definition
+of persistence. No source theorem eliminates the actual domain/map bridges.
+The noise probability argument and source-level read-set bridge still need
+fuller mechanization. The new Lean files have no `sorry` or added axioms, but
+that is not represented as full mechanization of the simulator or of all four
+originals. The dated follow-ups record the subsequent matrix-instance and
+fixed-completion progress.
 
 ## Self-review and validation
 

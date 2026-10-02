@@ -91,6 +91,17 @@ for its precise scope. The potential is changed and the completion channels
 are frozen. Simulator bridges, the parameter-to-secant bridge, persistent
 outer-loop packages, and the historical smaller shell remain open.
 
+`CompletionDynamics.lean` and `CompletionForcing.lean` now support the original
+fixed-state completion/refinement obligations: derive l1 contraction from an
+entry floor, prove all-starts convergence and real fixed-point uniqueness,
+and instantiate the actual pre/post audit-to-spectral operators. The new fixed
+object persists under its own completion. The unordered family of pre/post
+strata is a genuine split of the existing scalar-history base; keeping only
+the final output is a proved factorizing false target. Original-shell
+membership is still open. Outer-loop package retention is a stronger possible
+continuation, rather than an imposed extra requirement for this repair.
+See [the original-completion support note](../docs/internal/original_completion_support_2026_10_02.md).
+
 See [the all-core construction note](../docs/internal/all_core_restoration_2026_10_01.md)
 for exact carrier changes, the stronger actual-P5 memory split pair,
 counterfactual necessity of all six operations, surviving thermodynamic

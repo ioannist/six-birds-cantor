@@ -9,6 +9,8 @@ import RetainedMemory
 import AffinityPressure
 import MatrixPressure
 import CompletionAffinityWitness
+import CompletionDynamics
+import CompletionForcing
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -86,3 +88,24 @@ import CompletionAffinityWitness
 #print axioms CantorAudit.completedInitial_stationary
 #print axioms CantorAudit.completion_affinity_witness_gap
 #print axioms CantorAudit.completion_reference_pressure_zero
+
+#print axioms CantorAudit.completionIterate_mass
+#print axioms CantorAudit.stochastic_zero_mass_contraction
+#print axioms CantorAudit.completionIterate_error
+#print axioms CantorAudit.completionIterate_converges
+#print axioms CantorAudit.completion_fixed_unique
+#print axioms CantorAudit.completion_stationary_error_of_residual
+#print axioms CantorAudit.pressureTransport_stochastic
+#print axioms CantorAudit.pressureSpectralCompletion_formula
+#print axioms CantorAudit.forcedCompletedFixed_mass
+#print axioms CantorAudit.auditCompletedChannel_floor
+#print axioms CantorAudit.audit_completion_saturates
+#print axioms CantorAudit.audit_completion_unique_real
+#print axioms CantorAudit.forced_completion_saturates
+#print axioms CantorAudit.forced_completion_fixed
+#print axioms CantorAudit.forcing_produces_new_fixed_object
+#print axioms CantorAudit.forcedStrataFamily_split
+#print axioms CantorAudit.completion_refinement_family_extension
+#print axioms CantorAudit.final_forced_readout_factorizes
+#print axioms CantorAudit.audit_transport_macro_obstruction
+#print axioms CantorAudit.saturation_and_material_forcing_support

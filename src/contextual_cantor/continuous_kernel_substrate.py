@@ -1112,6 +1112,26 @@ def iterate_completion_endomap(
         current, kernel, tau, lens_state, packaging_state, return_meta=True,
     )
     residual = math.sqrt(sum((a - b) ** 2 for a, b in zip(current, image)))
+    l1_residual = sum(abs(a - b) for a, b in zip(current, image))
+    # A posteriori error = residual/(1-contraction) in the ideal linear
+    # stochastic model. Compute its one-step minorization from B Q U; this
+    # floating estimate is explicitly not an outward-rounded certificate.
+    package = final_meta["packaging_state"]
+    stationary = _stationary_distribution(kernel)
+    support = package.get("support") or [1.0 / len(kernel)] * len(kernel)
+    groups = [group for group in package.get("groups", []) if group] or [list(range(len(kernel)))]
+    weights = [0.55 * stationary[j] + 0.25 * support[j] + 0.20 * kernel[j][j]
+               for j in range(len(kernel))]
+    shares = {}
+    for group in groups:
+        total = sum(weights[j] for j in group)
+        for j in group:
+            shares[j] = weights[j] / total if total > 0 else 1.0 / len(group)
+    blend = _completion_kernel_blend(kernel, tau)
+    entry_floor = min(sum(blend[i][h] for h in group) * shares[j]
+                      for i in range(len(kernel)) for group in groups for j in group)
+    minorization_mass = len(kernel) * entry_floor
+    error_estimate = l1_residual / minorization_mass if minorization_mass > 0 else None
     return {
         "status": status,
         "cycle_length": cycle_length,
@@ -1122,6 +1142,11 @@ def iterate_completion_endomap(
         "history": history,
         "meta_history": meta_history,
         "residual": residual,
+        "l1_residual": l1_residual,
+        "minorization_mass_estimate": minorization_mass,
+        "stationary_l1_error_estimate": error_estimate,
+        "error_bound_certified": False,
+        "tolerance": tol,
         "package_count": final_meta["package_count"],
         "package_entropy": final_meta["package_entropy"],
         "numerically_converged": status == "fixed_point" and residual <= tol,
@@ -1135,9 +1160,19 @@ def update_lens_from_packaging(
 ) -> tuple[str, dict[str, Any]]:
     package_count = int(completion_summary.get("package_count", 0))
     entropy = float(completion_summary.get("package_entropy", 0.0))
-    residual = float(completion_summary.get("residual", 0.0))
+    residual = float(completion_summary.get("residual", math.inf))
     status = str(completion_summary.get("status", "nonconvergent"))
-    packaging_active = status in {"fixed_point", "cycle"} or package_count >= 2 or entropy > 0.4 or residual < 1e-4
+    tolerance = float(completion_summary.get("tolerance", 1e-7))
+    # The claimed refinement is AFTER saturation. Package multiplicity,
+    # entropy, and a missing residual do not establish even numerical
+    # convergence. This gate remains a numerical signal, not a proof.
+    packaging_active = (
+        status == "fixed_point"
+        and completion_summary.get("numerically_converged", False) is True
+        and math.isfinite(residual) and residual >= 0
+        and math.isfinite(tolerance) and tolerance > 0
+        and residual <= tolerance
+    )
     if current_lens == "spectral_lens" and packaging_active:
         next_lens = "row_similarity_cluster_lens"
     elif current_lens == "row_similarity_cluster_lens" and packaging_active:
@@ -1153,7 +1188,65 @@ def update_lens_from_packaging(
         "status": status,
         "package_count": package_count,
         "package_entropy": entropy,
-        "residual": residual,
+        "residual": residual if math.isfinite(residual) else None,
+        "trigger": "numerically_converged_completion_only",
+        "saturation_certified": False,
+    }
+
+
+def apply_completion_feedback(
+    kernel: list[list[float]],
+    tau: float,
+    lens_state: str,
+    completion_summary: dict[str, Any],
+    *,
+    max_iter: int = 48,
+    tol: float = 1e-7,
+) -> dict[str, Any]:
+    """Execute the completion refinement at the same kernel and timescale.
+
+    A converged pre-feedback candidate supplies the next initial distribution.
+    The selected lens regenerates its actual package and its completion is
+    evaluated. Materiality is a numerical pre/post comparison, not a renamed
+    old signature or a theorem certificate. Outer substrate evolution is not
+    changed by this fixed-state completion operation.
+    """
+    if max_iter < 1 or not math.isfinite(tol) or tol <= 0:
+        raise ValueError("max_iter and tol must be positive")
+    next_lens, feedback = update_lens_from_packaging(lens_state, completion_summary)
+    post_summary = None
+    post_package = None
+    distance = None
+    separation_estimate = None
+    if feedback["applied"]:
+        post_package = _completion_packaging_from_lens(kernel, tau, next_lens)
+        post_summary = iterate_completion_endomap(
+            completion_summary["final_mu"], kernel, tau, next_lens,
+            packaging_state=post_package, max_iter=max_iter, tol=tol,
+        )
+        distance = sum(abs(a - b) for a, b in
+                       zip(completion_summary["final_mu"], post_summary["final_mu"]))
+        pre_error = completion_summary.get("stationary_l1_error_estimate")
+        post_error = post_summary.get("stationary_l1_error_estimate")
+        if pre_error is not None and post_error is not None:
+            separation_estimate = distance - pre_error - post_error
+    numerical_change = (
+        post_summary is not None and post_summary["numerically_converged"]
+        and separation_estimate is not None and separation_estimate > 4 * tol
+    )
+    return {
+        "next_lens": next_lens,
+        "feedback": {
+            **feedback,
+            "post_completion_evaluated": post_summary is not None,
+            "numerical_object_change": numerical_change,
+            "pre_post_l1_distance": distance,
+            "stationary_separation_estimate": separation_estimate,
+            "materiality_certified": False,
+            "scope": "pre_post_completion_at_fixed_kernel_and_timescale",
+        },
+        "post_feedback_completion_summary": post_summary,
+        "post_feedback_packaging_state": post_package,
     }
 
 
@@ -1249,7 +1342,9 @@ def compute_packaging_fixed_points(
                     tol=tol,
                     packaging_state=packaging_state,
                 )
-                next_lens, feedback = update_lens_from_packaging(lens_state, summary)
+                refinement = apply_completion_feedback(
+                    kernel, tau, lens_state, summary, max_iter=max_iter, tol=tol,
+                )
                 admissibility = packaging_macro_admissibility(
                     summary, kernel=_completion_kernel_blend(kernel, tau),
                     groups=packaging_state["groups"],
@@ -1263,8 +1358,7 @@ def compute_packaging_fixed_points(
                         "initial_index": idx,
                         "completion_summary": summary,
                         "packaging_state": packaging_state,
-                        "feedback": feedback,
-                        "next_lens": next_lens,
+                        **refinement,
                         "macro_admissibility": admissibility,
                     }
                 )

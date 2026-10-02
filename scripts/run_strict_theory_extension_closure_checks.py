@@ -83,7 +83,12 @@ def _summarize_config(
     forcing_summary = completion_cfg["p4_from_p5_feedback_summary"]
     material_events = int(forcing_summary["material_feedback_events"])
     persistent_forced_strata = sum(1 for count in forced_strata_counter.values() if count > 1)
-    # Only the pre-change signature was recorded; no new-operator result was computed.
+    evaluated_post_feedback = sum(1 for run in runs if
+        run.get("feedback", {}).get("post_completion_evaluated", False))
+    numerical_post_changes = sum(1 for run in runs if
+        run.get("feedback", {}).get("numerical_object_change", False))
+    # Post-change candidates now exist, but no original-shell exact
+    # materiality/persistence certificate is supplied by this floating report.
     new_strata_after_forcing = False
     persistence_after_forcing = False
 
@@ -102,6 +107,8 @@ def _summarize_config(
             "new_strata_after_forcing": new_strata_after_forcing,
             "persistent_forced_strata_count": 0,
             "repeated_pre_feedback_signature_count": persistent_forced_strata,
+            "evaluated_post_feedback_count": evaluated_post_feedback,
+            "numerically_changed_post_feedback_count": numerical_post_changes,
             "persistence_after_forcing": persistence_after_forcing,
         },
         "admissibility_obstruction_summary": {

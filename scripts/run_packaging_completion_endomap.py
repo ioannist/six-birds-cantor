@@ -4,6 +4,8 @@ from __future__ import annotations
 import csv
 import json
 import statistics
+import hashlib
+from datetime import datetime, timezone
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -103,7 +105,7 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
         tau_values=tau_values,
         lens_states=lens_values,
         initial_distributions=initials,
-        max_iter=56,
+        max_iter=512,
         tol=1e-8,
     )
 
@@ -112,6 +114,8 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
     admissible_count = sum(1 for run in runs if run["macro_admissibility"]["admissible"])
     feedback_events = sum(1 for run in runs if run["feedback"]["applied"])
     material_feedback = sum(1 for run in runs if run["feedback"]["applied"] and run["feedback"]["to_lens"] != run["feedback"]["from_lens"])
+    post_feedback_evaluated = sum(1 for run in runs if run["feedback"]["post_completion_evaluated"])
+    numerical_material_feedback = sum(1 for run in runs if run["feedback"]["numerical_object_change"])
     distinct_counts_by_panel = Counter((run["tau"], run["lens_state"]) for run in runs)
     fixed_point_counts_by_panel: dict[str, dict[str, Any]] = {}
     for tau in tau_values:
@@ -152,6 +156,10 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
         "feedback_events": feedback_events,
         "material_feedback_events": 0,
         "proposed_lens_change_count": material_feedback,
+        "post_feedback_completion_count": post_feedback_evaluated,
+        "numerically_material_feedback_events": numerical_material_feedback,
+        "materiality_scope": "numerical_pre_post_completion_at_same_kernel_and_tau",
+        "materiality_certified": False,
         "feedback_rate": feedback_events / max(1, len(runs)),
         "material_feedback_rate": 0.0,
         "proposal_rate": material_feedback / max(1, len(runs)),
@@ -167,8 +175,8 @@ def _run_config(repo_root: Path, cfg: dict[str, Any]) -> dict[str, Any]:
         ],
     }
 
-    # A proposed lens change is not a comparison of the pre/post completion
-    # objects. No certificate of changed theorem objects is constructed here.
+    # Actual post-feedback candidates are now evaluated. Their floating
+    # comparison does not establish an exact theorem-object change.
     theorem_object_changed = False
     broadening_verdict = "not_broader"
     p5_object_role_verdict = "theorem_object_generator_but_class_equivalent"
@@ -276,9 +284,48 @@ def run() -> int:
     import sys
     sys.path.insert(0, str(repo_root / "src"))
     from contextual_cantor.audit_status import mark_diagnostic_report
-    mark_diagnostic_report(report, "numerical_completion_candidates_and_feedback_proposals")
+    mark_diagnostic_report(report, "numerical_pre_and_post_feedback_completion_candidates")
 
     (out_dir / "report.json").write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    # A compact, reviewable receipt for the original configurations. The
+    # full trajectories remain diagnostic data; no closure flag is promoted.
+    support = {
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "target": "original_fixed_state_completion_saturation_and_material_lens_feedback",
+        "outer_substrate_update_changed": False,
+        "persistent_memory_carrier_added": False,
+        "original_main_theorems_certified": False,
+        "scope": "floating_pre_post_completion_on_original_config_snapshots",
+        "source_sha256": hashlib.sha256((repo_root / "src/contextual_cantor/continuous_kernel_substrate.py").read_bytes()).hexdigest(),
+        "full_report_sha256": hashlib.sha256((out_dir / "report.json").read_bytes()).hexdigest(),
+        "formal_endpoints": [
+            "CantorAudit.audit_completion_saturates",
+            "CantorAudit.forced_completion_saturates",
+            "CantorAudit.completion_refinement_family_extension",
+        ],
+        "formal_instance_scope": "existing_exact_four_state_witness_not_original_shell_membership",
+        "configs": [],
+    }
+    for summary in summaries:
+        feedback = summary["p4_from_p5_feedback_summary"]
+        numerical_changes = [run["feedback"]["stationary_separation_estimate"]
+                             for run in summary["runs"] if run["feedback"]["numerical_object_change"]]
+        support["configs"].append({
+            "config_id": summary["config_id"],
+            "config_path": summary["config_path"],
+            "config_sha256": hashlib.sha256((repo_root / summary["config_path"]).read_bytes()).hexdigest(),
+            "kernel_dim": summary["kernel_dim"],
+            "tau_values_checked": summary["tau_values_checked"],
+            "pre_feedback_statuses": summary["fixed_point_count_summary"]["statuses"],
+            "evaluated_post_feedback_count": feedback["post_feedback_completion_count"],
+            "numerically_material_count": feedback["numerically_material_feedback_events"],
+            "minimum_estimated_stationary_separation": min(numerical_changes) if numerical_changes else None,
+            "materiality_certified": False,
+        })
+    (out_dir / "support_summary.json").write_text(
+        json.dumps(support, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8",
+    )
 
     with (out_dir / "report.csv").open("w", encoding="utf-8", newline="") as fh:
         writer = csv.writer(fh)

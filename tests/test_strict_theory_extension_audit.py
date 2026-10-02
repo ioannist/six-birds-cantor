@@ -15,17 +15,9 @@ def test_strict_theory_extension_artifacts_exist_and_load() -> None:
     target = _load("docs/internal/hybrid_cocycle_completion_object_v2.json")
     report = _load("results/strict_theory_extension/report.json")
 
-    assert target["decision"] in {
-        "strict_extension_certified",
-        "strict_extension_signal_but_not_certified",
-        "no_strict_extension_beyond_cocycle",
-    }
-    assert report["decision"] in {
-        "strict_extension_certified",
-        "strict_extension_signal_but_not_certified",
-        "no_strict_extension_beyond_cocycle",
-    }
-    assert target["decision"] == report["decision"]
+    assert target["decision"] == report["decision"] == "diagnostic_only_not_certified"
+    assert target["mathematical_certification"]["main_theorem_certified"] is False
+    assert report["mathematical_certification"]["main_theorem_certified"] is False
 
 
 def test_strict_theory_extension_report_shape() -> None:
@@ -47,5 +39,7 @@ def test_strict_theory_extension_report_shape() -> None:
     ):
         assert field in report
 
-    assert report["definability_test"]["reconstructible_from_T0"] in {"yes", "no", "partial"}
+    assert report["definability_test"]["reconstructible_from_T0"] == "unknown"
+    assert report["definability_test"]["exact_factorization_decided"] is False
+    assert report["definability_test"]["sampled_descriptor_label"] in {"yes", "no", "partial"}
     assert report["macro_admissibility_obstruction"]["inadmissible_count"] >= 0

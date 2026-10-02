@@ -58,9 +58,13 @@ def _new_strata_after_forcing(runs: list[dict[str, Any]]) -> tuple[bool, int]:
         signature = _round_signature(summary["final_signature"])
         tau = float(run["tau"])
         source_signatures[(tau, run["lens_state"])].add(signature)
-        if feedback["applied"] and feedback["to_lens"] != feedback["from_lens"]:
+        post = run.get("post_feedback_completion_summary")
+        if (feedback.get("numerical_object_change", False)
+                and post is not None and post.get("numerically_converged", False)):
             material_events += 1
-            target_signatures[(tau, feedback["to_lens"])].add(signature)
+            # Compare the ACTUAL post-feedback output to its pre-feedback
+            # panel, rather than relabelling the old signature as a new one.
+            target_signatures[(tau, run["lens_state"])].add(_round_signature(post["final_signature"]))
 
     new_strata = 0
     for key, signatures in target_signatures.items():
@@ -133,14 +137,18 @@ def _summarize_config(
             "material_p4_from_p5_events": material_feedback_events,
             "new_packaged_strata_after_forcing": forcing_creates_new_strata,
             "new_packaged_strata_count": new_strata_count,
+            "new_strata_certified": False,
+            "scope": "numerical_pre_post_completion_comparison_only",
         },
         "definability_test": {
-            "reconstructible_from_T0": reconstructible,
+            "reconstructible_from_T0": "unknown",
+            "sampled_descriptor_label": reconstructible,
+            "exact_factorization_decided": False,
             "definability_mismatch_rate": mismatch_rate,
             "strata_not_explained_by_T0": unexplained_strata,
             "descriptor_count": len(t0_descriptor_map),
             "fixed_point_count": fixed_point_total,
-            "note": "T0 descriptors are the cocycle-level family id, tau, active lens, and the closed cocycle pressure/growth descriptors. If one T0 descriptor supports multiple packaged strata, T1 is not reconstructible from T0 in the audited sense.",
+            "note": "These are rounded sampled descriptors. Their sampled label does not decide factorization through the exact original T0 object.",
         },
         "macro_admissibility_obstruction": {
             "admissible_count": admissible_count,
@@ -195,7 +203,7 @@ def run() -> int:
         for item in per_config
     )
     nondefinable = all(
-        item["definability_test"]["reconstructible_from_T0"] == "no"
+        item["definability_test"]["sampled_descriptor_label"] == "no"
         for item in per_config
     )
     macro_obstruction = all(
@@ -204,7 +212,7 @@ def run() -> int:
         for item in per_config
     )
     partial_definability = any(
-        item["definability_test"]["reconstructible_from_T0"] == "partial"
+        item["definability_test"]["sampled_descriptor_label"] == "partial"
         for item in per_config
     )
 
@@ -254,7 +262,9 @@ def run() -> int:
             },
         },
         "definability_test": {
-            "reconstructible_from_T0": "no" if nondefinable else "partial" if partial_definability else "yes",
+            "reconstructible_from_T0": "unknown",
+            "sampled_descriptor_label": "no" if nondefinable else "partial" if partial_definability else "yes",
+            "exact_factorization_decided": False,
             "definability_mismatch_rate": sum(
                 item["definability_test"]["definability_mismatch_rate"] for item in per_config
             )
@@ -265,7 +275,7 @@ def run() -> int:
             "per_config": {
                 item["config_id"]: item["definability_test"] for item in per_config
             },
-            "note": "This is an audited proxy for definability, not a formal theorem of non-definability. It tests whether packaged strata are deterministic functions of the cocycle-level T0 descriptors actually carried by the closed route.",
+            "note": "Rounded candidate comparisons are diagnostics. Neither a sampled collision nor its absence decides factorization through the exact original T0 map.",
         },
         "macro_admissibility_obstruction": {
             "admissible_count": sum(
@@ -298,8 +308,8 @@ def run() -> int:
         "decision": decision,
         "notes": [
             "This audit replaces the v1 broadening question with the paper-native question of strict theory extension.",
-            "Class membership is held fixed; the audit tests whether T1 defines richer theory depth than T0.",
-            "Macro-admissibility failure at T0 is treated as extension pressure, not as a neutral side diagnostic.",
+            "The sampled configurations are held fixed; membership in an invariant original shell is not certified.",
+            "Lumpability diagnostics are distinct from an exact non-factorization witness.",
             f"Hybrid v1 decision for comparison: {hybrid['decision']}.",
         ],
         "per_config": per_config,
@@ -307,6 +317,22 @@ def run() -> int:
 
     out_dir = repo_root / "results" / "strict_theory_extension"
     out_dir.mkdir(parents=True, exist_ok=True)
+    report["historical_workflow_verdicts"] = {
+        key: report[key] for key in ("object_identity_verdict", "saturation_verdict",
+                                    "p4_from_p5_forcing_verdict", "definability_verdict",
+                                    "macro_admissibility_verdict")
+    }
+    report.update({
+        "object_identity_verdict": "exact_object_identity_not_decided",
+        "saturation_verdict": "numerical_convergence_signal_only",
+        "p4_from_p5_forcing_verdict": "numerical_post_feedback_candidates_only",
+        "definability_verdict": "exact_factorization_not_decided",
+        "macro_admissibility_verdict": "numerical_lumpability_diagnostic_only",
+    })
+    import sys
+    sys.path.insert(0, str(repo_root / "src"))
+    from contextual_cantor.audit_status import mark_diagnostic_report
+    mark_diagnostic_report(report, "numerical_completion_refinement_and_rounded_descriptors")
     (out_dir / "report.json").write_text(
         json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )

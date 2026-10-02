@@ -100,7 +100,7 @@ endpoint inputs. The new finite-matrix theorem removes the abstract normed-ring
 instantiation gap for pressure EXISTENCE, without claiming a full formalization
 of the parameter family or simulator.
 
-The highest-value remaining construction is a persistent package under the
+The earlier proposed stronger continuation was a persistent package under the
 outer loop, with material feedback and the same precisely declared lower
 observation map. The present stored P5 package is overwritten at the next
 step. A distinct frozen readout by itself cannot establish persistent packaged
@@ -111,8 +111,15 @@ the observation map and the timing of the extension must therefore be fixed
 before asserting non-factorization. A pre-intervention base and a
 post-intervention base are different theorem targets.
 
-After that construction, the remaining original-domain tasks are reachability
-from the historical initializer and preservation of its smaller shell. A
+Target correction on 2026-10-02: the paper's stated persistence is defined
+through fixed-state completion. Outer-loop preservation is a stronger possible
+reading, rather than an additional requirement imposed on the present repair.
+The next pass builds [the original completion/forcing support](original_completion_support_2026_10_02.md)
+and executes the previously missing post-saturation refinement step.
+
+The remaining original-domain task is a nonempty invariant realization of
+the historical smaller shell. Initializer reachability is needed only if the
+adopted original carrier definition requires it. A
 single end-to-end theorem must connect those domain facts, pressure closure,
 strict extension, saturation/forcing, and the chosen consequence endpoint on
 the SAME system. The present results are useful proved components, not a

@@ -1,57 +1,79 @@
 {
-  "schema_version": "v2",
-  "target_id": "hybrid_cocycle_completion_object_v2",
-  "generated_at_utc": "2026-03-18T00:00:00Z",
   "base_theory_id": "T0_cocycle_pressure_theory",
+  "current_support": "docs/internal/original_completion_support_2026_10_02.md",
+  "decision": "diagnostic_only_not_certified",
+  "definability_verdict": "exact_factorization_not_decided",
   "extended_theory_id": "T1_hybrid_cocycle_plus_completion_theory",
-  "saturation_evidence": {
-    "per_config": {
-      "generated.continuous_full_loop_kernel": {
-        "distinct_fixed_point_total": 17,
-        "saturated": true
-      },
-      "generated.continuous_full_loop_kernel_shell": {
-        "distinct_fixed_point_total": 6,
-        "saturated": true
-      }
+  "generated_at_utc": "2026-10-02T04:53:52.001459+00:00",
+  "historical_support_evidence": {
+    "definability_test": {
+      "definability_mismatch_rate": 0.8333333333333333,
+      "note": "T0 descriptors are the cocycle-level family id, tau, active lens, and the closed cocycle pressure/growth descriptors. Multiple packaged strata per T0 descriptor count as audited non-reconstructibility.",
+      "reconstructible_from_T0": "no",
+      "strata_not_explained_by_T0": 18
     },
-    "summary": "Both frozen configs saturate under the completion audit."
-  },
-  "forcing_evidence": {
-    "per_config": {
-      "generated.continuous_full_loop_kernel": {
-        "material_p4_from_p5_events": 18,
-        "new_packaged_strata_after_forcing": true,
-        "new_packaged_strata_count": 18
+    "forcing_evidence": {
+      "per_config": {
+        "generated.continuous_full_loop_kernel": {
+          "material_p4_from_p5_events": 18,
+          "new_packaged_strata_after_forcing": true,
+          "new_packaged_strata_count": 18
+        },
+        "generated.continuous_full_loop_kernel_shell": {
+          "material_p4_from_p5_events": 18,
+          "new_packaged_strata_after_forcing": true,
+          "new_packaged_strata_count": 12
+        }
       },
-      "generated.continuous_full_loop_kernel_shell": {
-        "material_p4_from_p5_events": 18,
-        "new_packaged_strata_after_forcing": true,
-        "new_packaged_strata_count": 12
-      }
+      "summary": "Forcing is active and generates new packaged strata on both frozen configs."
     },
-    "summary": "Forcing is active and generates new packaged strata on both frozen configs."
+    "macro_admissibility_obstruction": {
+      "admissible_count": 0,
+      "inadmissible_count": 36,
+      "macro_admissibility_verdict": "T0_too_coarse_for_closed_macro_dynamics"
+    },
+    "saturation_evidence": {
+      "per_config": {
+        "generated.continuous_full_loop_kernel": {
+          "distinct_fixed_point_total": 17,
+          "saturated": true
+        },
+        "generated.continuous_full_loop_kernel_shell": {
+          "distinct_fixed_point_total": 6,
+          "saturated": true
+        }
+      },
+      "summary": "Both frozen configs saturate under the completion audit."
+    }
   },
-  "definability_test": {
-    "reconstructible_from_T0": "no",
-    "definability_mismatch_rate": 0.8333333333333333,
-    "strata_not_explained_by_T0": 18,
-    "note": "T0 descriptors are the cocycle-level family id, tau, active lens, and the closed cocycle pressure/growth descriptors. Multiple packaged strata per T0 descriptor count as audited non-reconstructibility."
-  },
-  "macro_admissibility_obstruction": {
-    "admissible_count": 0,
-    "inadmissible_count": 36,
-    "macro_admissibility_verdict": "T0_too_coarse_for_closed_macro_dynamics"
-  },
-  "decision": "strict_extension_certified",
-  "object_identity_verdict": "hybrid_objects_strictly_finer_than_T0_objects",
-  "saturation_verdict": "saturation_certified",
-  "p4_from_p5_forcing_verdict": "forcing_active_with_new_strata",
-  "definability_verdict": "nondefinable_from_T0",
-  "macro_admissibility_verdict": "T0_too_coarse_for_closed_macro_dynamics",
-  "notes": [
+  "historical_workflow_decision": "strict_extension_certified",
+  "historical_workflow_generated_at_utc": "2026-03-18T00:00:00Z",
+  "historical_workflow_notes": [
     "The v1 broader-class question was the wrong success metric.",
     "The audited question is whether T1 is a strict theory extension of T0.",
     "On the audited proxy used here, the hybrid object certifies strict theory extension, but the theorem proof remains future work."
-  ]
+  ],
+  "historical_workflow_verdicts": {
+    "definability_verdict": "nondefinable_from_T0",
+    "macro_admissibility_verdict": "T0_too_coarse_for_closed_macro_dynamics",
+    "object_identity_verdict": "hybrid_objects_strictly_finer_than_T0_objects",
+    "p4_from_p5_forcing_verdict": "forcing_active_with_new_strata",
+    "saturation_verdict": "saturation_certified"
+  },
+  "macro_admissibility_verdict": "numerical_lumpability_diagnostic_only",
+  "mathematical_certification": {
+    "main_theorem_certified": false,
+    "review": "docs/internal/mathematics_review_2026_10_01.md",
+    "scope": "historical_rounded_descriptor_audit_not_an_original_shell_proof"
+  },
+  "notes": [
+    "Historical certification labels and supporting counts are archived, not mathematical proofs.",
+    "Current saturation and forcing support is scoped in docs/internal/original_completion_support_2026_10_02.md.",
+    "Original invariant-shell membership and exact T0 applicability remain unresolved."
+  ],
+  "object_identity_verdict": "exact_object_identity_not_decided",
+  "p4_from_p5_forcing_verdict": "see_scoped_completion_support",
+  "saturation_verdict": "original_shell_saturation_not_certified",
+  "schema_version": "v2",
+  "target_id": "hybrid_cocycle_completion_object_v2"
 }

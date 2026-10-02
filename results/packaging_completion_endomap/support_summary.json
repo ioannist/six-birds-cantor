@@ -1,0 +1,52 @@
+{
+  "configs": [
+    {
+      "config_id": "generated.continuous_full_loop_kernel",
+      "config_path": "configs/experiments/generated/continuous_full_loop_kernel.json",
+      "config_sha256": "c34b5af670bc8338dc08fe179d29d7f27893c3f3d06051420833a6d36a23b45a",
+      "evaluated_post_feedback_count": 18,
+      "kernel_dim": 16,
+      "materiality_certified": false,
+      "minimum_estimated_stationary_separation": 0.017921899292256765,
+      "numerically_material_count": 6,
+      "pre_feedback_statuses": {
+        "fixed_point": 18
+      },
+      "tau_values_checked": [
+        0.6,
+        0.95
+      ]
+    },
+    {
+      "config_id": "generated.continuous_full_loop_kernel_shell",
+      "config_path": "configs/experiments/generated/continuous_full_loop_kernel_shell.json",
+      "config_sha256": "d19380e407f96056e6917fff54b10330581689d159dc1bea162f0d578628801f",
+      "evaluated_post_feedback_count": 18,
+      "kernel_dim": 20,
+      "materiality_certified": false,
+      "minimum_estimated_stationary_separation": 0.0014011394152084085,
+      "numerically_material_count": 18,
+      "pre_feedback_statuses": {
+        "fixed_point": 18
+      },
+      "tau_values_checked": [
+        0.603,
+        0.953
+      ]
+    }
+  ],
+  "formal_endpoints": [
+    "CantorAudit.audit_completion_saturates",
+    "CantorAudit.forced_completion_saturates",
+    "CantorAudit.completion_refinement_family_extension"
+  ],
+  "formal_instance_scope": "existing_exact_four_state_witness_not_original_shell_membership",
+  "full_report_sha256": "b1f26b03b556cee68c2035ff16b12d6436668af162bb92462fb3c4669775f8dd",
+  "generated_at_utc": "2026-10-02T04:48:55.108165+00:00",
+  "original_main_theorems_certified": false,
+  "outer_substrate_update_changed": false,
+  "persistent_memory_carrier_added": false,
+  "scope": "floating_pre_post_completion_on_original_config_snapshots",
+  "source_sha256": "b1ed697f04919a1ba580ed4c8506aab540a04460e1527633b80ed948c4c7eff2",
+  "target": "original_fixed_state_completion_saturation_and_material_lens_feedback"
+}
