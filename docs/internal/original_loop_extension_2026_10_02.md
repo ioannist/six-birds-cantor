@@ -229,3 +229,33 @@ the all-real/all-horizon result.
 only standard Lean axioms. The new 20-state dataset has not been imported as
 Lean terms. Self-review is recorded in the sparse-pressure follow-up; this
 pass has not had an independent reviewer. The paper remains untouched.
+
+## Next original-shell construction route
+
+The next attempt can remove the large-budget requirement of the J join.
+The kernels differ only in entries whose column indices are in {0,1,2}.
+Instead of making the entire next kernel rank one, replace only rows 0,1,2
+of W by their mean; keep every other row unchanged. Averaging these rows
+annihilates the skew cycle, so the two resulting kernels R agree. Column
+sums are preserved, and the three rows on the cycle are identical. Thus
+`(A0+-A0-) A1=0` still holds for EVERY entry weight and parameter: their
+difference is supported on those three columns and each difference row has
+sum zero. Arbitrary common evolving tails then give the same full-history
+collision as before.
+
+Exact rational endpoint checks at C=.79 and .80 found maximum compensation
+`1433092297/4102200000000` and `19970353/56975000000`, respectively, both
+below .000351. Affinity in C returns this bound to the real source score.
+This is below even the minimum original noise amplitude .0025, so warm
+budget 3 can be used. The selected spectral/cluster branch is still isolated
+there: the unselected similarity score is at most .40, below L=.4625.
+Final Frobenius variations also agree exactly: R's equal cycle rows are
+orthogonal to the skew cycle, while H is symmetric. The income/cost bounds
+above now give an actual budget increase rather than saturation at 12.
+
+This is a checked algebraic route, not yet a persisted constructor/source
+replay or an original-shell theorem. Next steps are to implement the three-row
+join, mechanize its restricted common-row product bridge, and attempt an
+infinite trapping or validated orbit argument for the common continuation.
+It preserves the original pilot parameters, current completion family and
+history potential; it does not add retained memory or a new dynamics variant.
