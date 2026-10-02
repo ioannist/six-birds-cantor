@@ -112,3 +112,23 @@ as exact rationals. They prove a waiting-domain invariant and return
 availability. The accompanying review explains why the domain disjointness
 and initial transition make these genuine arbitrarily long first-return
 paths. They do not establish a dimension formula for that local IFS.
+# Original-target obstruction checks (2026-10-02)
+
+`ConditionalPressure.lean` proves exact finite initial-law disintegration of
+the same positive matrix path potential and derives a common pressure for all
+initial probability laws, including those with zero coordinates. It then
+combines the actual B Q U completion/refinement split with an identically zero
+original-potential weighted gap, for every real parameter. This prevents
+structural strictness from being used as an unsupported scalar-separation
+bridge. The 4-state operator countermodel does not certify membership of the
+original 16/20-state invariant shell.
+It also proves the correct two-fiber mixture pressure law and the exact
+criterion for a positive gap: different conditional pressure limits. Those
+limits must be derived from a genuine disintegration; object strictness alone
+does not establish their inequality.
+
+`OriginalShell.lean` proves selector isolation, the variance bound and the
+clamped timescale escape of a uniform 20-state warm state under the original
+parameters. The full Python-to-formula bridge is analytic, not mechanized;
+seed reachability and arbitrary invariant-subclass nonexistence are not claimed.
+See `docs/internal/original_claim_obstructions_2026_10_02.md` for exact coverage.

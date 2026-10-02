@@ -177,3 +177,11 @@ The original completion configurations and their downstream strict-extension
 diagnostic reports were regenerated. Their exact closure flags remain false.
 The compact receipt hashes the current source and generated full report.
 `git diff --check` passed, and the paper was unchanged.
+# Follow-up: original-target obstructions
+
+The [original shell/disintegration follow-up](original_claim_obstructions_2026_10_02.md)
+now supplies an exact 20-state escape from the operational rectangle and a
+mechanized all-real-parameter zero-gap result for genuine fixed initial-law
+conditioning, even in the actual completion/refinement strict split example.
+These are original-support obstacles; they do not complete original-shell
+applicability or replace the original pressure by the affinity observable.

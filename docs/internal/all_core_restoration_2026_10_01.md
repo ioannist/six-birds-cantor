@@ -401,9 +401,15 @@ completion-channel construction, rather than a claim that outer F itself
 preserves its previous P5 object. The pressure sum is derived from tensor
 history products, not an injected entropy term. The potential and this
 auxiliary retention operation differ from the old initial-conditioning model.
-It restores the FORM and positive strength of a weighted pressure consequence
-on this explicit hybrid carrier; identifying it with the paper's currently
-unspecified conditional-disintegration object remains a target decision.
+It restores the FORM and positive strength of a weighted pressure comparison
+on this explicit hybrid carrier. It is not a genuine disintegration of the
+reference partition into these package partitions: the reference pressure is
+zero while every package pressure is strictly negative. A genuine finite
+fixed-weight mixture would instead have pressure `max_z Q_z<0`.
+Consequently identifying this comparison with the original disintegration
+would require a different construction, not a change of terminology. The
+2026-10-02 original-target follow-up mechanizes the correct two-fiber mixture
+law and its separation criterion.
 
 ## Corpus use and remaining work
 

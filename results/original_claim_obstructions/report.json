@@ -1,0 +1,127 @@
+{
+  "generated_at_utc": "2026-10-02T06:17:31.799735+00:00",
+  "input_sha256": {
+    "configs/experiments/generated/continuous_full_loop_kernel_shell.json": "d19380e407f96056e6917fff54b10330581689d159dc1bea162f0d578628801f",
+    "lean/CompletionForcing.lean": "454d3b64ac320de3947ab4121ad4da01561faf4bc05e1671949456a7b3d252a2",
+    "lean/ConditionalPressure.lean": "1070b54f560b91938e168c1752d70815cecd8eece3a5fa1959ab2ea6e6bc70a8",
+    "lean/OriginalShell.lean": "278e145094b5e271a0e4dffe2076d08b75039ba6642b34eb7d5f19f5fdc4626f",
+    "scripts/run_original_claim_obstructions.py": "bd5bcc791bb0715edbabb61d83c90489021922008d5346dc64bb042aa7824bb1",
+    "src/contextual_cantor/continuous_kernel_substrate.py": "b1ed697f04919a1ba580ed4c8506aab540a04460e1527633b80ed948c4c7eff2",
+    "src/contextual_cantor/exact_completion.py": "b96bdf5a959d2ed55aa6eb6a9de848d2f879338108b877ce975e62300a8d9f00",
+    "src/contextual_cantor/original_claim_obstructions.py": "be30c72ab62acb0fa98fee1cd5def413d3d931c400dc11b95e17acaea3c9c588",
+    "src/contextual_cantor/pressure_extension.py": "db935e97b33e38772c5858a94911ec830c8695a43fe07f619b1b6b9bee078a07"
+  },
+  "main_theorem_package_complete": false,
+  "original_update_law_modified": false,
+  "pressure": {
+    "actual_completion_forcing_creates_distinct_object": true,
+    "changed_path_potential": false,
+    "conditional_gap": "identically zero for all real s; Lean limit theorem, not finite sampling",
+    "exact_s_one_readouts": [
+      {
+        "audit": "1",
+        "horizon": 0,
+        "kernel": "forward",
+        "spectral": "1"
+      },
+      {
+        "audit": "1/2",
+        "horizon": 1,
+        "kernel": "forward",
+        "spectral": "1/2"
+      },
+      {
+        "audit": "1/4",
+        "horizon": 2,
+        "kernel": "forward",
+        "spectral": "1/4"
+      },
+      {
+        "audit": "1/32",
+        "horizon": 5,
+        "kernel": "forward",
+        "spectral": "1/32"
+      },
+      {
+        "audit": "1/32768",
+        "horizon": 15,
+        "kernel": "forward",
+        "spectral": "1/32768"
+      },
+      {
+        "audit": "1",
+        "horizon": 0,
+        "kernel": "transpose",
+        "spectral": "1"
+      },
+      {
+        "audit": "1/2",
+        "horizon": 1,
+        "kernel": "transpose",
+        "spectral": "1/2"
+      },
+      {
+        "audit": "1/4",
+        "horizon": 2,
+        "kernel": "transpose",
+        "spectral": "1/4"
+      },
+      {
+        "audit": "1/32",
+        "horizon": 5,
+        "kernel": "transpose",
+        "spectral": "1/32"
+      },
+      {
+        "audit": "1/32768",
+        "horizon": 15,
+        "kernel": "transpose",
+        "spectral": "1/32768"
+      }
+    ],
+    "frozen_observable": "q=log(2), same potential as existing exact transpose witness",
+    "full_loop_selector_observable_bridge": "not_established",
+    "kernel_dimension": 4,
+    "likelihood_ratio_price": false,
+    "nonfactorizing_fixed_object_family": true,
+    "original_shell_membership": "not_established",
+    "scope": "genuine_fixed_initial_law_disintegration_of_same_frozen_positive_potential"
+  },
+  "review": "docs/internal/original_claim_obstructions_2026_10_02.md",
+  "schema_version": "v1",
+  "shell": {
+    "exact_bounds": {
+      "eta_cap": "141/1000",
+      "lens_score": "731/1600",
+      "tau_initial": "21/20",
+      "tau_next_lower": "21009/20000",
+      "variance_cap": "4098392922882739/830905171600000000",
+      "variation_cap": "3/40"
+    },
+    "floating_source_replay": {
+      "eta": 0.14074108891324555,
+      "lens_score": 0.456875,
+      "packaging_score": 0.7948217782649107,
+      "selector_margins": {
+        "lens_margin": 0.07151966094067258,
+        "packaging_margin": 0.31082177826491075
+      },
+      "tau_next": 1.0512825927393918
+    },
+    "formalization_scope": "selector isolation, variance cap and clamped tau escape; source bridge analytic",
+    "initial": {
+      "budget": 3,
+      "kernel": "all entries 1/20",
+      "lens": "spectral_lens",
+      "packaging": "partition_cluster_packaging",
+      "phase": 0,
+      "primitive_activity": "all six enabled",
+      "switch_history": "empty",
+      "tau": "21/20"
+    },
+    "noise_scope": "tau updated before noise; exact escape independent of legal noise input",
+    "original_shell_membership": "not_established",
+    "scope": "twenty_state_operational_rectangle_not_arbitrary_invariant_subclass",
+    "seed_reachability": "not_established"
+  }
+}

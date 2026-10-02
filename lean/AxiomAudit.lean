@@ -11,6 +11,8 @@ import MatrixPressure
 import CompletionAffinityWitness
 import CompletionDynamics
 import CompletionForcing
+import ConditionalPressure
+import OriginalShell
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -109,3 +111,22 @@ import CompletionForcing
 #print axioms CantorAudit.final_forced_readout_factorizes
 #print axioms CantorAudit.audit_transport_macro_obstruction
 #print axioms CantorAudit.saturation_and_material_forcing_support
+
+#print axioms CantorAudit.initial_conditioning_common_pressure
+#print axioms CantorAudit.binary_disintegration_pressure
+#print axioms CantorAudit.binary_disintegration_gap_positive_iff
+#print axioms CantorAudit.initial_conditioning_disintegration
+#print axioms CantorAudit.equal_conditional_pressures_gap_zero
+#print axioms CantorAudit.initial_conditioning_gap_zero
+#print axioms CantorAudit.initial_conditioning_profiles_equal
+#print axioms CantorAudit.originalBranchMatrix_rows
+#print axioms CantorAudit.constant_row_partition
+#print axioms CantorAudit.completion_strictness_with_equal_original_partitions
+#print axioms CantorAudit.originalParameterizedMatrix_positive
+#print axioms CantorAudit.original_uniform_partitions_equal
+#print axioms CantorAudit.strict_completion_with_common_original_pressure
+#print axioms CantorAudit.originalPackageInitial_probability
+#print axioms CantorAudit.original_strict_completion_zero_gap
+#print axioms CantorAudit.uniformShell_selector_and_eta_bounds
+#print axioms CantorAudit.uniformShellVariation_cap
+#print axioms CantorAudit.uniformShellTimescale_exit

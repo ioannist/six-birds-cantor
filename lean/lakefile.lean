@@ -11,4 +11,4 @@ lean_lib CantorAudit where
   roots := #[`CantorAudit, `KernelCocycle, `KernelEscape, `CompletionWitness,
     `KernelLawfulness, `PressureExtension, `PressureRegularity, `RetainedMemory,
     `AffinityPressure, `MatrixPressure, `CompletionAffinityWitness,
-    `CompletionDynamics, `CompletionForcing]
+    `CompletionDynamics, `CompletionForcing, `ConditionalPressure, `OriginalShell]

@@ -94,6 +94,13 @@ identify the original unspecified measure disintegration, or establish that
 outer F preserves its earlier package. The hybrid tensor-product construction
 and the simulator-to-state-carrier bridge remain analytic.
 
+The positive affinity comparison is also not a finite fixed-weight
+disintegration of the reference partition into the affinity partitions:
+all affinity pressures are negative, whereas the reference pressure is zero.
+A genuine mixture of those affinity partitions has pressure equal to their
+maximum, which is negative. This exclusion is now supported by the exact
+two-fiber mixture theorem in `ConditionalPressure.lean`.
+
 Likewise, the branch-weight-to-parameter-secant bridge remains analytic;
 `PressureRegularity.lean` derives the unique zero from explicit secant and
 endpoint inputs. The new finite-matrix theorem removes the abstract normed-ring
