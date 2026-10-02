@@ -245,13 +245,23 @@ collision as before.
 
 Exact rational endpoint checks at C=.79 and .80 found maximum compensation
 `1433092297/4102200000000` and `19970353/56975000000`, respectively, both
-below .000351. Affinity in C returns this bound to the real source score.
+below .000351. Affine dependence on C returns this bound to the real source score.
 This is below even the minimum original noise amplitude .0025, so warm
 budget 3 can be used. The selected spectral/cluster branch is still isolated
 there: the unselected similarity score is at most .40, below L=.4625.
 Final Frobenius variations also agree exactly: R's equal cycle rows are
 orthogonal to the skew cycle, while H is symmetric. The income/cost bounds
 above now give an actual budget increase rather than saturation at 12.
+
+An even simpler common continuation averages ALL rows within each physical
+half of W. Both tag and skew perturbations have zero summed columns within
+that half, so this gives the same doubly stochastic, two-half block-constant
+R as averaging W(J). Every cycle-index row is again identical. Endpoint
+compensation is below .000535, still far below .0025. Its unforced continuation
+under zero legal noise stays in a small exchangeable-class matrix family;
+the first budget phase splits it into classes of sizes 5,5,10. This offers
+a reduced-dimensional route to a validated twelve-phase trapping argument.
+The class/rank choices and trapping estimates are not yet established.
 
 This is a checked algebraic route, not yet a persisted constructor/source
 replay or an original-shell theorem. Next steps are to implement the three-row
