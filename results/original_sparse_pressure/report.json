@@ -1,0 +1,85 @@
+{
+  "both_observable_bounds": [
+    "log(5/4)",
+    "log(10)"
+  ],
+  "conditional_disintegration_gap": "not supplied by pressure existence or strict extension",
+  "configs": [
+    {
+      "config_path": "configs/experiments/generated/continuous_full_loop_kernel.json",
+      "dimension": 16,
+      "original_parameters_within_derived_selector_bounds": true
+    },
+    {
+      "config_path": "configs/experiments/generated/continuous_full_loop_kernel_shell.json",
+      "dimension": 20,
+      "original_parameters_within_derived_selector_bounds": true
+    }
+  ],
+  "declared_observable_clamp": "inactive on this original full-role physical carrier",
+  "fully_mechanized_simulator_instance": false,
+  "generated_at_utc": "2026-10-02T08:56:24.403109+00:00",
+  "input_sha256": {
+    "configs/experiments/generated/continuous_full_loop_kernel.json": "c34b5af670bc8338dc08fe179d29d7f27893c3f3d06051420833a6d36a23b45a",
+    "configs/experiments/generated/continuous_full_loop_kernel_shell.json": "d19380e407f96056e6917fff54b10330581689d159dc1bea162f0d578628801f",
+    "docs/internal/original_sparse_pressure_2026_10_02.md": "1a9adc539b909ab8081efa000572798d0e6f88ab6cd037cf75cdd287121466dc",
+    "lean/KernelCocycle.lean": "e89d1c1ba0f5ddc6279a9905850ebea2edee0bd0c2542dfb6cf97b2274a8a55b",
+    "lean/MatrixPressure.lean": "3af710f4ce0ca25bd2f929443ce26e714ae4f73fc69f4c0d6a158e2200b54fb5",
+    "lean/SparsePressure.lean": "907695b214560697b4d350f8d9c987ed090197b7c0ffd9de7cc7f412a9c0430f",
+    "scripts/run_continuous_pressure_checks.py": "2b5e464b276e5440ff11041e72dfc641bf51d2e5a412787ceeea19738d7dc1da",
+    "scripts/run_continuous_pressure_closure_checks.py": "9f258ab7b7877648eace0dd13f4a63c09352bf69a806bea49fae16f444cbc647",
+    "scripts/run_original_sparse_pressure.py": "b1bdd63cdeca70601f914a6366ad491bfd63f4e88a8d69fe815d1b28d3fe5860",
+    "src/contextual_cantor/cocycle_pressure.py": "9a5568156d4fe07310c2aa1dceb2fcf82fecb217fc568c0d7f3e298a5ce6adf3",
+    "src/contextual_cantor/continuous_kernel_substrate.py": "46541744d277351a9373ee0d20ba10443923006037b4c3ef8cc7f8856185afa2"
+  },
+  "observable_variants": {
+    "pressure_closure": {
+      "coefficients": [
+        ".25",
+        ".30",
+        ".05",
+        ".05"
+      ]
+    },
+    "pressure_existence_and_restoration": {
+      "coefficients": [
+        ".28",
+        ".32",
+        ".10",
+        ".08"
+      ]
+    }
+  },
+  "original_main_theorem_package_complete": false,
+  "original_tighter_audited_shell_membership": "not_established",
+  "outer_update_changed": false,
+  "positive_parameter_regularities": "Holder convexity and interior continuity/local Lipschitz; analytic",
+  "positive_root": {
+    "anchor_parameter": "1/32",
+    "anchor_pressure_lower_bound": "log(8/5)/24 > 0",
+    "negative_anchor_parameter": 1,
+    "negative_anchor_upper_bound": "-log(5/4)",
+    "phase_count_and_root_assembly": "analytic",
+    "uniform_positive_entry_floor_on_every_kernel": "not_required",
+    "unique_root_interval": [
+      "1/32",
+      "1"
+    ]
+  },
+  "recurrent_branch": {
+    "at_least_core_columns": 4,
+    "maximum_original_hysteresis": "48/1000",
+    "minimum_selector_advantage": "51/1000",
+    "noise_clipping_normalization_return": "mechanized",
+    "post_noise_core_floor": "340887/2755520000",
+    "pre_noise_core_floor": "11716887/2528000000",
+    "recurrence_period": 12,
+    "selected_packaging": "budget_audit_packaging",
+    "short_core_floor": "1/10000",
+    "source_pre_phase": 8,
+    "source_selector_and_gate_bridge": "analytic"
+  },
+  "scope": "ideal_real_original_full_role_physical_update_without_added_minorization",
+  "sparse_pressure_exists": "for any nonempty invariant instance; matrix bounds mechanized",
+  "strict_pressure_decrease": "derived parameter secant bound mechanized"
+}

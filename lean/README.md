@@ -146,3 +146,17 @@ clamped timescale escape of a uniform 20-state warm state under the original
 parameters. The full Python-to-formula bridge is analytic, not mechanized;
 seed reachability and arbitrary invariant-subclass nonexistence are not claimed.
 See `docs/internal/original_claim_obstructions_2026_10_02.md` for exact coverage.
+
+`LoopExtension.lean` proves the moving-history bridge: equal first-step row
+moments and one shared rank-one second matrix give equal full products at
+all later horizons and equal scalar growth profiles at every horizon. The
+original-parameter 20-state warm construction is exact rational Python plus
+an analytic source bridge; original infinite-shell membership remains open.
+
+`SparsePressure.lean` derives finite pressure existence and strict decrease
+from nonnegative stochasticity and bounded positive q, without a positive
+entry floor. It keeps zero edges absent at s=0. The original recurrent budget
+branch supplies a derived core floor and positive anchor at s=1/32, giving a
+unique root in (1/32,1). Interior regularity, phase counting and the source
+branch bridge are analytic; survival of its floor through clipping noise is
+mechanized. Original tighter-shell applicability remains open.

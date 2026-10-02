@@ -15,6 +15,8 @@ import ConditionalPressure
 import OriginalShell
 import PrimitiveCompletion
 import HistoryConditioning
+import LoopExtension
+import SparsePressure
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -161,3 +163,24 @@ import HistoryConditioning
 #print axioms CantorAudit.full_support_history_same_pressure
 #print axioms CantorAudit.scalar_row_history
 #print axioms CantorAudit.stochastic_cocycle_initial_law_independent
+#print axioms CantorAudit.equal_rows_mul_rankOne
+#print axioms CantorAudit.equal_rows_norm
+#print axioms CantorAudit.joinedHistory_equal_from_two
+#print axioms CantorAudit.joinedHistory_rows_equal
+#print axioms CantorAudit.joinedHistory_norms_equal
+#print axioms CantorAudit.joinedHistory_partitions_equal
+#print axioms CantorAudit.joinedHistory_disintegration_equal
+#print axioms CantorAudit.stochastic_row_entry_bound
+#print axioms CantorAudit.sparseSelectorMatrix_nonnegative
+#print axioms CantorAudit.sparseSelectorMatrix_row_bounds
+#print axioms CantorAudit.sparse_selector_pressure_exists
+#print axioms CantorAudit.sparseSelectorMatrix_parameter_bound
+#print axioms CantorAudit.moving_history_scaled_domination
+#print axioms CantorAudit.moving_envelope_scaled_domination
+#print axioms CantorAudit.pressure_comparison_of_scaling
+#print axioms CantorAudit.sparse_selector_pressure_parameter_bound
+#print axioms CantorAudit.sparse_selector_pressure_strictAnti
+#print axioms CantorAudit.sparse_selector_pressure_at_one
+#print axioms CantorAudit.original_selector_observable_bounds
+#print axioms CantorAudit.original_budget_core_survives_noise
+#print axioms CantorAudit.original_branch_root_anchor
