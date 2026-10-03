@@ -2,8 +2,9 @@
 
 The exact rational constructor covers kernels, actual completion objects,
 and P1/P2/noise algebra uniformly over the real package-score interval.
-Original infinite-time audited-shell membership and seeded reachability remain
-unproved. This is not a replacement for that applicability obligation.
+All-time membership is supplied separately by controlled_shell.py on the
+declared controlled exact-real carrier. Seeded reachability and the paper's
+unspecified base definition remain unresolved.
 """
 from __future__ import annotations
 
@@ -24,6 +25,16 @@ class OriginalLoopExtension:
     shared_next_kernel: Matrix
     tau: Q = Q(3, 5)
     lens_score: Q = Q(37, 80)
+
+
+@dataclass(frozen=True)
+class HalfJoinCertificate:
+    package_score: Q
+    pre_noise: tuple[Matrix, Matrix]
+    common_kernel: Matrix
+    noise: tuple[Matrix, Matrix]
+    maximum_noise: Q
+    final_variation_squared: Q
 
 
 def construct_original_loop_extension() -> OriginalLoopExtension:
@@ -107,6 +118,58 @@ def exact_pre_noise(witness: OriginalLoopExtension, package_score: Q) -> tuple[M
            for z in (0,1) for i in range(20) for j in range(20))*20 >= Q(8, 100):
         raise ArithmeticError("variation bound for original budget saturation failed")
     return tuple(outputs)
+
+
+def exact_half_join(witness: OriginalLoopExtension, package_score: Q) -> HalfJoinCertificate:
+    """Actual legal-noise joining at any original budget, including b=3.
+
+    Averaging rows inside the two physical halves annihilates the tag/skew
+    perturbations. The output is NOT globally rank one: its rows coincide
+    only inside each half. The pressure-product return uses the support of
+    the original first-matrix difference. The real-score bridge is affine.
+    """
+    outputs=exact_pre_noise(witness,package_score)
+    joined=[]
+    for output in outputs:
+        averages=[tuple(sum(output[i][j] for i in group)/10 for j in range(20))
+                  for group in (range(10),range(10,20))]
+        joined.append(tuple(averages[0 if i<10 else 1] for i in range(20)))
+    common=_kernel(joined[0])
+    if common != joined[1]:
+        raise ArithmeticError("physical half average did not give a common successor")
+    if any(sum(common[i][j] for i in range(20)) != 1 for j in range(20)):
+        raise ArithmeticError("half-row averaging lost doubly stochasticity")
+    noise=tuple(tuple(tuple(common[i][j]-outputs[z][i][j] for j in range(20))
+                      for i in range(20)) for z in (0,1))
+    maximum=max(abs(x) for m in noise for row in m for x in row)
+    if not maximum < Q(1,400):
+        raise ArithmeticError("half join exceeds minimum original noise amplitude")
+    variances=tuple(sum((common[i][j]-witness.kernels[z][i][j])**2
+                       for i in range(20) for j in range(20)) for z in (0,1))
+    if variances[0] != variances[1]:
+        raise ArithmeticError("actual final-variation observable did not match")
+    return HalfJoinCertificate(Q(package_score),outputs,common,noise,maximum,variances[0])
+
+
+def exact_fixed_half_join(witness: OriginalLoopExtension, package_score: Q) -> HalfJoinCertificate:
+    """Correct the ACTUAL score-dependent rows to one fixed rational target.
+
+    The target uses 159/200 as a construction parameter; the source package
+    score is enclosed in [.79,.80], never replaced by that parameter. Noise
+    is affine in the actual score, so endpoint bounds certify the real score.
+    """
+    outputs=exact_pre_noise(witness,package_score)
+    common=exact_half_join(witness,Q(159,200)).common_kernel
+    noise=tuple(tuple(tuple(common[i][j]-outputs[z][i][j] for j in range(20))
+                      for i in range(20)) for z in (0,1))
+    maximum=max(abs(x) for m in noise for row in m for x in row)
+    if maximum>=Q(6,10000):
+        raise ArithmeticError('fixed half join is outside the certified noise bound')
+    variances=tuple(sum((common[i][j]-witness.kernels[z][i][j])**2
+                       for i in range(20) for j in range(20)) for z in (0,1))
+    if variances[0]!=variances[1]:
+        raise ArithmeticError('fixed half join changed the shared source observable')
+    return HalfJoinCertificate(Q(package_score),outputs,common,noise,maximum,variances[0])
 
 
 def integer_moving_history_rows(kernels: tuple[Matrix, ...], parameter: int,

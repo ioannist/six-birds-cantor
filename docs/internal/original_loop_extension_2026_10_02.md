@@ -4,9 +4,11 @@ This construction attacks the missing strict-extension witness. It uses the
 original 20-state pilot parameters, the actual B Q U completion constructor,
 and the full evolving kernel history. It does not add minorization or replace
 the history potential with an affinity potential. It supplies an exact split
-on a warm, legally controlled carrier. Membership in the paper's original
-infinite-time audited shell remains unresolved. The original main theorem
-package is not yet complete.
+on a warm, legally controlled carrier. The subsequent construction in
+`controlled_original_shell_2026_10_03.md` now supplies an all-time controlled
+exact-real carrier for this pair, without changing the original pilot
+parameters. Seeded reachability and the paper's unspecified base definition
+remain unresolved. The original main theorem package is not yet complete.
 
 ## Exact kernels and current packaged objects
 
@@ -263,9 +265,10 @@ the first budget phase splits it into classes of sizes 5,5,10. This offers
 a reduced-dimensional route to a validated twelve-phase trapping argument.
 The class/rank choices and trapping estimates are not yet established.
 
-This is a checked algebraic route, not yet a persisted constructor/source
-replay or an original-shell theorem. Next steps are to implement the three-row
-join, mechanize its restricted common-row product bridge, and attempt an
-infinite trapping or validated orbit argument for the common continuation.
-It preserves the original pilot parameters, current completion family and
-history potential; it does not add retained memory or a new dynamics variant.
+The next pass persisted the half-row constructor, the restricted-common-row
+Lean bridge, and a fixed rational half target with legal compensation for
+the actual irrational source score. It then certified a 24-step entry route
+and an all-time cyclic Cantor kernel family; see the 2026-10-03 note and
+`results/controlled_original_shell/report.json`. That is a controlled
+exact-real carrier, not seeded or uncontrolled-noise invariance. It preserves
+the original parameters, current completion family and history potential.

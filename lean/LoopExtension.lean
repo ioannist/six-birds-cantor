@@ -28,6 +28,60 @@ theorem equal_rows_norm (A B : Matrix (Fin d) (Fin d) ℝ)
   · exact positiveMatrix_norm_le B hB ‖A‖ (norm_nonneg _)
       (fun i => (rows i).ge.trans (positiveMatrix_row_le_norm A hA i))
 
+/-- Only the columns on which the first matrices differ need common rows
+in the second matrix. This preserves the moving-history split with much
+smaller ORIGINAL legal noise and an unsaturated initial budget. -/
+theorem supported_difference_mul_common_rows (A B R : Matrix (Fin d) (Fin d) ℝ)
+    (S : Set (Fin d)) (r : Fin d → ℝ)
+    (rows : ∀ i, ∑ j, A i j = ∑ j, B i j)
+    (outside : ∀ i k, k ∉ S → A i k = B i k)
+    (common : ∀ k, k ∈ S → ∀ j, R k j = r j) : A*R = B*R := by
+  classical
+  ext i j
+  have h : (∑ k, (A i k-B i k)*R k j) = (∑ k, (A i k-B i k))*r j := by
+    rw [Finset.sum_mul]
+    apply Finset.sum_congr rfl
+    intro k _
+    by_cases hk : k ∈ S
+    · rw [common k hk j]
+    · rw [outside i k hk,sub_self,zero_mul,zero_mul]
+  have sum : (∑ k, (A i k-B i k)) = 0 := by
+    rw [Finset.sum_sub_distrib,rows i,sub_self]
+  apply sub_eq_zero.mp
+  simp only [Matrix.mul_apply,← Finset.sum_sub_distrib,← sub_mul]
+  rw [h,sum,zero_mul]
+
+def matchedHistory (A R : Matrix (Fin d) (Fin d) ℝ)
+    (tail : ℕ → Matrix (Fin d) (Fin d) ℝ) : ℕ → Matrix (Fin d) (Fin d) ℝ
+  | 0 => 1
+  | 1 => A
+  | n+2 => A*R*tail n
+
+theorem matchedHistory_equal_from_two (A B R : Matrix (Fin d) (Fin d) ℝ)
+    (match_two : A*R = B*R) (tail : ℕ → Matrix (Fin d) (Fin d) ℝ) (n : ℕ) :
+    matchedHistory A R tail (n+2) = matchedHistory B R tail (n+2) := by
+  simp only [matchedHistory,match_two]
+
+theorem matchedHistory_norms_equal (A B R : Matrix (Fin d) (Fin d) ℝ)
+    (hA : ∀ i j, 0 ≤ A i j) (hB : ∀ i j, 0 ≤ B i j)
+    (rows : ∀ i, ∑ j, A i j = ∑ j, B i j) (match_two : A*R = B*R)
+    (tail : ℕ → Matrix (Fin d) (Fin d) ℝ) (n : ℕ) :
+    ‖matchedHistory A R tail n‖ = ‖matchedHistory B R tail n‖ := by
+  rcases n with _ | _ | n
+  · rfl
+  · exact equal_rows_norm A B hA hB rows
+  · rw [matchedHistory_equal_from_two A B R match_two tail n]
+
+theorem matchedHistory_partitions_equal (A B R : Matrix (Fin d) (Fin d) ℝ)
+    (rows : ∀ i, ∑ j, A i j = ∑ j, B i j) (match_two : A*R = B*R)
+    (tail : ℕ → Matrix (Fin d) (Fin d) ℝ) (n : ℕ) (p : Fin d → ℝ) :
+    rowHistoryPartition (matchedHistory A R tail n) p =
+      rowHistoryPartition (matchedHistory B R tail n) p := by
+  rcases n with _ | _ | n
+  · rfl
+  · simp only [rowHistoryPartition,matchedHistory,rows]
+  · rw [matchedHistory_equal_from_two A B R match_two tail n]
+
 /-- `tail n` is the common ordered future product after the shared rank-one
 second step. It can be nonautonomous and need not itself be rank one. -/
 def joinedHistory (A : Matrix (Fin d) (Fin d) ℝ) (r : Fin d → ℝ)

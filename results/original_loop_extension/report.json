@@ -1,5 +1,8 @@
 {
-  "all_parameter_all_horizon_pressure_profile_bridge": "equal weighted row sums; rank-one second matrix; common arbitrary moving tail",
+  "all_parameter_all_horizon_pressure_profile_bridge": "equal weighted row sums; first difference supported on columns 0,1,2; shared second rows there; common arbitrary moving tail",
+  "all_time_carrier_certificate": "results/controlled_original_shell/report.json",
+  "all_time_carrier_certificate_current": true,
+  "all_time_carrier_receipt_sha256": "a365f85a2066598e16fb8f6762327e25f9111f2b99886b76354ac35ec6e0b628",
   "audit_macro_defects": [
     "101/3906250",
     "101/3906250"
@@ -52,8 +55,10 @@
     ]
   ],
   "conditional_disintegration": {
-    "finite_two_world_equal_partitions": true,
+    "distinct_completion_initial_laws": "same pressure; finite partitions need not agree",
+    "finite_partitions_equal_for_every_shared_initial_law": true,
     "gap_if_common_pressure_exists": "zero",
+    "history_norm_profiles_equal": true,
     "paper_conditional_law_identified": false
   },
   "current_audit_groups": [
@@ -86,7 +91,9 @@
   "formal_endpoints": [
     "CantorAudit.equal_rows_mul_rankOne",
     "CantorAudit.joinedHistory_norms_equal",
-    "CantorAudit.joinedHistory_partitions_equal"
+    "CantorAudit.joinedHistory_partitions_equal",
+    "CantorAudit.supported_difference_mul_common_rows",
+    "CantorAudit.matchedHistory_partitions_equal"
   ],
   "formal_instance_scope": "generic ordered-matrix bridge; 20-state dataset not imported as Lean terms",
   "forward_kernel": [
@@ -531,38 +538,44 @@
       "1/20"
     ]
   ],
-  "generated_at_utc": "2026-10-02T08:56:24.297480+00:00",
+  "generated_at_utc": "2026-10-03T05:42:52.908737+00:00",
   "input_sha256": {
     "configs/experiments/generated/continuous_full_loop_kernel_shell.json": "d19380e407f96056e6917fff54b10330581689d159dc1bea162f0d578628801f",
-    "lean/LoopExtension.lean": "73d9567eaf2a94d4b87bad8c45b3e458850ba9c8c740c520cddbe82b19e20b59",
+    "lean/LoopExtension.lean": "f0baee86da9d76b020deb741d3c4df7ea73b97e6e36e18961bc58815e659f43f",
     "scripts/run_continuous_pressure_checks.py": "2b5e464b276e5440ff11041e72dfc641bf51d2e5a412787ceeea19738d7dc1da",
     "scripts/run_continuous_pressure_closure_checks.py": "9f258ab7b7877648eace0dd13f4a63c09352bf69a806bea49fae16f444cbc647",
-    "scripts/run_original_loop_extension.py": "00b7b858315a8e07678f13b993d8cee384bd44aebf6af1726a33418f7d376ce8",
+    "scripts/run_original_loop_extension.py": "9f69ce23e335dde6c3ea2c20d67f25eceae3a12f1c31d5cdcc8f849e92d409b1",
     "src/contextual_cantor/continuous_kernel_substrate.py": "46541744d277351a9373ee0d20ba10443923006037b4c3ef8cc7f8856185afa2",
     "src/contextual_cantor/exact_completion.py": "b96bdf5a959d2ed55aa6eb6a9de848d2f879338108b877ce975e62300a8d9f00",
-    "src/contextual_cantor/original_loop_extension.py": "b136d046ac018b6b46ce93516aa43c902af1a0c992949f608733e63d52526781"
+    "src/contextual_cantor/original_loop_extension.py": "650ea4ab04020595766aaa404f9b9ff2e466485f70ec0537afe3b42a51680234"
   },
   "kernel_dimension": 20,
   "legal_noise_endpoint_bounds": [
     {
+      "fixed_half_join_noise_cap": "7120094423/13674000000000",
+      "half_join_noise_cap": "2401731891/4558000000000",
       "legal_noise_amplitude": "9/2000",
       "maximum_required_noise": "51968453173/13674000000000",
+      "minimum_original_noise_amplitude": "1/400",
       "package_score": "79/100"
     },
     {
+      "fixed_half_join_noise_cap": "3655804997/6837000000000",
+      "half_join_noise_cap": "301104531/569750000000",
       "legal_noise_amplitude": "9/2000",
       "maximum_required_noise": "2173332031/569750000000",
+      "minimum_original_noise_amplitude": "1/400",
       "package_score": "4/5"
     }
   ],
   "lens": "audit_flow_quantile_lens",
   "main_theorem_package_complete": false,
   "minorization_added": false,
-  "original_global_shell_membership": "not_established",
+  "original_global_shell_membership": "separate_current_certificate_for_the_declared_controlled_real_arithmetic_shell",
   "outer_update_modified": false,
   "pointwise_weighted_row_moment_equality": true,
   "reverse_kernel": "transpose of forward_kernel",
-  "scope": "exact_original_parameter_warm_controlled_pair_with_analytic_source_bridge",
+  "scope": "exact_original_parameter_warm_controlled_pair_with_analytic_source_bridge_and_separate_carrier_certificate",
   "seeded_reachability": "not_established",
   "shared_cluster_stationary": [
     "1/20",
@@ -608,5 +621,6 @@
     "200000/4000533",
     "200000/4000533"
   ],
-  "tau": "3/5"
+  "tau": "3/5",
+  "uncontrolled_noise_invariance": false
 }

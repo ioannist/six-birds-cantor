@@ -6,7 +6,7 @@ import random
 import pytest
 
 from contextual_cantor.original_loop_extension import (
-    construct_original_loop_extension, exact_pre_noise, integer_moving_history_rows,
+    construct_original_loop_extension, exact_pre_noise, exact_half_join, integer_moving_history_rows,
 )
 from contextual_cantor.continuous_kernel_substrate import (
     KernelSubstrateState, PilotParameters, refresh_informants, compute_p4_lenses,
@@ -56,6 +56,20 @@ def test_full_moving_history_readouts_after_rank_one_join(witness):
             left=integer_moving_history_rows((witness.kernels[0],*suffix),s,scales)
             right=integer_moving_history_rows((witness.kernels[1],*suffix),s,scales)
             assert left==right
+
+
+def test_exact_half_join_uses_minimum_original_noise_and_retains_all_history_profiles(witness):
+    for c in (Q(79,100),Q(4,5)):
+        join=exact_half_join(witness,c)
+        assert join.maximum_noise < Q(535,10**6) < Q(1,400)
+        assert join.common_kernel[0]==join.common_kernel[1]==join.common_kernel[9]
+        assert join.common_kernel[0] != join.common_kernel[10]
+        for s in (0,1,2,3):
+            for tail in ((),(join.common_kernel,),(join.common_kernel,witness.kernels[0])):
+                scales=(Q(2,3),)*(1+len(tail))
+                a=integer_moving_history_rows((witness.kernels[0],*tail),s,scales)
+                b=integer_moving_history_rows((witness.kernels[1],*tail),s,scales)
+                assert a==b
 
 
 class _PrescribedNoise:
@@ -112,6 +126,49 @@ def test_unmodified_source_original_parameter_noise_join(witness):
     assert states[0].kernel==states[1].kernel
     assert states[0].previous_kernel==states[1].previous_kernel
     assert _observable(future[0])==pytest.approx(_observable(future[1]),abs=1e-15)
+
+
+def test_unmodified_source_smaller_budget_half_join(witness):
+    root=Path(__file__).resolve().parents[1]
+    params=PilotParameters(**json.loads((root/'configs/experiments/generated/continuous_full_loop_kernel_shell.json')
+        .read_text())['parameters']['pilot_parameters'])
+    states=[]
+    pre=[]
+    for k in witness.kernels:
+        state=KernelSubstrateState([[float(x) for x in row] for row in k],0.6,3.0,0.0,0,
+            'refresh','audit_flow_quantile_lens','budget_audit_packaging',[1]*6,
+            pilot_parameters=params,lens_history=['audit_flow_quantile_lens'],
+            packaging_history=['budget_audit_packaging'])
+        inf=refresh_informants(state,state.primitive_activity)
+        lens=max(compute_p4_lenses(state,inf),key=lambda x:x['score'])
+        package=max(compute_p5_packagings(state,inf,lens),key=lambda x:x['score'])
+        p1,_=apply_p1_rewrite(state,package,lens)
+        p2,_=apply_p2_gating(state,p1,package,lens,inf)
+        states.append(state)
+        pre.append(p2)
+    targets=[[sum(pre[z][i][j] for z in (0,1) for i in group)/20 for j in range(20)]
+             for group in (range(10),range(10,20))]
+    common=[targets[0 if i<10 else 1][:] for i in range(20)]
+    steps=[]
+    for z,state in enumerate(states):
+        noise=[common[i][j]-pre[z][i][j] for i in range(20) for j in range(20)]
+        assert max(abs(v) for v in noise)<0.000535
+        step=step_substrate(state,_PrescribedNoise(noise))
+        assert state.budget>3.206244 and state.budget<4
+        assert state.tau==0.6 and state.phase==1
+        assert min(step['selector_diagnostics'].values())>0.03
+        steps.append(step)
+    assert states[0].kernel==states[1].kernel
+    assert _observable(steps[0])==pytest.approx(_observable(steps[1]),abs=1e-15)
+    assert _observable_value(_series_for_step(steps[0]))==pytest.approx(
+        _observable_value(_series_for_step(steps[1])),abs=1e-15)
+    # Finite original-source prefix check, not an infinite shell certificate.
+    for state in states:
+        for _ in range(36):
+            step=step_substrate(state,_PrescribedNoise([0.0]*400))
+            assert 2.1<=state.budget<=12.1 and 0.55<=state.tau<=1.05
+            assert min(step['selector_diagnostics'].values())>=0.01
+    assert states[0].kernel==states[1].kernel
 
 
 @pytest.mark.parametrize('score',[0.795,Q(0),Q(1),True])

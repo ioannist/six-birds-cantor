@@ -17,6 +17,7 @@ import PrimitiveCompletion
 import HistoryConditioning
 import LoopExtension
 import SparsePressure
+import ControlledShell
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -184,3 +185,17 @@ import SparsePressure
 #print axioms CantorAudit.original_selector_observable_bounds
 #print axioms CantorAudit.original_budget_core_survives_noise
 #print axioms CantorAudit.original_branch_root_anchor
+#print axioms CantorAudit.supported_difference_mul_common_rows
+#print axioms CantorAudit.matchedHistory_equal_from_two
+#print axioms CantorAudit.matchedHistory_norms_equal
+#print axioms CantorAudit.matchedHistory_partitions_equal
+#print axioms CantorAudit.normalized_target_control
+#print axioms CantorAudit.controlledTimescale_step_bound
+#print axioms CantorAudit.controlledTimescale_switch_reset
+#print axioms CantorAudit.controlledBudget_preserved
+#print axioms CantorAudit.controlledBudget_increases_before_cap
+#print axioms CantorAudit.controlled_shell_all_iterates
+#print axioms CantorAudit.controlled_shell_root_anchor
+#print axioms CantorAudit.controlled_shell_pressure_root
+#print axioms CantorAudit.binary_equal_weight_gap
+#print axioms CantorAudit.separated_original_continuations_gap_bound

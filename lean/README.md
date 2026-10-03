@@ -4,6 +4,20 @@ Build with `lake build` in this directory. The portable dependency manifest
 pins Lean and mathlib to v4.8.0. The review used the matching local mathlib
 cache; no local filesystem paths are present in the committed manifest.
 
+`ControlledShell.lean` supplies clipping/normalization return for legal target
+corrections, the actual four-phase timescale reset bounds, budget invariance,
+and all-time induction. Its pressure endpoint gives a unique root in (1/3,1)
+from explicit original-potential bounds. The actual 20-state controlled
+carrier and score guards are separately checked by exact outward rational
+interval arithmetic; they are not imported as Lean data. See
+`../docs/internal/controlled_original_shell_2026_10_03.md` for the precise
+real-arithmetic, controlled-input, and original-base scope.
+
+`LoopExtension.lean` now also handles a first-matrix difference supported on
+selected columns when only the corresponding second-matrix rows agree. This
+supports the original small-budget split and its common evolving tail without
+requiring a globally rank-one second kernel.
+
 `CantorAudit.lean` proves:
 
 - Exact equal-base/different-extension witnesses obstruct factorization.

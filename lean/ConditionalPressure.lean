@@ -76,6 +76,22 @@ theorem binary_disintegration_gap_positive_iff (w P₀ P₁ : ℝ)
     rw [formula]
     exact ⟨fun _ => ne_of_gt h, fun _ => mul_pos (by linarith) (sub_pos.mpr h)⟩
 
+/-- Quantitative endpoint for a genuine equal-weight TWO-WORLD law.
+This does not identify the paper's packaged fibers with those worlds. -/
+theorem binary_equal_weight_gap (P₀ P₁ : ℝ) :
+    max P₀ P₁ - ((1/2)*P₀+(1/2)*P₁) = |P₁-P₀|/2 := by
+  rcases le_total P₀ P₁ with h | h
+  · rw [max_eq_right h,abs_of_nonneg (sub_nonneg.mpr h)]
+    ring
+  · rw [max_eq_left h,abs_of_nonpos (sub_nonpos.mpr h)]
+    ring
+
+theorem separated_original_continuations_gap_bound (P₀ P₁ : ℝ)
+    (separation : (1/1000 : ℝ) < P₁-P₀) :
+    (1/2000 : ℝ) < max P₀ P₁ - ((1/2)*P₀+(1/2)*P₁) := by
+  rw [binary_equal_weight_gap,abs_of_nonneg (by linarith : 0 ≤ P₁-P₀)]
+  linarith
+
 /-- A single pressure works for EVERY initial probability law, including
 zeros in that law. The proof derives the common norm limit from entry bounds.
 Thus choosing distinct completion fixed objects as initial laws cannot
