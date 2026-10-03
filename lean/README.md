@@ -176,6 +176,15 @@ criterion for a positive gap: different conditional pressure limits. Those
 limits must be derived from a genuine disintegration; object strictness alone
 does not establish their inequality.
 
+`FiniteDisintegration.lean` proves the corresponding return for any fixed
+finite family with positive probabilities. The logarithmic pressure of the
+total partition is the largest conditional pressure. The weighted gap is
+nonnegative, vanishes exactly when all conditional pressures agree, and is
+positive exactly when two of those pressures differ. A quantitative deficit
+at one fiber gives a quantitative lower bound. Actual conditional partitions,
+their limits and a return to the shell supremum remain explicit instance
+obligations. See [the point 4 import audit](../docs/internal/point4_pressure_return_and_import_audit_2026_10_03.md).
+
 `PrimitiveCompletion.lean` removes one-step positivity from the completion
 saturation argument: a positive finite power suffices. It CONSTRUCTS stationary
 existence from a Cauchy sequence, proves full convergence including remainder

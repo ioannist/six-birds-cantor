@@ -1,0 +1,84 @@
+{
+  "audit_date": "2026-10-03",
+  "kind": "exact_imported_hypothesis_and_finite_pressure_return_audit",
+  "review_mode": "self_review",
+  "corpus_search_exhaustive": false,
+  "paper_edited": false,
+  "original_target": "four stated hypotheses imply a nontrivial weighted package-conditioned pressure gap",
+  "original_four_premise_pressure_implication_status": "insufficient_as_stated",
+  "valid_finite_return": "reference pressure=max conditional pressures; positive weighted gap iff two charged conditional pressures differ",
+  "reference_probability_law_and_original_stratum_identification": "explicit separate instance obligations",
+  "shell_supremum_return": "explicit separate instance obligation",
+  "reference_law_change_adopted_as_original_claim_repair": false,
+  "replacement_original_claim_selected_by_user": false,
+  "source_bindings": [
+    {
+      "path": "../six-birds-papers/Tsiokos_2026_Six_Birds_Foundations_III_A_Finite_Audited_Interaction_Calculus_for_SBT.tex",
+      "sha256": "f77097dc018e50134cf71fb21db7b8d1bbc7eae071a8ce2b144577efd953dbd3",
+      "theorem_anchors": [
+        "Theorem 8: Markov Closure-Deficit Theorem",
+        "Theorem 12: Strict-Extension Nonfactorization",
+        "Theorem 13: Factorization Defect Equivalence",
+        "A refinement is not assumed to improve any closure deficit"
+      ],
+      "proved_return_scope": "finite nonfactorization and predictive-KL closure; no pressure return",
+      "original_pressure_separation_supplied": false
+    },
+    {
+      "path": "../six-birds-papers/Tsiokos_2026_Six_Birds_Foundations_IV_A_Catalog_of_Layer_Agnostic_Structural_Laws.tex",
+      "sha256": "7ec3e11d5b7d6ce9993c561623cd260eeaffe745c469c6127fe7f7c616af0472",
+      "theorem_anchors": [
+        "\\label{lem:F8}",
+        "\\label{thm:F39}"
+      ],
+      "proved_return_scope": "retentive strictness; entropy mixing requires an explicit fiber-faithfulness clause",
+      "original_pressure_separation_supplied": false
+    },
+    {
+      "path": "../six-birds-papers/Tsiokos_2026_Six_Birds_Foundations_VIII_A_Typed_Calculus_of_Coarse_Graining.tex",
+      "sha256": "c2d8cbc814920048bb430b26b1e0fbe204cb4ff99fdc37ed5eded33d8f71e4ec",
+      "theorem_anchors": [
+        "\\label{thm:Q9a}",
+        "\\label{thm:Q9b}",
+        "\\label{thm:Q9c}"
+      ],
+      "proved_return_scope": "finite lumpability and support-relative predictive closure; no asymptotic pressure separation",
+      "original_pressure_separation_supplied": false
+    },
+    {
+      "path": "../six-birds-papers/Tsiokos_2026_To_Cast_a_Stone_with_Six_Birds_A_Closure_Deficit_Account_of_Randomness_under_Packaging_and_Budget.tex",
+      "sha256": "a44677097ba1600d1dba9e6cb423d5c9896b00ab79f8c5b5d8f0a750b6f0e139",
+      "theorem_anchors": [
+        "\\label{prop:cd-decomposition}",
+        "\\label{prop:cd-kl}",
+        "\\label{prop:cd-zero}"
+      ],
+      "proved_return_scope": "specified finite predictive entropy/KL identities; no identification with the original pressure gap",
+      "original_pressure_separation_supplied": false
+    }
+  ],
+  "local_input_sha256": {
+    "paper/sections/06_strict_extension.tex": "8790142527a82c8384706d119f15c6cdffab3a931ac132273419746c3e0e58ee",
+    "paper/sections/07_conditional_disintegration.tex": "e50cefbde8a80fdeeb2e37bd0d8f7d0ba24b1161afbe540f887c21c2b8ad6ef8",
+    "lean/FiniteDisintegration.lean": "180cea1ec40a7bb741a31e8d3a0b05893ff305c4c4a88f16b86cc0f1d97ad6b0",
+    "docs/internal/point4_pressure_return_and_import_audit_2026_10_03.md": "f4708825746960b4e336c7b2a3cf0ab0caca8e77ace5a4c87e5560f59dbaf638",
+    "results/all_word_pressure_disintegration/report.json": "fbf9963da6fc267e2604af405494ac4b5029fce09012354ed816ad1e0027230a",
+    "results/common_input_disintegration_obstruction/report.json": "6416ed54fa78324650c152166d897dba30b5efe9412001139a7b61d206f1a120",
+    "lean/lakefile.lean": "f9600bc04cf4af2942e8fe2e73cc60df694a1009c7c70eca6d5304bde25f3aea",
+    "lean/AxiomAudit.lean": "829b9a40be55a3c4a57eff33548c65fcd18b3bd205908def2bc65e2f3bfb1275",
+    "lean/README.md": "cfc235993d7d6963caa7df9f9b75777fd1f942a8d363ece7401cb966cbd9e60c"
+  },
+  "validation": {
+    "lake_build": "passed",
+    "fresh_axiom_audit_export_count": 196,
+    "transitive_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "proof_holes_or_custom_axioms": false,
+    "existing_positive_and_zero_gap_input_hashes_current": true,
+    "new_corpus_source_hashes_and_theorem_anchors_current": true,
+    "python_mathematics_or_experiment_code_changed": false
+  }
+}

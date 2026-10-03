@@ -22,10 +22,17 @@ import PackagedDisintegration
 import ReferencePressure
 import WeightedHistoryBounds
 import CommonInputDisintegration
+import FiniteDisintegration
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
 #print axioms CantorAudit.extension_with_zero_gap
+#print axioms CantorAudit.finite_disintegration_pressure
+#print axioms CantorAudit.finite_disintegration_gap_formula
+#print axioms CantorAudit.finite_disintegration_gap_nonnegative
+#print axioms CantorAudit.finite_disintegration_gap_zero_iff
+#print axioms CantorAudit.finite_disintegration_gap_positive_iff
+#print axioms CantorAudit.finite_disintegration_gap_lower_bound
 #print axioms CantorAudit.coarse_collision_with_exact_factorization
 #print axioms CantorAudit.conditional_fekete
 #print axioms CantorAudit.linear_partition_zero_pressure
