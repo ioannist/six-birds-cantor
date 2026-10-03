@@ -21,6 +21,7 @@ import ControlledShell
 import PackagedDisintegration
 import ReferencePressure
 import WeightedHistoryBounds
+import CommonInputDisintegration
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -214,3 +215,7 @@ import WeightedHistoryBounds
 #print axioms CantorAudit.binary_actual_package_pressure_from_intervals
 #print axioms CantorAudit.weighted_matrixHistory_bounds
 #print axioms CantorAudit.weighted_matrixHistory_norm_bounds
+#print axioms CantorAudit.expected_row_history_bounds
+#print axioms CantorAudit.constant_package_fiber_partition
+#print axioms CantorAudit.expected_row_history_same_pressure
+#print axioms CantorAudit.common_input_actual_package_zero_gap

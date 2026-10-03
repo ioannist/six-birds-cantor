@@ -85,7 +85,8 @@
         "CDI-LEM-2",
         "CDI-LEM-3"
       ],
-      "status": "closed_in_note"
+      "status": "closed_in_note",
+      "mathematical_audit_status": "generic_implication_refuted; positive-gap construction needs a specified law and independently established pressure separation"
     },
     {
       "lemma_id": "CDI-LEM-5",
@@ -114,7 +115,8 @@
         "CDI-LEM-5",
         "SE-THM-6"
       ],
-      "status": "closed_in_note"
+      "status": "closed_in_note",
+      "mathematical_audit_status": "generic_implication_refuted; positive-gap construction needs a specified law and independently established pressure separation"
     },
     {
       "lemma_id": "CDI-THM-7",
@@ -128,7 +130,8 @@
       "depends_on": [
         "CDI-COR-6"
       ],
-      "status": "closed_in_note"
+      "status": "closed_in_note",
+      "mathematical_audit_status": "generic_implication_refuted; positive-gap construction needs a specified law and independently established pressure separation"
     }
   ],
   "dependency_edges": [
@@ -178,13 +181,28 @@
     "generated.continuous_full_loop_kernel_shell"
   ],
   "gap_status": {
-    "status": "conditional_disintegration_closed",
-    "note": "The theoremlet is closed in note on the audited shell using the weighted package-conditioned pressure gap as the explicit consequence object."
+    "status": "generic_implication_refuted",
+    "historical_workflow_status": "conditional_disintegration_closed",
+    "note": "Strict extension and well-defined same-potential conditional profiles do not force pressure separation. The fixed common-input law gives zero gap while matching the full controlled shell pressure. A correlated-law construction supplies a separate model-specific positive-gap theorem."
   },
   "mathematical_certification": {
     "current_status": "requires_mathematical_repair",
     "legacy_status_scope": "historical_workflow_assessment_only",
     "main_theorems_certified": false,
-    "review": "docs/internal/mathematics_review_2026_10_01.md"
+    "review": "docs/internal/mathematics_review_2026_10_01.md",
+    "original_generic_implication_valid": false,
+    "current_constructed_positive_gap_scope": "two actual same-lens completion fibers under a specified correlated world law on the exact-real original-parameter twenty-state controlled shell",
+    "original_descriptor_family_exhausted": false,
+    "original_sixteen_state_positive_gap_established": false,
+    "current_repair": "docs/internal/all_word_pressure_disintegration_2026_10_03.md",
+    "current_obstruction": "docs/internal/common_input_disintegration_obstruction_2026_10_03.md",
+    "original_fixed_input_panel_exact_object_count": 1,
+    "original_fixed_input_panel_exact_limit_weights": [
+      "1"
+    ],
+    "original_empirical_multiple_fibers_established": false,
+    "original_panel_scope": "all twelve recorded config/tau/lens panels, interpreted as exactly row-normalized real input tables; not ideal real seeded trajectories",
+    "original_claimed_multifiber_empirical_weights_established": false,
+    "original_fixed_input_panel_exact_weights_established": true
   }
 }

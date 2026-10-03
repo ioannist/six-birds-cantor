@@ -38,6 +38,16 @@ positive source-realization comparisons. These measure constructions and the
 interval datasets are not imported Lean proofs. See
 `../docs/internal/all_word_pressure_disintegration_2026_10_03.md`.
 
+`CommonInputDisintegration.lean` integrates the actual row-history bounds under
+one common input measure, proves the conditional pressure return and derives
+zero gap alongside structural nonfactorization. The original twenty-state
+controlled instance uses the same shell, potential and actual audit outputs as
+the positive-gap construction, with a common mixture of lawful futures. It
+still matches the full-shell supremum. Thus supplying that missing pressure
+return cannot make strictness alone imply a gap. The source and measure inputs
+remain analytical instances, while the integral/limit argument is mechanized.
+See `../docs/internal/common_input_disintegration_obstruction_2026_10_03.md`.
+
 `LoopExtension.lean` now also handles a first-matrix difference supported on
 selected columns when only the corresponding second-matrix rows agree. This
 supports the original small-budget split and its common evolving tail without

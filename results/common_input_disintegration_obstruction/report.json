@@ -1,0 +1,1587 @@
+{
+  "audited_profile_return": [
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "7489330683884977483588039/2500000000000000000000000",
+        "14978661367769954967176247/5000000000000000000000000"
+      ],
+      "observable": "closure",
+      "parameter": "0"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "7489330683884977483588039/2500000000000000000000000",
+        "14978661367769954967176247/5000000000000000000000000"
+      ],
+      "observable": "operator",
+      "parameter": "0"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "11700394675006857124621823/10000000000000000000000000",
+        "5850197337503472628494647/5000000000000000000000000"
+      ],
+      "observable": "closure",
+      "parameter": "1/2"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "2283364088728174521399407/2000000000000000000000000",
+        "11416820443640959284297177/10000000000000000000000000"
+      ],
+      "observable": "operator",
+      "parameter": "1/2"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "93330685200699196269677/312500000000000000000000",
+        "597316385284500409912439/2000000000000000000000000"
+      ],
+      "observable": "closure",
+      "parameter": "3/4"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "2561220579373397504192483/10000000000000000000000000",
+        "1280610289686761545262011/5000000000000000000000000"
+      ],
+      "observable": "operator",
+      "parameter": "3/4"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "-2731532943184121359758977/5000000000000000000000000",
+        "-5463065886368077315204311/10000000000000000000000000"
+      ],
+      "observable": "closure",
+      "parameter": "1"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "-6030214349100211754768017/10000000000000000000000000",
+        "-6030214349100049260588109/10000000000000000000000000"
+      ],
+      "observable": "operator",
+      "parameter": "1"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "-1709682331334461599891227/1250000000000000000000000",
+        "-13677458650675490822268651/10000000000000000000000000"
+      ],
+      "observable": "closure",
+      "parameter": "5/4"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "-14386394229090654100809743/10000000000000000000000000",
+        "-224787409829538370939907/156250000000000000000000"
+      ],
+      "observable": "operator",
+      "parameter": "5/4"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "-21683298351417831789240631/10000000000000000000000000",
+        "-4336659670283469848154727/2000000000000000000000000"
+      ],
+      "observable": "closure",
+      "parameter": "3/2"
+    },
+    {
+      "both_conditional_pressures": "P_S, exactly; proved through actual reference integrals",
+      "gap_exact": "0",
+      "global_shell_pressure_interval": [
+        "-11266608948302147934738459/5000000000000000000000000",
+        "-22533217896603419201817733/10000000000000000000000000"
+      ],
+      "observable": "operator",
+      "parameter": "3/2"
+    }
+  ],
+  "basis_receipt": "results/all_word_pressure_disintegration/report.json",
+  "basis_receipt_sha256": "fbf9963da6fc267e2604af405494ac4b5029fce09012354ed816ad1e0027230a",
+  "conditional_profiles_assigned_by_hand": false,
+  "displayed_current_object_weights": [
+    "1/2",
+    "1/2"
+  ],
+  "displayed_future_carrier_weights": [
+    "1/2",
+    "1/2"
+  ],
+  "displayed_joint_weights": [
+    [
+      "1/4",
+      "1/4"
+    ],
+    [
+      "1/4",
+      "1/4"
+    ]
+  ],
+  "exact_source_checks": {
+    "active_lens": "audit_flow_quantile_lens",
+    "actual_objects": [
+      [
+        "30018048928716345/600329781650284187",
+        "30007383909669000/600329781650284187",
+        "30012261694834500/600329781650284187",
+        "30022017265165500/600329781650284187",
+        "30014149117233076/600329781650284187",
+        "30010249305749807/600329781650284187",
+        "30006349494266538/600329781650284187",
+        "30033648174649421/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187"
+      ],
+      [
+        "10006016308704885/200109927212425471",
+        "10002461303223000/200109927212425471",
+        "10004087231611500/200109927212425471",
+        "10007339088388500/200109927212425471",
+        "10004716371543908/200109927212425471",
+        "10003416434382931/200109927212425471",
+        "10002116497221954/200109927212425471",
+        "10011216057348793/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471"
+      ]
+    ],
+    "actual_source_score_interval": [
+      "79/100",
+      "4/5"
+    ],
+    "completion_entry_floors": [
+      "499929948/39085859375",
+      "499929948/39085859375"
+    ],
+    "finite_partition_scope": "the exact coefficient differs even though the true limiting conditional pressures agree",
+    "finite_source_factor_at_s_two": "exp(-2*(q_0+q_1)); original q, common to both warm worlds",
+    "fixed_join_noise_caps": [
+      "7120094423/13674000000000",
+      "3655804997/6837000000000"
+    ],
+    "initial_probability_floors": [
+      "30006349494266538/600329781650284187",
+      "10002116497221954/200109927212425471"
+    ],
+    "kernel_dimension": 20,
+    "macro_lumpability_defects": [
+      "101/3906250",
+      "101/3906250"
+    ],
+    "minimum_original_noise_support": "1/400",
+    "timescale": "3/5",
+    "two_step_norm_matching_support": [
+      0,
+      1,
+      2
+    ],
+    "two_step_unscaled_partition_difference": "1575024057047647051055495490531994607925791/119797678397954420409813086945861447603089344000000000000000000",
+    "two_step_unscaled_partitions": [
+      "901853080690060966182901559787880617379348681/359195608334165031025029158400000000000000000000",
+      "300617693556839955619922614632791593459820573/119731869442127361107417587200000000000000000000"
+    ]
+  },
+  "fiber_map": "world -> its actual current audit stationary vector; future-carrier labels are NOT packaging objects",
+  "formal_exports": [
+    "CantorAudit.constant_package_fiber_partition",
+    "CantorAudit.expected_row_history_bounds",
+    "CantorAudit.expected_row_history_same_pressure",
+    "CantorAudit.common_input_actual_package_zero_gap"
+  ],
+  "full_shell_pressure_return_analytic": true,
+  "generated_at_utc": "2026-10-03T10:49:33.746063+00:00",
+  "independent_original_raw_noise_law": false,
+  "input_sha256": {
+    "docs/internal/common_input_disintegration_obstruction_2026_10_03.md": "45f213d74177eacb6120f67567ca016e5bdfdac0d3208f46c6515e2fe6411b80",
+    "docs/internal/proof_dependency_conditional_disintegration_v1.json": "894d6a2891079e6bc389058d6faf143ec82f3288432f696b485967d450e9044a",
+    "lean/CommonInputDisintegration.lean": "b32134cf8a93ec86033675a54a13e0eb5707d94906ba6c76b3541ad2e73dd2ce",
+    "lean/HistoryConditioning.lean": "1fdad92392d5fa095c842dcc77a298db74f87edcabcac5003157b0241c92f8d1",
+    "lean/LoopExtension.lean": "f0baee86da9d76b020deb741d3c4df7ea73b97e6e36e18961bc58815e659f43f",
+    "lean/PrimitiveCompletion.lean": "8e07f4edd60887576cffa5e9ecf6b3d57d621e31277c087d20980d01bc0b755a",
+    "lean/ReferencePressure.lean": "7592d907a38734e9f7379adcb452cd419ca09fba9a85ee9c5506cbe975adfcbd",
+    "paper/sections/03_canonical_object.tex": "957c639ead56b073cebc6911669cb350b211a2efb68dba5b04863487e4e41c83",
+    "paper/sections/07_conditional_disintegration.tex": "e50cefbde8a80fdeeb2e37bd0d8f7d0ba24b1161afbe540f887c21c2b8ad6ef8",
+    "scripts/run_common_input_disintegration_obstruction.py": "a77c7e73f666969c0a8bf05c3a84a3a746b490cda66e0309cc86c6826435093d",
+    "src/contextual_cantor/completion_support.py": "63adbb39c76c0cece00e5b276c3ba02f725587f45dc38073806b8e1ece65aa15",
+    "src/contextual_cantor/exact_completion.py": "b96bdf5a959d2ed55aa6eb6a9de848d2f879338108b877ce975e62300a8d9f00",
+    "src/contextual_cantor/original_loop_extension.py": "650ea4ab04020595766aaa404f9b9ff2e466485f70ec0537afe3b42a51680234"
+  },
+  "main_theorem_package_complete": false,
+  "mechanization_scope": "actual Bochner integral comparisons, pressure transfer, actual-object conditioning, nonfactorization and zero gap; source dataset and compact variational measure construction remain analytic",
+  "original_generic_strictness_to_positive_gap_implication": false,
+  "original_outer_update_unchanged": true,
+  "original_panel_weight_scope": "exact limits of repeated starts at fixed config/tau/lens have one object of weight one; this is not a multi-object descriptor law over varying kernels",
+  "original_potential_unchanged": true,
+  "original_recorded_panel_audit": [
+    {
+      "config_id": "generated.continuous_full_loop_kernel",
+      "ideal_real_seeded_snapshot_certified": false,
+      "kernel_data_sha256": "0a86088129663a7ad7d64d13d64c9fd3c0543af36cf1c73274f292f3ebaa4766",
+      "kernel_dimension": 16,
+      "panels": [
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              1,
+              2,
+              3,
+              7,
+              12
+            ],
+            [
+              0,
+              4,
+              5,
+              6,
+              8,
+              9,
+              10,
+              11,
+              13,
+              14,
+              15
+            ]
+          ],
+          "lens": "spectral_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.6,
+          "transport_positive_power": 2,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 2,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              0
+            ],
+            [
+              4
+            ],
+            [
+              10
+            ],
+            [
+              13
+            ],
+            [
+              14
+            ],
+            [
+              7
+            ],
+            [
+              6
+            ],
+            [
+              11
+            ],
+            [
+              5
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              12
+            ],
+            [
+              15
+            ]
+          ],
+          "lens": "row_similarity_cluster_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.6,
+          "transport_positive_power": 2,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              1,
+              2,
+              3,
+              12
+            ],
+            [
+              0,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              13,
+              14,
+              15
+            ]
+          ],
+          "lens": "audit_flow_quantile_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.6,
+          "transport_positive_power": 2,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              1,
+              2,
+              3,
+              7,
+              12
+            ],
+            [
+              0,
+              4,
+              5,
+              6,
+              8,
+              9,
+              10,
+              11,
+              13,
+              14,
+              15
+            ]
+          ],
+          "lens": "spectral_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.95,
+          "transport_positive_power": 2,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 2,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              0
+            ],
+            [
+              4
+            ],
+            [
+              10
+            ],
+            [
+              13
+            ],
+            [
+              14
+            ],
+            [
+              7
+            ],
+            [
+              6
+            ],
+            [
+              11
+            ],
+            [
+              5
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              8
+            ],
+            [
+              9
+            ],
+            [
+              12
+            ],
+            [
+              15
+            ]
+          ],
+          "lens": "row_similarity_cluster_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.95,
+          "transport_positive_power": 2,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              1,
+              2,
+              3,
+              12
+            ],
+            [
+              0,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              13,
+              14,
+              15
+            ]
+          ],
+          "lens": "audit_flow_quantile_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.95,
+          "transport_positive_power": 2,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        }
+      ],
+      "real_input_interpretation": "K_ij=v_ij/sum_j(v_ij), preserving support of the recorded binary-rational table",
+      "recorded_kernel_hex": [
+        [
+          "0x1.0340022ee4605p-4",
+          "0x1.5b6379ab857d7p-4",
+          "0x1.69de7d3bde707p-4",
+          "0x1.71b738d5dc60bp-4",
+          "0x1.faf8adbe21e36p-5",
+          "0x1.0d7a9c4322ea4p-4",
+          "0x1.14cd6b68fbb08p-4",
+          "0x1.056cbae9d8389p-4",
+          "0x1.ab7a9277732aep-5",
+          "0x1.aa93520c4e6e4p-5",
+          "0x1.ae11bd6c07b09p-5",
+          "0x1.88fbed3ea5356p-5",
+          "0x1.0fd91aba8a297p-4",
+          "0x1.73f9492419618p-5",
+          "0x1.86e0a197d16d1p-5",
+          "0x1.9983b9de39776p-5"
+        ],
+        [
+          "0x1.e91b6dc197895p-6",
+          "0x1.1e8298e787877p-2",
+          "0x1.dfd0d9b9aa5e4p-3",
+          "0x1.bc47d35201f1ep-3",
+          "0x1.c30b2d6e542d5p-6",
+          "0x1.b38aa8ba3625cp-6",
+          "0x1.cddaf8595db6cp-6",
+          "0x1.2eaf53947e3b2p-5",
+          "0x1.3cbaeaa9e1aa2p-8",
+          "0x1.2f960650f23e8p-7",
+          "0x1.fe89c575abe14p-9",
+          "0x0.0p+0",
+          "0x1.7aaba917b0f20p-4",
+          "0x1.fa8432dd9fcecp-9",
+          "0x1.121f0f0904119p-10",
+          "0x1.28e84e43e7decp-8"
+        ],
+        [
+          "0x1.bd97a65f41a3dp-6",
+          "0x1.bc7b77ad3acc1p-3",
+          "0x1.2edb943c2e87dp-2",
+          "0x1.ba713e891ef21p-3",
+          "0x1.373f49e4fea2dp-5",
+          "0x1.02619742e59e6p-5",
+          "0x1.7f89564cbb617p-6",
+          "0x1.562d3f775bd79p-5",
+          "0x1.6c7fcdb202964p-9",
+          "0x0.0p+0",
+          "0x1.6ece27683a59ap-8",
+          "0x1.52615a92a94e0p-7",
+          "0x1.4b2685236b6b0p-4",
+          "0x1.039545b09bc46p-8",
+          "0x1.c4dbfbda7b36cp-9",
+          "0x1.2ca5b28826439p-9"
+        ],
+        [
+          "0x1.166ecb19470c1p-5",
+          "0x1.b45036cf77e1fp-3",
+          "0x1.b92c5927fdab2p-3",
+          "0x1.20ba0a2fc0485p-2",
+          "0x1.42b4958927741p-5",
+          "0x1.0c4b9820424afp-5",
+          "0x1.5405e4fc03b2ep-6",
+          "0x1.523f90abe2861p-5",
+          "0x0.0p+0",
+          "0x1.21d29af029a72p-8",
+          "0x1.e46ec1f5554fep-10",
+          "0x1.63e224bb155e2p-9",
+          "0x1.89d967675851ep-4",
+          "0x1.eaa8ae96ba8a1p-11",
+          "0x1.b535628b2e167p-7",
+          "0x1.0453cd25a16e6p-9"
+        ],
+        [
+          "0x1.0aee9499e3856p-4",
+          "0x1.6e856295cab04p-4",
+          "0x1.6622d0a870059p-4",
+          "0x1.562b3bba1d647p-4",
+          "0x1.059b39de7c8b2p-4",
+          "0x1.0b2fde180695fp-4",
+          "0x1.0968a0b84ae71p-4",
+          "0x1.16ea32b6a253ap-4",
+          "0x1.b5273e0f627a8p-5",
+          "0x1.8e61112f47711p-5",
+          "0x1.8924626b16bdfp-5",
+          "0x1.72ade26fb4393p-5",
+          "0x1.183c8b43281a3p-4",
+          "0x1.8f592b44d92adp-5",
+          "0x1.9398bb4d85c30p-5",
+          "0x1.9f7a90de8404bp-5"
+        ],
+        [
+          "0x1.ed8226fc3c9eap-5",
+          "0x1.65bc9d5eca235p-4",
+          "0x1.56d08e73e6ba2p-4",
+          "0x1.731d618eeb4d0p-4",
+          "0x1.0d08fa548d348p-4",
+          "0x1.1756563202b29p-4",
+          "0x1.073ea64f6c384p-4",
+          "0x1.00d220da1a02fp-4",
+          "0x1.717c2bb594aeap-5",
+          "0x1.a937f705eea27p-5",
+          "0x1.973aa0b7b4c17p-5",
+          "0x1.9002c261892d2p-5",
+          "0x1.ff0fb1bcb0366p-5",
+          "0x1.bb518658da92ep-5",
+          "0x1.a847826ce71ddp-5",
+          "0x1.b5ae4e892ba1cp-5"
+        ],
+        [
+          "0x1.f12c1161b310bp-5",
+          "0x1.5d602e20b041fp-4",
+          "0x1.72c6ca0b0acd4p-4",
+          "0x1.636b95f49480bp-4",
+          "0x1.ced44c4dc0ebbp-5",
+          "0x1.e32b495d00b3cp-5",
+          "0x1.0fa1aaff52613p-4",
+          "0x1.200cf441ac543p-4",
+          "0x1.b8858766db6cfp-5",
+          "0x1.b7404f4ffff9fp-5",
+          "0x1.a315188743e40p-5",
+          "0x1.8ec2b86aef624p-5",
+          "0x1.2099f6f4aea5ep-4",
+          "0x1.6fe64fa89dcb9p-5",
+          "0x1.7d13351060db3p-5",
+          "0x1.c686e3e584260p-5"
+        ],
+        [
+          "0x1.f6192ba123074p-5",
+          "0x1.7773a0d9ae6a7p-4",
+          "0x1.7ac7d42da4dc9p-4",
+          "0x1.6593b35e0e3eap-4",
+          "0x1.f00ce7c5ad2ecp-5",
+          "0x1.f25dcd67e9dd6p-5",
+          "0x1.0e7ab14fedc6bp-4",
+          "0x1.0fcdc6dc6bc22p-4",
+          "0x1.a2ce03eba7a15p-5",
+          "0x1.95cf4864d30cdp-5",
+          "0x1.92ad87a664e92p-5",
+          "0x1.8aaf1466d21ebp-5",
+          "0x1.096c2aaaf0edep-4",
+          "0x1.baf915f84ec56p-5",
+          "0x1.a94b49e95ea4ep-5",
+          "0x1.6e3640788ed36p-5"
+        ],
+        [
+          "0x1.8573baeb3aecdp-5",
+          "0x1.153d430bd8c67p-4",
+          "0x1.0e601f2e0fc85p-4",
+          "0x1.19e641a422d49p-4",
+          "0x1.a5185052e4a8ep-5",
+          "0x1.baa83ad1aec29p-5",
+          "0x1.8891832ef5fb6p-5",
+          "0x1.7851092177726p-5",
+          "0x1.239d28ef0ec67p-4",
+          "0x1.0437d39fb74ddp-4",
+          "0x1.ef9513f59d4cap-5",
+          "0x1.22faa7ced3d20p-4",
+          "0x1.73796bab21630p-4",
+          "0x1.03c0dd0fc731ep-4",
+          "0x1.13b90ad9e5f23p-4",
+          "0x1.01e371049fa61p-4"
+        ],
+        [
+          "0x1.c3e5b00c3b897p-5",
+          "0x1.0c254b9d0dcedp-4",
+          "0x1.15a5c6db35e38p-4",
+          "0x1.09828e985b234p-4",
+          "0x1.9873ce57b4d71p-5",
+          "0x1.97f12bc7755cdp-5",
+          "0x1.c0760523db21dp-5",
+          "0x1.b8071ab5c676ap-5",
+          "0x1.0cb850395342ep-4",
+          "0x1.f8fb159d54ea7p-5",
+          "0x1.02d6b284ab232p-4",
+          "0x1.0b875efda1043p-4",
+          "0x1.5a6b0552347e6p-4",
+          "0x1.19e61d6e1e6d3p-4",
+          "0x1.143ea7d9fff68p-4",
+          "0x1.fc558590817ccp-5"
+        ],
+        [
+          "0x1.8b14a3aede507p-5",
+          "0x1.22dd2b13ba613p-4",
+          "0x1.0f40577aa1860p-4",
+          "0x1.090c6cf39d306p-4",
+          "0x1.6626411122503p-5",
+          "0x1.7f92041049fa7p-5",
+          "0x1.8eb18f82004cbp-5",
+          "0x1.84c5988b38db3p-5",
+          "0x1.0c42fd73ead5cp-4",
+          "0x1.08c0f11af896ap-4",
+          "0x1.17c671bab1e29p-4",
+          "0x1.07221683c855fp-4",
+          "0x1.897f6d1e2a11bp-4",
+          "0x1.1df1e5f7df59fp-4",
+          "0x1.097e308bb0f18p-4",
+          "0x1.1dd80da02d04dp-4"
+        ],
+        [
+          "0x1.af954516e9200p-5",
+          "0x1.0ef34155c9d1dp-4",
+          "0x1.06bca3f8d8042p-4",
+          "0x1.00c74c94a7a85p-4",
+          "0x1.9597e0a94f56cp-5",
+          "0x1.a4a1e87d74d9ap-5",
+          "0x1.8b62f206e6b3dp-5",
+          "0x1.a0495a912650bp-5",
+          "0x1.03ca7e648391ep-4",
+          "0x1.08e8071a2478cp-4",
+          "0x1.153fce3b514ccp-4",
+          "0x1.20369c5bb6ff3p-4",
+          "0x1.4f75e8a14ede4p-4",
+          "0x1.0006768f0c309p-4",
+          "0x1.292da74dc8287p-4",
+          "0x1.23f82a1e05c96p-4"
+        ],
+        [
+          "0x1.d23bd225666ddp-9",
+          "0x1.b81971cbd39b0p-4",
+          "0x1.8bb79e2ad8b77p-4",
+          "0x1.c3f3cc2b15aadp-4",
+          "0x0.0p+0",
+          "0x1.3ca6d6a541e5ap-7",
+          "0x1.31a23066c0891p-8",
+          "0x1.69d4dab910ba3p-7",
+          "0x1.cc8b24ec07192p-6",
+          "0x1.527497e1c1415p-6",
+          "0x1.3fa9729de23e7p-5",
+          "0x1.c30fc8c6466a1p-6",
+          "0x1.ba1628b7ff784p-2",
+          "0x1.04f985dfc76c5p-5",
+          "0x1.430df0b213120p-5",
+          "0x1.3a15667bf904fp-5"
+        ],
+        [
+          "0x1.886686d37bd08p-5",
+          "0x1.163d7f776e5aap-4",
+          "0x1.1a9c4e6290ea7p-4",
+          "0x1.197e49e4bf963p-4",
+          "0x1.9583668998f79p-5",
+          "0x1.8def36b75cb22p-5",
+          "0x1.717703e13dd55p-5",
+          "0x1.86587fbb316ebp-5",
+          "0x1.0f2059f980126p-4",
+          "0x1.17b976dcdabcep-4",
+          "0x1.16ac81d880263p-4",
+          "0x1.0228eb04568e7p-4",
+          "0x1.6a1ac532bf70cp-4",
+          "0x1.199b10c5221b5p-4",
+          "0x1.0931ceb063297p-4",
+          "0x1.173cb20d5a8c7p-4"
+        ],
+        [
+          "0x1.909a2fd501108p-5",
+          "0x1.122e216503cf9p-4",
+          "0x1.0b9d48b23d9d9p-4",
+          "0x1.02b4e1d7056e1p-4",
+          "0x1.81b32bf091d92p-5",
+          "0x1.b558ee25023c5p-5",
+          "0x1.93b3e923a6be4p-5",
+          "0x1.a8ff2f9fde3ddp-5",
+          "0x1.0fb2e951b8c18p-4",
+          "0x1.1a9cb6316f52cp-4",
+          "0x1.22562d69ba7e2p-4",
+          "0x1.0b717f1d54114p-4",
+          "0x1.6ad21c1dd58bcp-4",
+          "0x1.01aadba6a666cp-4",
+          "0x1.0e84e71bd1a84p-4",
+          "0x1.0a39d7d027d5ep-4"
+        ],
+        [
+          "0x1.7a9a457b9fdb4p-5",
+          "0x1.0289cedba87c5p-4",
+          "0x1.2317e6c558060p-4",
+          "0x1.178bcfa68c8c7p-4",
+          "0x1.a49a37e6f173ep-5",
+          "0x1.74d1a36c60a8bp-5",
+          "0x1.b9bef4cd6d99ap-5",
+          "0x1.b5f7ff829436ap-5",
+          "0x1.18edd09acd2b9p-4",
+          "0x1.17153b06d8730p-4",
+          "0x1.06d11801ab9bcp-4",
+          "0x1.1e213b86a6d54p-4",
+          "0x1.590102b3ef188p-4",
+          "0x1.f5fe1bfed200cp-5",
+          "0x1.fcad9f1192c65p-5",
+          "0x1.19a7b0c2df81dp-4"
+        ]
+      ]
+    },
+    {
+      "config_id": "generated.continuous_full_loop_kernel_shell",
+      "ideal_real_seeded_snapshot_certified": false,
+      "kernel_data_sha256": "064a1fd8b76cc7384557c125c464679244e22ecd20d3cb5449fa768684977e9d",
+      "kernel_dimension": 20,
+      "panels": [
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              2,
+              3,
+              4,
+              15,
+              16,
+              19
+            ],
+            [
+              0,
+              1,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              17,
+              18
+            ]
+          ],
+          "lens": "spectral_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.603,
+          "transport_positive_power": 1,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              5
+            ],
+            [
+              11
+            ],
+            [
+              1
+            ],
+            [
+              6
+            ],
+            [
+              17
+            ],
+            [
+              7
+            ],
+            [
+              12
+            ],
+            [
+              8
+            ],
+            [
+              14
+            ],
+            [
+              15
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ],
+            [
+              13
+            ],
+            [
+              16
+            ],
+            [
+              18
+            ],
+            [
+              19
+            ]
+          ],
+          "lens": "row_similarity_cluster_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.603,
+          "transport_positive_power": 1,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              2,
+              3,
+              4,
+              16,
+              19
+            ],
+            [
+              0,
+              1,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          ],
+          "lens": "audit_flow_quantile_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.603,
+          "transport_positive_power": 1,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              2,
+              3,
+              4,
+              15,
+              16,
+              19
+            ],
+            [
+              0,
+              1,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              17,
+              18
+            ]
+          ],
+          "lens": "spectral_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.953,
+          "transport_positive_power": 1,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              5
+            ],
+            [
+              11
+            ],
+            [
+              1
+            ],
+            [
+              6
+            ],
+            [
+              17
+            ],
+            [
+              7
+            ],
+            [
+              12
+            ],
+            [
+              8
+            ],
+            [
+              14
+            ],
+            [
+              15
+            ],
+            [
+              0
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ],
+            [
+              9
+            ],
+            [
+              10
+            ],
+            [
+              13
+            ],
+            [
+              16
+            ],
+            [
+              18
+            ],
+            [
+              19
+            ]
+          ],
+          "lens": "row_similarity_cluster_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.953,
+          "transport_positive_power": 1,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        },
+        {
+          "completion_positive_power": 1,
+          "exact_fixed_probability_object_count": 1,
+          "exact_limit_frequency_weights": [
+            "1"
+          ],
+          "groups": [
+            [
+              2,
+              3,
+              4,
+              16,
+              19
+            ],
+            [
+              0,
+              1,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              17,
+              18
+            ]
+          ],
+          "lens": "audit_flow_quantile_lens",
+          "sampled_initial_count": 3,
+          "tau": 0.953,
+          "transport_positive_power": 1,
+          "weight_proof": "ALL mass-one starts converge to the unique fixed vector; transient rounded signatures are not separate exact fibers"
+        }
+      ],
+      "real_input_interpretation": "K_ij=v_ij/sum_j(v_ij), preserving support of the recorded binary-rational table",
+      "recorded_kernel_hex": [
+        [
+          "0x1.8c09f8c2c330dp-6",
+          "0x1.760a6cd6fabcap-6",
+          "0x1.132bc0d58a768p-3",
+          "0x1.26ae69275b148p-3",
+          "0x1.220ec0a631d7bp-3",
+          "0x1.6364c91caf9e1p-6",
+          "0x1.0c5f622213dfep-6",
+          "0x1.1401203e17ebep-6",
+          "0x1.4db58749d5ad8p-6",
+          "0x1.4150542bcd6ecp-6",
+          "0x1.210a55856ebf6p-6",
+          "0x1.5dac17a5f8ee2p-6",
+          "0x1.792ffc6a3e087p-6",
+          "0x1.1eb41b2149105p-6",
+          "0x1.37e0dc116be3dp-6",
+          "0x1.918b97cae83ccp-6",
+          "0x1.1f17e3d6de7a8p-3",
+          "0x1.dc54c2e74c28ap-7",
+          "0x1.37bbd16413e82p-6",
+          "0x1.21a59a8722f7fp-3"
+        ],
+        [
+          "0x1.0f4c0e1264cfdp-6",
+          "0x1.80df3daec88b6p-6",
+          "0x1.2a8634aa306b9p-3",
+          "0x1.28d0f840a96a8p-3",
+          "0x1.2403a51c227b1p-3",
+          "0x1.4c53bf2287b56p-6",
+          "0x1.0911b9ee69020p-6",
+          "0x1.26a3d7c272f01p-6",
+          "0x1.fa60cd83178f0p-7",
+          "0x1.139cb1fb21fa3p-6",
+          "0x1.edd93c8b06b0fp-7",
+          "0x1.52e875457a536p-6",
+          "0x1.2ac32eb7713a9p-6",
+          "0x1.498e3b2933a4dp-6",
+          "0x1.ff859da214ff5p-7",
+          "0x1.9842506b735efp-6",
+          "0x1.2b5083400f8a7p-3",
+          "0x1.4356a958681a2p-6",
+          "0x1.3f3d8c2630d76p-6",
+          "0x1.1e9c79c9f5207p-3"
+        ],
+        [
+          "0x1.12330f9af156bp-6",
+          "0x1.caff877dc3ffap-7",
+          "0x1.59ac44700d3b5p-3",
+          "0x1.3d2e096b73677p-3",
+          "0x1.3e27bc7fb2e1bp-3",
+          "0x1.ed6a2746b4eadp-7",
+          "0x1.1b1b8c024a290p-6",
+          "0x1.46e5ecc77491bp-6",
+          "0x1.e9fe7541fb8a9p-7",
+          "0x1.21766183bc26bp-6",
+          "0x1.d5a2b5e626dc9p-7",
+          "0x1.88c77d5efd765p-7",
+          "0x1.44c4bc8d17df1p-6",
+          "0x1.f09c5c7b875cdp-7",
+          "0x1.58b09eea5a342p-8",
+          "0x1.3dc94b7c35067p-6",
+          "0x1.2c7bef9b4214ep-3",
+          "0x1.ba31f167cf066p-7",
+          "0x1.27964bfbe139dp-7",
+          "0x1.3381f3c1536afp-3"
+        ],
+        [
+          "0x1.6a84aace7fa66p-6",
+          "0x1.78540ce44c934p-7",
+          "0x1.43f3557b144c8p-3",
+          "0x1.5e87df944bc61p-3",
+          "0x1.46fc26ce8ad18p-3",
+          "0x1.14c390968ac58p-6",
+          "0x1.cddc553a55121p-7",
+          "0x1.7373e7dd26b79p-7",
+          "0x1.71e772a97bb4bp-7",
+          "0x1.dda63a50f57e1p-7",
+          "0x1.7d46cffb02638p-7",
+          "0x1.7f4fb9a801423p-7",
+          "0x1.224437d9784bep-7",
+          "0x1.0fd0c8b0d5a0ep-6",
+          "0x1.e64c25349f3d7p-7",
+          "0x1.d92f747323b6cp-6",
+          "0x1.2ad5c9d26e551p-3",
+          "0x1.a65a6f3970a08p-7",
+          "0x1.83d315988ceacp-7",
+          "0x1.2b216516f129dp-3"
+        ],
+        [
+          "0x1.9f2e34e7e0a2fp-6",
+          "0x1.e39d4ad208ea0p-7",
+          "0x1.1a283de9fe6b8p-3",
+          "0x1.13d8eb1c838e5p-3",
+          "0x1.36a1df67b279dp-3",
+          "0x1.2d0bab47bae3ap-6",
+          "0x1.8b3020d51f530p-6",
+          "0x1.18cd61fbc34d6p-6",
+          "0x1.18ff994706b77p-6",
+          "0x1.29065ee51ddccp-6",
+          "0x1.05aa52f9d8029p-6",
+          "0x1.03c0517218b90p-6",
+          "0x1.865cfc4738052p-6",
+          "0x1.8714cae614372p-6",
+          "0x1.55e5b291fbb68p-6",
+          "0x1.a3419ae41bf98p-6",
+          "0x1.1e3548488efd6p-3",
+          "0x1.4653061197d36p-6",
+          "0x1.0b0b4c8086debp-6",
+          "0x1.1c79edc2593dcp-3"
+        ],
+        [
+          "0x1.34f14c267d2bfp-6",
+          "0x1.5a0eebfaed687p-6",
+          "0x1.2714200d8f8bcp-3",
+          "0x1.218ca8ef2fb4fp-3",
+          "0x1.2eed702631ab0p-3",
+          "0x1.25401e6b08c18p-6",
+          "0x1.54692deaf3f53p-6",
+          "0x1.f02d9e62125f8p-7",
+          "0x1.45d4e2f81ee25p-6",
+          "0x1.c99787f4982cap-7",
+          "0x1.68cb1daefa70dp-6",
+          "0x1.1a0262ae768fep-6",
+          "0x1.52b0a3d1bcdfbp-6",
+          "0x1.3ba1cd84e20a2p-6",
+          "0x1.23a486949ead6p-6",
+          "0x1.7c0477ecb7f07p-6",
+          "0x1.27aa0e34f8a27p-3",
+          "0x1.02dc52d2f22e7p-6",
+          "0x1.1c8d7f8f9494fp-6",
+          "0x1.21554101bd5a2p-3"
+        ],
+        [
+          "0x1.f24783daedfb7p-7",
+          "0x1.5395fa016423fp-6",
+          "0x1.2857026e49a53p-3",
+          "0x1.321f73fda1185p-3",
+          "0x1.1bd5b9729a511p-3",
+          "0x1.773b407fcb621p-6",
+          "0x1.3d6b8d200d960p-6",
+          "0x1.bb994d9bd2c3bp-7",
+          "0x1.5058501e99e3fp-6",
+          "0x1.d8e07fd223e89p-7",
+          "0x1.514eabbbaa7c8p-6",
+          "0x1.351ef3aa7fb2fp-6",
+          "0x1.2f9b03c41888bp-6",
+          "0x1.2cb57bfccff5ap-6",
+          "0x1.3974ff43feeedp-6",
+          "0x1.90df807143004p-6",
+          "0x1.29ba1ade76b1ep-3",
+          "0x1.283aa75b7fc0cp-6",
+          "0x1.2d223fd65ce62p-6",
+          "0x1.1c2d0c74b4ecap-3"
+        ],
+        [
+          "0x1.1876b137c9d3ep-6",
+          "0x1.5d2a50ee934fdp-6",
+          "0x1.19636b15e3d07p-3",
+          "0x1.1ea3e9850cb1bp-3",
+          "0x1.20f6727f56defp-3",
+          "0x1.eae8f681eab7fp-7",
+          "0x1.2516085b22805p-6",
+          "0x1.59ee93cdd99b0p-6",
+          "0x1.557d80afd2765p-6",
+          "0x1.493aa92077397p-6",
+          "0x1.1a1f91a984a45p-6",
+          "0x1.1d8fcc7fa4e74p-6",
+          "0x1.648e8e56a3affp-6",
+          "0x1.7886690d080fdp-6",
+          "0x1.3de9be753f0b0p-6",
+          "0x1.c062a38e5e964p-6",
+          "0x1.2189cb5125ee9p-3",
+          "0x1.79b919267e294p-6",
+          "0x1.105b72ca53144p-6",
+          "0x1.20b97cb85721fp-3"
+        ],
+        [
+          "0x1.5358ab88a6a9dp-6",
+          "0x1.429cb0dfe48acp-6",
+          "0x1.25b68e1cebf88p-3",
+          "0x1.1c0deee1d6b74p-3",
+          "0x1.24bf023795f28p-3",
+          "0x1.8dfbe2da90fb5p-6",
+          "0x1.227cb05366a16p-6",
+          "0x1.e80ceab7804ccp-7",
+          "0x1.67447ef9f3d9fp-6",
+          "0x1.5ce97898611e5p-6",
+          "0x1.0cb95280b59b7p-6",
+          "0x1.7842b7dd0a7fcp-6",
+          "0x1.02dfb5b0f0215p-6",
+          "0x1.1268b7ba18581p-6",
+          "0x1.60bb8e62ae978p-6",
+          "0x1.ba030b77e0f60p-6",
+          "0x1.160620d172de6p-3",
+          "0x1.5c20c69229d9ep-6",
+          "0x1.1437414b733c9p-6",
+          "0x1.1ef6b13782da4p-3"
+        ],
+        [
+          "0x1.bee1134d63249p-7",
+          "0x1.bba4ca74265a4p-7",
+          "0x1.2c94824a8dd6bp-3",
+          "0x1.2945adafe5863p-3",
+          "0x1.279958c34bd83p-3",
+          "0x1.255f4a6d1fbb2p-6",
+          "0x1.21563104efe25p-6",
+          "0x1.9ee0e29516762p-6",
+          "0x1.3be88e0def45ep-6",
+          "0x1.4c6a92bb0fc95p-6",
+          "0x1.3e1dda5c1bb13p-6",
+          "0x1.2f4ff04b99db1p-6",
+          "0x1.eec697d20c5f0p-7",
+          "0x1.267abbaa6c2b3p-6",
+          "0x1.474586ebb40ccp-6",
+          "0x1.5e62f7897f3e4p-6",
+          "0x1.1a470a941f015p-3",
+          "0x1.38ea47de70d18p-6",
+          "0x1.47f213dd8a9e0p-6",
+          "0x1.2ca5c96a79b92p-3"
+        ],
+        [
+          "0x1.5d38ba3020083p-6",
+          "0x1.7b814f6610dc3p-6",
+          "0x1.27479c0aea1aep-3",
+          "0x1.164567ef8a584p-3",
+          "0x1.1ed7a8536fbb9p-3",
+          "0x1.51dee4698d44cp-6",
+          "0x1.18893db7cc8fep-6",
+          "0x1.61153a4a98cd0p-6",
+          "0x1.87f325f6098efp-6",
+          "0x1.de640f4ebf084p-7",
+          "0x1.3c40d8e00c9cbp-6",
+          "0x1.71ff3d0994d21p-6",
+          "0x1.0cee3f537b2f1p-6",
+          "0x1.274f7cc7dda24p-6",
+          "0x1.cff3d34a3acb0p-7",
+          "0x1.96e125c9de079p-6",
+          "0x1.19fc00954b52ep-3",
+          "0x1.3dd4356069ee1p-6",
+          "0x1.810c0e45b502bp-6",
+          "0x1.222c9c059c57dp-3"
+        ],
+        [
+          "0x1.54dc99aa2b8d6p-6",
+          "0x1.153e533a3e34bp-6",
+          "0x1.2bb6e4f0e7a5bp-3",
+          "0x1.1cd8becca04c6p-3",
+          "0x1.2849d547774bep-3",
+          "0x1.4a4eee942958dp-6",
+          "0x1.48ccd749bd9c9p-6",
+          "0x1.18120a956b4b1p-6",
+          "0x1.5973cb52ed872p-6",
+          "0x1.160aefb9929abp-6",
+          "0x1.5af3fd05b0340p-6",
+          "0x1.3b64412d4b5c3p-6",
+          "0x1.129e578c8094dp-6",
+          "0x1.4086a9c420961p-6",
+          "0x1.174f8647e3c90p-6",
+          "0x1.4e2ff043bc98bp-6",
+          "0x1.268a7efe25eb3p-3",
+          "0x1.48ae61a659e54p-6",
+          "0x1.dcdf1fc5345f4p-7",
+          "0x1.273fc3fd4d2c3p-3"
+        ],
+        [
+          "0x1.4a43379309818p-6",
+          "0x1.48902d8588f46p-6",
+          "0x1.2808490ed7211p-3",
+          "0x1.2090573f50cf7p-3",
+          "0x1.212151e87931dp-3",
+          "0x1.e7c693663fb39p-7",
+          "0x1.35afa7a569118p-6",
+          "0x1.83bae3fe821dap-6",
+          "0x1.15f035d97c3c4p-6",
+          "0x1.21369d85593fdp-6",
+          "0x1.0debbef299e43p-6",
+          "0x1.001ee4ed9a8eap-6",
+          "0x1.4e3ef7ae0a75dp-6",
+          "0x1.394000d2fd829p-6",
+          "0x1.edbe95f713144p-7",
+          "0x1.061e2c7fc7e48p-5",
+          "0x1.1cdf62b943f0dp-3",
+          "0x1.1b90acea518a8p-6",
+          "0x1.5c87ec67419bap-6",
+          "0x1.2865ee208f70fp-3"
+        ],
+        [
+          "0x1.25096b4439a59p-6",
+          "0x1.1c6f035de8102p-6",
+          "0x1.1af2712f5a54ep-3",
+          "0x1.1dc3c5ad666eap-3",
+          "0x1.20ed9db9a243ap-3",
+          "0x1.2795bb53625a3p-6",
+          "0x1.413ad64aa08adp-6",
+          "0x1.2c36f16649631p-6",
+          "0x1.cf00bcd81311ap-7",
+          "0x1.14a8acd31c5a3p-6",
+          "0x1.5c6620c6bd4bbp-6",
+          "0x1.820f37b8f65d3p-6",
+          "0x1.1f380df1ad51ep-6",
+          "0x1.91a7b1435d2dap-6",
+          "0x1.38b711ce819dap-6",
+          "0x1.b0ab59f5e56fap-6",
+          "0x1.274f7ef1de8dap-3",
+          "0x1.e08fcf1f730a5p-7",
+          "0x1.980aa2f31fd6bp-6",
+          "0x1.24964b1b8c1cep-3"
+        ],
+        [
+          "0x1.65b5b2d1baf97p-6",
+          "0x1.3e8c3eacac894p-6",
+          "0x1.1d60570e80d37p-3",
+          "0x1.19d1a7c07bad8p-3",
+          "0x1.1eadae29f5912p-3",
+          "0x1.78c01db865407p-6",
+          "0x1.16e11bdc0ee68p-6",
+          "0x1.5c0b42623a9bbp-6",
+          "0x1.4b9c725d7a41dp-6",
+          "0x1.4992cab9ba293p-6",
+          "0x1.406d42e24396cp-6",
+          "0x1.0fe2b1f616be4p-6",
+          "0x1.53f0b04f9a4b9p-6",
+          "0x1.010747969b6bep-6",
+          "0x1.aaf165aa44b04p-6",
+          "0x1.a6e662344ad2ep-6",
+          "0x1.24c934e2ee67dp-3",
+          "0x1.2f56121368611p-6",
+          "0x1.f0c3c9218d114p-7",
+          "0x1.1cd8736a6c612p-3"
+        ],
+        [
+          "0x1.24bc805d4e9b8p-6",
+          "0x1.c53534278c0a2p-7",
+          "0x1.2428c637c6366p-3",
+          "0x1.1efa3bbb6c38fp-3",
+          "0x1.1677a13fd24bbp-3",
+          "0x1.87a9fb8b3daadp-6",
+          "0x1.ff79b1eca2ca2p-7",
+          "0x1.76ebc09f3d859p-6",
+          "0x1.313f5e4e7f2c3p-6",
+          "0x1.4a19cb6e14097p-6",
+          "0x1.6c43fd319e75bp-6",
+          "0x1.301296882bddfp-6",
+          "0x1.4d9347d24f610p-6",
+          "0x1.7a3c02e50cf56p-6",
+          "0x1.4f8de862b2df7p-6",
+          "0x1.d0b9268269712p-6",
+          "0x1.1a0fd6ec8995bp-3",
+          "0x1.5fc63d4d53c3bp-6",
+          "0x1.1f8008d4604fbp-6",
+          "0x1.1bbec447a4405p-3"
+        ],
+        [
+          "0x1.09a9d985f5062p-6",
+          "0x1.9d64e5fd9ebdep-6",
+          "0x1.0cf0912b51e94p-3",
+          "0x1.10536443cba76p-3",
+          "0x1.0c3622d3a3bbcp-3",
+          "0x1.3f972fca0fe4dp-6",
+          "0x1.7f98a3a14f16dp-6",
+          "0x1.4b7e55673a603p-6",
+          "0x1.5c597297ee9e0p-6",
+          "0x1.8706a529c2f0dp-6",
+          "0x1.43283159afc7fp-6",
+          "0x1.625fd201d9961p-6",
+          "0x1.7414c8996872bp-6",
+          "0x1.32d963416295bp-6",
+          "0x1.03bfbbe70fa30p-6",
+          "0x1.974ea95a594c8p-6",
+          "0x1.384618ef5e90fp-3",
+          "0x1.185b0d905af34p-6",
+          "0x1.39b1b45469ef0p-6",
+          "0x1.246a03ff54061p-3"
+        ],
+        [
+          "0x1.4a52922eb2d45p-6",
+          "0x1.4fc8f620ac2e7p-6",
+          "0x1.24eabb5a3de85p-3",
+          "0x1.2fefa719636d5p-3",
+          "0x1.16f151e452340p-3",
+          "0x1.335ed387568b9p-6",
+          "0x1.4381deb82afcfp-6",
+          "0x1.0c7d113aa10abp-6",
+          "0x1.67fa478547fc8p-6",
+          "0x1.1ab1c361ce261p-6",
+          "0x1.36b65eb4ebc61p-6",
+          "0x1.4504c76551a98p-6",
+          "0x1.1b419ced22346p-6",
+          "0x1.c225e6a356d83p-7",
+          "0x1.c42ff4dc212f6p-7",
+          "0x1.adef4d66b960cp-6",
+          "0x1.2859b1acf2921p-3",
+          "0x1.3771c9c8a310cp-6",
+          "0x1.308875d098757p-6",
+          "0x1.29d3c76c24db7p-3"
+        ],
+        [
+          "0x1.861e68b5f464ap-6",
+          "0x1.3a02fd96ac0b8p-6",
+          "0x1.1860b631ca98dp-3",
+          "0x1.1a59d998ae1c3p-3",
+          "0x1.185284739aad5p-3",
+          "0x1.1dd5b5331dc9ep-6",
+          "0x1.7ecbbf4311ae3p-6",
+          "0x1.71fe0330fe4b8p-6",
+          "0x1.9ed54335c7142p-6",
+          "0x1.e54662ed5c304p-7",
+          "0x1.2bf67c9fa5e3bp-6",
+          "0x1.369a1a560506bp-6",
+          "0x1.e4f29f3f0a34dp-7",
+          "0x1.38f05f8b17fa8p-6",
+          "0x1.7045e63fd1de2p-6",
+          "0x1.b2b226a6b839fp-6",
+          "0x1.27a40e8da20b8p-3",
+          "0x1.2ca6348cde0f2p-6",
+          "0x1.51d9682657c03p-6",
+          "0x1.1b5974e901299p-3"
+        ],
+        [
+          "0x1.19e59a7ae454cp-6",
+          "0x1.2c68cfc319493p-6",
+          "0x1.2518f8b58f4f2p-3",
+          "0x1.1886054051e88p-3",
+          "0x1.17d56a1d2c4c9p-3",
+          "0x1.37cce0ae608cap-6",
+          "0x1.56c45db89cbd1p-6",
+          "0x1.37cdd307275cap-6",
+          "0x1.1e927d4c4350cp-6",
+          "0x1.87064dfbfb6c3p-6",
+          "0x1.2f6e8f30807b4p-6",
+          "0x1.55fc1f3dd5fa1p-6",
+          "0x1.317b697421c3cp-6",
+          "0x1.2d5aea6f4890ap-6",
+          "0x1.d8b89d225cc1ap-7",
+          "0x1.9ee5d2d651871p-6",
+          "0x1.14f0cc78f2335p-3",
+          "0x1.687107c332b3ap-6",
+          "0x1.695e910ee0343p-6",
+          "0x1.3727ab0409b56p-3"
+        ]
+      ]
+    }
+  ],
+  "original_recorded_support_receipt": "results/packaging_completion_endomap/support_summary.json",
+  "original_recorded_support_receipt_sha256": "ce1b0ef1668c40d4a2fd25dbada095f07312c9dbac788d5d566fa92279ebc985",
+  "paper_current_state_family_interpretation_resolved": false,
+  "path_integrand": "product_t A_s(i_t,i_(t+1))/K_t(i_t,i_(t+1)); unchanged original A_s and original K path reference",
+  "reference_law": "sample actual warm audit object with weights w,1-w; independently sample return carrier with weights theta,1-theta; then its previously constructed fixed all-word law nu_i; use the same legal join and entry controls",
+  "reference_measure_construction_analytic": true,
+  "reference_measure_numerically_instantiated": false,
+  "required_claim_repair": "specify the reference law/fibers and independently establish conditional-pressure separation; structural strictness and well-defined profiles alone cannot imply it",
+  "same_shell_as_positive_gap_construction": true,
+  "saturation_and_material_fixed_completion_forcing": true,
+  "scope": "the SAME exact-real original-parameter twenty-state controlled shell, potential, current completion readout and coarse base as the all-word positive-gap construction",
+  "seeded_audited_shell_identified": false,
+  "strict_current_object_extension": true,
+  "weights_scope": "any fixed 0<w<1 and 0<theta<1; not asserted empirical frequencies",
+  "zero_gap_for_all_nonnegative_parameters_and_both_original_q_definitions": true
+}
