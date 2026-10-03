@@ -1,0 +1,80 @@
+\section{Growth pressure on the shell}\label{sec:pressure}
+
+The growth theory $\Tzero$ records how fast products of weighted transition matrices grow along the evolving substrate. This section defines that growth, proves that its pressure exists, and locates the pressure's zero.
+
+\subsection{Weighted histories}
+
+Fix one of the two selector observables $q\in\{q^{(1)},q^{(2)}\}$. For a state $x$ and a parameter $s\ge0$, the \emph{weighted transition matrix} is
+\[
+A_s(x)_{ij}=\bigl(e^{-q(x)}K(x)_{ij}\bigr)^{s},
+\]
+where $K(x)$ is the kernel before the transition and $q(x)$ is the observable of the transition from~$x$. The \emph{weighted history} of length $n$ is the ordered product
+\[
+C_{s,n}(x)=A_s(x)\,A_s(Fx)\cdots A_s(F^{n-1}x),\qquad C_{s,0}(x)=I.
+\]
+We measure it with the maximum row-sum norm $\norm{M}=\max_i\sum_j|M_{ij}|$, which for a nonnegative matrix is the largest entry of $M\one$. The \emph{envelope} and the \emph{growth pressure} of the shell are
+\[
+\Phi_n(s)=\sup_{x\in\Sh}\norm{C_{s,n}(x)},\qquad
+P_\Sh(s)=\lim_{n\to\infty}\frac1n\log\Phi_n(s).
+\]
+A path interpretation is useful later. If a microscopic Markov path $i_0,i_1,\dots$ is driven by the moving kernels $K(F^tx)$, then $C_{s,n}(x)\one$ is the vector of expectations of $\prod_{t<n}A_s(F^tx)_{i_ti_{t+1}}/K(F^tx)_{i_ti_{t+1}}$ given the starting state $i_0$. In this sense $C_{s,n}$ is a partition function over paths of length~$n$.
+
+\begin{lemma}[Branch bounds]\label{lem:branch-bounds}
+On~$\Sh$, for both observables, $\log(5/4)\le q\le\log 10$. Consequently every positive weight satisfies $\tfrac1{1000}\le e^{-q}K_{ij}\le\tfrac45$.
+\end{lemma}
+
+\begin{proof}
+The argument of each logarithm is $1$ plus a nonnegative combination of the final variation, the selected scores, $b'/12$, $\tau'$ and the action entropy. The phase windows and the selection rule force every selected lens score to be at least $0.42-0.03=0.39$. They likewise force every selected packaging score to be at least $0.46-0.048=0.412$, after allowing for hysteresis and the tie band. Since also $\tau'\ge0.6$, the combination in $q^{(1)}$ is at least $0.25\cdot0.39+0.30\cdot0.412+0.05\cdot0.6=0.2511>1/4$. The combination in $q^{(2)}$ has larger coefficients and is larger still. In the other direction, two stochastic rows differ by at most $\sqrt2$ in Euclidean norm, so $v_f\le\sqrt{2d}<7$. Lens scores are at most $1.25$, packaging scores at most $1$, $b'\le12$, $\tau'\le4$ and $H\le\log6<2$. The combination is therefore at most $7+0.28\cdot1.25+0.32+0.10+0.08\cdot4+0.05\cdot2=8.19<9$. Hence $\log(5/4)\le q\le\log10$ for both observables, and in particular the clamp of $q^{(2)}$ is inactive. Together with $1/100<K_{ij}\le1$ (Theorem~\ref{thm:shell}), this gives the weight bounds.
+\end{proof}
+
+\subsection{Existence and shape of the pressure}
+
+\begin{theorem}[Growth pressure]\label{thm:pressure}
+For each observable $q\in\{q^{(1)},q^{(2)}\}$ and every $s\ge0$, the limit $P_\Sh(s)$ exists and is finite. Moreover:
+\begin{enumerate}
+  \item for $0\le s\le t$,
+  \[
+  -(t-s)\log 1000\;\le\;P_\Sh(t)-P_\Sh(s)\;\le\;-(t-s)\log\tfrac54;
+  \]
+  in particular $P_\Sh$ is Lipschitz and strictly decreasing on $[0,\infty)$;
+  \item $P_\Sh(0)=\log 20$, $P_\Sh(1/3)\ge\log 2$ and $P_\Sh(1)\le-\log(5/4)$;
+  \item $P_\Sh$ has exactly one zero on $[0,\infty)$, and it lies in $(1/3,1)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Write $a=1/1000$ and $\beta=4/5$.
+
+\emph{Existence.} Products split as $C_{s,n+m}(x)=C_{s,n}(x)\,C_{s,m}(F^nx)$, and $F^nx\in\Sh$ by Theorem~\ref{thm:shell}. Since the norm is submultiplicative, $\Phi_{n+m}(s)\le\Phi_n(s)\Phi_m(s)$. All entries of $A_s$ lie in $[a^s,\beta^s]$, so for $n\ge1$ every product has entries between $d^{\,n-1}a^{sn}$ and $d^{\,n-1}\beta^{sn}$, and
+\[
+(d\,a^{s})^{n}\le\Phi_n(s)\le(d\,\beta^{s})^{n}.
+\]
+By Fekete's lemma \cite{Fekete1923DistributionRoots}, $\frac1n\log\Phi_n(s)$ converges to $\inf_{n\ge1}\frac1n\log\Phi_n(s)$, which lies in $[\log d+s\log a,\;\log d+s\log\beta]$.
+
+\emph{Secant bounds.} For $t\ge s$ and every state, $a^{t-s}A_s(x)_{ij}\le A_t(x)_{ij}\le\beta^{t-s}A_s(x)_{ij}$ entrywise. Products of nonnegative matrices preserve entrywise inequalities, so $a^{n(t-s)}C_{s,n}\le C_{t,n}\le\beta^{n(t-s)}C_{s,n}$. The norm and the supremum preserve these inequalities. Taking $\frac1n\log$ and letting $n\to\infty$ gives item~1.
+
+\emph{Anchors.} At $s=0$ every weighted matrix is the all-ones matrix, because all kernel entries are positive. Then $\Phi_n(0)=d^n$ and $P_\Sh(0)=\log 20$. At $s=1$ the rows of $A_1(x)$ sum to $e^{-q(x)}\le\beta$, because $K$ is stochastic. Hence $\Phi_n(1)\le\beta^n$. At $s=1/3$ every entry is at least $a^{1/3}=1/10$, so every row sum is at least $2$ and every $n$-step product has row sums at least $2^n$; hence $P_\Sh(1/3)\ge\log 2$.
+
+\emph{Zero.} $P_\Sh$ is continuous and strictly decreasing, positive at $1/3$ and negative at $1$, so it has exactly one zero, and the zero lies in $(1/3,1)$.
+\end{proof}
+
+All bounds in the proof are uniform over the shell. They are not assumptions about the limiting rate along a particular input word. Theorem~\ref{thm:pressure} also does not assert that $\frac1n\log\norm{C_{s,n}(x)}$ converges for every individual state.
+
+\begin{remark}[Why a multiplicative history]
+Pressure must be computed from the products $C_{s,n}$, not from a sum over time. The additive alternative $Z_n(s)=\sum_{t<n}e^{-s\,q(F^tx)}$ satisfies $n\,e^{-sM}\le Z_n(s)\le n\,e^{sM}$ whenever $|q|\le M$. Its logarithmic growth rate is therefore identically zero, and it carries no thermodynamic information.
+\end{remark}
+
+\begin{remark}[Sharper location of the zero]
+The interval certificates of Section~\ref{sec:positive-gap} enclose $P_\Sh(s)$ at $s\in\{1/2,3/4,1,5/4,3/2\}$ to within $10^{-13}$ (Figure~\ref{fig:pressure}). They give $P_\Sh(3/4)\approx0.299$ for $q^{(1)}$ and $\approx0.256$ for $q^{(2)}$, and $P_\Sh(1)\approx-0.546$ and $\approx-0.603$. For both observables the zero therefore lies in $(3/4,1)$. This refinement uses the return theorem behind Proposition~\ref{prop:positive-gap}. Theorem~\ref{thm:pressure} itself uses only the uniform bounds above.
+\end{remark}
+
+\begin{figure}[t]
+\centering
+\input{figures/fig_pressure}
+\caption{Growth pressure on the controlled shell. The shaded cone is the region allowed by Theorem~\ref{thm:pressure}: it starts at $\log 20$ and is bounded by slopes $-\log 1000$ and $-\log(5/4)$. The bar marks the constraint $P_\Sh(1)\le-\log(5/4)$. The markers are the values of $P_\Sh(s)$ for the two selector observables, rounded to six decimals from certified intervals whose widths are below $10^{-13}$. The certified zero interval $(1/3,1)$ is shaded on the axis.}
+\label{fig:pressure}
+\end{figure}
+
+\begin{remark}[No dimension claim]
+For a self-similar set generated by similarities satisfying the open set condition, the zero of the pressure built from the contraction ratios is its Hausdorff dimension \cite{Moran1946AdditiveFunctions,Hutchinson1981Fractals}, and Bowen's formula gives analogous identities in certain conformal settings \cite{Bowen1979Quasicircles}. We make no such identification here: $P_\Sh$ is the growth pressure of a declared observable on a declared shell. It is not shown to compute the dimension of any limit set.
+\end{remark}

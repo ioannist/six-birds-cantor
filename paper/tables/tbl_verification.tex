@@ -1,0 +1,20 @@
+\begin{table}[t]
+\caption{How each result is established. \emph{Lean}: checked by the Lean kernel. \emph{Exact/interval}: exact rational computation, or outward-rounded rational interval arithmetic over boxes covering the stated domain. \emph{Analytic}: argued in the text.}
+\label{tbl:verification}
+\centering
+\small
+\begin{tabular}{@{}p{0.27\linewidth} p{0.22\linewidth} p{0.2\linewidth} p{0.22\linewidth}@{}}
+\toprule
+Result & Lean & Exact/interval & Analytic \\
+\midrule
+Thm.~\ref{thm:shell} (controlled shell) & target control, timescale, budget, all-time induction & all phase boxes, entry prefix, knockouts & source-formula correspondence \\
+Thm.~\ref{thm:pressure} (growth pressure) & existence from row bounds; secants $\Rightarrow$ unique zero in $(1/3,1)$ & branch bounds on $q$ & source-to-score bounds \\
+Lem.~\ref{lem:completion-object} (completion objects) & positive prototype completion has a unique attracting fixed point & --- & uniform entry floor on~$\Sh$ \\
+Thm.~\ref{thm:strict-extension} (strict extension) & twenty-state objects, history norms, non-factorization & joining bounds, equal final variations & membership of the warm states in~$\Sh$; equal $q$ at the join \\
+Thm.~\ref{thm:blindness} (growth blindness) & matched histories, bounded-factor comparison & --- & common later states \\
+Prop.~\ref{prop:finite-disintegration} & complete & --- & --- \\
+Prop.~\ref{prop:zero-gap} (zero gap) & integrated bounds, zero gap & two-step partition difference & common future law \\
+Prop.~\ref{prop:positive-gap} (positive gap) & reference pressure from small losses; gap from intervals & return-block enclosures & return map, Schreiber's theorem, law construction \\
+\bottomrule
+\end{tabular}
+\end{table}

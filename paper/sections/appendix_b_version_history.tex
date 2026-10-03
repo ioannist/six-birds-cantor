@@ -1,0 +1,14 @@
+\section{Version history}\label{app:version-history}
+
+\paragraph{v1 (31 March 2026).} First public version.
+
+\paragraph{v2 (19 April 2026).} Editorial revision of v1, with no change to the mathematical claims.
+
+\paragraph{v3 (3 October 2026).} A substantive mathematical revision following an audit of the v1/v2 arguments. The title is unchanged. The main changes are the following.
+\begin{enumerate}
+  \item \emph{Explicit shell.} The ``audited shell'' of v1/v2 was described through assumed properties (shell preservation, persistent activity, noncollapse), and its preservation was supported by finite simulations. It is replaced by the explicitly constructed controlled shell of Section~\ref{sec:shell}, whose invariance is proved, together with certified nonredundancy of the six mechanisms.
+  \item \emph{Pressure definition.} The v1/v2 pressure was implemented as a logarithm of a sum over time of bounded weights, and such a quantity has identically zero growth rate. It is replaced by the multiplicative history pressure of Section~\ref{sec:pressure}, with full proofs of existence, monotonicity and the location of its zero.
+  \item \emph{Strict extension.} The v1/v2 strict-extension evidence compared rounded descriptors and counted unconverged transient signatures as fixed points. It is replaced by an exact witness: unique completion objects (Lemma~\ref{lem:completion-object}), an explicit base description (Definition~\ref{def:base}) and two shell states that agree on it while their completion objects differ (Theorem~\ref{thm:strict-extension}).
+  \item \emph{Fourth result.} v1/v2 asserted that strict extension yields a nontrivial conditional pressure gap over packaging fibers. That implication does not hold, and the claim is withdrawn. It is replaced by the growth-blindness theorem (Theorem~\ref{thm:blindness}) and the analysis of Section~\ref{sec:disintegration}: the gap is zero under one admissible reference law and positive under another. The positive case is retained as a constructed example (Proposition~\ref{prop:positive-gap}).
+  \item \emph{Verification.} A Lean~4 development and exact rational interval certificates were added (Section~\ref{sec:verification}). The support-only diagnostics and sampled-witness tables of v1/v2 were removed.
+\end{enumerate}

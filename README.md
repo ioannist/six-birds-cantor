@@ -8,32 +8,31 @@ This repository contains the **Cantor instantiation** for the paper:
 >
 > Repository: https://github.com/ioannist/six-birds-cantor
 
-This paper develops an audited-shell Cantor theorem package for a canonical hybrid object built from a cocycle-pressure base theory and a completion-based extension. The repository contains the frozen internal theorem-package artifacts, manuscript source, supporting diagnostics, publication ledgers, and the static web app scaffold used to package the audited outputs.
+The manuscript (version v3, 3 October 2026; v1 31 March 2026, v2 19 April 2026) studies a twenty-state self-rewriting stochastic substrate driven by six coupled mechanisms. It proves four results:
 
-The active mathematical revision is documented in
-[the revised theorem package](docs/internal/revised_main_theorem_package_2026_10_03.md).
-It studies an explicitly constructed controlled continuous shell, its
-multiplicative history pressure, and distinct completion objects invisible to
-the specified growth observations. Structural extension does not imply a
-positive pressure gap. The positive-gap reference law is a secondary
-constructed example. The manuscript and frozen publication artifacts await
-the later editing phase; their historical closure labels are not mathematical
-certificates for the revised results.
+1. **Controlled shell.** An explicitly constructed, forward-invariant controlled Cantor shell exists for the unmodified update law.
+2. **Growth pressure.** The multiplicative growth pressure on this shell exists, is Lipschitz and strictly decreasing, and has a unique zero in (1/3, 1).
+3. **Strict extension.** Two shell states have identical growth descriptions but different completion objects.
+4. **Growth blindness.** For those two states, all weighted history matrices coincide from the second step onward.
+
+Strict extension therefore does not force a conditional pressure gap. On the same shell, one reference law gives a zero gap and another gives a certified positive gap; the positive case is a secondary constructed example.
+
+The mathematics follows [the revised theorem package](docs/internal/revised_main_theorem_package_2026_10_03.md). Historical closure labels in older internal ledgers (the v1/v2 "theoremlets") are not mathematical certificates for these results. Appendix B of the paper records the version history.
 
 ## What this repository provides
 
-- **Frozen theorem-package artifacts** under `docs/internal/` and `results/`, including the final claim ledger, traceability matrix, contribution delta map, publication-risk audit, and manuscript handoff bundle.
-- **Core audited-shell theoremlets** for continuous full-loop lawfulness, cocycle pressure closure, strict theory extension, and conditional pressure disintegration.
 - **Manuscript source** under `paper/`, including figures, tables, bibliography, compiled PDF output, and flattened TeX output at `paper/build/main_flat.tex`.
-- **Static web app scaffold** under `apps/cantor-web/` for later data-driven visualization of frozen exported JSON.
-- **Regression tests and builders** for theorem-package assembly, manuscript consistency, compile cleanup, and handoff generation.
+- **Lean 4 development** under `lean/`, covering the twenty-state witness, the matrix-pressure and disintegration arguments, and the shell induction. See `lean/README.md`.
+- **Exact rational and interval certificates** under `results/` (controlled shell, all-word pressure, common-input zero gap), together with their generators under `src/` and `scripts/`.
+- **Internal notes** under `docs/internal/`, including the revised theorem package and the historical v1/v2 artifacts.
+- **Static web app scaffold** under `apps/cantor-web/`.
 
 ## Scope and limitations
 
-- The manuscript core is restricted to the audited shell; it does not claim a broader-class theorem beyond that shell-stable class.
-- The paper does not claim a shell-general theorem, a non-SFT breadth theorem beyond what is closed, a direct stratumwise root-separation theorem, or a packaging-induced broader theorem class claim.
-- Support-only diagnostics remain support-only; they do not enlarge the theorem package.
-- The theorem-level contribution is theory depth on a fixed audited shell, not unrestricted family breadth.
+- The shell is a class of legally controlled orbits. The paper does not claim positive probability under the original independent innovation law, nor that seeded floating-point runs reach the shell.
+- All statements concern the exact-real reading of the update formulas.
+- Strictness is relative to the stated growth description. The full labelled kernel determines the completion object.
+- The pressure is the growth pressure of a declared observable; no dimension identity is claimed.
 
 ## Install
 

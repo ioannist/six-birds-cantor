@@ -1,0 +1,24 @@
+\section{Discussion}\label{sec:discussion}
+
+\paragraph{What the results show.}
+On an explicit, invariant and nondegenerate class of states of a self-rewriting stochastic substrate, there are two levels of description. The growth theory has a well-behaved pressure function. The completion theory retains the growth theory and strictly extends it. The extension is genuine but has no thermodynamic shadow: two states with different completion objects have identical growth observations, and from the second step on their weighted history products are equal. A thermodynamic separation can be produced, but only by choosing a reference law that correlates the completion object with the future. On the same shell another legal choice removes it.
+
+\paragraph{Limitations.}
+We list the boundaries of the results explicitly.
+\begin{enumerate}
+  \item \emph{Controlled, not typical.} The shell consists of legally controlled orbits. We do not show that the original independent innovation law gives positive probability to~$\Sh$, nor that the seeded simulations of the original implementation reach it.
+  \item \emph{Exact-real reading.} All statements concern the exact-real interpretation of the update formulas. Floating-point arithmetic may break exact ties, for example in the uniform informant along the entry prefix, differently.
+  \item \emph{Strictness relative to a base.} The completion object does not factor through the stated growth description. It does factor through the full labelled kernel. Theorem~\ref{thm:strict-extension} is a statement about what the growth description can see.
+  \item \emph{Pressure of a declared observable.} $P_\Sh$ is the growth pressure of the declared selector-weighted histories on~$\Sh$. It is not identified with a dimension, and pointwise convergence along individual futures is not asserted.
+  \item \emph{Constructed reference laws.} The laws in Propositions~\ref{prop:zero-gap} and~\ref{prop:positive-gap} are constructed analytically. They are not the law of the original experiment, and the positive-gap law is not supported in a single fiber of the base description.
+  \item \emph{Witness dimension.} All results concern the twenty-state pilot configuration. No statement is made about the sixteen-state configuration or about other parameter shells.
+\end{enumerate}
+
+\paragraph{Open problems.}
+Several questions are left open.
+\begin{itemize}
+  \item \emph{Typical inputs.} Does the original independent innovation law keep the system in a neighbourhood of~$\Sh$ with positive probability, or does it admit a random invariant set with the same properties?
+  \item \emph{The natural law.} For the original innovation law, are the conditional pressures over completion objects separated?
+  \item \emph{A detecting invariant.} Which quantitative invariant does detect completion objects? Finite-horizon partition functions do, at bounded scale. One would like a functional that does not disappear in the logarithmic limit, for example a relative entropy rate of the completed versus the base dynamics.
+  \item \emph{Geometry.} The admissible futures form a Cantor space and the shell carries a growth pressure. Is there a natural measure or dimension theory on the induced family of kernel histories for which $P_\Sh$ has a geometric meaning?
+\end{itemize}

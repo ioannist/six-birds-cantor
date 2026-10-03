@@ -18,7 +18,7 @@
     "system": "Linux"
   },
   "python": {
-    "executable": "/home/ioannis/.local/bin/python",
+    "executable": "~/.local/bin/python",
     "implementation": "CPython",
     "major": 3,
     "micro": 12,
@@ -93,7 +93,7 @@
     "elan": {
       "available": true,
       "error": null,
-      "path": "/home/ioannis/.elan/bin/elan",
+      "path": "~/.elan/bin/elan",
       "version": "elan 4.1.2 (58e8d545e 2025-05-26)"
     },
     "gcc": {
@@ -111,13 +111,13 @@
     "lake": {
       "available": true,
       "error": null,
-      "path": "/home/ioannis/.elan/bin/lake",
+      "path": "~/.elan/bin/lake",
       "version": "Lake version 5.0.0-src+7e01a1b (Lean version 4.28.0)"
     },
     "lean": {
       "available": true,
       "error": null,
-      "path": "/home/ioannis/.elan/bin/lean",
+      "path": "~/.elan/bin/lean",
       "version": "Lean (version 4.28.0, x86_64-unknown-linux-gnu, commit 7e01a1bf5c70fc6167d49c345d3bf80596e9a79b, Release)"
     },
     "make": {

@@ -37,3 +37,31 @@ results/*
 # Local snapshot packaging artifacts
 .package-repo-snapshot-version
 six-birds-cantor_snapshot_v*.zip
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+.netrc
+
+# Local AI-agent state, transcripts and settings (never commit)
+/.claude/
+/.codex/
+CLAUDE.local.md
+.claude/settings.local.json
+.codex_thread_id
+*.codex.jsonl
+.cursor/
+.aider*
+
+# Vendored AI-agent instructions, memory and prompts (kept on disk, not tracked)
+/vendors/six-birds-pica/.claude/
+/vendors/six-birds-pica/CLAUDE.md
+/vendors/six-birds-pica/agent.md
+/vendors/six-birds-pica/lab/*prompt*.md
+/vendors/six-birds-pica/scripts/prompt_for_particle_agent.md
+
+# Zenodo release artifacts (rebuildable; uploaded to Zenodo)
+/paper/submission/artifacts/

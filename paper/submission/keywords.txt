@@ -1,7 +1,8 @@
 Cantor-dynamics
+Products-of-nonnegative-matrices
+Matrix-pressure
 Thermodynamic-formalism
 Theory-extension
-Pressure-closure
-Conditional-disintegration
-Packaging-completion
+Non-factorization
+Formal-verification
 Six-Birds-Theory

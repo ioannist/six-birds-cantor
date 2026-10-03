@@ -1,0 +1,18 @@
+\begin{table}[t]
+\caption{Nonredundancy of the six mechanisms (Theorem~\ref{thm:shell}, item~6). The state is cyclic phase~$0$ with $\tau=0.6$ and $b=3$. Each row disables one mechanism through the implementation's own knockout switch and keeps the standardized innovation word fixed. The certified lower bounds already include the effect of the budget-dependent innovation amplitude.}
+\label{tbl:nonredundancy}
+\centering
+\small
+\begin{tabular}{@{}l l l@{}}
+\toprule
+Disabled & Effect of the knockout & Certified change \\
+\midrule
+P1 rewrite & no move toward the packaging target & cross-half kernel entry, $>1.30\cdot10^{-3}$ \\
+P2 gating & no viability gate or fallback blend & same kernel entry, $>1.15\cdot10^{-2}$ \\
+P3 timescale & phase and timescale frozen & budget (phase-dependent cost), $=1.728\cdot10^{-2}$ \\
+P4 lens & lens scores damped, support halved & cross-half kernel entry, $>8.6\cdot10^{-5}$ \\
+P5 packaging & fallback packaging, score $0$ & class-$A$ mass of a row, $>0.156$ \\
+P6 budget & budget frozen, no innovation & budget, $>0.187$ \\
+\bottomrule
+\end{tabular}
+\end{table}

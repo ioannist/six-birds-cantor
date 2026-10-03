@@ -1,0 +1,102 @@
+\section{A lawful controlled Cantor shell}\label{sec:shell}
+
+We now construct the set of states on which every later statement is made. It is defined in the original coordinates and uses the original constants, and it is invariant under the original update law~$F$, with no projection, minorization or retuning. What makes invariance possible is the control of the inputs: each future innovation is chosen inside its legal range so that the next kernel lands exactly on a prescribed target.
+
+\subsection{Cyclic targets and the Cantor parameter}
+
+Partition $[d]$ into three physical classes $A=\{0,\dots,4\}$, $B=\{5,\dots,9\}$ and $C=\{10,\dots,19\}$, of sizes $(5,5,10)$. A \emph{class-structured kernel} is constant on each block $a\times b$ of the partition, except for an additional diagonal excess $h_a$ on the states of class~$a$. It is determined by a stochastic $3\times 3$ aggregate matrix and the three excesses. We fix twelve rational class-structured kernels $K_0,\dots,K_{11}$, one per phase. They were found by a numerical search and then rounded to rationals with exact row-mass preservation. Their status comes from the certificates below, not from that search. A second family $K^{\circ}_k=\tfrac{99}{100}K_k+\tfrac{1}{100}J$ mixes each of them $1\%$ toward the uniform kernel.
+
+Let $r=10^{-14}$ and let $\Cr=\{r\sum_{m\ge1}2a_m3^{-m}:a_m\in\{0,1\}\}$ be the middle-thirds Cantor set scaled to $[0,r]$. For $\theta\in\Cr$ set
+\[
+K_k(\theta)=(1-\theta)K_k+\theta J,\qquad K^{\circ}_k(\theta)=(1-\theta)K^{\circ}_k+\theta J.
+\]
+These are genuinely different real kernels for different $\theta$, because no $K_k$ equals $J$. A \emph{parameter word} is a sequence $(\theta_1,\theta_2,\dots)\in\Cr^{\N}$. Its entries are chosen independently of one another, so the word need not be constant or periodic.
+
+The certified \emph{selector schedule} is as follows. From a state in phase $k\in\{0,1,2,3\}$ the selected pair is (spectral lens, cluster packaging), for $k\in\{4,\dots,7\}$ it is (row-similarity lens, return packaging), and for $k\in\{8,\dots,11\}$ it is (audit lens, budget packaging). The timescale box at phase~$k$ is
+\[
+\mathcal{T}_k=\bigl[\,0.6,\;0.6+0.0132\,((k-1)\bmod 4)\,\bigr],
+\]
+whose largest upper end is $0.6396$.
+
+\subsection{The shell}
+
+\begin{definition}[Controlled shell]\label{def:shell}
+For $i\in\{0,1\}$, let $\Sh_i^{\mathrm{cyc}}$ be the set of states $x=(K,\tau,b,k,\varrho,\lambda,\pi,\omega)$ with the following properties.
+\begin{enumerate}
+  \item $K=K_k(\theta)$ (if $i=0$) or $K=K^{\circ}_k(\theta)$ (if $i=1$), for some $\theta\in\Cr$.
+  \item $\tau\in\mathcal{T}_k$ and $b\in[3,12]$.
+  \item The protocol label $\varrho$ is the one determined by the phase~$k$, and the selector records $\lambda,\pi$ are those of the schedule at the preceding phase.
+  \item There is a parameter word $(\theta_t)_{t\ge1}\in\Cr^{\N}$ such that the input word $\omega$ makes the $t$-th future kernel equal to the target of the same family at phase $k+t$ with parameter $\theta_t$. Concretely, the $t$-th innovation is that target minus the pre-innovation operator of the $(t-1)$-st future state.
+\end{enumerate}
+The \emph{warm entry} consists of the two warm states $\xp,\xm$ of Section~\ref{sec:extension}, which are at phase~0 with $\tau=3/5$, budget~$12$, and a previous audit/budget selection on record, together with a fixed joining step to a common kernel~$R$ and a certified $24$-step entry prefix whose last step lands at any admissible phase-one kernel coordinate of either cyclic family, with $\tau=3/5$ and budget~$12$. The \emph{controlled shell}~$\Sh$ is the union of $\Sh_0^{\mathrm{cyc}}$, $\Sh_1^{\mathrm{cyc}}$ and the forward orbits of the warm entry under all admissible parameter words.
+\end{definition}
+
+A state of~$\Sh$ thus consists of bounded physical and selector data together with a prescribed admissible future. The definition is not circular. Item~4 requires each innovation to be \emph{some} matrix; Theorem~\ref{thm:shell} proves that the matrix so defined is a legal innovation for the original update, that the selectors make the scheduled choices, and that the result is again in~$\Sh$.
+
+\begin{theorem}[Lawful controlled shell]\label{thm:shell}
+The controlled shell~$\Sh$ has the following properties.
+\begin{enumerate}
+  \item \emph{Invariance.} $\Sh$ is nonempty and $F(\Sh)\subseteq\Sh$. For every physical and selector tuple occurring in $\Sh_0^{\mathrm{cyc}}\cup\Sh_1^{\mathrm{cyc}}$, every parameter word in $\Cr^{\N}$ is realized by a legal input augmentation, so the resulting target-kernel futures form a Cantor space.
+  \item \emph{Legal inputs and isolated selectors.} Along every orbit in~$\Sh$, each required innovation has all entries of modulus below $10^{-3}$, whereas the legal amplitude is at least $2.5\cdot10^{-3}$. Every lens and packaging selection beats its competitors by more than $0.03$, more than both hysteresis thresholds and the tie band, so no randomized tie-break is ever used.
+  \item \emph{Positive kernels.} Every kernel on~$\Sh$ is stochastic with all entries above $1/100$.
+  \item \emph{Timescale and budget.} On the cyclic part, $\tau\in\mathcal{T}_k\subseteq[0.6,0.6396]$, and $\tau$ is reset exactly to $0.6$ at the phases where the selectors switch. The budget stays in $[3,12]$ and increases strictly until it reaches the cap~$12$.
+  \item \emph{Persistent variation.} In the cyclic part, the entry $K_{00}$ changes by more than $0.0275$ at every transition from phase~$8$ to phase~$9$, so the kernel never freezes.
+  \item \emph{Nonredundancy.} For each mechanism P$m$ there is a state of~$\Sh$ at which disabling P$m$, while keeping the standardized innovation fixed, changes a physical coordinate of the update by the certified amount in Table~\ref{tbl:nonredundancy}.
+\end{enumerate}
+\end{theorem}
+
+Item~6 is a statement of nonredundancy. Each mechanism changes the physical law somewhere on the shell. It does not say that every mechanism is needed for every theorem or affects every coordinate at every state.
+
+\subsection{Proof of Theorem~\ref{thm:shell}}
+
+The proof has three exact lemmas, which are mechanized, one family of interval certificates, and an induction.
+
+\begin{lemma}[Target control]\label{lem:target-control}
+Let $W$ be a stochastic matrix and let $T$ be a stochastic matrix with nonnegative entries. If $\max_{ij}|T_{ij}-W_{ij}|\le\sigma$, then $N=T-W$ is a legal innovation of amplitude~$\sigma$ and $\operatorname{rownorm}(\max(0,W+N))=T$ exactly.
+\end{lemma}
+
+\begin{proof}
+$W+N=T$ has nonnegative entries, so the clip does nothing, and its rows already sum to one, so the renormalization does nothing.
+\end{proof}
+
+\begin{lemma}[Timescale]\label{lem:timescale}
+If $v\ge0$ and no selector switches, then $\tau'\le\max(0.6,\tau+0.0132)$. If both selectors switch and $\tau\le0.6396$, then $\tau'=0.6$.
+\end{lemma}
+
+\begin{proof}
+The increment $0.11\max(0,0.12-v)-0.06v$ is at most $0.11\cdot0.12=0.0132$. With both switches the argument of the clamp is at most $0.6396+0.0132-0.12<0.6$.
+\end{proof}
+
+\begin{lemma}[Budget]\label{lem:budget}
+If $I-C>0$ and $b\in[3,12]$, then $b'\in[3,12]$. If moreover $b<12$, then $b'>b$.
+\end{lemma}
+
+\begin{proof}
+$b'=\min(12,\max(0,b+I-C))$, and $b+I-C>b\ge 3$.
+\end{proof}
+
+\paragraph{Interval certificates.}
+For every phase $k$ and both families, we cover the set of possible states by boxes. There are eighteen budget cells covering $[3,12]$ and four timescale cells covering $\mathcal{T}_k$, and the current and next kernel parameters each range over the whole interval $[0,r]$. The Cantor set is contained in this interval, so these boxes cover every state of the cyclic part. On each box we evaluate the original formulas in exact rational interval arithmetic, rounding every endpoint outward to the grid $10^{-25}$. Square roots use integer square roots. Logarithms use range reduction to $[1,2]$ and the series $\log y=2\sum_{j\ge0}t^{2j+1}/(2j+1)$, $t=(y-1)/(y+1)$, with an explicit remainder bound. Exponentials use a Taylor polynomial with remainder and repeated squaring. No floating-point transcendental routine supplies an endpoint. On every box the computation certifies the following.
+\begin{itemize}
+  \item The finite informant stops at a fixed iteration count, so no stopping surface is crossed.
+  \item The scheduled lens and packaging win by more than $0.03$.
+  \item The return and budget cores are the intended ones.
+  \item Every P2 row viability is below $0.18$, so every row uses the fallback blend.
+  \item The net budget gain satisfies $I-C>0.018$.
+  \item The innovation needed to reach the next target has modulus below $5.4\cdot10^{-4}$.
+  \item All target entries exceed $0.014$.
+\end{itemize}
+Table~\ref{tbl:shell-certificates} lists the extreme values over all boxes. The same certification covers the joining step and the $24$-step entry prefix. On the entry prefixes the innovation bound is $6.3\cdot10^{-4}$, the first eight prefix kernels are exactly doubly stochastic with equal diagonals, and the last step is certified against the entire phase-one kernel-parameter box, so it can land at any admissible phase-one kernel coordinate of either cyclic family, with $\tau=3/5$ and budget~$12$.
+
+\input{tables/tbl_shell_certificates}
+
+\paragraph{Induction.}
+Let $x\in\Sh$. The certificates and Lemma~\ref{lem:target-control} show that the prescribed innovation is legal and that $F(x)$ has exactly the prescribed next kernel. The selector records and the phase follow the schedule. By Lemmas~\ref{lem:timescale} and~\ref{lem:budget}, $\tau$ and $b$ stay in their boxes; within each block of four phases the timescale grows by at most $0.0132$ per step and is reset at the block boundary. Hence $F(x)\in\Sh$. Induction on the number of steps gives the whole forward orbit, which proves items~1--4. Item~5 is a further interval certificate: the phase-$8$ and phase-$9$ entries $K_{00}$ differ by more than $0.0278$ for the first family and by more than $0.0275$ for the second, uniformly over both independent parameters.
+
+For item~6 we take the cyclic state at phase~$0$ with $\tau=0.6$ and $b=3$, apply each knockout with the \emph{same} standardized innovation $N/\sigma$, and do not recompute a compensating input. The knockout may change the budget and hence~$\sigma$. The resulting change of innovation is at most $3.1\cdot10^{-6}$, and this loss is already deducted in the table. The affected rows stay strictly positive, so clipping and renormalization cannot erase the differences. \qed
+
+\input{tables/tbl_nonredundancy}
+
+\begin{remark}[What the shell is, and what it is not]
+The shell is a class of \emph{legally controlled} orbits. The innovations are prescribed, not sampled. We do not assert that the original independent innovation law gives positive probability to~$\Sh$, nor that the published seeded floating-point runs enter~$\Sh$. All statements concern the exact-real reading of the update formulas. In floating point, exact ties, such as those of the uniform informant on the entry prefix, may be broken differently. Every state of~$\Sh$ reaches the return section with budget~$12$ at phase~$1$ within $912$ steps. This uniform entry time is used in Section~\ref{sec:disintegration}.
+\end{remark}

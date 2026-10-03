@@ -1,0 +1,69 @@
+\section{Completion objects}\label{sec:completion}
+
+The completion theory $\Tone$ attaches to each state a probability vector: the fixed point of an evolve--forget--reinstate map built from the current kernel and the current lens. This section defines the map, proves that its fixed point exists and is unique at every state of the shell, and fixes the base description against which strict extension is tested.
+
+\subsection{The evolve--forget--reinstate map}
+
+Let $x\in\Sh$ have kernel $K$, timescale $\tau$ and incumbent lens $\ell$. The completion map is built from three pieces.
+
+\paragraph{Evolve.}
+The lazy transport is
+\[
+B_\tau(K)=(1-\alpha)I+\alpha K,\qquad \alpha=\clamp_{[0.18,0.78]}\bigl(0.22+0.18\min(1,\tau/3)\bigr).
+\]
+This is a convex combination of $I$ and $K$, not a fractional power of~$K$.
+
+\paragraph{Forget.}
+The lens determines a partition $\mathcal{G}_\ell(K)$ of $[d]$; empty cells are omitted.
+\begin{itemize}
+  \item \emph{Spectral:} a core of states with large informant mass or large diagonal, and its complement.
+  \item \emph{Row-similarity:} the partition into singletons returned by the row-similarity routine (candidate pairs of similar rows determine an ordering but are not merged), so that $U=I$ and $E=B_\tau(K)$.
+  \item \emph{Audit:} the five states with the largest support (ties broken by the diagonal), and the rest.
+\end{itemize}
+Forgetting replaces a probability vector by its masses on the cells.
+
+\paragraph{Reinstate.}
+Each state $j$ receives a prototype weight $\rho_j=0.55\,\hat\pi_j+0.25\,\kappa_j+0.20\,K_{jj}$. A cell's mass is redistributed over the cell in proportion to these weights. As a matrix, this is
+\[
+U_\ell(x)_{ij}=\frac{\rho_j}{\sum_{h\in G(i)}\rho_h}\ \text{ if } j\in G(i),\qquad U_\ell(x)_{ij}=0\ \text{ otherwise},
+\]
+where $G(i)$ is the cell containing~$i$.
+
+\medskip
+\noindent The completion map acts on row probability vectors by
+\[
+\mu\;\longmapsto\;\mu\,E_{x,\ell},\qquad E_{x,\ell}=B_\tau(K)\,U_\ell(x).
+\]
+Transport by $B_\tau$ followed by $U_\ell$ is the same as transporting, forgetting the distribution within cells and reinstating it from the prototypes, because $U_\ell$ depends on its input only through the cell masses.
+
+\begin{lemma}[Completion objects are well defined on the shell]\label{lem:completion-object}
+For every $x\in\Sh$ and every lens $\ell$, all entries of $E_{x,\ell}$ are at least $9\cdot10^{-7}$. Consequently $E_{x,\ell}$ is a positive stochastic matrix with a unique stationary probability vector $\Gamma(x,\ell)$, and $\lVert\mu E_{x,\ell}^{\,n}-\Gamma(x,\ell)\rVert_1\le2(1-9d\cdot10^{-7})^n$ for every probability vector~$\mu$.
+\end{lemma}
+
+\begin{proof}
+All entries of $K$ are at least $1/100$ (Theorem~\ref{thm:shell}). Each power-iteration step $\mu\mapsto\mu K$ maps probability vectors to vectors with all coordinates at least $1/100$. Hence $\hat\pi_j\ge1/100$, and so $\kappa_j\ge1/100$ and $\rho_j\ge1/100$. Also $\rho_j\le1$, so a cell's total prototype weight is at most $20$ and $U_{jj}\ge1/2000$. Since $\alpha\ge0.18$, $B_{ij}\ge0.18\cdot\frac1{100}=\frac{9}{5000}$. Therefore $E_{ij}\ge B_{ij}U_{jj}\ge9\cdot10^{-7}$. A stochastic matrix whose entries are all at least $\varepsilon$ contracts the total-variation distance between probability vectors by the factor $1-d\varepsilon$ \cite{Seneta2006NonnegativeMatrices}, and this gives existence, uniqueness and the convergence rate.
+\end{proof}
+
+The \emph{completion object} of a state is $\Gamma(x)=\Gamma(x,\ell(x))$, the fixed point at its current lens. Two points deserve emphasis. First, a fixed completion map has exactly one fixed object: iterating it from different starting vectors does not produce several ``persistent strata''. The finitely many transient signatures that such iterations display before convergence are not distinct fixed objects. Second, $\Gamma(x)$ is an object at the current state. It is not claimed to be preserved by the outer update~$F$.
+
+\subsection{The base description and strict extension}
+
+The base description records what the growth theory can see, together with all the control data that the completion map shares with it.
+
+\begin{definition}[Base description and hybrid object]\label{def:base}
+For $x\in\Sh$, the \emph{base description} $\Desc(x)$ consists of:
+\begin{enumerate}
+  \item the pilot configuration, the timescale $\tau$, the budget $b$, the phase $k$, the protocol label and the incumbent lens;
+  \item the diagonal of $K$, the support vector $\kappa$ and the reinstatement matrix $U_{\ell(x)}(x)$;
+  \item for both observables $q^{(1)},q^{(2)}$, the complete growth profile $(s,n)\mapsto\norm{C_{s,n}(x)}$ for all real $s\ge0$ and all integers $n\ge0$, along the future carried by~$x$.
+\end{enumerate}
+The \emph{hybrid object} is $\Hyb(x)=(\Desc(x),\Gamma(x))$.
+\end{definition}
+
+The base forgets two things: the labelled off-diagonal entries of $K$ and the raw innovation word. It keeps the entire finite-horizon growth profile, not just the pressure or a rounded summary. Item~3 refers to the future prescribed in the state. It does not ask how the norms would respond to every counterfactual input.
+
+\begin{definition}[Factorization and strict extension]\label{def:factorization}
+Let $\Desc:\Sh\to\mathcal{D}$ and $\Gamma:\Sh\to\mathcal{O}$ be maps. We say that $\Gamma$ \emph{factors through} $\Desc$ if $\Gamma=\phi\circ\Desc$ for some map $\phi:\mathcal{D}\to\mathcal{O}$. Equivalently, $\Desc(x)=\Desc(y)$ implies $\Gamma(x)=\Gamma(y)$. The completion theory is a \emph{strict retentive extension} of the growth theory on~$\Sh$ if the hybrid object $\Hyb=(\Desc,\Gamma)$ retains the base by its first projection and $\Gamma$ does not factor through~$\Desc$.
+\end{definition}
+
+The equivalence in Definition~\ref{def:factorization} needs only that $\mathcal{O}$ be nonempty. So strictness is witnessed by, and only by, two states with equal base description and different completion objects \cite{TsiokosFoundations}. Strictness is relative to the base. If $\Desc$ retained the full labelled kernel, then $\Gamma$ would be a function of it by construction, and no witness could exist. The content of Theorem~\ref{thm:strict-extension} is that the growth description, which is the natural input to a thermodynamic theory, does \emph{not} determine the completion object, even though it records much more than the pressure.

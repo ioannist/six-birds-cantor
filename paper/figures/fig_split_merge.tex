@@ -1,0 +1,33 @@
+\begin{tikzpicture}[
+  font=\small,
+  st/.style={draw, rounded corners=2pt, minimum width=1.5cm, minimum height=0.8cm, align=center, fill=white},
+  obj/.style={draw, rounded corners=2pt, minimum height=0.6cm, align=center, fill=black!5, inner sep=3pt},
+  obs/.style={draw, rounded corners=2pt, align=center, fill=black!5, inner sep=4pt},
+  arr/.style={-{Latex[length=2mm]}, thick},
+  objarr/.style={-{Latex[length=1.6mm]}, densely dashed},
+]
+  % states
+  \node[st] (xp) at (0, 1.0) {$\xp$\\[-2pt]\scriptsize $\Kp$};
+  \node[st] (xm) at (0,-1.0) {$\xm$\\[-2pt]\scriptsize $\Km=\Kp^{\top}$};
+  \node[st] (R)  at (3.0,0)  {join\\[-2pt]\scriptsize kernel $R$};
+  \node[st] (y1) at (5.4,0)  {entry\\[-2pt]\scriptsize prefix};
+  \node[st] (y2) at (8.1,0)  {common parameter word\\[-2pt]\scriptsize $(\theta_t)_{t\ge1}\in\Cr^{\N}$};
+  \draw[arr] (xp) -- node[above, sloped, font=\scriptsize]{$N_+$} (R);
+  \draw[arr] (xm) -- node[below, sloped, font=\scriptsize]{$N_-$} (R);
+  \draw[arr] (R) -- (y1);
+  \draw[arr] (y1) -- (y2);
+  \draw[arr] (y2) -- ++(1.5,0);
+  % completion objects
+  \node[obj, anchor=east] (gp) at (-1.3, 1.0) {$\Gamma_{+}=\Fix E_{\xp}$};
+  \node[obj, anchor=east] (gm) at (-1.3,-1.0) {$\Gamma_{-}=\Fix E_{\xm}$};
+  \draw[objarr] (xp.west) -- (gp.east);
+  \draw[objarr] (xm.west) -- (gm.east);
+  \node[font=\scriptsize, align=center] at ($(gp.south)!0.5!(gm.north)$) {$\Gamma_{+}\neq\Gamma_{-}$};
+  \node[font=\scriptsize, anchor=south] at (gp.north) {completion theory $\Tone$};
+  % growth observations
+  \node[font=\scriptsize, anchor=south west] at ($(R.north)+(0.1,0.35)$) {$A_s(\xp)A_s(R)=A_s(\xm)A_s(R)$};
+  \node[obs, anchor=north, font=\scriptsize] (ob) at (4.2,-1.85) {growth theory $\Tzero$:\quad
+     $C_{s,n}(\xp)=C_{s,n}(\xm)$ for $n\ge 2$;\quad
+     $\norm{C_{s,n}(\xp)}=\norm{C_{s,n}(\xm)}$ for all $n\ge0$, $s\ge0$};
+\draw[objarr] (R.south) -- (R.south |- ob.north);
+\end{tikzpicture}

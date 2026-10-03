@@ -1,0 +1,32 @@
+\begin{tikzpicture}[
+  font=\small,
+  box/.style={draw, rounded corners=2pt, minimum height=0.8cm, align=center, fill=white, inner sep=3pt},
+  arr/.style={-{Latex[length=2mm]}, thick},
+  carry/.style={-{Latex[length=1.6mm]}, densely dashed},
+  node distance=0.45cm,
+]
+  \node[box] (K) {kernel\\$K$};
+  \node[box, right=of K] (inf) {informants\\\scriptsize$\hat\pi,\kappa$, diag.};
+  \node[box, right=of inf] (p4) {P4\\\scriptsize lens};
+  \node[box, right=of p4] (p5) {P5\\\scriptsize packaging};
+  \node[box, right=of p5] (p1) {P1\\\scriptsize rewrite};
+  \node[box, right=of p1] (p2) {P2\\\scriptsize gate};
+  \node[box, below=0.9cm of p2] (W) {$W(x)$};
+  \node[box, left=0.9cm of W] (p3) {P3\\\scriptsize $\tau'$, phase $k'$};
+  \node[box, left=of p3] (p6) {P6\\\scriptsize budget $b'$};
+  \node[box, left=0.9cm of p6] (Kn) {$K'=\operatorname{rownorm}$\\\scriptsize$\max(0,W+N)$};
+  \draw[arr] (K) -- (inf);
+  \draw[arr] (inf) -- (p4);
+  \draw[arr] (p4) -- (p5);
+  \draw[arr] (p5) -- (p1);
+  \draw[arr] (p1) -- (p2);
+  \draw[arr] (p2) -- (W);
+  \draw[arr] (W) -- node[above, font=\scriptsize]{$v$} (p3);
+  \draw[arr] (p3) -- (p6);
+  \draw[arr] (p6) -- node[above, font=\scriptsize]{$\sigma(b')$} (Kn);
+  \draw[arr] (W.south) -- ++(0,-0.35) -| (Kn.south);
+  \node[font=\scriptsize] at ($(Kn.south)!0.5!(W.south)+(0,-0.6)$) {innovation $N\in[-\sigma,\sigma]^{d\times d}$ from the input word};
+  \draw[carry] (Kn.west) -- ++(-0.3,0) |- (K.west);
+  \draw[carry] (p4.north) -- ++(0,0.3) node[above, font=\scriptsize]{incumbent $\lambda'$};
+  \draw[carry] (p5.north) -- ++(0,0.3) node[above, font=\scriptsize]{incumbent $\pi'$};
+\end{tikzpicture}

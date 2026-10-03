@@ -1,100 +1,117 @@
-\section{Strict theory extension}\label{sec:strict-extension}
+\section{The split pair: strict extension and growth blindness}\label{sec:extension}
 
-We now state the third closed theoremlet in the paper: the strict theory extension theoremlet. This is the point where the paper moves from a closed thermodynamic base theory to a deeper theorem object. The key claim is not that the paper has found a broader theorem class, but that the packaged-object theory \(\Tone\) carries object structure not definable from the cocycle theory \(\Tzero\) on the same audited shell.
+This section constructs two shell states that the growth theory cannot tell apart but the completion theory can, and proves Theorems~\ref{thm:strict-extension} and~\ref{thm:blindness}.
 
-\subsection{From the base theory to the extension problem}
+\subsection{Two transposed kernels}
 
-Section~\ref{sec:cocycle-pressure} closed the cocycle-pressure theory \(\Tzero\) on the audited shell. Section~\ref{sec:canonical-object} then introduced the packaged-object map
+Start from the uniform kernel $J$. For each triple $(i,j,a)$ in
 \[
-\pi_1:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_1
+(0,3,\tfrac1{10000}),\;(1,3,-\tfrac1{20000}),\;(2,3,-\tfrac1{40000}),\;
+(4,7,\tfrac1{12500}),\;(5,7,\tfrac3{50000}),\;(6,7,\tfrac1{25000}),
 \]
-alongside the cocycle-level object map
+add $a$ to the diagonal entries $(i,i)$ and $(j,j)$ and subtract $a$ from the off-diagonal entries $(i,j)$ and $(j,i)$. Call the resulting symmetric matrix~$S_0$. These \emph{tags} give the states $0,\dots,7$ distinct diagonal values. Then add $\delta=10^{-6}$ on the directed cycle $0\to1\to2\to0$ and subtract $\delta$ on the reverse cycle:
 \[
-\pi_0:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_0.
+\Kp=S_0+\delta\,(E_{01}+E_{12}+E_{20}-E_{10}-E_{21}-E_{02}),\qquad \Km=\Kp^{\top},
 \]
-The extension problem is therefore intrinsic: does the packaged-object map \(\pi_1\) factor through the cocycle-level object map \(\pi_0\), or does the completion-based theory define additional object structure \cite{LindMarcus1995SymbolicDynamics,Walters1986RelativePressure}?
+where $E_{ij}$ is the matrix unit. All entries are rational and are listed in Appendix~\ref{app:witness-data}.
 
-If there exists a map
-\[
-\phi:\mathcal{O}_0\to\mathcal{O}_1
-\]
-such that
-\[
-\pi_1=\phi\circ \pi_0
-\qquad \text{on } \mathcal{S}_{\mathrm{aud}},
-\]
-then the completion theory adds no new object depth. The packaged-object structure would simply be reconstructible from the base cocycle theory. The theoremlet below states that this does \emph{not} happen on the audited shell.
-
-\subsection{The extension mechanism}
-
-Three ingredients drive the extension.
-
-\paragraph{Saturation.}
-For fixed lens \(\ell\) and timescale \(\tau\), the completion endomap
-\[
-E_{\tau,\ell}(\mu)=U_{\ell}\!\bigl(Q_{\ell}(\mu K^\tau)\bigr)
-\]
-may saturate: repeated completion stops producing new packaged objects at the current theory depth. Saturation is therefore not the end of the story, but the signal that the current object vocabulary has stabilized.
-
-\paragraph{Material \texorpdfstring{$P4\leftarrow P5$}{P4<-P5} forcing.}
-Once saturation occurs, packaging feeds back into the lens layer. Material \(P4\leftarrow P5\) forcing changes the active lens and reveals new packaged strata that were not visible at the previous theory depth. This is the mechanism by which the extension moves from the base theory to the packaged-object theory.
-
-\paragraph{Macro-admissibility obstruction.}
-The cocycle-level theory is too coarse to support closed macro-dynamics on the packaged future. This macro-admissibility obstruction is not an accidental diagnostic. It is one of the certificates that the base theory cannot already express the packaged-object structure, and it is conceptually closest to a failure of admissible aggregation or lumpability at the macro level \cite{KemenySnell1976FiniteMarkovChains}.
-
-Together, saturation, forcing, and macro-admissibility obstruction provide the structural route from \(\Tzero\) to \(\Tone\) \cite{TsiokosFoundations}.
-
-\begin{theorem}[Strict theory extension on the audited shell]\label{thm:strict-extension}
-Let \(\mathcal{S}_{\mathrm{aud}}\) be the audited shell-stable class, let
-\[
-\pi_0:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_0
-\]
-be the cocycle-level object map of the base theory \(\Tzero\), and let
-\[
-\pi_1:\mathcal{S}_{\mathrm{aud}}\to \mathcal{O}_1
-\]
-be the packaged-object map defined by the completion theory \(\Tone\). Assume:
+\begin{lemma}[The warm kernels]\label{lem:warm-kernels}
+The kernels $\Kp$ and $\Km$ have the following properties.
 \begin{enumerate}
-    \item the cocycle-pressure theory \(\Tzero\) is closed on \(\mathcal{S}_{\mathrm{aud}}\),
-    \item the completion endomap is well-defined on \(\mathcal{S}_{\mathrm{aud}}\),
-    \item saturation of the completion dynamics occurs on the audited shell,
-    \item material \(P4\leftarrow P5\) forcing produces new packaged strata after saturation,
-    \item and the cocycle-level theory exhibits macro-admissibility obstruction on the packaged future.
+  \item Both are positive and doubly stochastic, and each row gives mass $1/2$ to each half $\{0,\dots,9\}$ and $\{10,\dots,19\}$.
+  \item For every $i$, row $i$ of $\Km$ is a permutation of row $i$ of $\Kp$. For $i\notin\{0,1,2\}$ the rows are identical; for $i\in\{0,1,2\}$ two entries $\tfrac1{20}\pm\delta$ are exchanged.
+  \item $(\Kp)_{ij}=(\Km)_{ij}$ whenever $j\notin\{0,1,2\}$.
+  \item Both have the same diagonal. Their finite informants are exactly uniform, so their supports, prototype weights and audit cells coincide. The audit core is $\{0,4,5,6,7\}$, and the reinstatement matrices $U_{\mathrm{audit}}$ are equal.
 \end{enumerate}
-Then \(\Tone\) is a strict theory extension of \(\Tzero\) on \(\mathcal{S}_{\mathrm{aud}}\). Equivalently, there is no factorization
-\[
-\pi_1=\phi\circ \pi_0
-\qquad \text{on } \mathcal{S}_{\mathrm{aud}}
-\]
-for any map \(\phi:\mathcal{O}_0\to\mathcal{O}_1\).
-\end{theorem}
+\end{lemma}
 
-\begin{proof}[Proof sketch]
-The proof follows the closed strict-extension package and is organized around factorization failure rather than family broadening.
-
-\smallskip
-\noindent\emph{Step 1: the base theory is already closed.}
-By Theorem~\ref{thm:cocycle-pressure}, the cocycle-pressure object of \(\Tzero\) is well-defined on the audited shell. Thus the later extension result is not compensating for a defective or undefined base theory.
-
-\smallskip
-\noindent\emph{Step 2: completion defines packaged-object strata.}
-The completion endomap \(E_{\tau,\ell}\) is well-defined on the shell and yields persistent packaged strata. These strata define the packaged-object map \(\pi_1\).
-
-\smallskip
-\noindent\emph{Step 3: saturation plus forcing produces genuinely new packaged strata.}
-Saturation shows that the current completion rule has stabilized at the present theory depth. Material \(P4\leftarrow P5\) forcing then changes the lens and reveals new packaged strata. Thus the extension is not merely an iteration of a fixed completion rule, but a genuine change in theory depth.
-
-\smallskip
-\noindent\emph{Step 4: non-definability from \(\Tzero\).}
-If \(\pi_1\) factored through \(\pi_0\), then the packaged-object strata revealed after forcing would already be reconstructible from the cocycle-level object map. The audited-shell non-definability step rules this out: shell states with the same \(\Tzero\)-object can carry different packaged-object strata in \(\Tone\).
-
-\smallskip
-\noindent\emph{Step 5: macro-admissibility obstruction.}
-The failure of macro-admissibility at the cocycle level shows that \(\Tzero\) is too coarse to support closed macro-dynamics on the same packaged future. This obstruction is therefore a positive certificate that the packaged-object theory is not already contained in the base theory.
-
-Combining these points yields the claimed failure of factorization and hence the strict theory extension theoremlet.
+\begin{proof}
+Items 1--3 are direct checks of the construction. Every tag preserves row and column sums and is symmetric. The cycle term has zero row and column sums. The cycle term is also antisymmetric, so transposition reverses the direction of the cycle; in rows $0,1,2$ it exchanges the entries $\tfrac1{20}+\delta$ and $\tfrac1{20}-\delta$, which lie in columns $\{0,1,2\}$. For item~4, a doubly stochastic kernel fixes the uniform vector, so the power iteration stops after its first step at the uniform vector. The support $\kappa_i=\tfrac12(\tfrac1{20}+K_{ii})$ then depends only on the diagonal. The five largest diagonal values belong to the states $7,0,4,5,6$.
 \end{proof}
 
-\input{tables/tbl_strict_theory_extension}
+The \emph{warm states} $\xp$ and $\xm$ have kernels $\Kp$ and $\Km$, phase $0$, $\tau=3/5$, budget $12$, the refresh protocol, and incumbent audit lens and budget packaging. Their selector records also contain one previous selection, the audit lens and the budget packaging. The lens and packaging switches at the joining step therefore incur both switch penalties, which reset the timescale to $0.6$. Each carries an admissible future in the sense of Definition~\ref{def:shell}: a joining step to a common kernel $R$, the entry prefix, and a parameter word in $\Cr^{\N}$. The future after the joining step is the same for both.
 
-Theorem~\ref{thm:strict-extension} records the object-level gap between the two theories: the packaged-object theory is not a more elaborate presentation of the cocycle-pressure theory but a deeper theory on the same audited shell.
+\subsection{The completion objects differ}
+
+\begin{proposition}[Distinct completion objects]\label{prop:distinct-objects}
+The audit completion maps $E_{\xp}$ and $E_{\xm}$ are positive stochastic matrices with a common reinstatement matrix and exactly computable rational stationary vectors $\Gamma_\pm=\Gamma(x_\pm)$. These vectors differ. In particular,
+\[
+(\Gamma_+)_0-(\Gamma_-)_0=\frac{390467997745347846870000}{120131948909489644812213124707327077}\approx3.25\cdot10^{-12}.
+\]
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:warm-kernels}, $E_{x_\pm}=B_{3/5}(K_\pm)\,U$ with a common $U$. The vectors $\Gamma_\pm$ are computed in exact rational arithmetic. Stationarity, positivity and unit mass are verified exactly, as is the displayed nonzero difference. By Lemma~\ref{lem:completion-object} each is the unique fixed point and attracts every initial probability vector. These facts are checked in Lean (Section~\ref{sec:verification}).
+\end{proof}
+
+The difference is small but exact: it is a rational number, not a floating-point separation. It arises because $B_{3/5}(K_\pm)$ carries the direction of the cycle into the audit cell $\{0,4,5,6,7\}$, which contains state~$0$ but not states $1,2$.
+
+\subsection{The joining step}
+
+From either warm state, the scheduled selection at phase~$0$ picks the spectral lens, with score $L=37/80$, and the cluster packaging, with score $0.736+0.035\sqrt3\in(0.79,0.80)$. Both are isolated beyond hysteresis and tie band. The physical cluster packaging takes all twenty states as its core. Its two groups are the two halves of $[d]$. This physical grouping is different from the audit completion cell above, and the construction never identifies the two. Let $R$ be the fixed rational kernel obtained by averaging the rows of the pre-innovation operator within each half $\{0,\dots,9\}$ and $\{10,\dots,19\}$, computed at the rational construction score $159/200$. At the warm states the pre-innovation operator is an affine function of the kernel, $W(K)=0.65\,[(1-\eta)K+\eta\,T(K)]+0.35\,J$ with $T$ affine, because the physical core is all of~$[d]$. The tag and cycle perturbations have zero column sums within each half, so the averaging erases them and gives the same $R$ for both kernels. $R$ is doubly stochastic, and its rows are equal within each half. Choose the innovations $N_\pm=R-W(x_\pm)$. Exact endpoint checks, which use the actual irrational packaging score and not a rational substitute, show that $|N_\pm|<6\cdot10^{-4}$ entrywise, well below the legal amplitude $2.5\cdot10^{-3}$. By Lemma~\ref{lem:target-control}, both states move to kernel~$R$.
+
+All scalars that enter the next state and the observable agree for $\xp$ and $\xm$: the selected scores, the P1 target distance, the P2 viabilities, the pre-innovation variation, the timescale and budget updates, and the action entropy. These scalars are invariant under transposition of the kernel. The final variations agree as well, because the cycle term is orthogonal, in the Frobenius inner product, both to $R$ (whose rows $0,1,2$ coincide, while the cycle term has zero column sums) and to the symmetric matrix~$S_0$. Hence
+$q(\xp)=q(\xm)$ for both observables, and $F(\xp)$ and $F(\xm)$ agree in every coordinate read by $F$ and~$q$.
+After the joining step the two states follow the same certified entry prefix and the same parameter word.
+
+\subsection{The history identity}
+
+\begin{lemma}[Common rows erase supported differences]\label{lem:common-rows}
+Let $A$ and $B$ be $d\times d$ matrices with equal row sums, and suppose $A_{ij}=B_{ij}$ for all $j\notin I$. If $M$ is a $d\times d$ matrix whose rows indexed by $I$ are all equal, then $AM=BM$.
+\end{lemma}
+
+\begin{proof}
+Let $m$ be the common row of $M$ on~$I$. Row $i$ of $(A-B)M$ is $\sum_{j\in I}(A-B)_{ij}\,m=\bigl(\sum_j(A-B)_{ij}\bigr)m=0$.
+\end{proof}
+
+\begin{proposition}[History identity]\label{prop:history-identity}
+Fix either observable, any $s\ge0$ and the common future of the warm states. Then
+\[
+\sum_j A_s(\xp)_{ij}=\sum_j A_s(\xm)_{ij}\ \text{ for every } i,
+\qquad
+C_{s,n}(\xp)=C_{s,n}(\xm)\ \text{ for every } n\ge2.
+\]
+\end{proposition}
+
+\begin{proof}
+Write $q_0=q(x_\pm)$, which is common to both states. Then $A_s(x_\pm)_{ij}=(e^{-q_0}(K_\pm)_{ij})^s$. By Lemma~\ref{lem:warm-kernels}(2) the rows of the two weighted matrices are permutations of each other, so their row sums agree. By Lemma~\ref{lem:warm-kernels}(3) they differ only in columns $I=\{0,1,2\}$. The next weighted matrix, with entries $A_s(Fx_\pm)_{ij}=(e^{-q_1}R_{ij})^s$, is common and has equal rows on $I$, because the rows of $R$ are equal within the first half. By Lemma~\ref{lem:common-rows}, $A_s(\xp)A_s(F\xp)=A_s(\xm)A_s(F\xm)$. Every later factor is common, since the later states agree in every coordinate read by $F$ and~$q$.
+\end{proof}
+
+\subsection{The two theorems}
+
+\begin{theorem}[Strict extension]\label{thm:strict-extension}
+The warm states satisfy $\xp,\xm\in\Sh$, $\Desc(\xp)=\Desc(\xm)$ and $\Gamma(\xp)\ne\Gamma(\xm)$. Consequently the completion object does not factor through the base description on~$\Sh$, and the hybrid object $\Hyb=(\Desc,\Gamma)$ is a strict retentive extension of the growth theory.
+\end{theorem}
+
+\begin{proof}
+The warm states and their futures belong to $\Sh$ by Theorem~\ref{thm:shell}. Items~1 and~2 of Definition~\ref{def:base} agree by construction and Lemma~\ref{lem:warm-kernels}(4). For item~3, Proposition~\ref{prop:history-identity} gives equal row sums at $n=1$, hence equal maximum row sums. It gives equal matrices for $n\ge2$, and $C_{s,0}=I$. So the norms agree at every horizon, for every $s\ge0$ and for both observables. Finally, $\Gamma(\xp)\ne\Gamma(\xm)$ by Proposition~\ref{prop:distinct-objects}, and Definition~\ref{def:factorization} applies.
+\end{proof}
+
+Theorem~\ref{thm:strict-extension} does not say that the completion object is undefinable from \emph{all} data at the state. The labelled kernel determines it. What it says is that the specified growth description does not: no function of everything the growth theory records reconstructs~$\Gamma$.
+
+\begin{theorem}[Growth blindness]\label{thm:blindness}
+For both observables, every $s\ge0$ and every admissible common future of the warm states:
+\begin{enumerate}
+  \item the weighted history matrices $C_{s,n}(\xp)$ and $C_{s,n}(\xm)$ coincide for every $n\ge2$, and their norms coincide for every $n\ge0$;
+  \item for every probability vector $u$ with full support, $u\,C_{s,n}(\xp)\one$ and $u\,C_{s,n}(\xm)\one$ differ by at most a factor $1/\min_ju_j$ at every horizon. In particular, their exponential growth rates (upper and lower) coincide, and this holds even when the initial vectors are the two distinct completion objects themselves;
+  \item every pressure computed from these growth observations, whether a limit, a $\limsup$ or a $\liminf$ of $\frac1n\log\norm{C_{s,n}}$, takes the same value at $\xp$ and at $\xm$, although $\Gamma(\xp)\ne\Gamma(\xm)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Item~1 is Proposition~\ref{prop:history-identity} together with the norm argument in the proof of Theorem~\ref{thm:strict-extension}. For item~2, a nonnegative matrix $C$ and a probability vector $u$ with $c=\min_ju_j>0$ satisfy $c\norm{C}\le u\,C\one\le\norm{C}$. By Lemma~\ref{lem:completion-object} the completion objects have full support. Item~3 follows from item~1.
+\end{proof}
+
+\begin{remark}[Saturation, refinement and lumpability]\label{rem:refinement}
+Three notions from the completion literature have exact counterparts at the warm states.
+\begin{itemize}
+  \item \emph{Saturation.} Each completion map is a strict contraction (Lemma~\ref{lem:completion-object}), so repeated completion converges to its unique object.
+  \item \emph{Refinement.} Switching the completion lens from audit to spectral produces, at the same kernel and timescale, a new object $p_{\mathrm{spec}}$. Because the spectral core is all of~$[d]$, this object is the same for both kernels and differs from both audit objects. The row-similarity lens has singleton cells, so its object is the uniform vector~$u$. The unordered families $\{\Gamma_+,p_{\mathrm{spec}},u\}$ and $\{\Gamma_-,p_{\mathrm{spec}},u\}$ are therefore different, while the spectral output alone is shared and does not witness strictness.
+  \item \emph{Lumpability.} The audit transport is not lumpable with respect to its two cells; its exact lumpability defect is $101/3906250$ \cite{KemenySnell1976FiniteMarkovChains}. So the cell masses do not evolve by a closed macro dynamics.
+\end{itemize}
+None of these facts is needed for Theorems~\ref{thm:strict-extension} and~\ref{thm:blindness}.
+\end{remark}
+
+\begin{remark}[Strictness is information at the current state]
+After the joining step the two physical trajectories coincide, so the distinction between $\Gamma_+$ and $\Gamma_-$ need not survive along the outer dynamics. Theorem~\ref{thm:strict-extension} is a statement about the information available at the current state. It does not assert a permanent difference between future physical trajectories.
+\end{remark}

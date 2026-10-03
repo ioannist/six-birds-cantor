@@ -1,5 +1,5 @@
-Audited-shell theorem package for a canonical hybrid continuous Cantor object
-Lawful full-loop theoremlet for six-primitive continuous Cantor substrates
-Cocycle pressure closure proved on a shell-stable class of lawful substrates
-Strict theory extension from a packaging/completion endomap, not a redescription
-Thermodynamic consequence: conditional pressure disintegration over packaging fibers
+Explicit forward-invariant controlled Cantor shell for a self-rewriting 20-state law
+Multiplicative growth pressure exists, decreases strictly, unique zero in (1/3,1)
+Two shell states share every growth observation yet differ in completion object
+Growth blindness: history matrices coincide from step two, so pressure cannot see
+The pressure gap is set by the reference law: zero under one, positive under another

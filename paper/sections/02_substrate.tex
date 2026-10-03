@@ -1,0 +1,79 @@
+\section{The substrate and its update law}\label{sec:substrate}
+
+This section describes one step of the substrate. The description follows the original implementation formula by formula, read in exact real arithmetic. The constants are those of the original twenty-state pilot configuration; nothing is retuned for the theorems. We keep the presentation at the level needed to follow the proofs and point to the formulas only where a proof uses them.
+
+\subsection{States and inputs}
+
+Throughout, $d=20$ and $[d]=\{0,\dots,19\}$. A \emph{kernel} is a row-stochastic $d\times d$ matrix, and $J$ denotes the uniform kernel with all entries $1/20$. A substrate state is
+\[
+x=(K,\tau,b,k,\varrho,\lambda,\pi,\omega),
+\]
+where
+\begin{itemize}
+  \item $K$ is the current kernel;
+  \item $\tau\in[0.6,4]$ is a timescale and $b\in[0,12]$ a budget;
+  \item $k\in\{0,\dots,11\}$ is the phase of a twelve-step protocol cycle and $\varrho$ is the protocol label (refresh, audit, packaging or settle);
+  \item $\lambda$ and $\pi$ record the incumbent \emph{lens} and \emph{packaging} and the selections made at the previous step;
+  \item $\omega=(\omega_0,\omega_1,\dots)$ is the sequence of future input blocks.
+\end{itemize}
+Each input block contains the innovation matrix used at that step and the uniform variables used by the randomized tie-break of the selectors. With the inputs in the state, the update is a deterministic map $F$, a skew product over the shift on input words. The original simulator draws the inputs from a pseudorandom generator. Here they are coordinates of the state, and the shell of Section~\ref{sec:shell} prescribes them. The implementation keeps full selector histories, but the update reads only their most recent entries, which $\lambda$ and $\pi$ retain. A switch penalty below is applied only when a previous selection exists. The implementation also keeps append-only logs and caches (switch counters, previous-kernel signatures, histories of past values). Some of these are read for bookkeeping, but none affects the physical update or the observables, so we omit them from the state. The implementation's initial ``boot'' label is never used on the shell, where the protocol label is always the one determined by the phase.
+
+\subsection{One step}
+
+Figure~\ref{fig:update-loop} shows the order of operations. Given $x$, one step computes the following.
+
+\begin{figure}[t]
+\centering
+\input{figures/fig_update_loop}
+\caption{One step of the substrate. Informants computed from the current kernel feed lens selection (P4) and packaging selection (P5). The selected packaging defines a rewrite target (P1) and a gate (P2), which produce the pre-innovation operator~$W$. The timescale and phase (P3) and the budget (P6) are updated from the variation $\lVert K-W\rVert_F$ and the selector scores. The new budget sets the innovation amplitude $\sigma(b')$, and the next kernel is $W$ plus a legal innovation, clipped and renormalized. Dashed arrows indicate what is carried to the next step: the new kernel, and the selected lens and packaging, which become the next incumbents.}
+\label{fig:update-loop}
+\end{figure}
+
+\paragraph{Informants.}
+The \emph{finite informant} $\hat\pi(K)$ is the vector obtained by power iteration $\mu\mapsto\mu K$ from the uniform vector. The iteration stops as soon as successive iterates differ by at most $10^{-12}$ in every coordinate, and after at most $80$ steps. It is the implemented stand-in for the stationary law, and we use it exactly as implemented, not replaced by the true stationary vector. The \emph{support} is $\kappa_i=\tfrac12(\hat\pi_i+K_{ii})$. The row sums, column sums and diagonal of $K$ complete the informants.
+
+\paragraph{P4: lens selection.}
+There are three lenses: spectral, row-similarity and audit-flow. Each receives a score built from the informants, the phase, $\tau$ and $b$. Each lens's score also carries a phase window: $+0.42$ during its own four phases of the cycle and $-0.08$ otherwise. Selection is hysteretic. The incumbent is kept unless the best challenger beats it by more than $h_L=0.017$. Otherwise the best candidate is chosen, unless several candidates lie within $\max(h_L,0.03)$ of the best, in which case one of them is drawn by a softmax using an input variable.
+
+\paragraph{P5: packaging selection.}
+Given the selected lens, three packagings compete: \emph{cluster} (built from the row-similarity routine, whose singleton cells are compressed, for $d=20$, into the two contiguous halves $\{0,\dots,9\}$ and $\{10,\dots,19\}$), \emph{return} (the core $\{i:\hat\pi_i\ge\hat\pi_{(14)}\text{ or }K_{ii}\ge0.18\}$, where $\hat\pi_{(14)}$ is the order statistic of index $14$, counting from $0$ in ascending order, together with its complement) and \emph{budget} (the quarter of states with largest support and its complement). Their scores depend on the selected lens score, the informant mass of the core, $\tau$, $b$ and the protocol label. Selection uses the same rule, with hysteresis $h_P=0.012+0.01\max(0,\tau-1)$. Each packaging carries a \emph{core} set of states and a partition of~$[d]$.
+
+\paragraph{P1: operator rewrite.}
+The selected packaging defines a target kernel $T(K)$ that boosts transitions into its core or groups. The target also includes a small lens-dependent diagonal shift. The kernel is moved toward the target,
+\[
+K\;\mapsto\;\operatorname{rownorm}\bigl((1-\eta)K+\eta\,T(K)\bigr),\qquad
+\eta=\clamp_{[0.03,0.18]}\bigl(0.08+0.05\,\Pi+0.02\,\tau\bigr),
+\]
+where $\Pi$ is the score of the selected packaging.
+
+\paragraph{P2: admissibility gating.}
+Each row $i$ receives a viability $v_i\in[0.08,1]$ from its core membership, support and informant mass. Entry $(i,j)$ is multiplied by $\sqrt{v_i c_j}$, where $c_j=1$ on the core and $0.55$ off it, and rows are renormalized. Rows with $v_i<0.18$ are blended, $65{:}35$, with a fixed core-preferring fallback row. The result is the \emph{pre-innovation operator} $W(x)$.
+
+\paragraph{P3: timescale and protocol.}
+With pre-innovation variation $v=\lVert K-W(x)\rVert_F$,
+\[
+\tau'=\clamp_{[0.6,4]}\bigl(\tau+0.11\max(0,0.12-v)-0.06\,v-0.07\,[\text{lens switch}]-0.05\,[\text{packaging switch}]\bigr).
+\]
+A switch means that the lens (respectively, packaging) selected at this step differs from the one selected at the previous step. The phase advances, $k'=k+1\bmod 12$, and determines a protocol label: refresh, audit, packaging or settle.
+
+\paragraph{P6: budget and innovation.}
+The budget is updated by an income and a cost,
+\begin{align*}
+b'&=\clamp_{[0,12]}\bigl(b+I-C\bigr),\\
+I&=1.08\,\bigl(0.24\,\Pi+0.12\,L+0.08\max(0,1-v)\bigr),\\
+C&=0.96\,\bigl(0.06+0.018\,k'+0.04\,v\bigr)+0.03\,[\text{lens switch}]+0.03\,[\text{packaging switch}],
+\end{align*}
+where $L$ is the selected lens score. The new budget sets the innovation amplitude $\sigma(b')=0.0025+0.002\min(1,b'/6)$, so $\sigma\in[0.0025,0.0045]$. Given an innovation matrix $N$ from the input block, with entries in $[-\sigma,\sigma]$, the next kernel is
+\[
+K'=\operatorname{rownorm}\bigl(\max(0,\,W(x)+N)\bigr),
+\]
+with the maximum taken entrywise. The state then moves to $F(x)=(K',\tau',b',k',\varrho',\lambda',\pi',\omega')$, where $\omega'=(\omega_1,\omega_2,\dots)$ is the shifted input word, $\varrho'$ is the label of~$k'$, and $\lambda',\pi'$ record the selections just made.
+
+\subsection{The two selector observables}
+
+The growth theory uses a scalar observable of each transition. Write $v_f=\lVert K-K'\rVert_F$ for the final variation and $H$ for the Shannon entropy of the \emph{action weights}. These weights are a softmax of six scalar primitive scores (the P1 target distance, the mean P2 viability, $\tau'$, $L$, $\Pi$ and the income~$I$) at a temperature determined by the pre-step timescale and budget and by pilot constants. The original implementation defines two observables:
+\begin{align*}
+q^{(1)}(x)&=\log\bigl(1+v_f+0.25\,L+0.30\,\Pi+0.05\,b'/12+0.05\,\tau'+0.05\,H\bigr),\\
+q^{(2)}(x)&=\log\bigl(1+v_f+0.28\,L+0.32\,\Pi+0.10\,b'/12+0.08\,\tau'+0.05\,H\bigr),
+\end{align*}
+and $q^{(2)}$ is further clamped to $[0.05,10]$. Both are kept throughout; no statement below identifies one with the other. On the shell constructed next, both satisfy $\log(5/4)\le q\le\log 10$, so the clamp is never active (Section~\ref{sec:pressure}).
