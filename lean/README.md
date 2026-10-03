@@ -13,6 +13,16 @@ interval arithmetic; they are not imported as Lean data. See
 `../docs/internal/controlled_original_shell_2026_10_03.md` for the precise
 real-arithmetic, controlled-input, and original-base scope.
 
+`PackagedDisintegration.lean` conditions a binary world law on its actual
+object-valued readout, proves the finite law of total expectation and the
+conditional pressure limits, and returns a quantitative gap from a separate
+pressure-separation input. The current 20-state instance uses exact audit
+completion outputs and two certified original-potential continuations. Its
+constructed input law, coarser current-state base, and forward-orbit pressure
+are explicit. It does not establish the original independent-noise law or
+identify its pressure with the entire continuous shell supremum. See
+`../docs/internal/packaged_world_disintegration_2026_10_03.md`.
+
 `LoopExtension.lean` now also handles a first-matrix difference supported on
 selected columns when only the corresponding second-matrix rows agree. This
 supports the original small-budget split and its common evolving tail without

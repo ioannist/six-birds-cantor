@@ -18,6 +18,7 @@ import HistoryConditioning
 import LoopExtension
 import SparsePressure
 import ControlledShell
+import PackagedDisintegration
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -199,3 +200,8 @@ import ControlledShell
 #print axioms CantorAudit.controlled_shell_pressure_root
 #print axioms CantorAudit.binary_equal_weight_gap
 #print axioms CantorAudit.separated_original_continuations_gap_bound
+#print axioms CantorAudit.binary_actual_package_mass
+#print axioms CantorAudit.binary_actual_package_conditional
+#print axioms CantorAudit.binary_actual_package_disintegration
+#print axioms CantorAudit.binary_package_nonfactor
+#print axioms CantorAudit.binary_actual_package_pressure

@@ -13,4 +13,4 @@ lean_lib CantorAudit where
     `AffinityPressure, `MatrixPressure, `CompletionAffinityWitness,
     `CompletionDynamics, `CompletionForcing, `ConditionalPressure, `OriginalShell,
     `PrimitiveCompletion, `HistoryConditioning, `LoopExtension, `SparsePressure,
-    `ControlledShell]
+    `ControlledShell, `PackagedDisintegration]
