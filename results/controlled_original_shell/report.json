@@ -853,7 +853,7 @@
     "target_construction_score": "159/200"
   },
   "floating_quantile_caveat": "uniform prefix ties are certified exactly; floating rounding may choose different cores",
-  "generated_at_utc": "2026-10-03T05:41:35.928319+00:00",
+  "generated_at_utc": "2026-10-03T09:57:04.415197+00:00",
   "informant_stopping_guards_stable": true,
   "input_sha256": {
     "configs/experiments/generated/continuous_full_loop_kernel_shell.json": "d19380e407f96056e6917fff54b10330581689d159dc1bea162f0d578628801f",
@@ -863,7 +863,7 @@
     "lean/LoopExtension.lean": "f0baee86da9d76b020deb741d3c4df7ea73b97e6e36e18961bc58815e659f43f",
     "scripts/run_controlled_original_shell.py": "40cc3e04a5d6d9be4ffea0a35d8f430f63cd57c88d55911e379020c39a542555",
     "src/contextual_cantor/continuous_kernel_substrate.py": "46541744d277351a9373ee0d20ba10443923006037b4c3ef8cc7f8856185afa2",
-    "src/contextual_cantor/controlled_pressure_separation.py": "dfa0c1435bd34853f524173e4b23272ab7e84e485581f6558a4a35d27ae74885",
+    "src/contextual_cantor/controlled_pressure_separation.py": "199b80cd53e5bb45066531a1883d8c60636f07dede3fd91ff1f75fb2c207cf84",
     "src/contextual_cantor/controlled_shell.py": "059499af5b9936e54aed200ac25bc47d6d8822424c5f9a0abc6964c452447d14",
     "src/contextual_cantor/original_loop_extension.py": "650ea4ab04020595766aaa404f9b9ff2e466485f70ec0537afe3b42a51680234",
     "src/contextual_cantor/rational_interval.py": "2d2a3ad62bd55cbac432d9d9b6bb10a8816e5f5b96614e3c107e0de1c7903481"

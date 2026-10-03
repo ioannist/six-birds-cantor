@@ -1,5 +1,12 @@
 # Actual completion fibers and an original-potential world law
 
+The subsequent [all-word construction](all_word_pressure_disintegration_2026_10_03.md)
+proves the previously missing full continuous-shell pressure return for a single
+fixed reference law. It retains the actual same-lens audit output as its fiber
+map. The periodic construction and outstanding obligations below describe the
+earlier stage; empirical weights, original descriptor/family interpretation and
+universal coverage remain unresolved.
+
 This repairs part of original obligation 4. The paper is unchanged. It constructs
 a genuine disintegration whose conditioning objects are actual completion
 outputs, rather than a synthetic correction to pressure. It does **not** yet

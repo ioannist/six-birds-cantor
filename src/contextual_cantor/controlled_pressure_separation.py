@@ -7,8 +7,10 @@ cannot belong to one fiber of a base that retains those profiles.
 """
 from fractions import Fraction as Q
 
-from .rational_interval import Interval as I,maximum
-from .controlled_shell import ClassKernel,load_cycle,informants,evaluate_phase,noise_bound
+from .rational_interval import Interval as I,as_interval,maximum
+from .controlled_shell import (
+    ClassKernel,load_cycle,informants,evaluate_phase,noise_bound,thick_kernel,thick_informants,
+)
 
 
 def mix_cycle(cycle,parameter):
@@ -26,10 +28,10 @@ def timescale_after(phase,tau,variation):
 
 def _final_variation(kernel,target):
     old=kernel.base(); new=target.base()
-    square=sum((5,5,10)[a]*(5,5,10)[b]*(I(new[a][b]-old[a][b])).square()
+    square=sum((5,5,10)[a]*(5,5,10)[b]*(as_interval(new[a][b]-old[a][b])).square()
                for a in range(3) for b in range(3) if a!=b)
-    square=square+sum((5,5,10)[a]*((5,5,10)[a]-1)*I(new[a][a]-old[a][a]).square()
-        +(5,5,10)[a]*I(new[a][a]+target.excess[a]-old[a][a]-kernel.excess[a]).square() for a in range(3))
+    square=square+sum((5,5,10)[a]*((5,5,10)[a]-1)*as_interval(new[a][a]-old[a][a]).square()
+        +(5,5,10)[a]*as_interval(new[a][a]+target.excess[a]-old[a][a]-kernel.excess[a]).square() for a in range(3))
     return square.sqrt()
 
 
@@ -45,6 +47,30 @@ def periodic_observable_pressure(cycle):
     for kernel in cycle:
         kernel.check_exact()
     infos=[informants(k) for k in cycle]
+    return _periodic_observables(cycle,infos)
+
+
+def periodic_observable_box(cycle,radius):
+    """Uniform original-q enclosure for arbitrary input words in [0,radius].
+
+    Each current and next K_k(lambda) has an independent parameter. Exact
+    resets bound the intervening tau history, so the same phase boxes enclose
+    every return block. Stochasticity follows from the kernel constructor,
+    not interval endpoint row sums. Fixed finite-informant stopping and
+    strict selector guards give continuity of the actual q family.
+    """
+    if len(cycle)!=12 or not isinstance(radius,(Q,int)) or isinstance(radius,bool) or not 0<radius<1:
+        raise ValueError('twelve exact kernels and a positive exact radius are required')
+    for kernel in cycle:
+        kernel.check_exact()
+    boxes=tuple(thick_kernel(k,radius) for k in cycle)
+    infos=[thick_informants(k) for k in boxes]
+    if any(len(info.stopping_steps)!=1 for info in infos):
+        raise ValueError('continuous input family requires stable informant stopping')
+    return _periodic_observables(boxes,infos)
+
+
+def _periodic_observables(cycle,infos):
     tau=I(Q(3,5))
     # Phase 8 resets tau, so the pre-phase-9 value is exactly .6. Build
     # pre-phase-0 from the audit window, rather than assuming tau is constant.
@@ -57,6 +83,8 @@ def periodic_observable_pressure(cycle):
         e=evaluate_phase(kernel,phase,tau,I(12),infos[phase])
         if e['income_minus_cost'].lo<=0 or noise_bound(e,cycle[(phase+1)%12]).hi>=Q(1,1000):
             raise ValueError('periodic continuation is not certified lawful')
+        if e['lens_margin'].lo<=Q(3,100) or e['packaging_margin'].lo<=Q(3,100):
+            raise ValueError('periodic selector branch lacks a strict uniform guard')
         next_tau=timescale_after(phase,tau,e['variation'])
         if phase%4==0 and (next_tau.lo!=Q(3,5) or next_tau.hi!=Q(3,5)):
             raise ValueError('joint selector switch did not reset the timescale')
@@ -81,8 +109,8 @@ def periodic_observable_pressure(cycle):
             'operator_q':[str(operator.lo),str(operator.hi)],
             'noise_cap':str(noise_bound(e,cycle[(phase+1)%12]).hi)})
         tau=next_tau
-    # All phases after a switch have a fixed .6 timescale, so this closure
-    # of the interval evaluation corresponds to the SAME periodic real state.
+    # The fixed reset makes the repeated interval expression close. For boxes
+    # this is an enclosure of all words, not equality of their actual tau values.
     if tau!=initial_tau:
         raise ValueError('timescale period failed to close')
     return {'phase_observables':rows,

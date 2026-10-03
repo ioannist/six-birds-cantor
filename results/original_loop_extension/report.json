@@ -2,7 +2,7 @@
   "all_parameter_all_horizon_pressure_profile_bridge": "equal weighted row sums; first difference supported on columns 0,1,2; shared second rows there; common arbitrary moving tail",
   "all_time_carrier_certificate": "results/controlled_original_shell/report.json",
   "all_time_carrier_certificate_current": true,
-  "all_time_carrier_receipt_sha256": "a365f85a2066598e16fb8f6762327e25f9111f2b99886b76354ac35ec6e0b628",
+  "all_time_carrier_receipt_sha256": "6ea618a88558e1834f20c84c04c531c3c25a20fdd8bc8c3e69f3a44168c3b312",
   "audit_macro_defects": [
     "101/3906250",
     "101/3906250"
@@ -538,7 +538,7 @@
       "1/20"
     ]
   ],
-  "generated_at_utc": "2026-10-03T05:42:52.908737+00:00",
+  "generated_at_utc": "2026-10-03T09:57:05.078776+00:00",
   "input_sha256": {
     "configs/experiments/generated/continuous_full_loop_kernel_shell.json": "d19380e407f96056e6917fff54b10330581689d159dc1bea162f0d578628801f",
     "lean/LoopExtension.lean": "f0baee86da9d76b020deb741d3c4df7ea73b97e6e36e18961bc58815e659f43f",

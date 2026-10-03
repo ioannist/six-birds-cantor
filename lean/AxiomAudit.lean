@@ -19,6 +19,8 @@ import LoopExtension
 import SparsePressure
 import ControlledShell
 import PackagedDisintegration
+import ReferencePressure
+import WeightedHistoryBounds
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -205,3 +207,10 @@ import PackagedDisintegration
 #print axioms CantorAudit.binary_actual_package_disintegration
 #print axioms CantorAudit.binary_package_nonfactor
 #print axioms CantorAudit.binary_actual_package_pressure
+#print axioms CantorAudit.reference_pressure_of_arbitrary_small_loss
+#print axioms CantorAudit.reference_pressure_of_dense_component_bounds
+#print axioms CantorAudit.pressure_bounds_of_geometric_constants
+#print axioms CantorAudit.binary_gap_lower_of_pressure_intervals
+#print axioms CantorAudit.binary_actual_package_pressure_from_intervals
+#print axioms CantorAudit.weighted_matrixHistory_bounds
+#print axioms CantorAudit.weighted_matrixHistory_norm_bounds

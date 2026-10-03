@@ -23,6 +23,21 @@ are explicit. It does not establish the original independent-noise law or
 identify its pressure with the entire continuous shell supremum. See
 `../docs/internal/packaged_world_disintegration_2026_10_03.md`.
 
+`WeightedHistoryBounds.lean` proves shared-positive-vector bounds for arbitrary
+nonautonomous products and returns them to maximum row norms. This supports
+uniform pressure bounds over every legal Cantor input word, rather than only
+periodic examples. `ReferencePressure.lean` proves that arbitrarily small
+exponential losses suffice for a fixed reference law to reproduce envelope
+pressure, with loss-dependent prefactors; it also formalizes geometric and
+interval bounds. The existing binary object-valued conditioning theorem uses
+the actual audit-completion outputs at one common active lens and base descriptor.
+The continuous-shell instance is certified by rational intervals.
+Its single parameter-independent reference law uses Schreiber's subadditive
+variational theorem analytically, together with compactness, Jensen and
+positive source-realization comparisons. These measure constructions and the
+interval datasets are not imported Lean proofs. See
+`../docs/internal/all_word_pressure_disintegration_2026_10_03.md`.
+
 `LoopExtension.lean` now also handles a first-matrix difference supported on
 selected columns when only the corresponding second-matrix rows agree. This
 supports the original small-budget split and its common evolving tail without

@@ -1044,7 +1044,7 @@
     "1/2"
   ],
   "gap_positive_for_all_positive_parameters": false,
-  "generated_at_utc": "2026-10-03T08:16:22.445759+00:00",
+  "generated_at_utc": "2026-10-03T09:58:52.322307+00:00",
   "genuine_actual_object_fiber_law_constructed": true,
   "identification_with_original_global_shell_supremum": false,
   "identification_with_two_world_forward_orbit_carrier": true,
@@ -1054,10 +1054,10 @@
     "lean/PackagedDisintegration.lean": "19af76907587683875addf3bcdcd10bd7812cd05313fec5e9b55937ef4ef634b",
     "scripts/run_packaged_world_disintegration.py": "9f418770bd62a75e714f9a84c4266360930aa13a90d3e7f54dfe38b88d354feb",
     "src/contextual_cantor/continuous_kernel_substrate.py": "46541744d277351a9373ee0d20ba10443923006037b4c3ef8cc7f8856185afa2",
-    "src/contextual_cantor/controlled_pressure_separation.py": "dfa0c1435bd34853f524173e4b23272ab7e84e485581f6558a4a35d27ae74885",
+    "src/contextual_cantor/controlled_pressure_separation.py": "199b80cd53e5bb45066531a1883d8c60636f07dede3fd91ff1f75fb2c207cf84",
     "src/contextual_cantor/controlled_shell.py": "059499af5b9936e54aed200ac25bc47d6d8822424c5f9a0abc6964c452447d14",
     "src/contextual_cantor/original_loop_extension.py": "650ea4ab04020595766aaa404f9b9ff2e466485f70ec0537afe3b42a51680234",
-    "src/contextual_cantor/packaged_world_disintegration.py": "76f5fc515a56b2d9c3dc5d203f046dc0c03b18f849f22c319bec53d4f8fd7c77",
+    "src/contextual_cantor/packaged_world_disintegration.py": "8fa73c5c1f922f038f93d42553ac811766dc2c5f6d4f3508807b3778710e7903",
     "src/contextual_cantor/rational_interval.py": "2d2a3ad62bd55cbac432d9d9b6bb10a8816e5f5b96614e3c107e0de1c7903481"
   },
   "law_pressure": "max of the two conditional pressures; finite prefixes do not affect limits",
@@ -1215,6 +1215,7 @@
             "6123876366639601985194366476799/5000000000000000000000000"
           ],
           "parameter": "1/2",
+          "start_phase": 0,
           "test_vector": [
             "1248290101805533/1250000000000000",
             "4998416685095509/5000000000000000",
@@ -1227,6 +1228,7 @@
             "12522764462820387546584045501183/10000000000000000000000000"
           ],
           "parameter": "1/2",
+          "start_phase": 0,
           "test_vector": [
             "624167032030583/625000000000000",
             "9996931419756413/10000000000000000",
@@ -1259,6 +1261,7 @@
             "4358933734665002433760284871011/5000000000000000000000000"
           ],
           "parameter": "1/2",
+          "start_phase": 0,
           "test_vector": [
             "1248290101805533/1250000000000000",
             "4998416685095509/5000000000000000",
@@ -1271,6 +1274,7 @@
             "8910755830969399399882750659153/10000000000000000000000000"
           ],
           "parameter": "1/2",
+          "start_phase": 0,
           "test_vector": [
             "624167032030583/625000000000000",
             "9996931419756413/10000000000000000",
@@ -1303,6 +1307,7 @@
             "352577669061308731118151829/10000000000000000000000000"
           ],
           "parameter": "3/4",
+          "start_phase": 0,
           "test_vector": [
             "1248749241745779/1250000000000000",
             "4998904119115319/5000000000000000",
@@ -1315,6 +1320,7 @@
             "5627134379373401772394239/156250000000000000000000"
           ],
           "parameter": "3/4",
+          "start_phase": 0,
           "test_vector": [
             "4995114359943053/5000000000000000",
             "2499467276508919/2500000000000000",
@@ -1347,6 +1353,7 @@
             "211731552106119538228449603/10000000000000000000000000"
           ],
           "parameter": "3/4",
+          "start_phase": 0,
           "test_vector": [
             "1248749241745779/1250000000000000",
             "4998904119115319/5000000000000000",
@@ -1359,6 +1366,7 @@
             "216166682480080120652121089/10000000000000000000000000"
           ],
           "parameter": "3/4",
+          "start_phase": 0,
           "test_vector": [
             "4995114359943053/5000000000000000",
             "2499467276508919/2500000000000000",
@@ -1391,6 +1399,7 @@
             "7012659288931335474483/5000000000000000000000000"
           ],
           "parameter": "1",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "1",
@@ -1403,6 +1412,7 @@
             "888760561931576813037/625000000000000000000000"
           ],
           "parameter": "1",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "1",
@@ -1435,6 +1445,7 @@
             "35529610323383952361/50000000000000000000000"
           ],
           "parameter": "1",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "1",
@@ -1447,6 +1458,7 @@
             "144000306293223185727/200000000000000000000000"
           ],
           "parameter": "1",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "1",
@@ -1479,6 +1491,7 @@
             "2972708286104281/40000000000000000000000"
           ],
           "parameter": "5/4",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "19976840845001/20000000000000",
@@ -1491,6 +1504,7 @@
             "37231987676799003/500000000000000000000000"
           ],
           "parameter": "5/4",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "2497153918047777/2500000000000000",
@@ -1523,6 +1537,7 @@
             "158835267273884917/5000000000000000000000000"
           ],
           "parameter": "5/4",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "19976840845001/20000000000000",
@@ -1535,6 +1550,7 @@
             "9938756897480061/312500000000000000000000"
           ],
           "parameter": "5/4",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "2497153918047777/2500000000000000",
@@ -1567,6 +1583,7 @@
             "3130082822241/625000000000000000000000"
           ],
           "parameter": "3/2",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "9974706694219291/10000000000000000",
@@ -1579,6 +1596,7 @@
             "12366461703661/2500000000000000000000000"
           ],
           "parameter": "3/2",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "4987531365388351/5000000000000000",
@@ -1611,6 +1629,7 @@
             "1806081605971/1000000000000000000000000"
           ],
           "parameter": "3/2",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "4987353347109707/5000000000000000",
@@ -1623,6 +1642,7 @@
             "17821671828571/10000000000000000000000000"
           ],
           "parameter": "3/2",
+          "start_phase": 0,
           "test_vector": [
             "1",
             "249376568269443/250000000000000",

@@ -11,7 +11,7 @@ from fractions import Fraction as Q
 from .original_loop_extension import construct_original_loop_extension
 from .controlled_shell import load_cycle, certify_cycle, certify_entry_prefix
 from .controlled_pressure_separation import mix_cycle, periodic_observable_pressure
-from .rational_interval import Interval as I
+from .rational_interval import Interval as I,as_interval
 
 
 def _exact_weight(w):
@@ -72,19 +72,24 @@ def construct_packaged_world_law(weight=Q(1, 2)):
     return PackagedWorldLaw(tuple(a.stationary for a in witness.audit), _exact_weight(weight))
 
 
-def periodic_matrix_pressure(cycle, parameter, observable='operator', periodic=None):
+def periodic_matrix_pressure(cycle, parameter, observable='operator', periodic=None, start_phase=0):
     """Certified full 20-state history pressure via a three-cell invariant subspace.
 
     Row sums of every product are constant on the three physical classes.
     Its infinity row norm is EXACTLY that of the three-by-three aggregate,
     including the separate diagonal term. A positive rational test vector
     gives Collatz bounds for the aggregate twelve-step Perron eigenvalue.
+    With interval kernels and q boxes it instead bounds EVERY allowed block
+    on one shared positive vector; arbitrary-product pressure needs the
+    separate induction and limit return in WeightedHistoryBounds/ReferencePressure.
     Power iteration only proposes the vector; no convergence is assumed.
     """
     if not isinstance(parameter, (int,Q)) or isinstance(parameter,bool) or parameter < 0:
         raise ValueError('an exact nonnegative pressure parameter is required')
     if observable not in ('closure','operator'):
         raise ValueError('choose an original source observable')
+    if type(start_phase) is not int or not 0<=start_phase<12:
+        raise ValueError('start phase must be an integer from zero to eleven')
     periodic = periodic_observable_pressure(cycle) if periodic is None else periodic
     if parameter == 0:
         return I(20).log(), {'eigenvalue_interval':['4096000000000000']*2,
@@ -99,14 +104,14 @@ def periodic_matrix_pressure(cycle, parameter, observable='operator', periodic=N
             values=[]
             for b,n in enumerate(sizes):
                 count=n-int(a==b)
-                value=count*(parameter*(I(base[a][b]).log()-q)).exp()
+                value=count*(parameter*(as_interval(base[a][b]).log()-q)).exp()
                 if a==b:
-                    value=value+(parameter*(I(base[a][b]+kernel.excess[a]).log()-q)).exp()
+                    value=value+(parameter*(as_interval(base[a][b]+kernel.excess[a]).log()-q)).exp()
                 values.append(value)
             matrix.append(tuple(values))
         matrices.append(tuple(matrix))
     product=tuple(tuple(I(int(i==j)) for j in range(3)) for i in range(3))
-    for matrix in matrices:
+    for matrix in (*matrices[start_phase:],*matrices[:start_phase]):
         product=tuple(tuple(sum(product[i][k]*matrix[k][j] for k in range(3))
                             for j in range(3)) for i in range(3))
     vector=(Q(1),)*3
@@ -121,7 +126,7 @@ def periodic_matrix_pressure(cycle, parameter, observable='operator', periodic=N
     eigenvalue=I(min(x.lo for x in ratios),max(x.hi for x in ratios))
     pressure=eigenvalue.log()/12
     return pressure, {'eigenvalue_interval':[str(eigenvalue.lo),str(eigenvalue.hi)],
-        'test_vector':list(map(str,vector)), 'parameter':str(parameter)}
+        'test_vector':list(map(str,vector)), 'parameter':str(parameter),'start_phase':start_phase}
 
 
 def certify_packaged_world_disintegration(include_carrier=True):
