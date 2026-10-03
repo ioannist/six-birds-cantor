@@ -1,0 +1,72 @@
+import LoopExtension
+import PrimitiveCompletion
+
+/-! Generated rational candidate data; independently checked in
+TwentyStateWitness.lean. Regenerate with scripts/generate_twenty_state_data.py. -/
+namespace CantorAudit
+
+def warmForward (i j : Fin 20) : ℚ :=
+  if i.val = 0 ∧ j.val = 0 then 501/10000 else
+  if i.val = 0 ∧ j.val = 1 then 50001/1000000 else
+  if i.val = 0 ∧ j.val = 2 then 49999/1000000 else
+  if i.val = 0 ∧ j.val = 3 then 499/10000 else
+  if i.val = 1 ∧ j.val = 0 then 49999/1000000 else
+  if i.val = 1 ∧ j.val = 1 then 999/20000 else
+  if i.val = 1 ∧ j.val = 2 then 50001/1000000 else
+  if i.val = 1 ∧ j.val = 3 then 1001/20000 else
+  if i.val = 2 ∧ j.val = 0 then 50001/1000000 else
+  if i.val = 2 ∧ j.val = 1 then 49999/1000000 else
+  if i.val = 2 ∧ j.val = 2 then 1999/40000 else
+  if i.val = 2 ∧ j.val = 3 then 2001/40000 else
+  if i.val = 3 ∧ j.val = 0 then 499/10000 else
+  if i.val = 3 ∧ j.val = 1 then 1001/20000 else
+  if i.val = 3 ∧ j.val = 2 then 2001/40000 else
+  if i.val = 3 ∧ j.val = 3 then 2001/40000 else
+  if i.val = 4 ∧ j.val = 4 then 313/6250 else
+  if i.val = 4 ∧ j.val = 7 then 156/3125 else
+  if i.val = 5 ∧ j.val = 5 then 2503/50000 else
+  if i.val = 5 ∧ j.val = 7 then 2497/50000 else
+  if i.val = 6 ∧ j.val = 6 then 1251/25000 else
+  if i.val = 6 ∧ j.val = 7 then 1249/25000 else
+  if i.val = 7 ∧ j.val = 4 then 156/3125 else
+  if i.val = 7 ∧ j.val = 5 then 2497/50000 else
+  if i.val = 7 ∧ j.val = 6 then 1249/25000 else
+  if i.val = 7 ∧ j.val = 7 then 2509/50000 else
+  1/20
+
+def warmKernel (z : Bool) (i j : Fin 20) : ℚ :=
+  if z then warmForward j i else warmForward i j
+
+def warmAuditCore (i : Fin 20) : Prop :=
+  i.val = 0 ∨ i.val = 4 ∨ i.val = 5 ∨ i.val = 6 ∨ i.val = 7
+
+instance (i : Fin 20) : Decidable (warmAuditCore i) :=
+  inferInstanceAs (Decidable (_ ∨ _ ∨ _ ∨ _ ∨ _))
+
+def warmPrototype (j : Fin 20) : ℚ :=
+  (55/100)*(1/20)+(25/100)*((1/20+warmForward j j)/2)
+    +(20/100)*warmForward j j
+
+def warmCoreMass : ℚ := ∑ j, if warmAuditCore j then warmPrototype j else 0
+def warmOtherMass : ℚ := ∑ j, if warmAuditCore j then 0 else warmPrototype j
+
+def warmCoreCoefficient (z : Bool) : Fin 20 → ℚ :=
+  if z then
+    ![63127/78125, 250001/3906250, 249999/3906250, 4998/78125, 101/125, 101/125, 101/125, 101/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125]
+  else
+    ![63127/78125, 249999/3906250, 250001/3906250, 4998/78125, 101/125, 101/125, 101/125, 101/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125, 8/125]
+
+def warmAuditObject (z : Bool) : Fin 20 → ℚ :=
+  if z then
+    ![10006016308704885/200109927212425471, 10002461303223000/200109927212425471, 10004087231611500/200109927212425471, 10007339088388500/200109927212425471, 10004716371543908/200109927212425471, 10003416434382931/200109927212425471, 10002116497221954/200109927212425471, 10011216057348793/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471, 10005713160000000/200109927212425471]
+  else
+    ![30018048928716345/600329781650284187, 30007383909669000/600329781650284187, 30012261694834500/600329781650284187, 30022017265165500/600329781650284187, 30014149117233076/600329781650284187, 30010249305749807/600329781650284187, 30006349494266538/600329781650284187, 30033648174649421/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187, 30017139480000000/600329781650284187]
+
+def warmCompletion (z : Bool) (i j : Fin 20) : ℚ :=
+  if warmAuditCore j then warmCoreCoefficient z i*(warmPrototype j/warmCoreMass)
+  else (1-warmCoreCoefficient z i)*(warmPrototype j/warmOtherMass)
+
+def warmJoin (i j : Fin 20) : ℚ :=
+  if (i.val < 10) = (j.val < 10) then 582838687/10939200000 else 511081313/10939200000
+
+end CantorAudit

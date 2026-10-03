@@ -4,6 +4,24 @@ Build with `lake build` in this directory. The portable dependency manifest
 pins Lean and mathlib to v4.8.0. The review used the matching local mathlib
 cache; no local filesystem paths are present in the committed manifest.
 
+The adopted revised main target is now specified in
+[the revised theorem package](../docs/internal/revised_main_theorem_package_2026_10_03.md).
+`TwentyStateWitness.lean` checks the original-dimensional warm kernel data,
+their actual lazy prototype completion, the stationary objects and their
+all-start convergence/uniqueness. It derives identical weighted history norms
+at every horizon with an arbitrary common suffix and proves nonfactorization
+through the whole stated growth descriptor. The rational candidate data are
+regenerated from the existing constructor; the Lean kernel checks the proofs.
+`CompletionObject.lean` constructs global stationary objects from positive
+transport/prototype bounds. Physical source realization and interval instance
+bounds remain analytic and are distinguished from this mechanization.
+
+The notes below record the successive historical repair stages. Their open
+original-shell obligations and surrogate scopes are preserved for provenance;
+the adopted controlled-domain statements above are the current target.
+
+## Historical formalization notes
+
 `ControlledShell.lean` supplies clipping/normalization return for legal target
 corrections, the actual four-phase timescale reset bounds, budget invariance,
 and all-time induction. Its pressure endpoint gives a unique root in (1/3,1)

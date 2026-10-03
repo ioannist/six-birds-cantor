@@ -1,0 +1,1326 @@
+{
+  "completion_meaning": "unique stationary vector and all-start convergence under each fixed E; not outer-F preservation",
+  "definition_source": "docs/internal/revised_main_theorem_package_2026_10_03.md",
+  "forgotten_base_information": "labelled off-diagonal K and raw innovation word",
+  "fresh_lean_validation": {
+    "allowed_foundations": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_command": [
+      "lake",
+      "env",
+      "lean",
+      "AxiomAudit.lean"
+    ],
+    "audit_exit_code": 0,
+    "audited_declaration_count": 226,
+    "build_command": [
+      "lake",
+      "build"
+    ],
+    "build_exit_code": 0,
+    "full_physical_source_formalization_inferred": false,
+    "transitive_axioms": {
+      "CantorAudit.a3_arbitrarily_long_waits": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.a3_wait_then_return": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.affinityMatrix_self": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.affinity_pressure_exists_strict": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.affinity_row_loss": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.auditCompletedChannel_floor": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.audit_completion_saturates": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.audit_completion_unique_real": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.audit_transport_macro_obstruction": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_actual_package_conditional": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_actual_package_disintegration": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_actual_package_mass": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_actual_package_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_actual_package_pressure_from_intervals": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_disintegration_gap_positive_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_disintegration_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_equal_weight_gap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_gap_lower_of_pressure_intervals": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.binary_package_nonfactor": [],
+      "CantorAudit.bounded_factor_same_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.bounded_weight_sum_zero_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.clamped_interval": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.coarse_collision_with_exact_factorization": [],
+      "CantorAudit.collision_obstructs_factorization": [],
+      "CantorAudit.common_input_actual_package_zero_gap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completedInitial_stationary": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_add": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_converges": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_distance": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_eq_vecMul": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_error": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_fixed": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_mass": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_nonnegative": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_positive_columns": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_pow": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionIterate_succ_initial": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionLimitClosure_absorbs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completionLimitClosure_idempotent": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completion_affinity_witness_gap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completion_fixed_unique": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completion_reference_pressure_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completion_refinement_family_extension": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completion_stationary_error_of_residual": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completion_stationary_ratio": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.completion_strictness_with_equal_original_partitions": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.conditional_fekete": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.constant_matrixHistoryEnvelope": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.constant_package_fiber_partition": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.constant_row_partition": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.controlledBudget_increases_before_cap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.controlledBudget_preserved": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.controlledTimescale_step_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.controlledTimescale_switch_reset": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.controlled_shell_all_iterates": [
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.controlled_shell_pressure_root": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.controlled_shell_root_anchor": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.equal_conditional_pressures_gap_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.equal_rows_mul_rankOne": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.equal_rows_norm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.expected_row_history_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.expected_row_history_same_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.extension_with_zero_gap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.factorization_iff_constant_on_fibers": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.final_forced_readout_factorizes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.finite_disintegration_gap_formula": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.finite_disintegration_gap_lower_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.finite_disintegration_gap_nonnegative": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.finite_disintegration_gap_positive_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.finite_disintegration_gap_zero_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.finite_disintegration_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.finite_positive_matrix_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.forcedCompletedFixed_mass": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.forcedStrataFamily_split": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.forced_completion_fixed": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.forced_completion_saturates": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.forcing_produces_new_fixed_object": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.full_support_history_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.full_support_history_same_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.initial_conditioning_common_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.initial_conditioning_disintegration": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.initial_conditioning_gap_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.initial_conditioning_profiles_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.joinedHistory_disintegration_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.joinedHistory_equal_from_two": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.joinedHistory_norms_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.joinedHistory_partitions_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.joinedHistory_rows_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.kernelEnvelope_submultiplicative": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.kernelProduct_split": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.kernel_pressure_exists": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.linear_partition_zero_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matchedHistory_equal_from_two": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matchedHistory_norms_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matchedHistory_partitions_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrixHistory_nonnegative": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrixHistory_rows": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrixPathValue_eq_row": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrixPathValue_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrixPathValue_upper": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrix_partition_exponential_loss": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrix_power_domination": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrix_power_positive_of_path": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrix_pressure_exists": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.matrix_two_step_escape": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.midpoint_noise_recouples": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.minorizedRow_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.minorizedRow_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.moving_envelope_scaled_domination": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.moving_history_scaled_domination": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.noiseNormalizedRow_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.nonnegative_matrix_product": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.normalized_coordinate_difference": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.normalized_target_control": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.originalBranchMatrix_rows": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.originalPackageInitial_probability": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.originalParameterizedMatrix_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.original_branch_root_anchor": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.original_budget_core_survives_noise": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.original_selector_observable_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.original_strict_completion_zero_gap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.original_uniform_partitions_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.positiveMatrixPartition_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.positiveMatrixPartition_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.positiveMatrixPartition_pressure_exists": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.positiveMatrixPartition_pressure_exists_of_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.positiveMatrix_norm_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.positiveMatrix_row_le_norm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.positive_completion_stationary_exists": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.positive_prototype_completion_object": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureBase_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureCompletion_formula": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureCompletion_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureCompletion_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureFixed_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureFixed_stationary": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureFixed_unique": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureKernelChoice_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureKernelChoice_uniform": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressurePredictor_loss": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressurePredictor_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressurePredictor_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureSpectralCompletion_formula": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressureTransport_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressure_bounds_of_geometric_constants": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressure_comparison_of_scaling": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressure_gap_of_even_escape": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressure_lipschitz": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressure_profile_extension": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressure_strictAnti": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressure_unique_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.pressure_upper_of_exponential": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.primitive_completion_error": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.primitive_completion_idempotent_limit": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.primitive_completion_readout_factorizes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.primitive_completion_saturates": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.primitive_completion_stationary_error": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.primitive_completion_unique": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.primitive_transport_completion_saturates": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.prototype_lift_retains_transport": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.reference_pressure_of_arbitrary_small_loss": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.reference_pressure_of_dense_component_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.retained_prototype_split": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.saturation_and_material_forcing_support": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.scalar_row_history": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.selector_time_sum_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.separated_original_continuations_gap_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.sparseSelectorMatrix_nonnegative": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.sparseSelectorMatrix_parameter_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.sparseSelectorMatrix_row_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.sparse_selector_pressure_at_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.sparse_selector_pressure_exists": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.sparse_selector_pressure_parameter_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.sparse_selector_pressure_strictAnti": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.sqrt_affinity_row_loss": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.stochasticMatrix_pressure_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.stochastic_cocycle_initial_law_independent": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.stochastic_matrix_product": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.stochastic_power_rows": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.stochastic_row_entry_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.stochastic_zero_mass_contraction": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.strict_completion_with_common_original_pressure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.supported_difference_mul_common_rows": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.transpose_historyTotal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.twenty_state_pressure_blind_extension": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.twenty_state_real_pressure_blind_extension": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.uniformShellTimescale_exit": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.uniformShellVariation_cap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.uniformShell_selector_and_eta_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_all_history_norms_equal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_all_weighted_rows": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_audit_completion_converges": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_audit_completion_unique": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_audit_mean_core": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_audit_object_formula": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_audit_object_mass": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_audit_object_stationary": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_audit_objects_distinct": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_audit_objects_real_distinct": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_completion_bqu": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_completion_positive_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_completion_real_floor": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_core_coefficient_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_core_coefficient_formula": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_core_mass_value": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_forward_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_join_common_rows": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_kernel_difference_support": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_kernel_row_permutation": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_kernel_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_kernel_uniform_informant": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_lazy_blend_parameter": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_original_weight_positive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_other_mass_value": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_prototype_ratio_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.warm_transport_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.weighted_affinity_pressure_gap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.weighted_matrixHistory_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.weighted_matrixHistory_norm_bounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.witnessFullCompletion_formula": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.witnessFullCompletion_saturates": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.witnessKernel_stochastic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.witnessSingletonCompletion_formula": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.witnessSingleton_unique": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.witness_package_extension": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "CantorAudit.witness_pair_lumpability_obstruction": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  },
+  "full_lean_source_model_formalized": false,
+  "hausdorff_dimension_identity_claimed": false,
+  "input_sha256": {
+    "docs/internal/revised_main_theorem_package_2026_10_03.md": "d41eb00495dab3450e3059d42af208db461b82eaa1d2b29464402ff96dc11947",
+    "lean/AffinityPressure.lean": "30dd7b21a73c359d3218474481eea3e644cf1b05d0e2a96c4dc4079b0d896eb1",
+    "lean/AxiomAudit.lean": "49610aa380133e49e64ce48cf9bbe4b42194b77dd27a4368fe51aae328425aee",
+    "lean/CantorAudit.lean": "a84eb7bf6d71b77b3076fd1dbe0c620295bbf44ef40c0d90157723f12d93c73a",
+    "lean/CommonInputDisintegration.lean": "b32134cf8a93ec86033675a54a13e0eb5707d94906ba6c76b3541ad2e73dd2ce",
+    "lean/CompletionAffinityWitness.lean": "efaff3eff52c15754f2ca831421a60c6507c448416981823f10df3edafad5a90",
+    "lean/CompletionDynamics.lean": "7df4563910c3f7274dba26d847ed8ed374c7c03b10d8fd4cb2d3dd435ef9a23b",
+    "lean/CompletionForcing.lean": "454d3b64ac320de3947ab4121ad4da01561faf4bc05e1671949456a7b3d252a2",
+    "lean/CompletionObject.lean": "00c0b55243c61841d1b10a9f82e8e2d5e424e9a42a11993c8af7879a167720d8",
+    "lean/CompletionWitness.lean": "25a5e6d24bb6a7fca125803907cfcf5ef8376ae4f60730831609d8728c2b0625",
+    "lean/ConditionalPressure.lean": "5a45f7f89ee91b6ef45e08f8b5fddd7a06f66a5cda6d17eedd74d12b1f45a441",
+    "lean/ControlledShell.lean": "3c22211e8f69138969a97d0906e7148802d911c1cf0a8cb8a48f40ee1140e0f6",
+    "lean/FiniteDisintegration.lean": "180cea1ec40a7bb741a31e8d3a0b05893ff305c4c4a88f16b86cc0f1d97ad6b0",
+    "lean/HistoryConditioning.lean": "1fdad92392d5fa095c842dcc77a298db74f87edcabcac5003157b0241c92f8d1",
+    "lean/KernelCocycle.lean": "e89d1c1ba0f5ddc6279a9905850ebea2edee0bd0c2542dfb6cf97b2274a8a55b",
+    "lean/KernelEscape.lean": "00ff965d8aa9f9b1d66b5718168a9bb1b9f9090dc6720a1432c14d29796ca6c9",
+    "lean/KernelLawfulness.lean": "a0ce5e825bd1fa82c27b3391536a3b323348748711b83de96d641cad66a3c491",
+    "lean/LoopExtension.lean": "f0baee86da9d76b020deb741d3c4df7ea73b97e6e36e18961bc58815e659f43f",
+    "lean/MatrixPressure.lean": "3af710f4ce0ca25bd2f929443ce26e714ae4f73fc69f4c0d6a158e2200b54fb5",
+    "lean/OriginalShell.lean": "278e145094b5e271a0e4dffe2076d08b75039ba6642b34eb7d5f19f5fdc4626f",
+    "lean/PackagedDisintegration.lean": "19af76907587683875addf3bcdcd10bd7812cd05313fec5e9b55937ef4ef634b",
+    "lean/PressureExtension.lean": "e6e1655bf61a2981692151fd1a45f9e489b16319f4219637047b560372c6b7bc",
+    "lean/PressureRegularity.lean": "a392556ebf86e6bb6d1bd355b8fd7173d9f41cd0ebd5c5052b2cfe870f00f556",
+    "lean/PrimitiveCompletion.lean": "8e07f4edd60887576cffa5e9ecf6b3d57d621e31277c087d20980d01bc0b755a",
+    "lean/README.md": "2d40a8d80da680f62de70b3a8fad32de3cfa74941a4b07d21c693e4629d51bae",
+    "lean/ReferencePressure.lean": "7592d907a38734e9f7379adcb452cd419ca09fba9a85ee9c5506cbe975adfcbd",
+    "lean/RetainedMemory.lean": "def67864bcb647acc7922e737febb38881ca4b6ba68cf2c5b3c7dfce5e728685",
+    "lean/SparsePressure.lean": "907695b214560697b4d350f8d9c987ed090197b7c0ffd9de7cc7f412a9c0430f",
+    "lean/TwentyStateData.lean": "26032454adfe27700db02ccec6502bf7a6fed750cb7b0d2fc1238c111af27464",
+    "lean/TwentyStateWitness.lean": "3aed59fef1f4b9c4238998b097776c10122924f6b016aa9c1bb137d65c5d081a",
+    "lean/WeightedHistoryBounds.lean": "f398cddd0ea4cc1254565dd723b2d0733cf29747088d29e124647afced2b1f79",
+    "lean/lake-manifest.json": "7b18f6bcaf857a6c8d16b0f2768b8a81899a0101c55f0621787267ac2613c9c1",
+    "lean/lakefile.lean": "a305531552e6910b0b52f83cb07a12e28867b3fe7a3a099332a87b5045915453",
+    "lean/lean-toolchain": "61561b06f5587e027815fac8f59bf6ca160dfbf3f7372fc6297664acfd85b8c0",
+    "scripts/generate_twenty_state_data.py": "446ac2075530870215cb7a8ff3f331724189dfc416eefe4c45c1baab1d5fd8d4",
+    "scripts/run_revised_main_theorem_package.py": "0cf2c8db9806c8eeea042ce3908351105cd071c869e6e489c82ce7435880d829"
+  },
+  "main_claim": "a lawful controlled growth theory has a strict retentive completion-object extension even through its complete stated finite-horizon growth observations",
+  "manuscript_edited": false,
+  "old_manuscript_universal_pressure_implication_retained": false,
+  "old_rounded_multifiber_interpretation_retained": false,
+  "receipt_sha256": {
+    "results/all_word_pressure_disintegration/report.json": "fbf9963da6fc267e2604af405494ac4b5029fce09012354ed816ad1e0027230a",
+    "results/common_input_disintegration_obstruction/report.json": "6416ed54fa78324650c152166d897dba30b5efe9412001139a7b61d206f1a120",
+    "results/controlled_original_shell/report.json": "6ea618a88558e1834f20c84c04c531c3c25a20fdd8bc8c3e69f3a44168c3b312"
+  },
+  "retained_base": "configuration, current controls/lens, diagonal/support/U, both entire finite-horizon growth-norm profiles",
+  "revision": "adopted_revised_main_package_2026_10_03",
+  "scope_revision_is_user_adopted": true,
+  "secondary_positive_gap_example": {
+    "independent_original_noise_law_identified": false,
+    "receipt": "results/all_word_pressure_disintegration/report.json",
+    "same_main_complete_growth_base_fiber": false,
+    "status": "constructed fixed-reference-law existence example",
+    "strictness_alone_entails_gap": false
+  },
+  "seeded_reachability_or_uncontrolled_noise_invariance_claimed": false,
+  "source_data_regeneration_matches": true,
+  "supporting_finite_pressure_formula": {
+    "formula": "P_reference=max_i P_i; gap=sum_i w_i(max_j P_j-P_i)",
+    "interpretation": "growth-rate dispersion, not complete predictive sufficiency",
+    "lean_source": "lean/FiniteDisintegration.lean",
+    "scope": "one fixed finite positive-mass fiber family, one law, one potential, existing conditional limits"
+  },
+  "theorems": [
+    {
+      "id": "R1",
+      "instance_receipt": "results/controlled_original_shell/report.json",
+      "lean_scope": "normalization, timescale, budget and iteration return lemmas",
+      "proof": "original-formula analytic return plus exact outward interval coverage and induction",
+      "statement": "explicit lawful continuous controlled shell"
+    },
+    {
+      "id": "R2",
+      "instance_receipt": "results/controlled_original_shell/report.json",
+      "lean_scope": "matrix_pressure_exists, pressure comparison/regularity and controlled_shell_pressure_root",
+      "proof": "source branch bounds, invariant-domain submultiplicativity and derived secants/anchors",
+      "statement": "multiplicative history pressure exists, is Lipschitz and strictly decreasing, with unique root in (1/3,1)"
+    },
+    {
+      "id": "R3",
+      "instance_receipt": "results/all_word_pressure_disintegration/report.json",
+      "lean_scope": "TwentyStateWitness checks the concrete rational completion and the matrix observation split; source realization remains analytic",
+      "proof": "exact twenty-state B Q U stationary objects plus legal all-time warm-state realization and identical base observations",
+      "statement": "actual current completion object does not factor through the specified complete growth description"
+    },
+    {
+      "id": "R4",
+      "instance_receipt": "results/common_input_disintegration_obstruction/report.json",
+      "lean_scope": "concrete twenty-state weighted-row/history return and nonfactorization",
+      "proof": "labelled row permutations, supported first-matrix difference, common second-matrix rows and arbitrary suffix multiplication",
+      "statement": "distinct completion objects have identical history norms for every horizon and original pressure parameter under common lawful continuations"
+    }
+  ],
+  "warm_exact_checks": {
+    "active_lens": "audit_flow_quantile_lens",
+    "actual_objects": [
+      [
+        "30018048928716345/600329781650284187",
+        "30007383909669000/600329781650284187",
+        "30012261694834500/600329781650284187",
+        "30022017265165500/600329781650284187",
+        "30014149117233076/600329781650284187",
+        "30010249305749807/600329781650284187",
+        "30006349494266538/600329781650284187",
+        "30033648174649421/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187",
+        "30017139480000000/600329781650284187"
+      ],
+      [
+        "10006016308704885/200109927212425471",
+        "10002461303223000/200109927212425471",
+        "10004087231611500/200109927212425471",
+        "10007339088388500/200109927212425471",
+        "10004716371543908/200109927212425471",
+        "10003416434382931/200109927212425471",
+        "10002116497221954/200109927212425471",
+        "10011216057348793/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471",
+        "10005713160000000/200109927212425471"
+      ]
+    ],
+    "actual_source_score_interval": [
+      "79/100",
+      "4/5"
+    ],
+    "completion_entry_floors": [
+      "499929948/39085859375",
+      "499929948/39085859375"
+    ],
+    "finite_partition_scope": "the exact coefficient differs even though the true limiting conditional pressures agree",
+    "finite_source_factor_at_s_two": "exp(-2*(q_0+q_1)); original q, common to both warm worlds",
+    "fixed_join_noise_caps": [
+      "7120094423/13674000000000",
+      "3655804997/6837000000000"
+    ],
+    "initial_probability_floors": [
+      "30006349494266538/600329781650284187",
+      "10002116497221954/200109927212425471"
+    ],
+    "kernel_dimension": 20,
+    "macro_lumpability_defects": [
+      "101/3906250",
+      "101/3906250"
+    ],
+    "minimum_original_noise_support": "1/400",
+    "timescale": "3/5",
+    "two_step_norm_matching_support": [
+      0,
+      1,
+      2
+    ],
+    "two_step_unscaled_partition_difference": "1575024057047647051055495490531994607925791/119797678397954420409813086945861447603089344000000000000000000",
+    "two_step_unscaled_partitions": [
+      "901853080690060966182901559787880617379348681/359195608334165031025029158400000000000000000000",
+      "300617693556839955619922614632791593459820573/119731869442127361107417587200000000000000000000"
+    ]
+  }
+}

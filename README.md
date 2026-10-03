@@ -10,6 +10,16 @@ This repository contains the **Cantor instantiation** for the paper:
 
 This paper develops an audited-shell Cantor theorem package for a canonical hybrid object built from a cocycle-pressure base theory and a completion-based extension. The repository contains the frozen internal theorem-package artifacts, manuscript source, supporting diagnostics, publication ledgers, and the static web app scaffold used to package the audited outputs.
 
+The active mathematical revision is documented in
+[the revised theorem package](docs/internal/revised_main_theorem_package_2026_10_03.md).
+It studies an explicitly constructed controlled continuous shell, its
+multiplicative history pressure, and distinct completion objects invisible to
+the specified growth observations. Structural extension does not imply a
+positive pressure gap. The positive-gap reference law is a secondary
+constructed example. The manuscript and frozen publication artifacts await
+the later editing phase; their historical closure labels are not mathematical
+certificates for the revised results.
+
 ## What this repository provides
 
 - **Frozen theorem-package artifacts** under `docs/internal/` and `results/`, including the final claim ledger, traceability matrix, contribution delta map, publication-risk audit, and manuscript handoff bundle.

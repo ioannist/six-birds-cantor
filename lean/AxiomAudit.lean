@@ -23,6 +23,8 @@ import ReferencePressure
 import WeightedHistoryBounds
 import CommonInputDisintegration
 import FiniteDisintegration
+import TwentyStateWitness
+import CompletionObject
 
 #print axioms CantorAudit.collision_obstructs_factorization
 #print axioms CantorAudit.factorization_iff_constant_on_fibers
@@ -33,6 +35,36 @@ import FiniteDisintegration
 #print axioms CantorAudit.finite_disintegration_gap_zero_iff
 #print axioms CantorAudit.finite_disintegration_gap_positive_iff
 #print axioms CantorAudit.finite_disintegration_gap_lower_bound
+#print axioms CantorAudit.positive_prototype_completion_object
+#print axioms CantorAudit.warm_forward_positive
+#print axioms CantorAudit.warm_kernel_stochastic
+#print axioms CantorAudit.warm_kernel_uniform_informant
+#print axioms CantorAudit.warm_lazy_blend_parameter
+#print axioms CantorAudit.warm_transport_stochastic
+#print axioms CantorAudit.warm_core_coefficient_formula
+#print axioms CantorAudit.warm_core_mass_value
+#print axioms CantorAudit.warm_other_mass_value
+#print axioms CantorAudit.warm_core_coefficient_bounds
+#print axioms CantorAudit.warm_prototype_ratio_bounds
+#print axioms CantorAudit.warm_completion_bqu
+#print axioms CantorAudit.warm_completion_positive_stochastic
+#print axioms CantorAudit.warm_audit_object_formula
+#print axioms CantorAudit.warm_audit_object_mass
+#print axioms CantorAudit.warm_audit_mean_core
+#print axioms CantorAudit.warm_audit_object_stationary
+#print axioms CantorAudit.warm_audit_objects_distinct
+#print axioms CantorAudit.warm_completion_real_floor
+#print axioms CantorAudit.warm_audit_completion_converges
+#print axioms CantorAudit.warm_audit_completion_unique
+#print axioms CantorAudit.warm_kernel_row_permutation
+#print axioms CantorAudit.warm_all_weighted_rows
+#print axioms CantorAudit.warm_kernel_difference_support
+#print axioms CantorAudit.warm_join_common_rows
+#print axioms CantorAudit.warm_all_history_norms_equal
+#print axioms CantorAudit.twenty_state_pressure_blind_extension
+#print axioms CantorAudit.warm_audit_objects_real_distinct
+#print axioms CantorAudit.twenty_state_real_pressure_blind_extension
+#print axioms CantorAudit.warm_original_weight_positive
 #print axioms CantorAudit.coarse_collision_with_exact_factorization
 #print axioms CantorAudit.conditional_fekete
 #print axioms CantorAudit.linear_partition_zero_pressure
